@@ -1,0 +1,29 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = tuscan
+add_accepted_culture = greek
+religion = catholic
+technology_group = western
+capital = 146	#Athens
+fixed_capital = 146 # Cannot move capital away from this province & no power cost to move to it
+
+1368.1.1 = {
+	monarch = {
+		name = "Federico III"
+		dynasty = "de Barcelona"
+		culture = sicilian
+		birth_date = 1341.9.1
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+
+	heir = {
+		name = "Maria"
+		birth_date = 1363.7.2
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

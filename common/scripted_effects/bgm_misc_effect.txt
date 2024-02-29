@@ -1,0 +1,728 @@
+bgm_religion_change = {
+	add_country_modifier = {
+		name = recent_conversion
+   		duration = 5475
+	}
+}
+
+var_effect_h = {
+    if = {
+        limit = { check_variable = { which = $var$ value = $num$ } }
+        subtract_variable = { which = $var$ value = $num$ }
+        $effect$ = $sign$$num$
+    }
+}
+var_effect = { #var #effect #sign ##positive only
+    while = {
+        limit = { check_variable = { which = $var$ value = 13107.2 } }
+        subtract_variable = { which = $var$ value = 13107.2 }
+        $effect$ = $sign$13107.2
+    }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=6553.6 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=3276.8 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=1638.4 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=819.2 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=409.6 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=204.8 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=102.4 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=51.2 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=25.6 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=12.8 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=6.4 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=3.2 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=1.6 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.8 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.4 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.2 }
+    var_effect_h = { sign=$sign$ var=$var$ effect=$effect$ num=0.1 }
+}
+
+designate_inhospitable_colonies = {
+    chad_area = { set_province_flag = bad_terrain_flag }
+    radom_area = {
+        set_province_flag = bad_terrain_flag
+    }
+    
+    east_congo_area = {
+        set_province_flag = bad_terrain_flag
+    }
+    
+    south_coastal_angola_area = {
+        set_province_flag = bad_terrain_flag
+    }
+    
+    inner_angola_area = {
+        set_province_flag = bad_terrain_flag
+    }
+    
+    namibia_area = {
+        set_province_flag = bad_terrain_flag
+    }
+    
+    south_botswana_area = {
+        set_province_flag = bad_terrain_flag
+    }
+    
+    north_botswana_area = {
+        set_province_flag = bad_terrain_flag
+    }
+
+    gabon_area = { 
+        set_province_flag = bad_terrain_flag
+    }
+    cameroon_area = { 
+        set_province_flag = bad_terrain_flag 
+    }
+    central_africa = { 
+        set_province_flag = bad_terrain_flag
+    }
+    east_central_africa = { 
+        set_province_flag = bad_terrain_flag
+    }
+}
+
+bgm_post_revolution = {
+    if = {
+        limit = {
+            bgm_rev = yes
+            has_parliament = no
+        }
+        change_government = futurist_government
+        #add_government_reform = socialist_republic
+    }
+    if = {
+        limit = {
+            bgm_rev = yes
+            has_parliament = yes
+        }
+        change_government = democracy_govt
+        add_government_reform = bgm_dem_parliament
+        add_faction_influence = {
+            faction = dm_social_democrat
+            influence = 40
+        }
+        add_faction_influence = {
+            faction = dm_communist
+            influence = 30
+        }
+        add_faction_influence = {
+            faction = dm_monarchist
+            influence = -100
+        }
+    }
+    
+
+
+    if = {
+        limit = {
+            bgm_rev = no
+            has_parliament = yes
+            government = monarchy
+        }
+        change_government = democracy_govt
+        add_government_reform = parliamentary_monarchism
+        add_government_reform = bgm_dem_parliament
+        add_faction_influence = {
+            faction = dm_social_conservative
+            influence = 20
+        }
+        add_faction_influence = {
+            faction = dm_monarchist
+            influence = -10
+        }
+    }
+    if = {
+        limit = {
+            bgm_rev = no
+            has_parliament = yes
+            government = republic
+        }
+        change_government = democracy_govt
+        add_government_reform = parliamentary_republic_reform_bgm
+        add_government_reform = bgm_dem_parliament
+        add_faction_influence = {
+            faction = dm_social_liberal
+            influence = 20
+        }
+        add_faction_influence = {
+            faction = dm_social_conservative
+            influence = 20
+        }
+        add_faction_influence = {
+            faction = dm_monarchist
+            influence = -100
+        }
+    }
+
+
+
+
+    if = {
+        limit = {
+            bgm_rev = no
+            has_parliament = no
+            government = monarchy
+        }
+        change_government = authoritarian_government
+        add_government_reform = auth_monarchism
+    }
+    if = {
+        limit = {
+            bgm_rev = no
+            has_parliament = no
+            government = republic
+            NOT = { has_reform = enlightened_republicanism_principle }
+        }
+        change_government = authoritarian_government
+        add_government_reform = auth_republic_reform
+    }
+    if = {
+        limit = {
+            bgm_rev = no
+            has_parliament = no
+            government = republic
+            has_reform = enlightened_republicanism_principle
+        }
+        change_government = futurist_government
+        #add_government_reform = auth_republic_reform
+    }
+}
+
+clear_advisors = {
+    remove_advisor_by_category = adm
+    remove_advisor_by_category = DIP
+    remove_advisor_by_category = MIL
+}
+
+set_monarch_power = { #thanks Seelöwe
+    if = {
+        limit = {
+            $type$_power = $value$
+        }
+        custom_tooltip = reset_powers
+        hidden_effect = {
+            add_$type$_power = -2000000
+            add_$type$_power = $debt_limit$
+            add_$type$_power = $value$
+        }
+    }
+}
+
+bgm_adm_assessment = {
+    if = {
+		limit = {
+			NOT = {
+				adm = 2
+			}
+		}
+		add_country_modifier = {
+			name = adm_one
+			duration = -1
+		}
+		remove_country_modifier = adm_five
+	}
+	else_if = {
+		limit = {
+			adm = 2
+			NOT = {
+				adm = 5
+			}
+		}
+		remove_country_modifier = adm_one
+		remove_country_modifier = adm_five
+	}
+	else = {
+		limit = {
+			adm = 5
+		}
+		add_country_modifier = {
+			name = adm_five
+			duration = -1
+		}
+		remove_country_modifier = adm_one
+	}
+}
+bgm_dip_assessment = {
+    if = {
+		limit = {
+			NOT = {
+				dip = 2
+			}
+		}
+		add_country_modifier = {
+			name = dip_one
+			duration = -1
+		}
+		remove_country_modifier = dip_five
+	}
+	else_if = {
+		limit = {
+			dip = 2
+			NOT = {
+				dip = 5
+			}
+		}
+		remove_country_modifier = dip_one
+		remove_country_modifier = dip_five
+	}
+	else = {
+		limit = {
+			dip = 5
+		}
+		add_country_modifier = {
+			name = dip_five
+			duration = -1
+		}
+		remove_country_modifier = dip_one
+	}
+}  
+bgm_mil_assessment = {
+    if = {
+		limit = {
+			NOT = {
+				mil = 2
+			}
+		}
+		add_country_modifier = {
+			name = mil_one
+			duration = -1
+		}
+		remove_country_modifier = mil_five
+	}
+	else_if = {
+		limit = {
+			mil = 2
+			NOT = {
+				mil = 5
+			}
+		}
+		remove_country_modifier = mil_one
+		remove_country_modifier = mil_five
+	}
+	else = {
+		limit = {
+			mil = 5
+		}
+		add_country_modifier = {
+			name = mil_five
+			duration = -1
+		}
+		remove_country_modifier = mil_one
+	}
+}
+
+bgm_get_fra = {
+    random_country = {
+        limit = {
+            bgm_france = yes
+        }
+        save_event_target_as = bgm_fra_target
+    }
+}
+
+inheritance_effect = {
+    every_owned_province = {
+        limit = {
+            can_spawn_rebels = nationalist_rebels
+            any_core_country = {
+                exists = no
+            }
+        }
+        
+        if = {
+            limit = {
+                any_core_country = {
+                    exists = no
+                }
+            }
+            random_list = {
+                10 = {
+                    random_core_country = {
+                        every_core_province = {
+                            limit = {
+                                owned_by = ROOT
+                            }
+                            remove_core = ROOT
+                            cede_province = PREV
+                        }
+                        limit = {
+                            exists = no
+                        }
+                        PREV = {
+                            cede_province = PREV
+                        }
+                        ROOT = {
+                            create_subject = {
+                                subject_type = appanage
+                                who = PREV
+                            }
+                        }
+                        PREV = {
+                            bgm_feudatory_creation = yes
+                            change_religion = ROOT
+                        }
+                        random_list = {
+                            60 = {
+                                hidden_effect = {
+                                    set_dynasty = ROOT
+                                }
+                            }
+                            40 = {
+
+                            }
+                        }
+                    }
+                    hidden_effect = {
+                        remove_core = ROOT
+                    }
+                }
+                90 = { }
+            }
+        }
+    }
+}
+
+bgm_feudatory_creation = {
+    ROOT = {
+        every_subject_country = {
+            while = {
+                limit = { 
+                    NOT = {
+                        adm_tech = PREV
+                    }
+                }
+                add_adm_tech = 1
+            }
+            while = {
+                limit = { 
+                    NOT = {
+                        dip_tech = PREV
+                    }
+                }
+                add_dip_tech = 1
+            }
+            while = {
+                limit = { 
+                    NOT = {
+                        mil_tech = PREV
+                    }
+                }
+                add_mil_tech = 1
+            }
+        }
+    }
+}
+
+bgm_define_heir = {
+    while = {
+        limit = { 
+            NOT = {
+                heir_adm = FROM
+            }
+        }
+        change_heir_adm = 1
+    }
+    while = {
+        limit = { 
+            NOT = {
+                heir_dip = FROM
+            }
+        }
+        change_heir_dip = 1
+    }
+    while = {
+        limit = { 
+            NOT = {
+                heir_mil = FROM
+            }
+        }
+        change_heir_mil = 1
+    }
+}
+
+yuan_startup_armies = {
+    697 = {
+        YUA = {
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            cavalry = PREV
+            cavalry = PREV
+        }
+    }
+    2163 = {
+        YUA = {
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            cavalry = PREV
+            cavalry = PREV
+        }
+    }
+    2173 = {
+        YUA = {
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            cavalry = PREV
+            cavalry = PREV
+        }
+    }
+    2174 = {
+        YUA = {
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            cavalry = PREV
+            cavalry = PREV
+        }
+    }
+    2179 = {
+        YUA = {
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            cavalry = PREV
+            cavalry = PREV
+        }
+    }
+    4990 = {
+        YUA = {
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            infantry = PREV
+            cavalry = PREV
+            cavalry = PREV
+        }
+    }
+}
+
+bgm_strengthen_govt = {
+    add_mil_power = -100
+	add_legitimacy_equivalent = {
+        amount = 10
+        republican_tradition = 3
+    }
+    add_estate_loyalty = {
+        estate = all
+        loyalty = -2
+    }
+    if = {
+        limit = { 
+            NOT = {
+                OR = {
+                    current_age = age_of_feudalism
+                    current_age = age_of_discovery
+                    current_age = age_of_reformation
+                    current_age = age_of_great_wars
+                    current_age = modern_age
+                }
+            }
+        }
+        add_absolutism = 2
+    }
+    if = {
+        limit = { 
+            OR = {
+                current_age = age_of_great_wars
+                current_age = modern_age
+            }
+        }
+        add_absolutism = 4
+    }
+}
+
+bgm_adm_corruption_absolutism = {
+	if = {
+        limit = { 
+            NOT = {
+                absolutism = 25
+            }
+        }
+        add_adm_power = -100
+        add_corruption = -0.5
+    }
+    else_if = {
+        limit = { absolutism = 25 }
+        add_adm_power = -95
+        add_corruption = -0.75
+    }
+    else_if = {
+        limit = { absolutism = 50 }
+        add_adm_power = -90
+        add_corruption = -1
+    }
+    else_if = {
+        limit = { absolutism = 75 }
+        add_adm_power = -85
+        add_corruption = -1.25
+    }
+    else = {
+        add_adm_power = -80
+        add_corruption = -1.5
+    }
+	if = {
+		limit = { 
+			uses_republican_tradition = yes
+		}
+		add_republican_tradition = 1
+	}
+}
+
+bgm_dip_corruption_absolutism = {
+	if = {
+        limit = { 
+            NOT = {
+                absolutism = 25
+            }
+        }
+        add_dip_power = -100
+        add_corruption = -0.5
+    }
+    else_if = {
+        limit = { absolutism = 25 }
+        add_dip_power = -95
+        add_corruption = -0.75
+    }
+    else_if = {
+        limit = { absolutism = 50 }
+        add_dip_power = -90
+        add_corruption = -1
+    }
+    else_if = {
+        limit = { absolutism = 75 }
+        add_dip_power = -85
+        add_corruption = -1.25
+    }
+    else = {
+        add_dip_power = -80
+        add_corruption = -1.5
+    }
+	if = {
+        limit = { 
+            NOT = {
+                OR = {
+                    uses_revolutionary_zeal = yes
+                    current_age = age_of_feudalism
+                    current_age = age_of_discovery
+                    current_age = age_of_reformation
+                }
+            }
+        }
+        add_absolutism = 2
+    }
+}
+
+bgm_mil_corruption_absolutism = {
+	if = {
+        limit = { 
+            NOT = {
+                absolutism = 25
+            }
+        }
+        add_mil_power = -100
+        add_corruption = -0.5
+    }
+    else_if = {
+        limit = { absolutism = 25 }
+        add_mil_power = -95
+        add_corruption = -0.75
+    }
+    else_if = {
+        limit = { absolutism = 50 }
+        add_mil_power = -90
+        add_corruption = -1
+    }
+    else_if = {
+        limit = { absolutism = 75 }
+        add_mil_power = -85
+        add_corruption = -1.25
+    }
+    else = {
+        add_mil_power = -80
+        add_corruption = -1.5
+    }
+
+    if = {
+        limit = { NOT = { absolutism = 75 } }
+        random_list = {
+            50 = {
+    
+            }
+            25 = {
+                random_owned_province = {
+                    limit = {
+                        NOT = {
+                            likely_rebels = nationalist_rebels
+                        }
+                    }
+                    create_revolt = 1
+                }
+            }
+            15 = {
+                random_owned_province = {
+                    limit = {
+                        NOT = {
+                            likely_rebels = nationalist_rebels
+                        }
+                    }
+                    create_revolt = 2
+                }
+            }
+            10 = {
+                random_owned_province = {
+                    limit = {
+                        NOT = {
+                            likely_rebels = nationalist_rebels
+                        }
+                    }
+                    create_revolt = 3
+                }
+            }
+        }
+    }
+
+    if = {
+        limit = { 
+            NOT = {
+                OR = {
+                    uses_revolutionary_zeal = yes
+                    current_age = age_of_feudalism
+                    current_age = age_of_discovery
+                    current_age = age_of_reformation
+                }
+            }
+        }
+        add_absolutism = 2
+    }
+}

@@ -1,0 +1,779 @@
+namespace = BGMWS
+
+country_event = { #Begin the Western Schism
+	id = BGMWS.1
+	title = "BGMWS.1.t"
+	desc = "BGMWS.1.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = "BGMWS.1.a"
+		set_global_flag = western_schism
+		country_event = {
+			id = BGMWS.2
+		}
+	}
+}
+
+country_event = { #Choose your capital
+	id = BGMWS.2
+	title = "BGMWS.2.t"
+	desc = "BGMWS.2.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	#major = yes
+
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					ai = yes
+					is_great_power = yes
+					religion = catholic
+					NOT = {
+						has_opinion = {
+							who = PAP
+							value = -100
+						}
+					}
+				}
+				change_religion = avignon
+				every_owned_province = {
+					change_religion = avignon
+				}
+			}
+
+			random_list = {
+				60 = {
+					if = {
+						limit = { 
+							FRA = { ai = yes }
+						}
+						FRA = {
+							change_religion = avignon
+							every_owned_province = {
+								change_religion = avignon
+							}
+							every_ally = {
+								limit = {
+									ai = yes
+								}
+								change_religion = avignon
+								every_owned_province = {
+									change_religion = avignon
+								}
+							}
+						}
+					}
+				}
+				40 = {
+
+				}
+			}
+		}
+	}
+
+	option = { #Roman Papacy
+		name = "BGMWS.2.a"
+		trigger = {
+			tag = PAP
+		}
+		if = {
+			limit = {
+				NOT = {
+					capital_scope = {
+						province_id = 118
+					}
+				}
+			}
+			set_capital = 118
+		}
+		if = {
+			limit = { 
+				202 = {
+					owned_by = ROOT
+				}
+			}
+			202 = {
+				cede_province = AVP
+				change_religion = avignon
+				add_core = AVP
+			}
+			AVP = { change_religion = avignon }
+			every_core_province = {
+				add_core = AVP
+			}
+		}
+		else = {
+			202 = {
+				owner = {
+					country_event = {
+						id = BGMWS.3
+					}
+				}
+			}
+		}
+	}
+
+	option = { #Pisan Papacy
+		name = "BGMWS.2.c"
+		trigger = {
+			tag = PPP
+		}
+		if = {
+			limit = {
+				NOT = {
+					capital_scope = {
+						province_id = 115
+					}
+				}
+			}
+			set_capital = 115
+		}
+		if = {
+			limit = { 
+				115 = {
+					owned_by = ROOT
+				}
+			}
+			115 = {
+				cede_province = PPP
+				change_religion = pisan
+				add_core = PPP
+			}
+			PPP = { change_religion = pisan }
+			every_core_province = {
+				add_core = PPP
+			}
+		}
+	}
+
+	option = { #Avignon Papacy
+		name = "BGMWS.2.b"
+		custom_tooltip = will_become_vassal_if_not_owns_202
+		trigger = {
+			NOT = { tag = PPP }
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns = 202
+				}
+			}
+			202 = {
+				owner = {
+					country_event = {
+						id = BGMWS.4
+					}
+				}
+			}
+		}
+		else = {
+			change_tag = AVP
+			change_religion = avignon
+			202 = { change_religion = avignon }
+			every_owned_province = {
+				limit = {
+					NOT = { province_id = 202 }
+				}
+				cede_province = PAP
+			}
+		}
+		PAP = {
+			every_core_province = {
+				add_core = AVP
+			}
+		}
+	}
+}
+
+country_event = { #Release the Avignon Papacy
+	id = BGMWS.3
+	title = "BGMWS.3.t"
+	desc = "BGMWS.3.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { #Make Avignon a vassal
+		name = "BGMWS.3.a"
+		202 = {
+			cede_province = AVP
+			change_religion = avignon
+			add_core = AVP
+		}
+		AVP = {
+			change_religion = avignon
+		}
+		create_subject = {
+			subject_type = vassal
+			who = AVP
+		}
+	}
+}
+
+country_event = { #Release the Avignon Papacy, Pope wants to be Avignon
+	id = BGMWS.4
+	title = "BGMWS.3.t"
+	desc = "BGMWS.3.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { #Make Avignon a vassal
+		name = "BGMWS.3.a"
+		202 = {
+			cede_province = PAP
+			change_religion = avignon
+			add_core = AVP
+		}
+		PAP = {
+			change_tag = AVP
+			change_religion = avignon
+		}
+		AVP = {
+			every_owned_province = {
+				limit = {
+					NOT = {
+						province_id = 202
+					}
+				}
+				cede_province = PAP
+				add_core = PAP
+			}
+		}
+		create_subject = {
+			subject_type = vassal
+			who = AVP
+		}
+		PAP = {
+			every_core_province = {
+				add_core = AVP
+			}
+		}
+	}
+}
+
+country_event = { #Decide Our Fate
+	id = BGMWS.5
+	title = "BGMWS.5.t"
+	desc = "BGMWS.5.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	#major = yes
+
+	option = { #Side with the Roman Catholic Church
+		name = "BGMWS.5.a"
+		if = {
+			limit = {
+				NOT = {
+					religion = catholic
+				}
+			}
+			change_religion = catholic
+			every_owned_province = {
+				change_religion = catholic
+			}
+		}
+	}
+	option = { #Side with the Avignon Church
+		name = "BGMWS.5.b"
+		if = {
+			limit = {
+				NOT = {
+					religion = avignon
+				}
+			}
+			change_religion = avignon
+			every_owned_province = {
+				change_religion = avignon
+			}
+		}
+	}
+}
+
+country_event = { #Fate of the Western Schism
+	id = BGMWS.6
+	title = "BGMWS.6.t"
+	desc = "BGMWS.6.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = western_schism
+		is_papal_controller = yes
+		has_global_flag = pisan_papacy
+	}
+
+	mean_time_to_happen = {
+		years = 15
+	}
+
+	major = yes
+
+	option = { #The die is cast. ################
+		name = "BGMWS.6.a"
+		if = {
+			limit = {
+				PAP = {
+					diplomatic_reputation = AVP
+					diplomatic_reputation = PPP
+				}
+			}
+			set_hre_religion_treaty = yes
+				emperor = {
+					set_country_flag = western_schism_hremperor
+					change_religion = catholic
+					every_owned_province = {
+						change_religion = catholic
+					}
+				}
+				set_hre_religion_treaty = no
+				set_hre_religion = catholic
+			every_country = {
+				limit = {
+					OR = {
+						religion = avignon
+						religion = pisan
+					}
+				}
+				change_religion = catholic
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = avignon
+							religion = pisan
+						}
+					}
+					change_religion = catholic
+				}
+			}
+			PAP = {
+				inherit = PPP
+				inherit = AVP
+			}
+		}
+		else_if = {
+			limit = { 
+				AVP = {
+					diplomatic_reputation = PAP
+					diplomatic_reputation = PPP
+				}
+			}
+			set_hre_religion_treaty = yes
+			emperor = {
+				set_country_flag = western_schism_hremperor
+				change_religion = avignon
+				every_owned_province = {
+					change_religion = avignon
+				}
+			}
+			set_hre_religion_treaty = no
+			set_hre_religion = avignon
+			every_country = {
+				limit = {
+					OR = {
+						religion = catholic
+						religion = pisan
+					}
+				}
+				change_religion = avignon
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = catholic
+							religion = pisan
+						}
+					}
+					change_religion = avignon
+				}
+			}
+			AVP = {
+				inherit = PAP
+				inherit = PPP
+			}
+		}
+		else = {
+			emperor = {
+				set_country_flag = western_schism_hremperor
+				change_religion = pisan
+				every_owned_province = {
+					change_religion = pisan
+				}
+			}
+			set_hre_religion_treaty = no
+			set_hre_religion = pisan
+			every_country = {
+				limit = {
+					OR = {
+						religion = catholic
+						religion = avignon
+					}
+				}
+				change_religion = pisan
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = catholic
+							religion = avignon
+						}
+					}
+					change_religion = pisan
+				}
+			}
+			PPP = {
+				inherit = PAP
+				inherit = AVP
+			}
+		}
+	}
+}
+
+country_event = { #The Pisan Papacy
+	id = BGMWS.7
+	title = "BGMWS.7.t"
+	desc = "BGMWS.7.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	trigger = {
+		owns = 115
+		num_of_cities = 2
+		NOT = { has_global_flag = pisan_papacy }
+		has_global_flag = western_schism
+	}
+
+	mean_time_to_happen = {
+		years = 10
+	}
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = pisan_papacy
+		}
+	}
+
+	option = { #We will not allow a new papacy in Pisa
+		name = "BGMWS.7.a"
+		
+	}
+	option = { #Grant the new Papal infrastructure
+		name = "BGMWS.7.b"
+		set_global_flag = pisa_spawned
+		115 = {
+			add_core = PPP
+			change_religion = pisan
+			add_core = PPP
+		}
+		release = PPP
+		PPP = {
+			create_alliance = ROOT
+			change_religion = pisan
+			change_government = theocracy
+			add_government_reform = papacy_reform
+		}
+	}
+}
+
+country_event = {
+	id = BGMWS.8
+	title = "BGMWS.8.t"
+	desc = "BGMWS.8.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { #Victory over Avignon
+		name = "BGMWS.8.a"
+		custom_tooltip = catholicism_consolidated
+		hidden_effect = {
+			if = {
+				limit = {
+					202 = {
+						owner = {
+							religion = catholic
+						}
+					}
+				}
+				PAP = { #Catholic
+					inherit = AVP
+				}
+				AVP = {
+					every_core_province = {
+						remove_core = AVP
+					}
+				}
+				set_hre_religion_treaty = yes
+				emperor = {
+					set_country_flag = western_schism_hremperor
+					change_religion = catholic
+					every_owned_province = {
+						limit = {
+							religion = avignon
+						}
+						change_religion = catholic
+					}
+				}
+				set_hre_religion_treaty = no
+				set_hre_religion = catholic
+				every_country = {
+					limit = {
+						religion = avignon
+					}
+					change_religion = catholic
+					every_province = {
+						limit = {
+							religion = avignon
+						}
+						change_religion = catholic
+					}
+				}
+			}
+			else = {
+				PPP = { #Catholic
+					inherit = AVP
+				}
+				AVP = {
+					every_core_province = {
+						remove_core = AVP
+					}
+				}
+				set_hre_religion_treaty = yes
+				emperor = {
+					set_country_flag = western_schism_hremperor
+					change_religion = pisan
+					every_owned_province = {
+						limit = {
+							religion = avignon
+						}
+						change_religion = pisan
+					}
+				}
+				set_hre_religion_treaty = no
+				set_hre_religion = pisan
+				every_country = {
+					limit = {
+						religion = avignon
+					}
+					change_religion = pisan
+					every_province = {
+						limit = {
+							religion = avignon
+						}
+						change_religion = pisan
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		set_global_flag = avignon_papacy_defeated
+	}
+}
+
+country_event = {
+	id = BGMWS.9
+	title = "BGMWS.9.t"
+	desc = "BGMWS.9.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { #Victory over the Catholics
+		name = "BGMWS.9.a"
+		custom_tooltip = catholicism_consolidated
+		hidden_effect = {
+			if = {
+				limit = {
+					118 = {
+						owner = {
+							religion = avignon
+						}
+					}
+				}
+				AVP = {
+					inherit = PAP
+				}
+				PAP = {
+					every_core_province = {
+						remove_core = PAP
+					}
+				}
+				set_hre_religion_treaty = yes
+				emperor = {
+					set_country_flag = western_schism_hremperor
+					change_religion = avignon
+					every_owned_province = {
+						limit = {
+							religion = catholic
+						}
+						change_religion = avignon
+					}
+				}
+				set_hre_religion_treaty = no
+				set_hre_religion = avignon
+				every_country = {
+					limit = {
+						religion = catholic
+					}
+					change_religion = avignon
+					every_province = {
+						limit = {
+							religion = catholic
+						}
+						change_religion = avignon
+					}
+				}
+			}
+			else = {
+				PPP = { #Catholic
+					inherit = PAP
+				}
+				PAP = {
+					every_core_province = {
+						remove_core = PAP
+					}
+				}
+				set_hre_religion_treaty = yes
+				emperor = {
+					set_country_flag = western_schism_hremperor
+					change_religion = pisan
+					every_owned_province = {
+						limit = {
+							religion = catholic
+						}
+						change_religion = pisan
+					}
+				}
+				set_hre_religion_treaty = no
+				set_hre_religion = pisan
+				every_country = {
+					limit = {
+						religion = catholic
+					}
+					change_religion = pisan
+					every_province = {
+						limit = {
+							religion = catholic
+						}
+						change_religion = pisan
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGMWS.10
+	title = "BGMWS.10.t"
+	desc = "BGMWS.10.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { #Victory over Pisa
+		name = "BGMWS.10.a"
+		custom_tooltip = catholicism_consolidated
+		hidden_effect = {
+			if = {
+				limit = {
+					115 = {
+						owner = {
+							religion = avignon
+						}
+					}
+				}
+				AVP = {
+					inherit = PPP
+				}
+				PPP = {
+					every_core_province = {
+						remove_core = PPP
+					}
+				}
+				set_hre_religion_treaty = yes
+				emperor = {
+					set_country_flag = western_schism_hremperor
+					change_religion = avignon
+					every_owned_province = {
+						limit = {
+							religion = pisan
+						}
+						change_religion = avignon
+					}
+				}
+				set_hre_religion_treaty = no
+				set_hre_religion = avignon
+				every_country = {
+					limit = {
+						religion = pisan
+					}
+					change_religion = avignon
+					every_province = {
+						limit = {
+							religion = pisan
+						}
+						change_religion = avignon
+					}
+				}
+			}
+			else = {
+				PAP = { #Catholic
+					inherit = PPP
+				}
+				PPP = {
+					every_core_province = {
+						remove_core = PPP
+					}
+				}
+				set_hre_religion_treaty = yes
+				emperor = {
+					set_country_flag = western_schism_hremperor
+					change_religion = catholic
+					every_owned_province = {
+						limit = {
+							religion = pisan
+						}
+						change_religion = catholic
+					}
+				}
+				set_hre_religion_treaty = no
+				set_hre_religion = catholic
+				every_country = {
+					limit = {
+						religion = pisan
+					}
+					change_religion = catholic
+					every_province = {
+						limit = {
+							religion = pisan
+						}
+						change_religion = catholic
+					}
+				}
+			}
+		}
+	}
+}

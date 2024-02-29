@@ -1,0 +1,57 @@
+great_horde_collapse = {
+	potential = {
+		normal_or_historical_nations = yes
+		tag = GLH
+		is_free_or_tributary_trigger = yes
+		NOT = {
+			has_country_flag = glh_collapse_happened
+		}
+	}
+	can_start = {
+		always = yes
+	}
+	can_stop = {
+		always = no
+	}
+	progress = {
+		modifier = {
+			factor = 100
+			always = yes
+		}
+	}
+	can_end = {
+		stability = 1
+		horde_unity = 100
+		custom_trigger_tooltip = {
+			tooltip = no_mamai_tooltip
+			NOT = { general_with_name = "Mamai" }
+			NOT = {
+				has_leader_with = {
+					fire = 1
+					shock = 6
+					manuever = 6
+					siege = 1
+					general = yes
+				}
+			}
+		}
+	}
+	modifier = {
+		horde_unity = -1
+		heir_chance = -1
+		shock_damage = -0.33
+		fire_damage = -0.33
+	}
+	
+	on_start = BGMGHC.1
+	on_end = BGMGHC.2
+	
+	on_monthly = {
+		events = {
+			
+		}
+		random_events = {
+			
+		}
+	}
+}

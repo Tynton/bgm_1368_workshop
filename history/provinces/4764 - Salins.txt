@@ -1,0 +1,18 @@
+# 4764 - Salins. Principal cities: Salins, Lons-le-Saunier, Arlay, Pontarlier
+owner = FCO
+controller = FCO
+capital = "Salins"
+is_city = yes
+add_local_autonomy = 30# The counts of Chalon-Arlay were very dominant in the region
+culture = frainc_comtou
+religion = catholic
+hre = yes
+base_tax = 4
+base_production = 3
+trade_goods = lumber
+base_manpower = 4
+add_core = FCO
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman

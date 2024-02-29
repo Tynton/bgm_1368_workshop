@@ -1,0 +1,15 @@
+add_core = CLV
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = CLV
+base_tax = 2
+base_manpower = 1
+base_production = 3
+culture = ligurian
+trade_goods = grain
+religion = catholic
+controller = CLV
+is_city = yes
+hre = yes

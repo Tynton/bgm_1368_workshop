@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = venetian
+religion = catholic
+technology_group = western
+capital = 108
+fixed_capital = 108 # Cannot move capital away from this province & no power cost to move to it
+
+1340.3.5 = {
+	monarch = {
+		name = "Consignorio"
+		dynasty = "della Scala"
+		birth_date = 1340.3.5
+		adm = 5
+		dip = 1
+		mil = 4
+	}
+	add_ruler_personality = cruel_personality
+}

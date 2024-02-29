@@ -1,0 +1,16 @@
+add_core = NRM
+add_core = NAV
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+capital = "Lisieux"
+owner = NAV
+trade_goods = lumber
+controller = NAV
+is_city = no
+base_tax = 5
+base_manpower = 3
+base_production = 4
+culture = normand
+religion = catholic

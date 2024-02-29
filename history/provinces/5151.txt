@@ -1,0 +1,15 @@
+add_core = RND
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = RND
+base_tax = 2
+base_manpower = 3
+base_production = 1
+culture = schleswig_holsteiner
+trade_goods = beer
+religion = catholic
+hre = yes
+controller = RND
+is_city = yes

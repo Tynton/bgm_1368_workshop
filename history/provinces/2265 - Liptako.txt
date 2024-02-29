@@ -1,0 +1,14 @@
+# 2265 - Liptako
+owner = MSI
+controller = MSI
+is_city = yes
+culture = mossi
+religion = shamanism#Fetishism
+capital = "Dori"
+trade_goods = livestock
+base_tax = 1
+base_production = 1
+base_manpower = 1
+add_core = ZND
+add_core = MSI
+discovered_by = sub_saharan

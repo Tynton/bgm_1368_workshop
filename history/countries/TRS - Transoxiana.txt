@@ -1,0 +1,26 @@
+#######################################
+# Timurid Empire
+#######################################
+technology_group = muslim
+primary_culture = uzbehk
+religion = sunni
+government = monarchy
+add_government_reform = iqta
+capital = 454 # Samarkand
+religious_school = hanafi_school
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Sultanate"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

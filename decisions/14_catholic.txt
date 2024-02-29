@@ -1,0 +1,23 @@
+country_decisions = {
+
+	grant_the_vatican = {
+		potential = {
+			has_country_modifier = catholic_rome
+			NOT = { has_country_modifier = sovereignty_vatican }
+			always = no
+		}
+		allow = {
+			has_country_modifier = catholic_rome
+			NOT = { has_country_modifier = sovereignty_vatican }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "sovereignty_vatican"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

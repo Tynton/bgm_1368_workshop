@@ -1,0 +1,30 @@
+#4197 - Huangzhou
+owner = MNG
+controller = MNG
+culture = hubei
+religion = confucianism
+capital = "Huangzhou"
+trade_goods = rice
+base_tax = 4
+base_production = 2
+base_manpower = 7
+is_city = yes
+add_core = MNG
+add_core = CHC
+add_core = CXI
+add_core = YUA
+discovered_by = chinese
+discovered_by = nomad_group
+latent_trade_goods = { 
+	coal 
+}
+1642.1.1 = { 
+	revolt = { size = 1 }
+}
+1643.1.1 = { 
+	revolt = { size = 1 }
+}
+1645.6.14 = { 
+	controller = QNG
+	add_core = QNG
+}

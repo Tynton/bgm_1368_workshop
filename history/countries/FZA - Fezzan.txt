@@ -1,0 +1,25 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = tunisian
+religion = sunni
+technology_group = muslim
+capital = 2448	# Murzuk
+fixed_capital = 2448 # Cannot move capital away from this province & no power cost to move to it
+religious_school = maliki_school
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Emirate"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

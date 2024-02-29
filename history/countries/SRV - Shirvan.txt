@@ -1,0 +1,16 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = azerbaijani
+technology_group = muslim
+religion = sunni
+capital = 421
+
+1368.1.1 = {
+	monarch = {
+		name = "Kavus I"
+		dynasty = "Kasranid"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

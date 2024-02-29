@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = bosnian
+add_accepted_culture = croatian
+religion = catholic #bogomilist
+technology_group = eastern
+capital = 3002	# Sarajevo
+historical_friend = SER
+government_rank = 1
+
+1398.1.1 = {
+	monarch = {
+		name = "Tvrtko I"
+		dynasty = "Kotromanic"
+		birth_date = 1338.1.1
+		adm = 5
+		dip = 3
+		mil = 5
+	}
+}

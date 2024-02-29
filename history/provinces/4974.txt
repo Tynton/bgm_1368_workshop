@@ -1,0 +1,13 @@
+add_core = MNG
+owner = MNG
+controller = MNG
+is_city = no
+religion = confucianism
+culture = jianghuai
+base_tax = 5
+base_manpower = 5
+base_production = 2
+trade_goods = tea
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = YUA

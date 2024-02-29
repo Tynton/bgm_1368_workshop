@@ -1,0 +1,15 @@
+add_core = LUX
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = LUX
+culture = lorrain
+religion = catholic
+hre = yes
+controller = LUX
+is_city = yes
+trade_goods = livestock
+base_tax = 4
+base_manpower = 3
+base_production = 4

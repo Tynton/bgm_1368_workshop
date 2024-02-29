@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = romagnan
+religion = catholic
+technology_group = western
+capital = 109	# Mantova
+
+
+1334.1.1 = {
+	monarch = {
+		name = "Ludovico II"
+		dynasty = "Gonzaga"
+		birth_date = 1334.1.1
+		adm = 1
+		dip = 3
+		mil = 4
+	}
+}
+
+1366.1.1 = {
+	heir = {
+		name = "Francesco"
+		monarch_name = "Francesco I"
+		dynasty = "Gonzaga"
+		birth_date = 1366.1.1
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}

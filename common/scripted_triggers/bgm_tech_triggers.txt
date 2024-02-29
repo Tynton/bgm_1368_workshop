@@ -1,0 +1,8 @@
+tech_difference_2_electric_boogaloo = { #with #type #diff
+    variable_arithmetic_trigger = {
+        export_to_variable = { which = ours value = trigger_value:$type$_tech }
+        export_to_variable = { which = theirs value = trigger_value:$type$_tech who = $with$ }
+        change_variable = { which = ours value = $diff$ }
+        check_variable = { which = theirs which = ours }
+    }
+}

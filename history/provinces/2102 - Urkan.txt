@@ -1,0 +1,26 @@
+# 2102 - Urkan
+owner = YUA
+controller = YUA
+culture = evenk
+religion = tengri_pagan_reformed
+#capital = "Urkantun"
+trade_goods = fur
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = SOL
+add_core = YUA
+add_core = LIA
+discovered_by = chinese
+discovered_by = nomad_group
+latent_trade_goods = {
+	coal 
+}
+1653.1.1 = {
+	owner = RUS
+	controller = RUS
+	religion = orthodox
+	culture = russian
+	trade_goods = wool
+}

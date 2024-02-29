@@ -1,0 +1,34 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = schlesian
+religion = catholic
+capital = 2966
+
+# Dukes of Olawa/Lubin
+
+1341.1.1 = {
+	monarch = {
+		name = "Henryk V"
+		dynasty = "Piast"
+		birth_date = 1319.1.1
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}
+
+1345.1.1 = {
+	heir = {
+		name = "Henryk"
+		monarch_name = "Henryk VI"
+		dynasty = "Piast"
+		birth_date = 1345.1.1
+		death_date = 1393.12.5
+		claim = 95
+		adm = 4
+		dip = 3
+		mil = 0
+	}
+}

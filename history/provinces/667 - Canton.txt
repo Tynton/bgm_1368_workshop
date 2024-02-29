@@ -1,0 +1,46 @@
+#667 - Guangzhou
+owner = MNG
+controller = MNG
+culture = cantonese
+religion = confucianism
+capital = "Canton"
+trade_goods = incense
+base_tax = 6
+base_production = 13
+base_manpower = 11
+is_city = yes
+extra_cost = 34
+center_of_trade = 3
+add_core = MNG
+add_core = YUE
+add_core = YUA
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = nomad_group
+add_permanent_province_modifier = { 
+	name = pearl_estuary_modifier
+	duration = -1
+}
+1647.4.1 = { 
+	controller = QNG
+	add_core = QNG
+}
+1648.4.15 = { 
+	controller = MNG
+}
+1650.11.11 = { 
+	controller = QNG
+}
+1659.1.1 = { 
+	controller = QNG
+}
+1662.4.1 = { 
+	controller = CZH
+	add_core = CZH
+}
+1681.10.1 = { 
+	controller = QNG
+}
+fort_15th = yes

@@ -1,0 +1,38 @@
+#4151 - Most of Kemi Lappmark: Enare/Inari, Sodankyl�, Kemikyla, Utsjoki, Kittila, Sombio
+owner = SMI
+controller = SMI
+culture = sapmi
+religion = catholic
+base_tax = 1
+base_production = 1
+trade_goods = fur
+base_manpower = 1
+add_local_autonomy = 90
+capital = "Sodankyl�"#Uncertain if this existed at that point.
+is_city = yes
+add_core = SMI
+discovered_by = eastern
+discovered_by = western
+1527.6.1 = {
+}
+1598.8.1 = {
+}
+# Sigismund tries to reconquer his crown
+1599.7.15 = {
+}
+# Duke Karl get it back
+1742.11.5 = {
+}
+# The War of the Hats-Estimated date
+1743.8.7 = {
+}
+# The Peace of �bo
+1808.9.14 = {
+}
+# The Swedish forces are defeated at the battle Oravais
+1809.9.17 = {
+	owner = RUS
+	add_core = RUS
+	remove_core = SWE
+}
+# Treaty of Fredrikshamn

@@ -1,0 +1,27 @@
+# 204 Dauphin� - Principal cities: Grenoble
+owner = FRA
+controller = FRA
+capital = "Grenoble"
+is_city = yes
+culture = lyonnais
+religion = catholic
+base_tax = 4
+base_production = 3
+trade_goods = wool
+base_manpower = 3
+add_core = FRA
+add_core = DAU
+add_core = PRO
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1446.9.27 = { 
+	revolt = { size = 1 }
+}
+1461.7.22 = { 
+	revolt = { size = 1 }
+}
+1615.7.1 = { 
+	fort_17th = yes
+}

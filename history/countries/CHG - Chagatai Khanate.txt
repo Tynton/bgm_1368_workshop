@@ -1,0 +1,47 @@
+government = tribal
+add_government_reform = steppe_horde
+primary_culture = kirgiz
+religion = sunni
+technology_group = nomad_group
+capital = 460
+religious_school = hanafi_school
+add_accepted_culture = uyghur
+
+#Khans of Mughalistan
+#1360.1.1 = {
+#	monarch = {
+#		name = "Iljas Khoja"
+#		dynasty = "Chagatai"
+#		culture = mongol
+#		birth_date = 1305.1.1
+#		adm = 1
+#		dip = 3
+#		mil = 3
+#	}
+#}
+
+1360.1.1 = {
+	monarch = {
+		name = "Timur"
+		dynasty = "Timurid"
+		birth_date = 1336.4.8
+		adm = 6
+		dip = 6
+		mil = 6
+	}
+	define_ruler_to_general = {
+		fire = 6
+		shock = 6
+		manuever = 6
+		siege = 6
+	}
+	#add_horde_unity = -50
+	clear_scripted_personalities = yes
+	add_ruler_personality = legendary_conqueror_personality
+	add_ruler_personality = strict_personality
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_modifier = {
+		name = intimidating_conqueror
+		duration = -1
+	}
+}

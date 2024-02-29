@@ -1,0 +1,226 @@
+﻿l_english:
+ wat_tyler:0 "English Peasants' War"
+ yuan_crisis:0 "Yuan Crisis"
+ great_horde_collapse:0 "Collapse of the Golden Horde"
+ harelle:0 "The Harelle"
+ serbian_collapse:0 "Collapse of the Serbian Empire"
+ 
+ remove_pol_power:0 "§RAll political power will be removed.§!"
+ disaster_time_limit_warning:0 "§RWe will be on a time schedule to resolve the crisis once it begins.§!"
+
+ 
+ #Serbian Collapse
+ BGMSC.1.t:0 "Collapse of the Serbian Empire"
+ BGMSC.1.d:0 "$MONARCH$ is dead. Without an heir capable of projecting authority in $COUNTRY$, local nobility has taken it upon themselves to seize control in regions which they control. A new dynasty is in charge and though they will most likely attempt to centralize power, the localism of the Serbian Empire makes this a challenge. The coming years will most likely either spell doom for the Empire or will at the very least threaten to weaken it significantly. Something which cannot be allowed to occur since Serbia is surrounded by foreign powers eager to take its territory for themselves."
+ BGMSC.1.a:0 "We must hope for a capable ruler."
+ 
+ BGMSC.2.t:0 "Order Restored in the Serbian Empire"
+ BGMSC.2.d:0 "$MONARCH$ has proven capable of restoring order to the once fractured Serbian Empire. Local nobility has been defeated and a new, centralized administration can take its place, headed by the monarch and answers only to the monarch. Sedition has been crushed and will not be tolerated any longer. It's time to look at a new dawn for a new regional power in the Balkans."
+ BGMSC.2.a:0 "The sun rises in Serbia."
+ 
+ BGMSC.3.t:0 "The Fall of the Serbian Empire"
+ BGMSC.3.d:0 "Nobles in the Serbian Realm have won against the central government. Central authority was vanquished as the Imperial Government was not able to defeat the revolt of the nobility seeking to carve out a name for themselves. New principalities exist in the Balkans who may be a prime target for conquest by foreign powers. God willing, Serbia may one day rise from the ashes."
+ BGMSC.3.a:0 "A true tragedy of our time."
+ 
+ BGMSC.4.t:0 "The Secession of Macedonia"
+ BGMSC.4.d:0 "The nobility in the territory of Macedonia have crowned one of their own as warlord of the region. We have to act quickly if we are to recover the area. Not doing so may jeopardize the area and put it into foreign hands. At the same time it may be more manageable if we leave this region to their control for the time being."
+ BGMSC.4.a:0 "We cannot afford to fight them."
+ BGMSC.4.b:0 "They will die."
+ 
+ BGMSC.5.t:0 "The Secession of Thessaly"
+ BGMSC.5.d:0 "The nobility in the territory of Thessaly have crowned one of their own as warlord of the region. We have to act quickly if we are to recover the area. Not doing so may jeopardize the area and put it into foreign hands. At the same time it may be more manageable if we leave this region to their control for the time being."
+ 
+ BGMSC.6.t:0 "The Secession of Prilep"
+ BGMSC.6.d:0 "The nobility in the territory of Prilep have crowned one of their own as warlord of the region. We have to act quickly if we are to recover the area. Not doing so may jeopardize the area and put it into foreign hands. At the same time it may be more manageable if we leave this region to their control for the time being."
+ 
+ BGMSC.7.t:0 "The Secession of Zeta"
+ BGMSC.7.d:0 "The nobility in the territory of Zeta have crowned one of their own as warlord of the region. We have to act quickly if we are to recover the area. Not doing so may jeopardize the area and put it into foreign hands. At the same time it may be more manageable if we leave this region to their control for the time being."
+ 
+ BGMSC.8.t:0 "The Secession of Montenegro"
+ BGMSC.8.d:0 "The nobility in the territory of Montenegro have crowned one of their own as warlord of the region. We have to act quickly if we are to recover the area. Not doing so may jeopardize the area and put it into foreign hands. At the same time it may be more manageable if we leave this region to their control for the time being."
+ 
+ BGMSC.9.t:0 "The Secession of Albania"
+ BGMSC.9.d:0 "The nobility in the territory of Albania have crowned one of their own as warlord of the region. We have to act quickly if we are to recover the area. Not doing so may jeopardize the area and put it into foreign hands. At the same time it may be more manageable if we leave this region to their control for the time being."
+ 
+ #Golden Horde Crisis
+ BGMGHC.1.t:0 "Mamai and the Puppet Rulers"
+ BGMGHC.1.d:0 "The Golden Horde has been undergoing for quite a few years now a time of instability. Local rulers have been attempting to either seize control of the Horde or one of its constituent states. Were it not for the talented general Mamai, we would most likely be at a loss to handle the pretender revolts. However, Mamai is indeed aware of this and has considerable influence over the politics of the Golden Horde. To a point even, it seems as though the rulers answer to his wishes instead. If we are to consolidate authority in the realm we will need to reduce the influence of the local lords as well as that of Mamai himself."
+ BGMGHC.1.a:0 "Acknowledged"
+ 
+ BGMGHC.2.t:0 "End of the Golden Horde Crisis"
+ BGMGHC.2.d:0 "The crisis of the previous years has finally abated and stability is finally brought back to the realm. Let us hope this does not culminate in the end of the great polity whose heritage traces back to Genghis Khan himself."
+ BGMGHC.2.a:0 "We can only have faith.."
+ 
+ BGMGHC.3.t:0 "Mamai appoints an Heir"
+ BGMGHC.3.d:0 "Mamai's immense informal influence over the politics of our realm means $MONARCH$ essentially rules as a puppet in Mamai's name. To secure the succession Mamai has taken it upon himself to select a favorable heir for the Throne."
+ BGMGHC.3.a:0 "Acknowledged"
+ 
+ BGMGHC.4.t:0 "Rival Claimant Attempts Coup"
+ BGMGHC.4.d:0 "The instability of the Golden Horde sees the context favorable for a newcomer from one of its constituent territories attempt to seize $CAPITAL$ for their own. If we are to defeat them we'd best do so soon."
+ BGMGHC.4.a:0 "Acknowledged"
+
+ BGMGHC.5.t:0 "Collapse of the Golden Horde"
+ BGMGHC.5.d:0 "The ruling party in the Great Troubles has proven ineffective at containing the power of Mamai and the local tribe leaders trying to seize control of the government. The country has fractured into pieces and it's left to the Great Horde to recover the glory it once had but is now lost to time."
+ BGMGHC.5.a:0 "A disaster, truly.."
+ 
+ #Yuan Crisis
+ yuan_crisis_start:0 "Yuan Crisis"
+ 
+ BGMYC.1.t:0 "Crisis of the Yuan Dynasty"
+ BGMYC.1.d:0 "The Yuan has made it readily apparent that it is not capable of maintaining the Mandate of Heaven and is in the process of losing legitimacy in the eyes of the nobility in the lands it still possesses. With the Ming claiming itself the new Celestial Emperor things are looking rather bleak. Desertions of the Chinese soldiers are commonplace and Yuan authority over Yunnan and Manchuria are also at high risk of fading away. Stability and order needs to be restored to the realm, and nothing is more likely to do this than a display of military talent and force. We have a simple directive: Destroy the Ming or the Northern Yuan will fall."
+ BGMYC.1.a:0 "Times are bleak indeed."
+ 
+ BGMYC.4.t:0 "Breakaway of Manchuria"
+ BGMYC.4.d:0 "The Government of the Northern Yuan has been too busy with its war against the Ming. The province of Manchuria as such has fallen into anarchy and a local chieftain has taken authority in the area. For the moment though the reconquest of the Ming is all that matters. If the Ming are destroyed, Manchuria will follow."
+ BGMYC.4.a:0 "Acknowledged"
+ 
+ BGMYC.2.t:0 "End of the Yuan Crisis"
+ BGMYC.2.d:0 "The Yuan Dynasty has enforced order in its lands once again. The pretenders in the Ming will soon be brought to justice as the capital once again will move to Khanbaliq as a display of the Great Yuan's prowess. Hopefully a new golden age will dawn upon our dynasty as the two peoples that inform most of the populace can unite as one. Forever prosper."
+ BGMYC.2.a:0 "A beautiful time to be alive."
+ 
+ BGMYC.5.t:0 "Collapse of the Yuan Dynasty"
+ BGMYC.5.d:0 "The Yuan has fallen into disarray and has failed in its attempts to subordinate the Chinese. Authority everywhere but the Mongol steppe region has faded as Toghon Temür will be remembered not so fondly. Without claim to the Celestial Empire, the former Yuan's identity has changed to that of the Oirat."
+ BGMYC.5.a:0 "Such tragedies.."
+ 
+ BGMYC.6.t:0 "Collapse of the Yuan Dynasty"
+ BGMYC.6.d:0 "The Yuan has fallen into disarray and has failed in its attempts to subordinate the Chinese. Authority everywhere but the Mongol steppe region has faded as Toghon Temür will be remembered not so fondly. Without claim to the Celestial Empire, the former Yuan's identity has changed to that of the Mongolian."
+ BGMYC.6.a:0 "Such tragedies.."
+ 
+ BGMYC.7.t:0 "Army Desertions"
+ BGMYC.7.d:0 "Part of the Yuan army is staffed by Chinese troops and officers out of necessity. Unfortunately many of these often side with the Ming and desert to their side as a consequence. Before long we will be forced to employ the services of Mercenary Armies..."
+ BGMYC.7.a:0 "They will know why they shouldn't have betrayed us in due time."
+ 
+ BGMYC.8.t:0 "The Ming Seize Yunnan"
+ BGMYC.8.d:0 "The provinces of the Yunnan region have defected to the Ming Dynasty, citing their faith that the Ming possess the Mandate of Heaven. Maybe one day they will see reason and return to us..."
+ BGMYC.8.a:0 "We certainly hope so."
+ 
+ #Harelle
+ harelle_legacy:0 "Legacy of the Harelle"
+ harelle_defeated:0 "Defeated the Harelle"
+ harelle_middleground:0 "Compromised with the Harelle"
+
+ BGMH.1.t:0 "The Harelle"
+ BGMH.1.d:0 "The peasantry have grown rather upset at the reimposition of new taxes which were temporarily abolished in times past. In Paris and other notable cities it seems tax collectors were attacked and the property of the rich have been compromised. Rioting has broken out in various places and we risk the whole country descending into revolt should the matter not be promptly addressed."
+ BGMH.1.a:0 "Oh dear."
+ 
+ BGMH.2.t:0 "Victory over the Harelle"
+ BGMH.2.d:0 "The peasantry in $COUNTRY$ have been defeated by the $COUNTRY_ADJ$ government and intervention by its fiefdoms. Negotations with the remaining leaders with $MONARCH$ and the various dukes have been resolved. The terms were:"
+ BGMH.2.a:0 "The rebels were forced to concede their demands.."
+ BGMH.2.b:0 "The $MONARCHTITLE$ has decided to make a compromise.."
+ 
+ BGMH.3.t:0 "Defeat in the Harelle"
+ BGMH.3.d:0 "The $COUNTRY_ADJ$ populace has overwhelmed the state and enforced authority over a largely absent regime, in the process causing a sort of temporary anarchy to reign in $COUNTRY$. Devastation has been rampant though this short stint of liberty would ultimately die down and taxes have once again be abolished by popular demand."
+ BGMH.3.a:0 "Okay."
+ 
+ BGMH.4.t:0 "$PROVINCE$ joins the Harelle"
+ BGMH.4.d:0 "The city of $PROVINCE$ and the local countryside have seen inspiration from the example of other towns' rioting and have elected to join in the revolt."
+ BGMH.4.a:0 "Okay."
+ 
+ #Wat Tyler's Rebellion
+ wt_legacy:0 "Legacy of the Peasants' Revolt"
+ wt_defeated:0 "Victory in the Peasants' Revolt"
+ wt_middlegrouns:0 "Compromise in the Peasants' Revolt"
+ BGWT.1.t:0 "English Peasants' Revolt"
+ BGWT.1.d:0 "The previous decades saw a storm of conditions which would eventually manifest as a violent public outcry against the English Crown. The Black Death had killed nearly half of the European continent resulting in condensed wealth for the survivors, in turn causing the Acts of Apparel which disallowed commoners from dressing similar to nobility, taxes being levied to fund England's role in the Hundred Years' War and the composition of the government. John of Gaunt became a rather well known but seemingly controversial figure. He was in support of the Lollards who were not liked very much by the locals in London, at least. Uproar over serfdom was also another grievance the commoners had against the state, as were the expanded anti-treason laws enacted at the time, enabling the state to punish families over merely criminal suspects. The peasantry would initially protest but things would eventually get out of hand. The Tower of London was attacked and royal officials inside were killed. We live in a potentially fateful stretch of time as the English public may once again prove their force of arms overpowers the state."
+ BGWT.1.a:0 "Oh dear.."
+ 
+ BGWT.2.t:0 "Victory in the English Peasants' Revolt"
+ BGWT.2.d:0 "The Crown of England has risen to the moment against the peasant revolt which has as such been defeated. Its leaders are either deceased or have been placed under arrest. It now falls on $MONARCH$ to determine the fate of the rebels' demands. Will there be clemency?"
+ BGWT.2.a:0 "No."
+ BGWT.2.b:0 "Yes."
+ 
+ BGWT.3.t:0 "Defeat in the English Peasants' Revolt"
+ BGWT.3.d:0 "The Crown of England was forced to submit to the Peasants' Revolt in its entirety. Parliament has been strengthened to the expense of the $DYNASTY$'s power. Otherwise the rebels' demands have been answered to without much concession being necessary on the part of the popular leadership."
+ BGWT.3.a:0 "What a disaster!"
+
+ BGWT.5.t:0 "$PROVINCE$ Joins the Rebellion"
+ BGWT.5.d:0 "The notable cities in $PROVINCE$ have elected to join the popular rebellion around London. Citing a perceived oppression by the Crown and Nobility, they demand reduced taxes and further guarantees of freedom and/or egalitarian treatment."
+ BGWT.5.a:0 "Acknowledged"
+ 
+ BGWT.5.t:0 "East England Joins the Rebellion"
+ BGWT.5.d:0 "The notable cities in Eastern England have elected to join the popular rebellion around London. Citing a perceived oppression by the Crown and Nobility, they demand reduced taxes and further guarantees of freedom and/or egalitarian treatment."
+ BGWT.5.a:0 "Acknowledged"
+ 
+ #Western Schism
+ schism_must_have_popes:0 "§RWhile the Western Schism is ongoing, the Papacy must remain sovereign.§!"
+ will_become_vassal_if_not_owns_202:0 "§YIf we do not own Avignon, the owner will release it and we will become their vassal.§!"
+ western_schism_owns_pope:0 "Influences the Papacy"
+
+ become_avignonian_title:0 "Change Allegiance to Avignon"
+ become_avignonian_desc:0 "We view the current papacy as illegitimate. For us to enact the right pope we must first declare a new allegiance to the Avignon Papacy."
+ 
+ become_pisan_title:0 "Change Allegiance to Pisa"
+ become_pisan_desc:0 "We view the current papacy as illegitimate. For us to enact the right pope we must first declare a new allegiance to the Pisan Papacy."
+ 
+ become_catholic_title:0 "Change Allegiance to Rome"
+ become_catholic_desc:0 "We view the current papacy as illegitimate. For us to enact the right pope we must first declare a new allegiance to the Roman Papacy."
+
+ become_catholic_romuva_title:0 "Convert to Catholicism"
+ become_catholic_romuva_desc:0 "It's quite clear that most potential diplomatic opportunities for $COUNTRY$ lie west. We are forced to scorn our traditions and convert to the Roman Catholic religion to open new paths and close the old ones which have placed us in geopolitical peril."
+ 
+ catholicism_consolidated:0 "§YAll provinces and countries adherent to the other papacy will become loyal to our cause.§!"
+
+ BGMWS.1.t:0 "The Western Schism"
+ BGMWS.1.d:0 "The Western Schism began as a consequence of the Roman Clergy's desire to see the capital of the Papacy return. They used any means necessary, up to and including intimidation. This as such brought the cardinals voting for $MONARCH$ to decide again that their votes were illegitimate as they were coerced by an outside force. They elected a new pope on their own but now a religious crisis has unfolded. There are now two popes vying for complete dominion over the Catholic Church. No longer is this a clerical issue but now a geopolitical one."
+ BGMWS.1.a:0 "Oh dear..."
+ 
+ BGMWS.2.t:0 "Fate of the Papacy"
+ BGMWS.2.d:0 "We've found ourselves at a great crossroads. We may either follow the path of the Avignon Papacy or instead elect to follow the Roman Catholic Papacy."
+ BGMWS.2.a:0 "Select the Roman Papacy."
+ BGMWS.2.b:0 "Select the Avignon Papacy."
+ BGMWS.2.c:0 "Select the Pisan Papacy."
+ 
+ BGMWS.3.t:0 "The Avignon Papacy"
+ BGMWS.3.d:0 "The seat of the Avignon Papacy has been designated in our territory of Avignon. They will prove to be our subject but we will gain substantial benefits for siding with them, even as their overlord. We may even acquire a disproportionate amount of influence in their papacy."
+ BGMWS.3.a:0 "Acknowledged"
+
+ BGMWS.6.t:0 "The Fate of the Western Schism"
+ BGMWS.6.d:0 "The Papacies have managed to resolve their crisis and disputes through negotiation. The most trusted papacy has secured the loyalty of the Catholic Church and its institutions."
+ BGMWS.6.a:0 "The die is cast."
+ 
+ #Hussite Wars
+ BGMHW.1.t:0 "Death of Jan Hus"
+ BGMHW.1.d:0 "Jan Hus was a notable preacher who distanced himself from the Catholic Church in the wake of the Western Schism though attempted to support reconciliation. He would begin preaching in Prague what would ultimately manifest as a dissident religion which would come to be known as Hussitism. Hus would ultimately continue operating in $COUNTRY$ until his beliefs were no longer tolerated and he was sentenced to execution. As a consequence he became a martyr and his posthumous influence would prove far more disastrous than when he was alive. If the Hussite threat is not properly contained swiftly there is a very real risk it blows up into an international reform movement."
+ BGMHW.1.a:0 "Oh dear.."
+ BGMHW.1.b:0 "This man spoke the truth!"
+ 
+ BGMHW.2.t:0 "End of the Hussite Wars"
+ BGMHW.2.d:0 "The religious crisis of the previous years has finally ended and $COUNTRY$ can once again appeal to a new prosperous age."
+ BGMHW.2.a:0 "Okay"
+ 
+ BGMHW.3.t:0 "Hussite Militia in [This.GetName]"
+ BGMHW.3.d:0 "An army loyal to the nascent Hussite cause has sprung up in our country. Since they are most likely not interested in negotiations, it seems we will have to turn to a solution involving the military."
+ BGMHW.3.a:0 "One way or another.."
+ 
+ BGMHW.4.t:0 "Hussite Preachers in [This.GetName]"
+ BGMHW.4.d:0 "Priests belonging to the new Hussite faith have started preaching their religion in [This.GetName]. The problem is that they appear to have grown rather popular there..."
+ BGMHW.4.a:0 "We will have to deal with them somehow."
+ 
+ BGMHW.5.t:0 "The Concomitant Reformationists"
+ BGMHW.5.d:0 "Seeing the success of the Hussite Reformation, priests in $COUNTRY$ have rallied and have taken to proselytizing their own brand of reformism."
+ BGMHW.5.a:0 "Oh dear.."
+ 
+ BGMHW.6.t:0 "Waldensian Opportunism"
+ BGMHW.6.d:0 "Seeing the success of the Hussite Reformation, priests in the Waldensian Valley have rallied and have taken to expanding operations, proselytizing their own brand of reformism, succeeding in the cities of $PROVINCE$."
+ BGMHW.6.a:0 "Oh dear.."
+ 
+ BGMHW.7.t:0 "Failure of the Hussite Reformation"
+ BGMHW.7.d:0 "The Religious Wars have ended in failure for the Hussite Reformationist factions. Their apparent inability to secure any major powers' convictions after such time means the seeds are sown for Catholic unity once more. Few will be convinced of the need for new religious denominations, at least for now."
+ BGMHW.7.a:0 "We aspire for unanimity."
+ 
+ BGMWS.7.t:0 "The Pisan Papacy"
+ BGMWS.7.d:0 "In an effort to reconcile the Avignon and Roman Papacies, a new proposition has been forwarded to create a third, nonpartisan religious seat."
+ BGMWS.7.a:0 "We will not do that."
+ BGMWS.7.b:0 "Okay."
+ 
+ BGMWS.8.t:0 "Defeat of the Avignon Papacy"
+ BGMWS.8.d:0 "Diplomacy has proven a failure as the Avignon Papacy was forced to submit in a peace treaty to one of the other Papacies.."
+ BGMWS.8.a:0 "Excellent."
+
+ BGMWS.9.t:0 "Defeat of the Roman Papacy"
+ BGMWS.9.d:0 "Diplomacy has proven a failure as the Roman Papacy was forced to submit in a peace treaty to an Antipope."
+ BGMWS.9.a:0 "Excellent."
+
+ BGMWS.10.t:0 "Defeat of the Pisan Papacy"
+ BGMWS.10.d:0 "Diplomacy has proven a failure as the Pisan Papacy was forced to submit in a peace treaty to one of the other Papacies.."
+ BGMWS.10.a:0 "Excellent."

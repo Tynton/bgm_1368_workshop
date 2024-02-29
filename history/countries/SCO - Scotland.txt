@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = scottish_monarchy_reform
+primary_culture = scottish
+add_accepted_culture = highland_scottish
+religion = catholic
+technology_group = western
+capital = 248 # Edinburgh
+
+
+1368.1.1 = {
+	monarch = {
+		name = "David II"
+		dynasty = "Bruce"
+		birth_date = 1324.3.5
+		adm = 5
+		dip = 4
+		mil = 2
+	}
+
+	heir = {
+		name = "Robert"
+		monarch_name = "Robert II"
+		dynasty = "Stuart"
+		birth_date = 1316.3.2
+		death_date = 9999.1.1
+		adm = 1
+		dip = 2
+		mil = 3
+	}
+}

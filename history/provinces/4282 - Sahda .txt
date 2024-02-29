@@ -1,0 +1,33 @@
+#4282 - Sahda
+owner = YEM
+controller = YEM
+culture = yemeni_culture
+religion = shiite
+capital = "Sahda"
+trade_goods = coffee
+base_tax = 2
+base_production = 2
+base_manpower = 2
+is_city = yes
+add_core = NJR
+add_core = YEM
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = indian
+discovered_by = nomad_group
+discovered_by = east_african
+1444.1.1 = {
+	controller = REB
+	revolt = {
+		type = pretender_rebels
+		size = 1
+		leader = "Al-Hadi al-Mutahhar"
+	}
+}
+1474.1.1 = {
+	controller = RAS
+	revolt = {
+	}
+}
+1515.1.1 = {
+}

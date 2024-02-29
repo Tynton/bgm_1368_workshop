@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = schlesian
+religion = catholic
+capital = 4723
+
+1337.1.1 = {
+	monarch = {
+		name = "Wladyslaw II"
+		dynasty = "Piast"
+		birth_date = 1332.1.1
+		adm = 2
+		dip = 6
+		mil = 1
+	}
+}

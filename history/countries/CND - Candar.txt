@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = beylik_government
+government_rank = 1
+primary_culture = turkish
+religion = sunni
+technology_group = ottoman
+capital = 328	# Sinop
+religious_school = hanafi_school
+
+1365.1.1 = {
+	heir = {
+		name = "Isfendiyar"
+		dynasty = "Candaroglu"
+		birth_date = 1365.1.1
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Celaleddin"
+		dynasty = "Candaroglu"
+		birth_date = 1340.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

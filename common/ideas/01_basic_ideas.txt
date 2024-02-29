@@ -1,0 +1,53 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# ai_will do is only used to determine which idea group is picked if AI_USES_HISTORICAL_IDEA_GROUPS define is 0, OR start is custom/random
+# ai never picks an idea that resolves to ai_will_do = 0, even if AI_USES_HISTORICAL_IDEA_GROUPS = 1
+# ROOT = country picking the idea
+# groups set to colonial=yes will be higher prioritized by the AI when spending power
+
+postmodern_ideas = {
+	category = ADM
+
+	bonus = {
+		yearly_absolutism = 1
+	}
+	trigger = {
+		adm_tech = 50
+	}
+
+	destroy_truth = {
+		global_unrest = 3
+		#stability_cost_modifier = -0.25
+	}
+	postmodern_art = {
+		#embracement_cost = -0.25
+		technology_cost = -0.1
+	}
+	postmodern_multiculturalism = {
+		years_of_nationalism = -10
+		#promote_culture_cost = -0.5
+		#land_morale = 0.10
+		#naval_morale = 0.10
+	}
+	moral_relativism = {
+		stability_cost_modifier = -0.1
+		#liberty_desire_from_subject_development = -0.25
+	}
+	deconstruction = {
+		all_power_cost = -0.05
+	}
+	postmodern_semiotics = {
+		max_absolutism = 5
+		#global_unrest = -2
+	}
+	defamiliarization = {
+		#innovativeness_gain = 1.0
+		culture_conversion_cost = -0.5
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}

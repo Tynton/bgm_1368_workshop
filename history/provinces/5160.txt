@@ -1,0 +1,15 @@
+add_core = CMN
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = CMN
+base_tax = 1
+base_manpower = 2
+base_production = 1
+culture = east_pomeranian
+trade_goods = lumber
+religion = catholic
+hre = yes
+controller = CMN
+is_city = yes

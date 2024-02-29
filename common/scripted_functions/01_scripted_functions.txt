@@ -1,0 +1,182 @@
+can_increase_autonomy = {
+}
+
+can_decrease_autonomy = {
+}
+
+can_make_core = {
+}
+
+can_make_state = {
+}
+
+can_abandon_state = {
+}
+
+
+can_improve_tax = {
+	condition = {
+		potential = { ai = yes }
+		allow = {
+			NOT = {
+				any_neighbor_country = {
+					tech_difference_2_electric_boogaloo = {
+						with = ROOT
+						type = adm
+						diff = 2
+				  	}
+				}
+			}
+			NOT = {
+				any_rival_country = {
+					tech_difference_2_electric_boogaloo = {
+						with = ROOT
+						type = adm
+						diff = 2
+				  	}
+				}
+			}
+			NOT = {
+				any_enemy_country = {
+					tech_difference_2_electric_boogaloo = {
+						with = ROOT
+						type = adm
+						diff = 2
+				  	}
+				}
+			}
+		}
+	}
+}
+
+can_improve_production = {
+	condition = {
+		potential = { ai = yes }
+		allow = {
+			NOT = {
+				any_neighbor_country = {
+					tech_difference_2_electric_boogaloo = {
+						with = ROOT
+						type = dip
+						diff = 2
+				  	}
+				}
+			}
+			NOT = {
+				any_rival_country = {
+					tech_difference_2_electric_boogaloo = {
+						with = ROOT
+						type = dip
+						diff = 2
+				  	}
+				}
+			}
+			NOT = {
+				any_enemy_country = {
+					tech_difference_2_electric_boogaloo = {
+						with = ROOT
+						type = dip
+						diff = 2
+				  	}
+				}
+			}
+		}
+	}
+}
+
+can_improve_manpower = {
+	condition = {
+		potential = { ai = yes }
+		allow = {
+			bgm_ai_mil_tech_peacetime_checks = yes
+		}
+	}
+	effect = {
+		log = "[Root.GetName] mil dev"
+	}
+}
+
+
+can_exploit_tax = {
+}
+
+can_exploit_production = {
+}
+
+can_exploit_manpower = {
+}
+
+can_change_culture = {
+}
+
+can_colonize_province = {
+	condition = {
+		tooltip = POOR_TERRAIN_TOOLTIP
+		potential = { 
+			has_province_flag = bad_terrain_flag
+		}
+		allow = { 
+			adm_tech = 36
+		}
+	}
+}
+
+can_have_colonial_nations = {
+	condition = {
+		potential = {
+			FROM = {
+				OR = {
+					tag = ANA
+					has_reform = democratic_mechanic
+					bgm_comgovt = yes
+					has_country_flag = created_bioweapon
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_harsh_treatment = {
+	condition = {
+		potential = { ai = yes }
+		allow = {
+			is_at_war = no
+			NOT = {
+				any_neighbor_country = {
+					OR = {
+						tech_difference_2_electric_boogaloo = {
+							with = ROOT
+							type = mil
+							diff = 2
+						  }
+						army_strength = {
+							who = ROOT
+							value = 1
+						}
+					}
+				}
+			}
+			NOT = {
+				any_rival_country = {
+					tech_difference_2_electric_boogaloo = {
+						with = ROOT
+						type = mil
+						diff = 1
+				  	}
+				}
+			}
+			NOT = {
+				any_enemy_country = {
+					tech_difference_2_electric_boogaloo = {
+						with = ROOT
+						type = mil
+						diff = 1
+				  	}
+				}
+			}
+		}
+	}
+}

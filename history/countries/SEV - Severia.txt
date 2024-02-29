@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+primary_culture = ryazanian
+religion = orthodox
+technology_group = eastern
+capital = 1945	# Smolensk
+fixed_capital = 1945 # Cannot move capital away from this province & no power cost to move to it
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Principality"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

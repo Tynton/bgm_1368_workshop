@@ -1,0 +1,35 @@
+# 75 Elsass - Principal cities: Strasbourg
+owner = ALS
+controller = ALS
+capital = "Stra�burg"
+is_city = yes
+culture = alsatian
+religion = catholic
+hre = yes
+base_tax = 3
+base_production = 4
+trade_goods = paper
+base_manpower = 1
+extra_cost = 8
+center_of_trade = 1
+add_core = ALS
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1474.5.9 = { 
+	revolt = { size = 1 }
+}
+1477.1.5 = { 
+	revolt = { size = 1 }
+}
+1525.5.14 = { 
+	revolt = { size = 1 }
+}
+1525.6.15 = { 
+	revolt = { size = 1 }
+}
+1749.1.1 = { 
+	base_tax = 6
+}
+fort_15th = yes

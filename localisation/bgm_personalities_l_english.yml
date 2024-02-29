@@ -1,0 +1,6 @@
+﻿l_english:
+ great_diplomat_personality:0 "Natural Diplomat"
+ desc_great_diplomat_personality:0 "This ruler has an affinity for handling affairs with other powers by means of words over weapons. They are effective at leveraging our geopolitical situation to our advantage, securing good deals with foreign powers where others normally fail."
+ great_diplomat_personality_die_desc:0 "[Root.Monarch.GetHerHis]'s talent in affairs with foreign powers will most certainly be missed."
+
+ 

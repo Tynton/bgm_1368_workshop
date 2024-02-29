@@ -1,0 +1,16 @@
+
+#dependency = {
+#	subject_type = vassal
+#	first = MOS
+#	second = YAR
+#	start_date = 1368.1.1
+#	end_date = 1532.8.3
+#}
+
+dependency = {
+	subject_type = vassal
+	first = MOS
+	second = RSO
+	start_date = 1368.1.1
+	end_date = 1532.8.3
+}

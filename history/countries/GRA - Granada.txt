@@ -1,0 +1,34 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = andalucian
+religion = sunni
+add_accepted_culture = berber
+technology_group = muslim
+capital = 223	# Granada
+government_rank = 1
+religious_school = maliki_school
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 8
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -15
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 7
+}
+
+1339.1.4 = {
+	monarch = {
+		name = "Muhammad V"
+		dynasty = "Nasrid"
+		birth_date = 1339.1.4
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+	#add_piety = -0.3
+}

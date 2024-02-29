@@ -1,0 +1,35 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = eastphalian
+religion = catholic
+capital = 57 # Brunswick
+
+#add_casus_belli = {
+#    target = HES
+#    type = cb_restore_personal_union
+#    months = 120
+#}
+
+1367.1.1 = {
+	monarch = {
+		name = "Magnus I"
+		dynasty = "von Welf"
+		birth_date = 1304.1.1
+		dip = 1
+		adm = 1
+		mil = 1
+	}
+}
+
+#1367.1.1 = {
+#	monarch = {
+#		name = "Otto I"
+#		dynasty = "von Welf"
+#		birth_date = 1340.1.1
+#		dip = 1
+#		adm = 1
+#		mil = 1
+#	}
+#}

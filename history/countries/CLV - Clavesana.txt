@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ligurian
+religion = catholic
+technology_group = western
+capital = 5143	# Finale, O Finâ
+fixed_capital = 5143 # Cannot move capital away from this province & no power cost to move to it
+
+1368.1.1 = {
+	monarch = {
+		name = "Oddone III"
+		dynasty = "del Carretto"
+		birth_date = 1320.1.1
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}

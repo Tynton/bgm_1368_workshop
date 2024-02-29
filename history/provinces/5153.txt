@@ -1,0 +1,15 @@
+add_core = BCH
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = BCH
+base_tax = 1
+base_manpower = 1
+base_production = 1
+culture = bavarian
+trade_goods = salt
+religion = catholic
+controller = BCH
+is_city = yes
+hre = yes

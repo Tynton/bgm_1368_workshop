@@ -1,0 +1,48 @@
+po_religious_supremacy_bgm = {
+	category = 6
+	power_projection = humiliated_rival
+	power_cost_base = 0
+	prestige_base = 0.25
+	ae_base = 0.0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 100.0
+		owner_keeps = 0.0
+		conquered = 5.0
+		returned_core = 0.05
+		released_nation = 0.05
+		cancelled_subject = 0.05
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = -1
+	is_make_subject = yes
+	requires_is_allowed = yes
+	
+	is_visible = {
+		
+	}
+	is_allowed = {
+		
+	}
+	effect = {
+		ROOT = {
+			add_devotion = 15
+			add_legitimacy = 10
+			add_republican_tradition = 5
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+		}
+		FROM = {
+			add_stability = -1
+			change_religion = ROOT
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value
+			value = 1000
+		}
+	}
+}

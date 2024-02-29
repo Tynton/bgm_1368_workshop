@@ -1,0 +1,26 @@
+owner = FRZ
+controller = FRZ
+capital = "Montbrison"
+is_city = yes
+culture = lyonnais
+religion = catholic
+base_tax = 4
+base_production = 3
+trade_goods = livestock
+base_manpower = 3
+add_local_autonomy = 25
+add_core = BOU
+add_core = FRZ
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1444.1.1 = { 
+	controller = BOU
+}
+1650.3.1 = { 
+	revolt = { size = 1 }
+}
+1651.4.1 = { 
+	revolt = { size = 1 }
+}

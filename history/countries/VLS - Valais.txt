@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = arpitan
+add_accepted_culture = swiss
+religion = catholic
+technology_group = western
+capital = 1871	# Köln
+fixed_capital = 1871 # Cannot move capital away from this province & no power cost to move to it
+
+1342.1.1 = {
+	monarch = {
+		name = "Guichard"
+		dynasty = "Tavelli"
+		birth_date = 1310.1.1
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}

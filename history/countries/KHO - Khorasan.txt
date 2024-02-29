@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = khorasani
+add_accepted_culture = persian
+religion = shiite
+technology_group = muslim
+#capital = 446	# Herat
+capital = 2214 #Astarabad
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Shahdom"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

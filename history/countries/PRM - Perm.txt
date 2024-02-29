@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = uralic
+religion = tengri_pagan_reformed #orthodox
+technology_group = eastern
+capital = 1963	# Cherdyn
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Great Perm"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

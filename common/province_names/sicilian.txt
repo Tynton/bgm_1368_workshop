@@ -1,0 +1,20 @@
+4945 = { "Lecci" "Lècce" }
+123 = "Calàvria"
+124 = "Missina"
+2982 = "Sarausa"
+125 = { "Palermu" "Palìaimmu" }
+4737 = { "Giurgenti" "Girgenti" }
+4736 = "Tràpani"
+
+# = "Catanzaru"
+
+#assumption
+
+121 = "Napule"
+122 = "Tarde"
+2985 = "Fògge"
+4733 = "Mulise"
+2983 = "Saliernu"
+1933 = { "Baàr" "Bare" }
+120 = { "Pescara" "Abbrùzzu" }
+# = "Beneventu"

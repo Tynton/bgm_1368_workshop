@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+primary_culture = ryazanian
+religion = orthodox
+technology_group = eastern
+capital = 297	# Smolensk
+fixed_capital = 297 # Cannot move capital away from this province & no power cost to move to it
+
+1368.1.1 = {
+	monarch = {
+		name = "Dimitry"
+		dynasty = "Bryansk"
+		birth_date = 1325.1.1
+		adm = 3
+		dip = 2
+		mil = 0
+	}
+}

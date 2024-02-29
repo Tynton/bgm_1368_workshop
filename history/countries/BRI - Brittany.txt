@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = breton
+religion = catholic
+technology_group = western
+capital = 172
+
+
+1345.9.16 = {
+	monarch = {
+		name = "Jean IV"
+		dynasty = "de Montfort"
+		birth_date = 1339.10.1
+		adm = 5
+		dip = 3
+		mil = 5
+	}
+}

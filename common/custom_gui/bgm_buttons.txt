@@ -1,0 +1,641 @@
+custom_button = {
+    name = stability_adm_reduce_corruption
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = { bgm_adm_absolutism = yes NOT = { corruption = 50 } }
+    effect = { 
+		bgm_adm_corruption_absolutism = yes
+	}
+    tooltip = use_adm_corruption
+}
+
+custom_button = {
+    name = stability_dip_reduce_corruption
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = { bgm_dip_absolutism = yes NOT = { corruption = 75 } }
+    effect = { 
+		bgm_dip_corruption_absolutism = yes
+	}
+    #tooltip = remove_1_corruption_50_adm
+	tooltip = use_dip_corruption
+}
+
+custom_button = {
+    name = stability_mil_reduce_corruption
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = { bgm_mil_absolutism = yes stability = 1 }
+    effect = { 
+		bgm_mil_corruption_absolutism = yes
+	}
+    #tooltip = remove_1_corruption_50_adm
+	tooltip = use_mil_corruption
+}
+
+custom_button = {
+    name = stability_dip_reduce_corruption
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = { dip_power = 100 corruption = 0.5 }
+    effect = { 
+		add_dip_power = -100
+		add_corruption = -0.5
+		if = {
+			limit = { 
+				NOT = {
+					OR = {
+						uses_revolutionary_zeal = yes
+						current_age = age_of_feudalism
+						current_age = age_of_discovery
+						current_age = age_of_reformation
+					}
+				}
+			}
+			add_absolutism = 2
+		}
+	}
+    #tooltip = remove_1_corruption_50_adm
+	tooltip = use_dip_corruption
+}
+
+custom_button = {
+    name = combat_inflation_money
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = { 
+		years_of_income = 0.33
+		inflation = 0.5
+	}
+    effect = { 
+		add_years_of_income = -0.33
+		add_inflation = -0.5
+		if = {
+			limit = { 
+				uses_republican_tradition = yes
+			}
+			add_republican_tradition = 1
+		}
+	}
+    tooltip = deflate_economy_button
+}
+
+#Reform Progress
+
+custom_button = {
+    name = buy_reformprogress
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = { 
+		years_of_income = 1
+	}
+    effect = { 
+		add_years_of_income = -1
+		change_government_reform_progress = 20
+	}
+    tooltip = buy_progress
+}
+
+custom_button = {
+    name = buy_reformprogress_adm
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = { 
+		adm_power = 100
+	}
+    effect = { 
+		add_adm_power = -100
+		change_government_reform_progress = 20
+	}
+    tooltip = buy_progress_adm
+}
+
+custom_button = {
+    name = bgm_strengthen_govt
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = {
+		NOT = {
+			legitimacy_equivalent = 100
+		}
+		mil_power = 100
+	}
+    effect = { 
+		bgm_strengthen_govt = yes
+	}
+    tooltip = bgm_strengthen_govt_tooltip
+}
+
+custom_button = {
+    name = reduce_absolutism
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = {
+		custom_trigger_tooltip = {
+			tooltip = absolutism_ages_trigger
+			NOT = {
+				OR = {
+					current_age = age_of_feudalism
+					current_age = age_of_discovery
+					current_age = age_of_reformation
+				}
+			}
+		}
+		absolutism = 1
+		adm_power = 100
+	}
+    effect = {
+		add_adm_power = -100
+		add_absolutism = -2
+	}
+    tooltip = reduce_absolutism_tooltip
+}
+
+custom_button = {
+    name = reduce_absolutism_dip
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = {
+		custom_trigger_tooltip = {
+			tooltip = absolutism_ages_trigger
+			NOT = {
+				OR = {
+					current_age = age_of_feudalism
+					current_age = age_of_discovery
+					current_age = age_of_reformation
+				}
+			}
+		}
+		absolutism = 1
+		dip_power = 100
+	}
+    effect = {
+		add_dip_power = -100
+		add_absolutism = -2
+	}
+    tooltip = reduce_absolutism_tooltip
+}
+
+custom_button = {
+    name = nuke_bgm
+    potential = {
+        FROM = { 
+			ai = no
+			has_country_flag = nukes_on
+		}
+    }
+    trigger = {
+
+		custom_trigger_tooltip = {
+			tooltip = needs_nuclear_tooltip
+			OR = {
+				technology_group = modern_nuke
+				technology_group = modern_german_nuke
+				technology_group = modern_soviet_nuke
+			}
+		}
+		has_country_modifier = air_force_tierthree
+		owner = {
+			war_with = FROM
+		}
+		NOT = {
+			ROOT = {
+				devastation = 50
+			}
+		}
+		NOT = {
+			ROOT = {
+				base_tax = 2
+				base_production = 2
+				base_manpower = 2
+			}
+		}
+	}
+    effect = { 
+		province_event = {
+			id = nuclearevents.4
+		}
+	}
+    tooltip = deploy_nuke
+}
+
+custom_button = {
+    name = bgm_paratrooper
+    potential = {
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+        FROM = { 
+			ai = no
+			has_country_modifier = air_force_tierone
+		}
+    }
+    trigger = {
+		has_country_modifier = air_force_tierthree
+		FROM = {
+			manpower = 1
+		}
+		any_province = {
+			OR = {
+				AND = {
+					FROM = {
+						NOT = { has_country_modifier = air_force_tierfour }
+					}
+					NOT = {
+						province_distance = {
+							who = ROOT
+							distance = 50
+						}
+					}
+				}
+				AND = {
+					FROM = {
+						NOT = { has_country_modifier = air_force_tierfive }
+					}
+					NOT = {
+						province_distance = {
+							who = ROOT
+							distance = 100
+						}
+					}
+				}
+				AND = {
+					FROM = {
+						NOT = { has_country_modifier = air_force_tiersix }
+					}
+					NOT = {
+						province_distance = {
+							who = ROOT
+							distance = 150
+						}
+					}
+				}
+				AND = {
+					FROM = {
+						NOT = { has_country_modifier = air_force_tierseven }
+					}
+					NOT = {
+						province_distance = {
+							who = ROOT
+							distance = 200
+						}
+					}
+				}
+			}
+			OR = {
+				controlled_by = FROM
+				controller = {
+					OR = {
+						is_subject_of = FROM
+						alliance_with = FROM
+					}
+				}
+			}
+			#OR = {
+			#	has_building = aerodrome
+			#	has_building = spaceport
+			#}
+		}
+		owner = {
+			war_with = FROM
+		}
+		FROM = {
+			custom_trigger_tooltip = {
+				tooltip = paratrooper_trigger
+				OR = {
+					had_country_flag = {
+						flag = just_used_paratroopers
+						days = 180
+					}
+					NOT = { has_country_flag = just_used_paratroopers }
+				}
+			}
+		}
+	}
+    effect = { 
+		ROOT = {
+			infantry = FROM
+		}
+		FROM = {
+			add_manpower = -1
+			if = {
+				limit = { 
+					has_country_flag = just_used_paratroopers
+				}
+				clr_country_flag = just_used_paratroopers
+				set_country_flag = just_used_paratroopers
+			}
+			else = {
+				set_country_flag = just_used_paratroopers
+			}
+		}
+	}
+    tooltip = paratrooper_tooltip
+}
+
+#Depopulation
+
+custom_button = {
+    name = genocide_button
+    potential = {
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+        FROM = { #PUT THIS FOR ALL PROVINCE BUTTONS
+			ai = no
+			has_reform = fascist_mechanic
+		}
+    }
+    trigger = { 
+		FROM = {
+			mil_power = 25
+			has_reform = purge_foreigners_reform
+		}
+		OR = {
+			owner = {
+				OR = {
+					tag = FROM
+					is_subject_of = FROM
+				}
+			}
+			controller = {
+				tag = FROM
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = depopulation_trigger
+			OR = {
+				had_province_flag = {
+					flag = just_depopulated
+					days = 60
+				}
+				NOT = { has_province_flag = just_depopulated }
+			}
+		}
+	}
+    effect = { 
+		add_mil_power = -25
+        ROOT = {
+            add_devastation = 10
+            if = {
+                limit = { base_tax = 1 }
+                add_base_tax = -1
+            }
+            if = {
+                limit = { base_production = 1 }
+                add_base_production = -1
+            }
+            if = {
+                limit = { base_manpower = 1 }
+                add_base_manpower = -1
+            }
+            custom_tooltip = need_10_dev_or_less
+            if = {
+                limit = { 
+                    NOT = {
+                        development = 10
+                    }
+                }
+                change_religion = ROOT
+                change_culture = ROOT
+            }
+			add_nationalism = -5
+            add_unrest = 3
+        }
+
+		if = {
+			limit = { 
+				has_province_flag = just_depopulated
+			}
+			clr_province_flag = just_depopulated
+			set_province_flag = just_depopulated
+		}
+		else = {
+			set_province_flag = just_depopulated
+		}
+	}
+    tooltip = depopulation_tooltip
+}
+
+custom_button = {
+    name = forced_famine
+    potential = {
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+        FROM = { #PUT THIS FOR ALL PROVINCE BUTTONS
+			ai = no
+			bgm_comgovt = yes
+		}
+    }
+    trigger = { 
+		FROM = {
+			adm_power = 25
+		}
+		owner = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = famine_trigger
+			NOT = {
+				has_province_modifier = forced_famine_2
+			}
+		}
+	}
+    effect = { 
+		add_adm_power = -25
+        ROOT = {
+            add_devastation = 25
+            add_province_modifier = {
+				name = forced_famine_1
+				duration = 1825
+			}
+			add_province_modifier = {
+				name = forced_famine_2
+				duration = 3650
+			}
+        }
+	}
+    tooltip = forced_famine_tooltip
+}
+
+custom_button = {
+    name = dem_investments
+    potential = {
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+        FROM = { #PUT THIS FOR ALL PROVINCE BUTTONS
+			ai = no
+			has_reform = democratic_mechanic
+		}
+    }
+    trigger = { 
+		FROM = {
+			years_of_income = 0.1
+		}
+		owner = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = investments_trigger
+			NOT = {
+				has_province_modifier = provincial_investment
+			}
+		}
+	}
+    effect = { 
+		FROM = { add_years_of_income = -0.1 }
+        ROOT = {
+            add_devastation = -10
+            add_province_modifier = {
+				name = provincial_investment
+				duration = 1825
+			}
+        }
+	}
+    tooltip = investment_tooltip
+}
+
+custom_button = {
+    name = terror_forces
+    potential = {
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+        FROM = { #PUT THIS FOR ALL PROVINCE BUTTONS
+			ai = no
+			has_reform = futurist_mechanic
+			bgm_comgovt = no
+		}
+    }
+    trigger = { 
+		FROM = {
+			mil_power = 25
+		}
+		owner = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = terror_force_trigger
+			NOT = {
+				has_province_modifier = forced_famine_2
+			}
+		}
+	}
+    effect = { 
+		FROM = { add_mil_power = -25 }
+        ROOT = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+            add_devastation = 5
+            add_province_modifier = {
+				name = forced_famine_2
+				duration = 1825
+			}
+        }
+	}
+    tooltip = terror_force_tooltip
+}
+
+custom_button = {
+    name = auth_exploit_button
+    potential = {
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+        FROM = { #PUT THIS FOR ALL PROVINCE BUTTONS
+			ai = no
+			has_reform = authoritarian_mechanic
+		}
+    }
+    trigger = { 
+		FROM = {
+			mil_power = 25
+		}
+		owner = {
+			tag = FROM
+		}
+		custom_trigger_tooltip = {
+			tooltip = exploitation_trigger
+			OR = {
+				had_province_flag = {
+					flag = just_exploited
+					days = 720
+				}
+				NOT = { has_province_flag = just_exploited }
+			}
+		}
+	}
+    effect = { 
+		FROM = {
+			add_corruption = 2
+			add_adm_power = 1
+			add_dip_power = 1
+			add_mil_power = 1
+		}
+        ROOT = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+            add_devastation = 5
+        }
+
+		if = {
+			limit = { 
+				has_province_flag = just_exploited
+			}
+			clr_province_flag = just_exploited
+			set_province_flag = just_exploited
+		}
+		else = {
+			set_province_flag = just_exploited
+		}
+	}
+    tooltip = exploit_bgm_tooltip
+}
+
+custom_text_box = {
+    name = population_controls_bgm #Must match a scripted instantTextBoxType in a .gui file
+    potential = { 
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+			current_age = modern_age
+		}
+	} #Determines when the text is visible
+    tooltip = population_controls_tooltip #Can use customizable localisation
+    #To localize it, use the name of the button as a key, can also use customizable localisation
+}

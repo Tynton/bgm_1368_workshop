@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = palatine
+add_accepted_culture = bavarian
+religion = catholic
+elector = yes
+technology_group = western
+capital = 77	# Pfalz
+
+
+1309.6.9 = {
+	monarch = {
+		name = "Ruprecht I"
+		dynasty = "von Wittelsbach"		
+		birth_date = 1309.6.9
+		adm = 4
+		dip = 2
+		mil = 1
+	}
+}
+
+1325.5.12 = {
+	heir = {
+		name = "Ruprecht"
+		monarch_name = "Ruprecht II"
+		birth_date = 1325.5.12
+		adm = 3
+		dip = 2
+		mil = 0
+	}
+}

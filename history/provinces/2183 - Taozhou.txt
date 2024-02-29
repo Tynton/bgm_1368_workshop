@@ -1,0 +1,22 @@
+# 2183 - Taozhou
+owner = XIA
+controller = XIA
+culture = tibetan
+religion = vajrayana
+capital = "Taozhou"
+trade_goods = chinaware
+base_tax = 3
+base_production = 3
+base_manpower = 3
+is_city = yes
+add_core = CSH
+discovered_by = chinese
+discovered_by = nomad_group
+1644.1.1 = { 
+	controller = CSH
+}
+1645.2.1 = { 
+	controller = QNG
+	add_core = QNG
+}
+add_core = XIA

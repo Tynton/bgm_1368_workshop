@@ -1,0 +1,6 @@
+royal_marriage = {
+	first = LPP
+	second = CLB
+	start_date = 1368.1.1
+	end_date = 9999.1.1
+}

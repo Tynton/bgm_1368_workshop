@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = indian_sultanate_reform
+technology_group = indian
+religion = shiite
+primary_culture = kannada
+capital = 1948	# Gulbarga
+add_accepted_culture = marathi
+add_accepted_culture = telegu
+religious_school = jafari_school
+
+change_rajputs_or_marathas_or_nobles_land_share_effect = {
+	share = 3
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Mohammed Shah"
+		dynasty = "Bahmanid"
+		birth_date = 1318.1.1
+		ADM = 5
+		DIP = 1
+		MIL = 1
+	}
+}

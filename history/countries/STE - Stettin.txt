@@ -1,0 +1,42 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = pommeranian
+add_accepted_culture = east_pomeranian
+add_accepted_culture = cassubian
+religion = catholic
+technology_group = western
+capital = 1858	# Stettin
+
+
+
+1344.4.13 = {
+	monarch = {
+		name = "Barnim III"
+		dynasty = "Greifen"
+		birth_date = 1300.1.1
+		adm = 3
+		dip = 5
+		mil = 5
+	}
+
+	queen = {
+		name = "Agnes"
+		dynasty = "von Braunschweig"
+		birth_date = 1306.1.1
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+
+1348.1.1 = {
+	heir = {
+		name = "Kasimir"
+		monarch_name = "Kasimir III"
+		birth_date = 1348.1.1
+		adm = 2
+		dip = 3
+		mil = 0
+	}
+}

@@ -1,0 +1,101 @@
+cb_zollverein = {
+
+	prerequisites = {
+		OR = {
+			total_development = FROM
+
+			AND = {
+				45 = { #Lubeck
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+				1766 = { #Frankfurt/Rheinland
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+				61 = { #Saxony
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+				134 = { #Vienna
+					trade_share = {
+						country = ROOT
+						share = 25
+					}
+				}
+			}
+		}
+		
+		is_subject_of = FROM
+		is_subject_of_type = german_confederation_member
+		#OR = {
+		#	culture_group = benelux
+		#	
+		#	culture_group = germanic
+		#	
+		#}
+	}
+
+	war_goal = take_capital_zollverein
+}
+
+cb_dynastic_enforcement = {
+
+	prerequisites = {
+		FROM = {
+			government = monarchy
+			marriage_with = ROOT
+			NOT = { dynasty = ROOT }
+			NOT = { prestige = ROOT }
+			OR = {
+				has_heir = no
+				NOT = { heir_claim = 33 }
+				NOT = { legitimacy = 33 }
+			}
+		}
+		government = monarchy
+	}
+
+	war_goal = take_capital_enforcedynasty
+}
+
+cb_emperor_dynastic_enforcement = {
+
+	prerequisites = {
+		is_emperor = yes
+		FROM = {
+			is_elector = yes
+			OR = {
+				is_rival = ROOT
+				is_enemy = ROOT
+			}
+			NOT = { dynasty = ROOT }
+		}
+		government = monarchy
+	}
+
+	war_goal = take_capital_enforcedynasty
+}
+
+cb_bgm_rev_mon_enforce_government = {
+
+	prerequisites = {
+		FROM = {
+			bgm_rev = no
+		}
+		bgm_rev = yes
+		government = monarchy
+		OR = {
+			has_country_flag = bgm_rev_conmon
+			has_reform = revolutionary_empire_reform
+		}
+	}
+
+	war_goal = take_capital_rev_mon
+}

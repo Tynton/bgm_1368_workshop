@@ -1,0 +1,138 @@
+namespace = BGMGHC
+
+country_event = { #General Mamai and the Puppet Rulers
+	id = BGMGHC.1
+	title = "BGMGHC.1.t"
+	desc = "BGMGHC.1.d"
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	is_triggered_only = yes
+
+	#major = yes
+
+	option = {
+		name = "BGMGHC.1.a"
+		random_list = {
+			75 = { }
+			25 = {
+				capital_scope = {
+					spawn_rebels = {
+						size = 1
+						type = pretender_rebels
+						win = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+
+country_event = { #good ending
+	id = BGMGHC.2
+	title = "BGMGHC.2.t"
+	desc = "BGMGHC.2.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = "BGMGHC.2.a"
+		set_country_flag = glh_collapse_happened
+		add_prestige = 50
+	}
+}
+
+country_event = { #mamai appoints an heir
+	id = BGMGHC.3
+	title = "BGMGHC.3.t"
+	desc = "BGMGHC.3.d"
+	picture = MONGOL_BANNERS_eventPicture
+
+	trigger = {
+		NOT = { stability = 1 }
+		has_disaster = great_horde_collapse
+		has_heir = no
+		general_with_name = "Mamai"
+	}
+
+	mean_time_to_happen = {
+		months = 42
+	}
+
+	option = {
+		name = "BGMGHC.3.a"
+		define_heir = {
+			claim = 0
+		}
+	}
+}
+
+country_event = { #Rival ruler coups the government
+	id = BGMGHC.4
+	title = "BGMGHC.4.t"
+	desc = "BGMGHC.4.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	trigger = {
+		has_disaster = great_horde_collapse
+	}
+
+	mean_time_to_happen = {
+		months = 56
+	}
+
+	option = {
+		name = "BGMGHC.4.a"
+		capital_scope = {
+			spawn_rebels = {
+				size = 3
+				type = pretender_rebels
+				win = yes
+			}
+		}
+	}
+}
+
+country_event = { #bad ending
+	id = BGMGHC.5
+	title = "BGMGHC.5.t"
+	desc = "BGMGHC.5.d"
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		has_disaster = great_horde_collapse
+		NOT = { general_with_name = "Mamai" }
+		is_year = 1380
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = "BGMGHC.5.a"
+		end_disaster = great_horde_collapse
+		set_country_flag = glh_collapse_happened
+		if = {
+			limit = { 
+				NOT = {
+					stability = -1
+				}
+			}
+			release = CRI
+			release = VGA
+			release = QAS
+			change_tag = GOL
+		}
+
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = tributary_state
+			}
+			grant_independence = yes
+		}
+	}
+}

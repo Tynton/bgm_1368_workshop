@@ -1,0 +1,87 @@
+#245 - Yorkshire - East Riding
+controller = ENG
+culture = northumbrian
+religion = catholic
+base_tax = 3
+base_production = 3
+trade_goods = naval_supplies
+base_manpower = 1
+capital = "Hull"
+is_city = yes
+add_core = ENG
+add_core = NOL
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+1453.1.1 = {
+}
+# Start of the War of the Roses
+1459.9.23 = {
+	0 revolt = {
+	}
+}
+# The Battle of Blore Heath
+1459.10.12 = {
+	revolt = {
+	}
+}
+# The Lancastrians are back in control after the battle of Ludford Bridge
+1461.4.1 = {
+	0 revolt = {
+	}
+}
+# Capture of York after Battle of Towton
+1461.6.28 = {
+	revolt = {
+	}
+}
+# Coronation of Edward IV
+1467.1.1 = {
+}
+# Rivalry between Edward IV & Warwick
+1470.3.1 = {
+	0 revolt = {
+	}
+}
+1470.10.6 = {
+	revolt = {
+	}
+}
+# Readeption of Henry VI
+1471.1.1 = {
+}
+# Unpopularity of Warwick & War with Burgundy
+1471.3.1 = {
+	0 revolt = {
+	}
+}
+1471.5.4 = {
+	revolt = {
+	}
+}
+# Murder of Henry VI & Restoration of Edward IV
+1483.6.26 = {
+}
+# Revulsion at Supposed Murder of the Princes in the Tower
+1485.8.23 = {
+}
+# Battle of Bosworth Field & the End of the War of the Roses
+1600.1.1 = {
+}
+1644.7.2 = {
+	revolt = {
+	}
+}
+# Battle of Marston Moor
+1646.5.5 = {
+	revolt = {
+	}
+}
+# End of First English Civil War
+1707.5.12 = {
+	owner = GBR
+	controller = GBR
+	add_core = GBR
+	remove_core = ENG
+}

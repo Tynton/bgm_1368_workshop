@@ -1,0 +1,15 @@
+add_core = NAP
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = western
+owner = NAP
+culture = neapolitan
+trade_goods = wine
+religion = catholic
+controller = NAP
+is_city = no
+base_tax = 3
+base_manpower = 3
+base_production = 4
+center_of_trade = 1

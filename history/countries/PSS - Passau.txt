@@ -1,0 +1,18 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = bavarian
+religion = catholic
+technology_group = western
+capital = 4709 #Passau
+fixed_capital = 4709 # Cannot move capital away from this province & no power cost to move to it
+
+1363.1.1 = {
+	monarch = {
+		name = "Albrecht von Winkel" 
+		birth_date = 1300.1.1
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+}

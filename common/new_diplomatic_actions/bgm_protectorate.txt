@@ -1,0 +1,444 @@
+###############################
+#COUPS
+###############################
+
+create_colonial_protectorate = {
+	category = influence
+	require_acceptance = yes
+	is_visible = {
+		FROM = {
+			capital_scope = {
+				NOT = {
+					OR = {
+						continent = europe
+						continent = ROOT
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			NOT = {
+				OR = {
+					technology_group = western
+					technology_group = eastern
+				}
+			}
+		}
+		OR = {
+			full_idea_group = exploration_ideas
+			full_idea_group = expansion_ideas
+		}
+	}
+	is_allowed = {
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+			is_subject = no
+			NOT = {
+				OR = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+					naval_strength = {
+						who = ROOT
+						value = 1
+					}
+					total_development = ROOT
+				}
+			}
+		}
+		OR = {
+			is_neighbor_of = FROM
+			any_subject_country = {
+				OR = {
+					bgm_colonial_subject = yes
+					is_subject_of_type = vassal
+				}
+				is_neighbor_of = FROM
+			}
+		}
+	}
+	ai_acceptance = {
+		
+		add_entry = {
+			name = OPINION
+			export_to_variable = { which = ai_value value = opinion who = FROM with = ROOT } 
+			multiply_variable = { which = ai_value value = 0.1 }
+		}
+
+		add_entry = {
+			name = ROOT_DIPREP
+			export_to_variable = { 
+				which = ai_value 
+				value = modifier:diplomatic_reputation
+			} 
+			multiply_variable = { which = ai_value value = 3 } #3
+		}
+
+		add_entry = {
+			name = TOTAL_DEV_ROOT
+			export_to_variable = { 
+				which = ai_value 
+				value = total_development
+			} 
+			multiply_variable = { which = ai_value value = 0.05 }
+		}
+
+		add_entry = {
+			name = BORDER_DISTANCE
+			export_to_variable = { 
+				which = ai_value 
+				value = border_distance 
+				who = FROM
+			} 
+			multiply_variable = { which = ai_value value = -0.33 }
+		}
+
+		add_entry = {
+			name = TOTAL_DEV
+			export_to_variable = { 
+				which = ai_value 
+				value = total_development 
+				who = FROM
+			} 
+			multiply_variable = { which = ai_value value = -0.05 }
+		}
+
+		
+		
+		add_entry = {
+			name = ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = trigger_value:mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = trigger_value:mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+					NOT = { check_variable = { which = military_power value = -39 } }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 40
+			}
+			multiply_variable = { which = ai_value value = -1.5 }
+		}
+		add_entry = {
+			name = ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = trigger_value:mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = trigger_value:mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+					check_variable = { which = military_power value = -39 }
+					NOT = { check_variable = { which = military_power value = 30 } }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 0
+			}
+			export_to_variable = {
+				which = our_mil_tech
+				value = trigger_value:mil_tech
+			}
+			export_to_variable = {
+				which = their_mil_tech
+				value = trigger_value:mil_tech
+				who = FROM
+			}
+			export_to_variable = {
+				which = our_army_size
+				value = trigger_value:army_size
+			}
+			export_to_variable = {
+				which = their_army_size
+				value = trigger_value:army_size
+				who = FROM
+			}
+			divide_variable = { which = our_army_size value = 10 }
+			divide_variable = { which = their_army_size value = -10 }
+			change_variable = { which = our_army_size which = their_army_size }
+			multiply_variable = { which = their_mil_tech value = -1 }
+			change_variable = { which = our_mil_tech which = their_mil_tech }
+			multiply_variable = { which = our_mil_tech value = 3 }
+			change_variable = { which = ai_value which = our_army_size }
+			change_variable = { which = ai_value which = our_mil_tech }
+		}
+		add_entry = {
+			name = ROOT_FROM_MILITARY_POWER_COMPARED
+			limit = {
+				variable_arithmetic_trigger = {
+					export_to_variable = {
+						which = our_mil_tech
+						value = trigger_value:mil_tech
+					}
+					export_to_variable = {
+						which = their_mil_tech
+						value = trigger_value:mil_tech
+						who = FROM
+					}
+					export_to_variable = {
+						which = our_army_size
+						value = trigger_value:army_size
+					}
+					export_to_variable = {
+						which = their_army_size
+						value = trigger_value:army_size
+						who = FROM
+					}
+					export_to_variable = {
+						which = military_power
+						value = 0
+					}
+					divide_variable = { which = our_army_size value = 10 }
+					divide_variable = { which = their_army_size value = -10 }
+					change_variable = { which = our_army_size which = their_army_size }
+					multiply_variable = { which = their_mil_tech value = -1 }
+					change_variable = { which = our_mil_tech which = their_mil_tech }
+					multiply_variable = { which = our_mil_tech value = 3 }
+					change_variable = { which = military_power which = our_army_size }
+					change_variable = { which = military_power which = our_mil_tech }
+					check_variable = { which = military_power value = 30 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 30
+			}
+		}
+
+
+
+		add_entry = {
+			name = FRIENDLY
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_friendly }
+						ai_attitude = { who = ROOT attitude = attitude_allied }
+					}
+				}
+			}
+			export_to_variable = { which = ai_value value = 25 }
+		}
+
+		add_entry = {
+			name = FROM_GREAT_POWER_RANK_DEMAND
+			limit = {
+				FROM = {
+					is_great_power = yes
+				}
+			}
+			export_to_variable = { which = ai_value value = -50 }
+		}
+
+		add_entry = {
+			name = DEFAULT_DEMAND
+			limit = {
+				always = yes
+			}
+			export_to_variable = { which = ai_value value = -50 }
+		}
+
+		#add_entry = {
+		#	name = PART_HRE
+		#	limit = {
+		#		FROM = {
+		#			is_part_of_hre = yes
+		#		}
+		#	}
+		#	export_to_variable = { which = ai_value value = -75 }
+		#}
+
+		add_entry = {
+			name = FREE_CITY
+			limit = {
+				FROM = {
+					has_reform = free_city
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = IS_EMPEROR
+			limit = {
+				FROM = {
+					is_emperor = yes
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = IS_ELECTOR
+			limit = {
+				FROM = {
+					is_elector = yes
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = HOSTILE
+			limit = {
+				FROM = {
+					OR = {
+						ai_attitude = { who = ROOT attitude = attitude_hostile }
+						ai_attitude = { who = ROOT attitude = attitude_outraged }
+						ai_attitude = { who = ROOT attitude = attitude_rivalry }
+					}
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = GUARANTEED
+			limit = {
+				any_country = {
+					has_guaranteed = FROM
+				}
+			}
+			export_to_variable = { which = ai_value value = -1000 }
+		}
+
+		add_entry = {
+			name = AI_THREATENED
+			limit = {
+				FROM = {
+					ai_attitude = { who = ROOT attitude = attitude_threatened }
+				}
+			}
+			export_to_variable = { which = ai_value value = 50 }
+		}
+		
+		add_entry = {
+			name = IS_RIVAL
+			#if = {
+				limit = {
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+				export_to_variable = { which = ai_value value = -1000 }
+			#}
+		}
+	}
+	on_accept = {
+		create_subject = {
+			subject_type = colonial_protectorate
+			who = FROM
+		}
+		FROM = {
+			set_country_flag = is_colonial_protectorate
+		}
+	}
+	on_decline = {
+		add_casus_belli = {
+			type = cb_restore_personal_union
+			target = FROM
+			months = 120
+		}
+    }
+	ai_will_do = {
+		NOT = {
+			FROM = {
+				total_development = 350
+			}
+		}
+	}
+}
+
+protectorate_to_vassal = {
+	category = influence
+	require_acceptance = no
+	is_visible = {
+		FROM = {
+			NOT = {
+				liberty_desire = 50
+			}
+			is_subject_of = ROOT
+			is_subject_of_type = colonial_protectorate
+			had_country_flag = {
+				flag = is_colonial_protectorate
+				days = 18250
+			}
+		}
+	}
+	is_allowed = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = colonial_protectorate
+			is_at_war = no
+		}
+		is_at_war = no
+	}
+	
+	on_accept = {
+		create_subject = {
+			subject_type = vassal
+			who = FROM
+		}
+	}
+	ai_will_do = {
+		always = yes
+	}
+}

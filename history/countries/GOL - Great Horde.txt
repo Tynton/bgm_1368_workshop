@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = steppe_horde
+primary_culture = mishary
+religion = sunni
+technology_group = nomad_group
+capital = 466	#Sarai
+religious_school = hanafi_school
+
+1335.1.1 = {
+	monarch = {
+		name = "Abdallah"
+		dynasty = "Borgijin"
+		birth_date = 1335.1.1 #unknown
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+	add_ruler_personality = babbling_buffoon_personality
+}

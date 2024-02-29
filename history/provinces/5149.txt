@@ -1,0 +1,15 @@
+add_core = PAL
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = PAL
+culture = palatine
+religion = catholic
+hre = yes
+controller = PAL
+is_city = yes
+base_tax = 2
+base_manpower = 1
+base_production = 1
+trade_goods = beer

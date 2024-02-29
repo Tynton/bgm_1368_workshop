@@ -1,0 +1,31 @@
+#44 - Hamburg
+owner = HAM
+controller = HAM
+culture = schleswig_holsteiner
+religion = catholic
+hre = yes
+base_tax = 4
+base_production = 5
+trade_goods = beer
+base_manpower = 2
+capital = "Hamburg"
+is_city = yes
+extra_cost = 26
+center_of_trade = 2
+add_core = HAM
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_permanent_province_modifier = { 
+	name = elbe_estuary_modifier
+	duration = -1
+}
+1810.12.13 = { 
+	controller = FRA
+	add_core = FRA
+}
+1814.4.11 = { 
+	controller = HAM
+}
+fort_15th = yes

@@ -1,0 +1,54 @@
+107 = { "Brèsa" "Brèssa" }
+4739 = { "Bèrghem" "Bergum" }
+4740 = { "Còmm" "Cómm" }
+2979 = "Nuàra"
+1862 = "Cremùna"
+104 = "Milan"
+118 = "Rouma"
+121 = { "Napul" "Napol" }
+116 = { "Firenz" "Fireenz" }
+112 = "Venèzia"
+2981 = "Monferraa"
+103 = "Türì"
+#5014 = { "La Spesia" "La Spessia" }
+101 = "Genua"
+109 = "Mantua"
+#4971 = "Tisin"
+4960 = "San Marin"
+4729 = "Padoa"
+111 = "Friul"
+
+#speculation starts
+1770 = "Trevis"
+1875 = "Cuni"
+4727 = "Salusa"
+102 = "Nissa"
+2978 = "Aresa"
+2977 = "Urbin"
+4731 = "Spulet"
+4733 = "Mulis"
+4734 = "Avelin"
+2983 = "Salern"
+125 = "Palerm"
+127 = "Sàsar"
+4737 = "Girgent"
+4736 = "Tràpan"
+1933 = "Bàr"
+4945 = "Lupi"
+4732 = "Teracina"
+1933 = "Salent"
+123 = "Calabra"
+2986 = "Caglar"
+2976 = "Perusa"
+4730 = "Bulogna"
+#4946 = "La Spesia"
+4959 = "Monac"
+# = "Catansar"
+# = "Bónevent"
+# = "Piasëinsa"
+#Speculation ends
+
+5389 = "Avegvan"
+5390 = { "Monça" "Monscia" }
+5391 = "Büsti Grandi"
+5392 = "Burbanee"

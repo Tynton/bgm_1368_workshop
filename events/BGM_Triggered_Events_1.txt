@@ -1,0 +1,257 @@
+namespace = BGMTE
+
+country_event = { #Yuan Victory in the Red Turban Rebellion
+	id = BGMTE.1
+	title = "BGMTE.1.t"
+	desc = "BGMTE.1.d"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.1.a"
+		set_capital = 1816
+	}
+}
+
+#################
+#STARTING EVENTS#
+#################
+
+country_event = { #English Starting Event
+	id = BGMTE.2
+	title = "BGMTE.2.t"
+	desc = "BGMTE.2.d"
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.2.a"
+		define_advisor = {
+			name = "Geoffrey Chaucer"
+			culture = english
+			type = artist
+			skill = 3
+			cost_multiplier = 0.25
+		}
+		define_advisor = {
+			name = "John of Gaunt"
+			type = statesman
+			skill = 3
+			cost_multiplier = 0.25
+		}
+
+		#add_casus_belli = {
+		#	type = cb_restore_personal_union
+		#	target = FRA
+		#	months = 1200
+		#}
+
+		custom_tooltip = eng_lose_missions
+	}
+}
+
+country_event = { #Yuan/Ming Starting Event
+	id = BGMTE.3
+	title = "BGMTE.3.t"
+	desc = "BGMTE.3.d"
+	picture = NUSANTARA_THRONE_eventPicture
+
+	#fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.3.a"
+		custom_tooltip = yuan_loses_china_warning
+		if = {
+			limit = { 
+				tag = YUA
+			}
+			add_country_modifier = {
+				name = yuan_crisis_start
+				duration = 7300
+			}
+			add_ruler_modifier = {
+				name = yuan_claimant
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = { #Serbian Starting Event
+	id = BGMTE.4
+	title = "BGMTE.4.t"
+	desc = "BGMTE.4.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.4.a"
+		custom_tooltip = disaster_time_limit_warning
+	}
+}
+
+country_event = { #Golden Horde Starting Event
+	id = BGMTE.5
+	title = "BGMTE.5.t"
+	desc = "BGMTE.5.d"
+	picture = IMPALED_SOLDIERS_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.5.a"
+		custom_tooltip = disaster_time_limit_warning
+		add_disaster_progress = {
+			value = 100
+			disaster = great_horde_collapse
+		}
+	}
+}
+
+country_event = { #The Claims of Charles IV
+	id = BGMTE.6
+	title = "BGMTE.6.t"
+	desc = "BGMTE.6.d"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.6.a"
+		custom_tooltip = charles_iv_core_warning
+	}
+}
+
+country_event = { #Our Ruler Captured
+	id = BGMTE.7
+	title = "BGMTE.7.t"
+	desc = "BGMTE.7.d"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.7.a"
+		random_war_enemy_country = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = THIS
+					}
+					is_in_war = {
+						defender_leader = THIS
+					}
+				}
+			}
+			country_event = {
+				id = BGMTE.8
+			}
+		}
+	}
+}
+
+country_event = { #Enemy Ruler Captured
+	id = BGMTE.8
+	title = "BGMTE.8.t"
+	desc = "BGMTE.8.d"
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.8.a"
+		random_war_enemy_country = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = THIS
+					}
+					is_in_war = {
+						defender_leader = THIS
+					}
+				}
+			}
+			every_owned_province = {
+				change_controller = ROOT
+			}
+		}
+	}
+}
+
+country_event = { #War of the Two Peters
+	id = BGMTE.9
+	title = "BGMTE.9.t"
+	desc = "BGMTE.9.d"
+	picture = BATTLE_eventPicture
+
+	#fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.9.a"
+		custom_tooltip = trastamara_warning
+	}
+}
+
+country_event = { #Turn into appanage
+	id = BGMTE.10
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = none
+	}
+	after = {
+		overlord = {
+			create_subject = {
+				subject_type = appanage
+				who = ROOT
+			}
+		}
+	}
+}
+
+country_event = { #Naples' Starting Context
+	id = BGMTE.11
+	title = "BGMTE.11.t"
+	desc = "BGMTE.11.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMTE.11.a"
+		custom_tooltip = joanna_warning
+		add_ruler_modifier = {
+			name = reign_of_joanna
+			duration = -1
+		}	
+	}
+}

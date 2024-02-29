@@ -1,0 +1,16 @@
+add_core = ENG
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = ENG
+capital = "Abbeville"
+base_tax = 4
+base_manpower = 4
+base_production = 4
+culture = picard
+trade_goods = cloth
+religion = catholic
+controller = ENG
+is_city = no
+add_core = PIC

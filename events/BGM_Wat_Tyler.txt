@@ -1,0 +1,213 @@
+namespace = BGWT
+
+country_event = { #Peasants' Revolt
+	id = BGWT.1
+	title = "BGWT.1.t"
+	desc = "BGWT.1.d"
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = "BGWT.1.a"
+		capital_scope = {
+			random_neighbor_province = {
+				spawn_rebels = {
+					size = 2
+					type = anti_tax_rebels
+					win = yes
+				}
+			}
+			spawn_rebels = {
+				size = 3
+				type = anti_tax_rebels
+				win = yes
+			}
+		}
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = yorkshire_area
+					area = scottish_marches_area
+				}
+			}
+			spawn_rebels = {
+				size = 1
+				type = anti_tax_rebels
+				win = yes
+			}
+		}
+	}
+}
+
+
+country_event = { #good ending
+	id = BGWT.2
+	title = "BGWT.2.t"
+	desc = "BGWT.2.d"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { #defeat them entirely
+		name = "BGWT.2.a"
+		set_country_flag = wt_happened
+		add_country_modifier = {
+			name = wt_defeated
+			duration = -1
+		}
+	}
+
+	option = { #grant clemency
+		name = "BGWT.2.b"
+		end_disaster = wat_tyler
+		set_country_flag = wt_happened
+		add_country_modifier = {
+			name = wt_middlegrouns
+			duration = -1
+		}
+	}
+}
+
+country_event = { #bad ending
+	id = BGWT.3
+	title = "BGWT.3.t"
+	desc = "BGWT.3.d"
+	picture = FARMING_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		has_disaster = wat_tyler
+		num_of_rebel_controlled_provinces = 8
+		OR = {
+			AND = {
+				NOT = {
+					owns = 235
+				}
+				235 = {
+					has_rebel_faction = anti_tax_rebels
+					controlled_by = REB
+				}
+			}
+			AND = {
+				NOT = {
+					owns = 245
+				}
+				245 = {
+					has_rebel_faction = anti_tax_rebels
+					controlled_by = REB
+				}
+			}
+			AND = {
+				NOT = {
+					owns = 243
+				}
+				243 = {
+					has_rebel_faction = anti_tax_rebels
+					controlled_by = REB
+				}
+			}
+			AND = {
+				NOT = {
+					owns = 236
+				}
+				236 = {
+					has_rebel_faction = anti_tax_rebels
+					controlled_by = REB
+				}
+			}
+		}
+		capital_scope = {
+			controlled_by = REB
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = "BGWT.3.a"
+		set_country_flag = wt_happened
+		end_disaster = wat_tyler
+		every_owned_province = {
+			limit = {
+				controlled_by = REB
+				has_rebel_faction = anti_tax_rebels
+			}
+			add_devastation = 15
+		}
+		disband_rebels = anti_tax_rebels
+		add_country_modifier = {
+			name = wt_legacy
+			duration = -1
+		}
+	}
+}
+
+province_event = { #province joins the rebellion
+	id = BGWT.4
+	title = "BGWT.4.t"
+	desc = "BGWT.4.d"
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		owner = { has_disaster = wat_tyler }
+		NOT = {
+			has_rebel_faction = nationalist_rebels
+		}
+		NOT = {
+			has_province_flag = wat_tyler_prov
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 68
+	}
+
+	option = {
+		name = "BGWT.4.a"
+		set_province_flag = wat_tyler_prov
+		spawn_rebels = {
+			size = 1
+			type = anti_tax_rebels
+			win = yes
+		}
+	}
+}
+
+province_event = { #east england joins the rebellion
+	id = BGWT.5
+	title = "BGWT.5.t"
+	desc = "BGWT.5.d"
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owner = { has_disaster = wat_tyler }
+		OR = {
+			area = east_midlands_area
+			area = east_anglia_area
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = "BGWT.4.a"
+		#set_province_flag = wat_tyler_prov
+		spawn_rebels = {
+			size = 3
+			type = anti_tax_rebels
+			win = yes
+		}
+	}
+}

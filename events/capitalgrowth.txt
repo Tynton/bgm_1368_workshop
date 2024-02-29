@@ -1,0 +1,586 @@
+namespace = capitalgrowth
+
+province_event = {
+	id = capitalgrowth.1
+	title = "capitalgrowth.n.1"
+	desc = "capitalgrowth.d.1"
+	picture = ANGRY_MOB_eventPicture
+
+	hidden = yes
+	
+	trigger = {
+		AND = {
+			OR = {
+				is_capital = yes
+				province_has_center_of_trade_of_level = 2
+				owner = {
+					NOT = { had_recent_war = 25 }
+				}
+			}
+			#industrialization = 99
+		}
+		#is_prosperous = yes
+		NOT = { devastation = 1 }
+	}
+
+	mean_time_to_happen = {
+		months = 650
+		
+		modifier = {
+			factor = 0.9
+			owner = {
+				NOT = { had_recent_war = 40 }
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			owner = {
+				NOT = { had_recent_war = 50 }
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				stability = 1
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				stability = 2
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			has_building = university
+		}
+
+		modifier = {
+			factor = 0.75
+			is_prosperous = yes
+		}
+
+		modifier = {
+			factor = 0.75
+			owner = {
+				has_reform = free_city
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_building = marketplace
+				has_building = trade_depot
+				has_building = stock_exchange
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			OR = {
+				has_building = workshop
+				has_building = counting_house
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			OR = {
+				has_building = textile
+				has_building = plantations
+				has_building = wharf
+				has_building = weapons
+				has_building = tradecompany
+				has_building = farm_estate
+				has_building = mills
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			OR = {
+				has_building = courthouse
+				has_building = town_hall
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			has_building = furnace
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				NOT = { num_of_loans = 1 }
+				full_idea_group = economic_ideas
+				capital_scope = {
+					region = british_isles_region
+				}
+				all_owned_province = {
+					region = british_isles_region
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				NOT = { num_of_loans = 1 }
+				full_idea_group = trade_ideas
+				capital_scope = {
+					region = british_isles_region
+				}
+				all_owned_province = {
+					region = british_isles_region
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			owner = {
+				full_idea_group = economic_ideas
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			owner = {
+				full_idea_group = trade_ideas
+			}
+		}
+		
+		modifier = {
+			factor = 0.7
+			has_terrain = farmlands
+		}
+		
+		modifier = {
+			factor = 0.75
+			has_terrain = grasslands
+		}
+		
+		modifier = {
+			factor = 0.775
+			has_terrain = woods
+		}
+		
+		modifier = {
+			factor = 1.1
+			has_terrain = forest
+		}
+		
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_terrain = hills
+				has_terrain = coastline
+				has_terrain = drylands
+			}
+		}
+		
+		modifier = {
+			factor = 1.25
+			owner = {
+				is_subject = yes
+			}
+		}
+		
+		modifier = {
+			factor = 1.2
+			has_terrain = highlands
+		}
+		
+		modifier = {
+			factor = 1.3
+			OR = {
+				has_terrain = marsh
+				has_terrain = savannah
+			}
+		}
+		
+		modifier = {
+			factor = 0.85
+			OR = {
+				highest_value_trade_node = yes
+			}
+		}
+		
+		modifier = {
+			factor = 1.35
+			OR = {
+				has_terrain = mountain
+				has_terrain = jungle
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = glacier
+			}
+		}
+		
+		modifier = {
+			factor = 0.8
+			OR = {
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		
+		modifier = {
+			factor = 0.8
+			OR = {
+				current_age = age_of_great_wars
+			}
+		}
+		
+		modifier = {
+			factor = 10
+			NOT = {
+				owner = {
+					adm_tech = 16
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 7.5
+			NOT = {
+				owner = {
+					adm_tech = 18
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 5
+			NOT = {
+				owner = {
+					adm_tech = 20
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 2.5
+			NOT = {
+				owner = {
+					adm_tech = 24
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.75
+			NOT = {
+				owner = {
+					adm_tech = 28
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
+			NOT = {
+				owner = {
+					adm_tech = 30
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.25
+			NOT = {
+				owner = {
+					adm_tech = 34
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.125
+			NOT = {
+				owner = {
+					adm_tech = 38
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 42
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 46
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.65
+			owner = {
+				is_hegemon = yes 
+				adm_tech = 32
+			}
+		}
+		
+	}
+	
+	option = {
+		name = "capitalgrowth.1.a"
+		add_base_tax = 1
+		add_base_production = 1
+		add_base_manpower = 1
+	}
+}
+
+#PARLIAMENT IMMIGRATIONS
+
+province_event = {
+	id = capitalgrowth.2
+	title = "capitalgrowth.n.2"
+	desc = "capitalgrowth.d.2"
+	picture = ANGRY_MOB_eventPicture
+
+	hidden = yes
+	
+	trigger = {
+		industrialization = 99
+		OR = {
+			AND = {
+				NOT = { devastation = 1 }
+				owner = { stability = 1 }
+			}
+			is_prosperous = yes
+		}
+		owner = {
+			has_parliament = yes
+		}
+		OR = {
+			NOT = { development = 15 }
+			has_seat_in_parliament = yes
+			province_has_center_of_trade_of_level = 1
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 650
+		
+		modifier = {
+			factor = 0.9
+			owner = {
+				NOT = { had_recent_war = 40 }
+			}
+		}
+				modifier = {
+			factor = 0.8
+			owner = {
+				NOT = { had_recent_war = 50 }
+			}
+		}
+		
+		modifier = {
+			factor = 0.7
+			has_terrain = farmlands
+		}
+		
+		modifier = {
+			factor = 0.75
+			has_terrain = grasslands
+		}
+		
+		modifier = {
+			factor = 0.775
+			has_terrain = woods
+		}
+		
+		modifier = {
+			factor = 1.1
+			has_terrain = forest
+		}
+		
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_terrain = hills
+				has_terrain = coastline
+				has_terrain = drylands
+			}
+		}
+		
+		modifier = {
+			factor = 1.25
+			owner = {
+				is_subject = yes
+			}
+		}
+		
+		modifier = {
+			factor = 1.2
+			has_terrain = highlands
+		}
+		
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_terrain = marsh
+				has_terrain = savannah
+			}
+		}
+		
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_terrain = mountain
+				has_terrain = jungle
+				has_terrain = desert
+				has_terrain = coastal_desert
+				has_terrain = glacier
+			}
+		}
+		
+		modifier = {
+			factor = 0.8
+			OR = {
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		
+		modifier = {
+			factor = 0.8
+			owner = {
+				government_rank = 3
+			}
+		}
+		
+		modifier = {
+			factor = 0.85
+			OR = {
+				highest_value_trade_node = yes
+			}
+		}
+		
+		modifier = {
+			factor = 0.8
+			OR = {
+				current_age = age_of_great_wars
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 32
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 33
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 34
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 35
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 36
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 42
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 43
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 44
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 45
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 1.1
+			NOT = {
+				owner = {
+					adm_tech = 46
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.65
+			owner = {
+				is_hegemon = yes
+			}
+		}
+		
+	}
+	
+	option = {
+		name = "capitalgrowth.2.a"
+		add_base_tax = 1
+		add_base_production = 1
+		add_base_manpower = 1
+	}
+}

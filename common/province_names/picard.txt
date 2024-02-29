@@ -1,0 +1,19 @@
+182 = { "Valois" "Compiène" }
+1743 = "Kimbré"
+89 = { "Anmyin" "Anmien" }
+87 = "Calés"
+88 = { "Arras" "Aros" }
+1866 = { "Namur" " Carleroé" }
+93 = "Liège"
+4769 = { "Lille" "Lile" }
+121 = "Napoule"
+266 = "Prague"
+98 = "Trèke"
+4770 = { "Barrois" "Boé-el-Duc" }
+4951 = { "Dunkèque" "Dunkèke" }
+94 = "Lussimbourg"
+
+#5087 = { "Boulonne" "Boulonne-su-Mér" }
+
+# = "Bieuvais"
+4946 = "Advile"

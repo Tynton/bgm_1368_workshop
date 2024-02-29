@@ -1,0 +1,24 @@
+sound = {
+	name = nuclear_detonation
+	file = "nuke.wav"
+}
+
+sound = {
+	name = terror_force_sound
+	file = "terror_force_wav.wav"
+}
+
+sound = {
+	name = genocide_sound
+	file = "genocide_wav.wav"
+}
+
+sound = {
+	name = exploit_auth_sound
+	file = "exploit_auth_wav.wav"
+}
+
+sound = {
+	name = dem_investments_sound
+	file = "dem_investments_wav.wav"
+}

@@ -1,0 +1,27 @@
+#1130 - Tadimekket
+owner = TMB
+controller = TMB
+culture = tuareg
+is_city = yes
+base_manpower = 1
+religion = sunni
+capital = "Tadmekka al-Suq"
+trade_goods = wool
+base_tax = 1
+base_production = 1
+add_core = TMB
+discovered_by = sub_saharan
+1543.1.1 = {
+}
+1591.3.15 = {
+	owner = AIR
+	controller = AIR
+	add_core = AIR
+}
+# Songahi defeat at Tondibi leaves Tuareg free
+1642.1.1 = {
+}
+# Collapse of last vestiges of unity among Songhai
+1700.1.1 = {
+}
+#Timbuktu is effectively a Tuareg tag again

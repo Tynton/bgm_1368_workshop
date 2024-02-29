@@ -1,0 +1,32 @@
+state_add = {
+	change_variable = {
+		which = stateScore
+		value = 1
+	}
+}
+populist_add = {
+	change_variable = {
+		which = populistScore
+		value = 1
+	}
+}
+
+reset_scores = {
+	set_variable = {
+		which = stateScore
+		value = 0
+	}
+	set_variable = {
+		which = populistScore
+		value = 0
+	}
+}
+
+bgm_remove_pol_power = {
+	custom_tooltip = remove_pol_power
+	hidden_effect = {
+		add_adm_power = -9999
+		add_dip_power = -9999
+		add_mil_power = -9999
+	}
+}

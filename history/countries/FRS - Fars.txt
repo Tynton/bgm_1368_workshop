@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = iqta
+government_rank = 1
+primary_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 2218 # Shiraz
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Sheikhdom"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

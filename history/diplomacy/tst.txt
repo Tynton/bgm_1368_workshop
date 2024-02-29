@@ -1,0 +1,6 @@
+alliance = {
+	first = TST
+	second = ARA
+	start_date = 1368.1.1
+	end_date = 9999.1.1
+}

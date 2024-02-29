@@ -1,0 +1,190 @@
+namespace = BGM_NAP_missions
+
+country_event = { #Assassination of Joanna
+	id = BGM_NAP_missions.1
+	title = "BGM_NAP_missions.1.t"
+	desc = "BGM_NAP_missions.1.d"
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		has_ruler_flag = giovanna_i
+		OR = {
+			NOT = { legitimacy = 25 }
+			NOT = { stability = -2 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 9
+	}
+	
+	option = {
+		name = "BGM_NAP_missions.1.a"
+		define_ruler = {
+			dynasty = "d'Anjou"
+			male = yes
+			claim = 75
+		}
+		if = {
+			limit = { 
+				PRO = {
+					is_subject_of_type = personal_union
+					is_subject_of = ROOT
+				}
+			}
+			MNE = {
+				create_subject = {
+					subject_type = personal_union
+					who = PRO
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Florence as the Capital?
+	id = BGM_NAP_missions.2
+	title = "BGM_NAP_missions.2.t"
+	desc = "BGM_NAP_missions.2.d"
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_NAP_missions.2.a" #No
+		add_stability_or_adm_power = yes
+		capital_scope = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+			add_province_modifier = {
+				name = nap_patronage_of_artists
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = "BGM_NAP_missions.2.b" #Yes
+		set_capital = 116
+		capital_scope = {
+			add_center_of_trade_level = 2
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		define_advisor = {
+			type = artist
+			cost_multiplier = 0.25
+		}
+	}
+}
+
+country_event = { #Rebuild the Latin Empire?
+	id = BGM_NAP_missions.3
+	title = "BGM_NAP_missions.3.t"
+	desc = "BGM_NAP_missions.3.d"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_NAP_missions.3.a" #No
+		add_stability_or_adm_power = yes
+		151 = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+		}
+		capital_scope = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+	option = {
+		name = "BGM_NAP_missions.3.b" #Yes
+		add_dip_power = 100
+		every_country = {
+			limit = {
+				has_reform = papacy_reform
+				religion = ROOT
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = pap_restored_constantinople
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = thrace_area
+					area = macedonia_area
+					area = northern_greece_area
+					area = morea_area
+				}
+			}
+			add_core = LTN
+			cede_province = LTN
+		}
+		create_subject = {
+			subject_type = personal_union
+			who = LTN
+		}
+		LTN = {
+			change_religion = ROOT
+			change_primary_culture = ROOT
+			set_capital = 151
+		}
+		151 = {
+			change_religion = ROOT
+		}
+		146 = {
+			change_religion = ROOT
+		}
+	}
+}
+
+country_event = { #Rebuild the Latin Empire?
+	id = BGM_NAP_missions.4
+	title = "BGM_NAP_missions.4.t"
+	desc = "BGM_NAP_missions.4.d"
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_NAP_missions.4.a" #No
+		add_stability_or_adm_power = yes
+	}
+	option = {
+		name = "BGM_NAP_missions.4.b" #Yes
+		change_tag = TTS
+		on_change_tag_effect = yes
+		if = {
+			limit = {
+				NOT = { tag = NAP }
+				NOT = { was_tag = NAP }
+			}
+			swap_non_generic_missions = yes
+		}
+		remove_non_electors_emperors_from_empire_effect = yes
+		if = {
+			limit = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+			set_government_rank = 2
+		}
+		set_country_flag = formed_two_sicilies_flag
+		add_prestige = 10
+		if = {
+			limit = {
+				has_custom_ideas = no
+				NOT = { has_idea_group = SIC_ideas }
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		set_capital = 125
+	}
+}

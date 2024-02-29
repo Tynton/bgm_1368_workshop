@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = azerbaijani
+add_accepted_culture = persian
+add_accepted_culture = al_iraqiya_arabic
+religion = shiite
+technology_group = muslim
+capital = 416 #Tabriz
+government_rank = 2
+add_army_professionalism = 0.05
+religious_school = jafari_school
+
+1356.1.1 = {
+	monarch = {
+		name = "Shaykh Uways"
+		dynasty = "Jalayirid"
+		birth_date = 1335.1.1
+		adm = 6
+		dip = 2
+		mil = 5
+	}
+}

@@ -1,0 +1,14 @@
+
+union = {
+	first = ENG
+	second = GUY
+	start_date = 1368.1.1
+	end_date = 1486.3.12
+}
+
+alliance = {
+	first = ENG
+	second = CAS
+	start_date = 1368.1.1
+	end_date = 1486.3.12
+}

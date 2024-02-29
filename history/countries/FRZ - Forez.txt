@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = appanage_reform
+government_rank = 1
+primary_culture = lyonnais
+religion = catholic
+technology_group = western
+capital = 4777	# Bourges
+fixed_capital = 4777 # Cannot move capital away from this province & no power cost to move to it
+
+1340.4.30 = {
+	monarch = {
+		name = "Jean II"
+		dynasty = "d'Albon"
+		birth_date = 1340.4.30
+		dip = 3
+		adm = 3
+		mil = 3
+	}
+}

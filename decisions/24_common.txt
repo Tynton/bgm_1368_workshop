@@ -1,0 +1,73 @@
+country_decisions = {
+
+	deflation = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+			inflation = 0.5
+		}
+		allow = {
+			years_of_income = 0.33
+		}
+		effect = {
+			
+			add_years_of_income = -0.33
+			add_inflation = -0.5
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						years_of_income = 2
+					}
+					is_in_deficit = yes
+					num_of_loans = 1
+					has_global_modifier_value = {
+						which = inflation_reduction
+						value = 0.05
+					}
+				}
+			}
+		}
+	}
+
+	localized_names_bgm = {
+	
+		major = yes
+	
+		potential = {
+			NOT = { has_global_flag = local_names_bgm }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			set_global_flag = local_names_bgm
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	disable_localized_names_bgm = {
+	
+		major = yes
+	
+		potential = {
+			has_global_flag = local_names_bgm
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			clr_global_flag = local_names_bgm
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

@@ -1,0 +1,76 @@
+wat_tyler = {
+	potential = {
+		normal_or_historical_nations = yes
+		tag = ENG
+		is_free_or_tributary_trigger = yes
+		NOT = { has_country_flag = wt_happened }
+		current_age = age_of_feudalism
+	}
+	can_start = {
+		OR = {
+			NOT = { legitimacy = 75 }
+			NOT = { stability = 1 }
+			NOT = { religious_unity = 0.75 }
+			AND = {
+				is_at_war = yes
+				NOT = { war_score = -25 }
+			}
+		}
+	}
+	can_stop = {
+		stability = 3
+		NOT = {
+			unrest = 0
+		}
+	}
+	progress = {
+		modifier = {
+			factor = 1
+			unrest = 1
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { religious_unity = 0.75 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { legitimacy = 75 }
+		}
+	}
+	can_end = {
+		stability = 1
+		NOT = {
+			any_owned_province = {
+				controlled_by = REB
+				unrest = 1
+			}
+		}
+		NOT = {
+			num_of_rebel_armies = 1
+		}
+	}
+	modifier = {
+		global_unrest = 5
+		stability_cost_modifier = 0.25
+	}
+	
+	on_start = BGWT.1
+	#on_end = BGWT.2
+	
+	on_monthly = {
+		events = {
+			
+		}
+		random_events = {
+			
+		}
+	}
+}

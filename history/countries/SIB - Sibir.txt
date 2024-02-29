@@ -1,0 +1,23 @@
+government = tribal
+add_government_reform = steppe_horde
+primary_culture = siberian
+religion = sunni
+technology_group = nomad_group
+capital = 1075	# Chimgi-Tura
+religious_school = hanafi_school
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Khanate"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

@@ -1,0 +1,7 @@
+
+union = {
+	first = HAI
+	second = HOL
+	start_date = 1368.1.1
+	end_date = 1486.3.12
+}

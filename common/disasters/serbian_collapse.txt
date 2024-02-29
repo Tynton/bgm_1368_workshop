@@ -1,0 +1,41 @@
+serbian_collapse = {
+	potential = {
+		normal_or_historical_nations = yes
+		tag = SER
+		is_free_or_tributary_trigger = yes
+		always = yes
+		NOT = { has_country_flag = serbian_collapse_happened }
+	}
+	can_start = {
+		always = yes
+	}
+	can_stop = {
+		stability = 3
+	}
+	progress = {
+		modifier = {
+			factor = 3
+			has_heir = no
+		}
+		
+	}
+	can_end = {
+		stability = 3
+	}
+	modifier = {
+		global_unrest = 10
+		global_manpower_modifier = -0.33
+	}
+	
+	on_start = BGMSC.1
+	on_end = BGMSC.2
+	
+	on_monthly = {
+		events = {
+			
+		}
+		random_events = {
+			
+		}
+	}
+}

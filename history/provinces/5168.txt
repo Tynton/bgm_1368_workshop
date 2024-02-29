@@ -1,0 +1,15 @@
+add_core = DAN
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = DAN
+base_tax = 2
+base_manpower = 2
+base_production = 3
+culture = danish
+trade_goods = livestock
+religion = catholic
+controller = DAN
+center_of_trade = 1
+is_city = yes

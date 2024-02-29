@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = palatine
+religion = catholic
+elector = yes
+technology_group = western
+capital = 78	# Mainz
+fixed_capital = 78 # Cannot move capital away from this province & no power cost to move to it
+
+1346.1.1 = {
+	monarch = {
+		name = "Gerlach"
+		dynasty = "von Nassau"
+		birth_date = 1322.1.1
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}

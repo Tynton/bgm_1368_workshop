@@ -1,0 +1,32 @@
+
+ARG = "countries/Argyn.txt"
+BGG = "countries/GerBerg.txt" #Julich
+BRY = "countries/Bryansk.txt"
+FRZ = "countries/Forez.txt"
+HER = "countries/Herat.txt"
+HMD = "countries/Hamid.txt"
+JAL = "countries/Jalayirid.txt"
+LIA = "countries/Liaoyang.txt"
+MCE = "countries/Macedonia.txt"
+MZF = "countries/Muzaffarid.txt"
+PDL = "countries/Podolia.txt"
+SEV = "countries/Severia.txt"
+THE = "countries/Thessaly.txt"
+TKE = "countries/Teke.txt"
+TSE = "countries/Trieste.txt"
+TST = "countries/Trastamara.txt"
+
+ARI = "countries/Mari.txt"
+VGA = "countries/VolgaBulgaria.txt"
+ANC = "countries/Ancona.txt"
+
+RVN = "countries/Ravenna.txt"
+MRM = "countries/Murom.txt"
+
+ZET = "countries/Zeta.txt"
+PRI = "countries/Prilep.txt"
+
+AVP = "countries/AvignonPap.txt"
+PPP = "countries/PisaPapacy.txt"
+
+GHN = "countries/Ghent.txt"

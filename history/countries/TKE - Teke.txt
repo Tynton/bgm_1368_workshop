@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = beylik_government
+government_rank = 1
+primary_culture = turkish
+religion = sunni
+technology_group = ottoman
+capital = 2298
+
+religious_school = hanafi_school
+
+1360.1.1 = {
+	monarch = {
+		name = "Mubarizuddin"
+		dynasty = "Tekeoglu"
+		birth_date = 1332.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}

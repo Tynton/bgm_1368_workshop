@@ -1,0 +1,36 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = angevin
+religion = catholic
+capital = 1773	# Mystras
+
+
+# Principality of Achaea #
+1368.1.1 = {
+	monarch = {
+		name = "Philippe II"
+		dynasty = "d'Anjou"
+		culture = angevin
+		birth_date = 1329.1.1
+		dip = 1
+		adm = 1
+		mil = 2
+	}
+
+	heir = {
+		name = "Giovanna"
+		monarch_name = "Giovanna I"
+		dynasty = "d'Anjou"
+		birth_date = 1325.12.1
+		death_date = 1382.7.27
+		claim = 95
+		adm = 5
+		dip = 1
+		mil = 4
+		female = yes
+	}
+	set_heir_flag = giovanna_i
+	add_heir_personality = infertile_personality
+}

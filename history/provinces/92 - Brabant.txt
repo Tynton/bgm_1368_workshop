@@ -1,0 +1,43 @@
+# 92 Brabant - Principal cities: Brussel & Mechelen
+owner = BRB
+controller = BRB
+is_city = yes
+capital = "Brussel"
+culture = brabantian
+religion = catholic
+hre = yes
+base_tax = 5
+base_production = 5
+trade_goods = cloth
+base_manpower = 2
+add_core = BRB
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1719.2.1 = { 
+	revolt = { size = 1 }
+}
+1719.9.19 = { 
+	revolt = { size = 1 }
+}
+1789.6.18 = { 
+	revolt = { size = 1 }
+}
+1790.1.10 = { 
+	revolt = { size = 1 }
+}
+1797.10.17 = { 
+	controller = FRA
+	add_core = FRA
+}
+1798.10.12 = { 
+	revolt = { size = 1 }
+}
+1798.12.5 = { 
+	revolt = { size = 1 }
+}
+1815.3.16 = { 
+	controller = NED
+	add_core = NED
+}

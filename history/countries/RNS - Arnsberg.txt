@@ -1,0 +1,18 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = hannoverian
+religion = catholic
+technology_group = western
+government_rank = 1
+capital = 82	# Köln
+fixed_capital = 82 # Cannot move capital away from this province & no power cost to move to it
+
+1368.1.1 = {
+	monarch = {
+		name = "Bishopric"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = iqta
+government_rank = 2
+primary_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 451 # Herat
+
+1360.1.1 = {
+	monarch = {
+		name = "Hussain"
+		dynasty = "Kartid"
+		birth_date = 1312.1.1
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

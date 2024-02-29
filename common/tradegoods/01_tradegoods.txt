@@ -1,0 +1,393 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new resources, make sure they are uniquely named.
+# Please add price definitions to prices.txt as well.
+
+#Base resources
+rubber = {
+	color = { 1.0 0.0 1.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 9 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		owner = { adm_tech = 42 }
+		owner = { has_institution = industrialization }
+		custom_trigger_tooltip = {
+			tooltip = trade_exports_tooltip
+			has_province_flag = trade_exports_located
+		}
+	}
+	
+	modifier = {
+		land_attrition = -0.15
+	}
+	
+	province = {
+		local_friendly_movement_speed = 0.1
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+oil = {
+	color = { 1.0 0.85 0.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 7 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		owner = { adm_tech = 45 }
+		owner = { has_institution = nationalism_institution }
+		custom_trigger_tooltip = {
+			tooltip = trade_exports_tooltip
+			has_province_flag = trade_exports_located
+		}
+	}
+	
+	modifier = {
+		global_trade_goods_size_modifier = 0.33
+	}
+	
+	province = {
+		local_development_cost_modifier = -0.15
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+uranium = {
+	color = { 0.0 0.0 1.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 4 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		provincial_institution_progress = {
+			which = electrification
+			value = 100
+		}
+		owner = { mil_tech = 49 }
+		owner = { has_institution = electrification }
+		custom_trigger_tooltip = {
+			tooltip = trade_exports_tooltip
+			has_province_flag = trade_exports_located
+		}
+	}
+	
+	modifier = {
+		technology_cost = -0.1
+	}
+	
+	province = {
+		local_production_efficiency = 0.15
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+tungsten = {
+	color = { 1.0 0.0 0.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 7 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		owner = { mil_tech = 42 }
+		owner = { has_institution = electrification }
+		custom_trigger_tooltip = {
+			tooltip = trade_exports_tooltip
+			has_province_flag = trade_exports_located
+		}
+	}
+	
+	modifier = {
+		artillery_levels_available_vs_fort = 2
+	}
+	
+	province = {
+		local_regiment_cost = -0.2
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+aluminium = {
+	color = { 0.0 1.0 0.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 7 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		owner = { adm_tech = 42 }
+		owner = { has_institution = electrification }
+		custom_trigger_tooltip = {
+			tooltip = trade_exports_tooltip
+			has_province_flag = trade_exports_located
+		}
+	}
+	
+	modifier = {
+		production_efficiency = 0.1
+	}
+	
+	province = {
+		local_production_efficiency = 0.1
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+steel = {
+	color = { 0.8 0.4 0.1 } #0.3 0.05 0.0 #0.8 0.7 0.55
+	modifier = {
+		global_regiment_cost = -0.1
+	}
+	province = {
+		local_development_cost = -0.2
+	}
+	chance = {
+		factor = 0
+	}
+}
+
+naval_equipment = {
+	color = { 0.1 0.4 0.5 }
+	modifier = {
+		naval_maintenance_modifier = -0.2
+	}
+	province = {
+		naval_forcelimit = 2.5
+		local_ship_cost = -0.2
+	}
+	chance = {
+		factor = 0
+	}
+}
+
+electronics = {
+	color = { 0.0 0.3 0.1 }
+	modifier = {
+		idea_cost = -0.2
+	}
+	province = {
+		local_unrest = -1
+	}
+	chance = {
+		factor = 0
+	}
+}
+
+automobile = {
+	color = { 0.5 1.0 0.0 }
+	modifier = {
+		prestige = 0.5
+	}
+	province = {
+		province_trade_power_modifier = 0.2
+	}
+	chance = {
+		factor = 0
+	}
+}
+
+cinema = {
+	color = { 1.0 1.0 1.0 }
+	modifier = {
+		all_power_cost = -0.1
+	}
+	province = {
+		local_development_cost_modifier = -0.1
+	}
+	chance = {
+		factor = 0
+	}
+}
+
+########################
+##NEW BLACK GOLD ITEMS##
+########################
+
+maize = {
+	color = { 0.35 0.65 0.1 }
+	modifier = {
+		movement_speed = 0.1
+	}
+	province = {
+		local_friendly_movement_speed = 0.1
+	}
+	chance = {
+		factor = 25
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+	}
+}
+
+potatoes = {
+	color = { 0.65 0.4 0.2 }
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	province = {
+		local_production_efficiency = 0.1
+	}
+	chance = {
+		factor = 25
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+	}
+}
+
+horses = {
+	color = { 0.5 0.175 0.1 }
+	modifier = {
+		cavalry_cost = -0.2
+	}
+	province = {
+		local_regiment_cost = -0.1
+	}
+	chance = {
+		factor = 10
+		modifier = {
+			factor = 0.05
+			OR = {
+				continent = south_america
+				continent = south_america
+			}
+		}
+
+		modifier = {
+			factor = 0.25
+			NOT = {
+				OR = {
+					has_terrain = farmlands
+					has_terrain = steppe
+					has_terrain = grasslands
+				}
+			}
+		}
+	}
+}
+
+beer = {
+	color = { 0.8 0.65 0.2 }
+	modifier = {
+		stability_cost_modifier = -0.1
+	}
+	province = {
+		local_years_of_nationalism = -5
+	}
+	chance = {
+		factor = 20
+		modifier = {
+			factor = 0.25
+			NOT = {
+				development = 10
+			}
+		}
+	}
+}
+
+silver = {
+	color = { 0.8 0.8 0.8 }
+	
+	chance = {
+		factor = 15
+		modifier = {
+			factor = 0
+			NOT = {
+				continent = south_america
+			}
+		}
+	}
+}
+
+rice = {
+	color = { 0.95 0.85 0.825 }
+	modifier = {
+		global_manpower_modifier = 0.15
+	}
+	province = {
+		local_manpower_modifier = 0.25
+	}
+	chance = {
+		factor = 25
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					superregion = china_superregion
+					superregion = east_indies_superregion
+				}
+			}
+		}
+	}
+}
+
+lumber = {
+	color = { 0.35 0.1 0.05 }
+	modifier = {
+		build_cost = -0.05
+	}
+	province = {
+		local_build_time = -0.2
+	}
+	chance = {
+		factor = 50
+		modifier = {
+			factor = 0.25
+			NOT = {
+				OR = {
+					colonial_region = colonial_canada
+					region = american_east_coast_region
+				}
+			}
+		}
+
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_terrain = woods
+				has_terrain = forest
+			}
+		}
+
+		modifier = {
+			factor = 0
+			NOT = {
+				OR = {
+					has_terrain = woods
+					has_terrain = forest
+				}
+			}
+		}
+	}
+}

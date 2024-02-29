@@ -1,0 +1,15 @@
+add_core = MNG
+owner = MNG
+controller = MNG
+is_city = no
+religion = confucianism
+culture = shandong_culture
+base_tax = 5
+base_manpower = 1
+base_production = 4
+trade_goods = incense
+center_of_trade = 1
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = QIC
+add_core = YUA

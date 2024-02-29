@@ -1,0 +1,18 @@
+#305 - Perm
+owner = PRM
+controller = PRM
+culture = uralic
+religion = tengri_pagan_reformed#Sami Shamanism
+base_tax = 2
+base_production = 2
+trade_goods = copper
+base_manpower = 1
+capital = "Yagoshiha"
+is_city = yes
+add_core = PRM
+discovered_by = eastern
+discovered_by = western
+discovered_by = nomad_group
+latent_trade_goods = { 
+	tungsten 
+}

@@ -1,0 +1,15 @@
+dependency = {
+	subject_type = vassal
+	first = SAV
+	second = GNV
+	start_date = 1368.1.1
+	end_date = 1452.1.1
+}
+
+dependency = {
+	subject_type = appanage
+	first = SAV
+	second = PDE
+	start_date = 1368.1.1
+	end_date = 1452.1.1
+}

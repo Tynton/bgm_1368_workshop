@@ -1,0 +1,66 @@
+namespace = BGM_MNG_missions
+
+# choose your strat
+country_event = {
+	id = BGM_MNG_missions.1
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		change_technology_group = western
+	}
+}
+
+country_event = {
+	id = BGM_MNG_missions.2
+	title = "BGM_MNG_missions.2.t"
+	desc = {
+		trigger = {
+			inflation = 3
+		}
+		desc = "BGM_MNG_missions.2.da"
+	}
+	desc = {
+		trigger = {
+			NOT = { inflation = 3 }
+		}
+		desc = "BGM_MNG_missions.2.db"
+	}
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_MNG_missions.2.a"
+		trigger = {
+			NOT = {
+				inflation = 3
+			}
+		}
+		set_country_flag = successful_in_fiat
+		remove_country_modifier = mng_hongwu_inflation
+		add_country_modifier = {
+			name = mng_successful_fiat
+			duration = -1
+		}
+	}
+
+	option = {
+		name = "BGM_MNG_missions.2.b"
+		trigger = {
+			inflation = 3
+		}
+		set_country_flag = failed_in_fiat
+		remove_country_modifier = mng_hongwu_inflation
+	}
+
+	after = {
+		set_country_flag = mng_inflation_crisis_happened
+	}
+}

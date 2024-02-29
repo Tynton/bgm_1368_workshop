@@ -1,0 +1,23 @@
+#4141 - Ditmarschen
+controller = DTT
+culture = schleswig_holsteiner
+religion = catholic
+hre = yes
+base_tax = 1
+base_production = 1
+trade_goods = grain
+base_manpower = 2
+capital = "Meldorf"
+is_city = yes
+add_core = DTT
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1810.12.13 = { 
+	controller = FRA
+	add_core = FRA
+}
+1814.4.11 = { 
+	controller = DAN
+}

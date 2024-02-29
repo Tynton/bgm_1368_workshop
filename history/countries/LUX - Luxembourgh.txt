@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = luxembourgish
+religion = catholic
+technology_group = western
+capital = 94	# Luxembourg
+fixed_capital = 94 # Cannot move capital away from this province & no power cost to move to it
+
+1353.1.1 = {
+	monarch = {
+		name = "Wenzel I"
+		dynasty = "von Luxemburg"
+		birth_date = 1337.2.25
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+
+	queen = {
+		name = "Jeanne"
+		dynasty = "de Reginar"
+		birth_date = 1322.6.24
+		culture = brabantian
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	set_consort_flag = jeanne_de_reginar
+}

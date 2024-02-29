@@ -1,0 +1,120 @@
+namespace = BGM_BOH_missions
+
+country_event = {
+	id = BGM_BOH_missions.1
+	title = "BGM_BOH_missions.1.t"
+	desc = "BGM_BOH_missions.1.d"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BOH_missions.1.a"
+		set_global_flag = boh_bank
+	}
+}
+
+country_event = {
+	id = BGM_BOH_missions.2
+	title = "BGM_BOH_missions.2.t"
+	desc = "BGM_BOH_missions.2.d"
+	picture = MILITARY_CAMP_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BOH_missions.2.a"
+		add_army_tradition = 15
+		add_country_modifier = {
+			name = boh_revolutionary_technology
+			duration = 1825
+		}
+	}
+}
+
+country_event = { #Enlightened Revolution
+	id = BGM_BOH_missions.3
+	title = "BGM_BOH_missions.3.t"
+	desc = "BGM_BOH_missions.3.d"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BOH_missions.3.a"
+		change_government = republic
+		add_government_reform = oligarchy_reform
+		kill_ruler = yes
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = 25
+		}
+		if = {
+			limit = { has_country_flag = is_boh_union }
+			restore_country_name = yes
+		}
+	}
+
+	option = {
+		name = "BGM_BOH_missions.3.b"
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = -25
+		}
+		every_owned_province = {
+			limit = {
+				province_has_center_of_trade_of_level = 1
+				OR = {
+					culture_group = west_slavic
+					region = poland_region
+					region = carpathia_region
+				}
+			}
+			random_list = {
+				40 = {
+					spawn_rebels = {
+						size = 1
+						type = revolutionary_rebels
+					}
+				}
+				35 = {
+					spawn_rebels = {
+						size = 2
+						type = revolutionary_rebels
+					}
+				}
+				25 = {
+					spawn_rebels = {
+						size = 3
+						type = revolutionary_rebels
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Military Doctrine
+	id = BGM_BOH_missions.4
+	title = "BGM_BOH_missions.4.t"
+	desc = "BGM_BOH_missions.4.d"
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BOH_missions.4.a" #The academies should focus on army quality
+		add_country_modifier = {
+			name = boh_quality_army
+			duration = -1
+		}
+	}
+
+	option = {
+		name = "BGM_BOH_missions.4.b" #The academies should focus on quantity
+		add_country_modifier = {
+			name = boh_quantity_army
+			duration = -1
+		}
+	}
+}

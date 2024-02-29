@@ -1,0 +1,45 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = western
+unit_type = western
+primary_culture = swedish
+religion = catholic
+add_accepted_culture = finnish
+capital = 1	#Stockholm
+
+national_focus = MIL
+
+change_estate_land_share = {
+	estate = estate_church
+	share = -6
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
+
+1316.6.20 = {
+	monarch = {
+		name = "Albrekt I"
+		dynasty = "von Mecklenburg"
+		birth_date = 1338.1.1
+		adm = 1
+		dip = 0
+		mil = 4
+	}
+	
+}
+
+1365.1.1 = {
+	queen = {
+		country_of_origin = SWE
+		name = "Richardis"
+		dynasty = "Hagen"
+		birth_date = 1418.1.1
+		death_date = 1451.1.1
+		female = yes
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

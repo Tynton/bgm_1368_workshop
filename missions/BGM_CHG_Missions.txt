@@ -1,0 +1,565 @@
+chg_row_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = CHG
+			tag = TIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	chg_transcaspia = {
+		icon = per_butcher_black_sheep
+		required_missions = { chg_destroy_transoxiana }
+		position = 3
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			area = transcaspia_area
+		}		
+		trigger = {
+			NOT = {
+				exists = KHI
+			}
+			transcaspia_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_prestige = 15
+			add_yearly_manpower = 0.5
+			add_years_of_income = 0.5
+		}
+	}
+}
+
+chg_row_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = CHG
+			tag = TIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	chg_destroy_transoxiana = {
+		icon = arm_etchmiadzin_cathedral
+		required_missions = { chg_mobilize_army }
+		position = 2
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				area = merv_area
+				area = herat_area
+				area = sistan_area
+				area = mashhad_area
+			}
+		}		
+		trigger = {
+			NOT = {
+				exists = TRS
+			}
+		}
+		effect = {
+			add_yearly_manpower = 0.33
+			if = {
+				limit = { 
+					exists = HER
+					HER = { is_neighbor_of = ROOT }
+				}
+				HER = {
+					every_owned_province = {
+						add_core = ROOT
+					}
+				}
+			}
+			else = {
+				merv_area = {
+					add_core = ROOT
+				}
+				herat_area = {
+					add_core = ROOT
+				}
+				sistan_area = {
+					add_core = ROOT
+				}
+				mashhad_area = {
+					add_core = ROOT
+				}
+			}
+			if = {
+				limit = { 
+					exists = KHI
+					KHI = { is_neighbor_of = ROOT }
+				}
+				KHI = {
+					every_owned_province = {
+						add_core = ROOT
+					}
+				}
+			}
+			else = {
+				khiva_area = {
+					add_core = ROOT
+				}
+				transcaspia_area = {
+					add_core = ROOT
+				}
+			}
+		}
+	}
+
+	chg_persian_dominion = {
+		icon = per_establish_eastern_defenses
+		required_missions = { chg_transcaspia chg_forged_in_blood }
+		position = 4
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			region = persia_region
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 25
+				all_owned_province = {
+					region = persia_region
+				}
+			}
+		}
+		effect = {
+			add_yearly_manpower = 0.33
+			caucasia_region = {
+				add_core = ROOT
+			}
+		}
+	}
+
+	chg_ruler_of_caucasia = {
+		icon = byz_avenge_1071
+		required_missions = { chg_persian_dominion }
+		position = 5
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			region = caucasia_region
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				all_owned_province = {
+					region = caucasia_region
+				}
+			}
+		}
+		effect = {
+			add_yearly_manpower = 0.33
+			anatolia_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+chg_row_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = CHG
+			tag = TIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	chg_mobilize_army = {
+		icon = mission_crusade_for_varna
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				owned_by = TRS
+				owned_by = AFG
+			}
+		}		
+		trigger = {
+			army_size_percentage = 1.0
+		}	
+		effect = {
+			add_yearly_manpower = 0.33
+			TRS = {
+				every_owned_province = {
+					add_core = ROOT
+				}
+			}
+			AFG = {
+				every_owned_province = {
+					add_core = ROOT
+				}
+			}
+		}
+	}
+
+	chg_forged_in_blood = {
+		icon = per_tim_legacy_of_timur
+		required_missions = { chg_destroy_transoxiana chg_destroy_afghanistan }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 428	# Teheran/Rayy
+				province_id = 429	# Isfahan
+				province_id = 446	# Herat
+				province_id = 451	# Kabul
+				province_id = 458	# Ferghana
+				province_id = 454	# Samarkand
+				province_id = 2213	# Qom
+				province_id = 2214	# Astarabad
+				province_id = 2218	# Shiraz
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}		
+		trigger = {
+			OR = {
+				owns_core_province = 428	# Teheran/Rayy
+				owns_core_province = 429	# Isfahan
+				owns_core_province = 446	# Herat
+				owns_core_province = 451	# Kabul
+				owns_core_province = 458	# Ferghana
+				owns_core_province = 454	# Samarkand
+				owns_core_province = 2213	# Qom
+				owns_core_province = 2214	# Astarabad
+				owns_core_province = 2218	# Shiraz
+			}
+		}	
+		effect = {
+			if = {
+				limit = { owns = 454 }
+				country_event = {
+					id = BGM_TIM_missions.1
+				}
+			}
+			change_tag = TIM
+			on_change_tag_effect = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = centralization_modifier
+				duration = 3650
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			persia_region = {
+				add_core = ROOT
+			}
+			khorasan_region = {
+				add_core = ROOT
+			}
+		}
+	}
+
+	chg_age_of_prosperity = {
+		icon = mission_persian_dawn
+		required_missions = { chg_forged_in_blood }
+		position = 4
+		provinces_to_highlight = {
+			
+		}		
+		trigger = {
+			stability = 3
+			prestige = 100
+		}	
+		effect = {
+			add_ruler_modifier = {
+				name = timurid_golden_era
+				duration = -1
+			}
+			if = {
+				limit = { owns = 446 }
+				country_event = {
+					id = BGM_TIM_missions.2
+				}
+			}
+		}
+	}
+
+	chg_politicking_golden_horde = {
+		icon = mission_consolidate_the_state
+		required_missions = { chg_ruler_of_caucasia chg_age_of_prosperity }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				owned_by = GLH
+				owned_by_subject_of = GLH
+			}
+		}		
+		trigger = {
+			total_development = GLH
+			GLH = {
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 0.33
+					}
+				}
+			}
+		}
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = GLH
+				months = 24
+			}
+		}
+	}
+}
+
+chg_row_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = CHG
+			tag = TIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	chg_destroy_afghanistan = {
+		icon = per_establish_eastern_defenses
+		required_missions = { chg_mobilize_army }
+		position = 2
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				area = kabulistan_area
+				area = balkh_area
+				area = ghor_area
+			}
+		}		
+		trigger = {
+			NOT = {
+				exists = AFG
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					area = kabulistan_area
+					area = balkh_area
+					area = ghor_area
+				}
+			}
+		}
+		effect = {
+			add_yearly_manpower = 0.33
+			if = {
+				limit = { 
+					exists = DLH 
+					DLH = { is_neighbor_of = ROOT }
+				}
+				DLH = {
+					every_owned_province = {
+						add_core = ROOT
+					}
+				}
+			}
+			else = {
+				kashmir_area = {
+					add_core = ROOT
+				}
+				sind_sagar_area = {
+					add_core = ROOT
+				}
+				lahore_area = {
+					add_core = ROOT
+				}
+				multan_area = {
+					add_core = ROOT
+				}
+				sirhind_area = {
+					add_core = ROOT
+				}
+				jangladesh_area = {
+					add_core = ROOT
+				}
+				upper_doab_area = {
+					add_core = ROOT
+				}
+				katehar_area = {
+					add_core = ROOT
+				}
+			}
+		}
+	}
+
+	chg_a_solid_base = {
+		icon = per_reform_our_defenses
+		required_missions = { chg_forged_in_blood chg_delhi }
+		position = 4
+		provinces_to_highlight = {
+			
+		}		
+		trigger = {
+			stability = 1
+			legitimacy_equivalent = 100
+			NOT = { num_of_loans = 1 }
+		}	
+		effect = {
+			add_prestige = 50
+			add_stability_or_adm_power = yes
+			if = {
+				limit = { NOT = { has_reform = steppe_horde } }
+				add_legitimacy_equivalent = {
+					amount = 25
+					republican_tradition = 10
+				}
+			}
+			custom_tooltip = tim_enable_mughals
+		}
+	}
+
+	chg_invade_the_chinese_empire = {
+		icon = mission_crisis_ming_dynasty
+		required_missions = { chg_age_of_prosperity chg_a_solid_base }
+		position = 5
+		provinces_to_highlight = {
+			owner = {
+				is_emperor_of_china = yes
+			}
+		}		
+		trigger = {
+			any_neighbor_country = {
+				is_emperor_of_china = yes
+				OR = {
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 1
+						}
+					}
+					NOT = {
+						imperial_mandate = 25
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = new_cb_timurid
+		}
+	}
+
+	chg_emperor_of_china = {
+		icon = eclipse
+		required_missions = { chg_invade_the_chinese_empire }
+		position = 6
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			is_emperor_of_china = yes
+		}
+		effect = {
+			tartary_superregion = {
+				add_permanent_claim = ROOT
+			}
+			manchuria_region = {
+				add_permanent_claim = ROOT
+			}
+			korea_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+chg_row_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = CHG
+			tag = TIM
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	chg_delhi = {
+		icon = mission_crush_delhi
+		required_missions = { chg_destroy_afghanistan }
+		position = 3
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				area = kashmir_area
+				area = sind_sagar_area
+				area = lahore_area
+				area = multan_area
+				area = sirhind_area
+				area = jangladesh_area
+				area = upper_doab_area
+				area = katehar_area
+			}
+		}		
+		trigger = {
+			NOT = {
+				exists = DLH
+			}
+			num_of_owned_provinces_with = {
+				value = 25
+				OR = {
+					area = kashmir_area
+					area = sind_sagar_area
+					area = lahore_area
+					area = multan_area
+					area = sirhind_area
+					area = jangladesh_area
+					area = upper_doab_area
+					area = katehar_area
+				}
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 30
+			}
+			add_prestige = 30
+			add_yearly_manpower = 0.5
+			add_years_of_income = 0.5
+		}
+	}
+}

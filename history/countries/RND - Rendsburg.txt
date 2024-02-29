@@ -1,0 +1,38 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = schleswig_holsteiner
+religion = catholic
+technology_group = western
+capital = 5151	# Kassel
+
+1368.1.1 = {
+	monarch = {
+		name = "Heinrich II"
+		dynasty = "von Rendsburg"
+		birth_date = 1317.1.1
+		adm = 3
+		dip = 5
+		mil = 6
+	}
+
+	queen = {
+		name = "Ingeborg"
+		dynasty = "von Mecklenburg"
+		birth_date = 1343.1.1
+		death_date = 9999.1.1
+		adm = 2
+		dip = 1
+		mil = 4
+	}
+
+	heir = {
+		name = "Gerhard"
+		monarch_name = "Gerhard VI"
+		birth_date = 1367.1.1
+		death_date = 9999.1.1
+		adm = 1
+		dip = 3
+		mil = 4
+	}
+}

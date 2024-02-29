@@ -1,0 +1,4 @@
+# = { "Duinkerken" "Duinkerke" }
+5155 = "Aarlen"
+
+#5132 = "Oostende"

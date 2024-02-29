@@ -1,0 +1,48 @@
+cb_enforce_protectorate = {
+
+	prerequisites = {
+		FROM = {
+			capital_scope = {
+				NOT = {
+					OR = {
+						continent = europe
+						continent = ROOT
+						continent = north_america
+						continent = south_america
+						continent = oceania
+					}
+				}
+			}
+			NOT = {
+				OR = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+					naval_strength = {
+						who = ROOT
+						value = 1
+					}
+					total_development = ROOT
+				}
+			}
+		}
+		OR = {
+			full_idea_group = exploration_ideas
+			full_idea_group = expansion_ideas
+		}
+
+		OR = {
+			is_neighbor_of = FROM
+			any_subject_country = {
+				OR = {
+					bgm_colonial_subject = yes
+					is_subject_of_type = vassal
+				}
+				is_neighbor_of = FROM
+			}
+		}
+	}
+
+	war_goal = take_capital_protectorate
+}

@@ -1,0 +1,13 @@
+add_core = MNG
+owner = MNG
+controller = MNG
+is_city = no
+religion = confucianism
+culture = gan
+base_tax = 4
+base_manpower = 3
+base_production = 6
+trade_goods = tea
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = YUA

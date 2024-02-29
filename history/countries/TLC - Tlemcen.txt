@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = barbary_sultanate_reform
+technology_group = muslim
+religion = sunni
+primary_culture = berber
+capital = 336 # Tlemcen
+fixed_capital = 336 # Cannot move capital away from this province & no power cost to move to it
+religious_school = maliki_school
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 5
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 5
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}
+
+1395.1.1 = {
+	monarch = {
+		name = "Abu Hammu II"
+		dynasty = "Zayyanid"
+		birth_date = 1324.1.1
+		adm = 6
+		dip = 3
+		mil = 5
+	}
+}

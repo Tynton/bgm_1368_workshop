@@ -1,0 +1,24 @@
+# 87 Calais - Principal cities: Calais
+controller = ENG
+capital = "Calais"
+culture = picard
+religion = catholic
+base_tax = 6
+base_production = 6
+trade_goods = fish
+base_manpower = 3
+is_city = yes
+extra_cost = 8
+center_of_trade = 1
+add_core = ENG
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1459.11.1 = { 
+	revolt = { size = 1 }
+}
+1461.6.1 = { 
+	revolt = { size = 1 }
+}
+fort_15th = yes

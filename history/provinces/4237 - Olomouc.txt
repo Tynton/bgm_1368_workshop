@@ -1,0 +1,44 @@
+#4237 - Olomouc
+owner = MVA
+controller = MVA
+capital = "Olm�tz"
+culture = moravian
+religion = catholic
+trade_goods = beer
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = MVA
+discovered_by = KAZ
+discovered_by = CRI
+discovered_by = GLH
+discovered_by = AST
+discovered_by = QAS
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+latent_trade_goods = { 
+	coal 
+}
+1419.12.1 = { 
+	revolt = { size = 1 }
+}
+1436.7.5 = { 
+	revolt = { size = 1 }
+}
+1526.8.30 = { 
+	controller = HAB
+	add_core = HAB
+}
+1618.5.23 = { 
+	controller = BOH
+	add_core = BOH
+}
+1620.11.8 = { 
+	controller = HAB
+}
+fort_15th = yes
+center_of_trade = 1

@@ -1,0 +1,25 @@
+# 4111 - Saintonge and Aunis
+controller = GUY
+capital = "Saintes"
+is_city = yes
+culture = poitevin
+religion = catholic
+base_tax = 5
+base_production = 5
+trade_goods = grain
+base_manpower = 3
+owner = GUY
+add_core = FRA
+add_core = POI
+add_core = GUY
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1652.2.15 = { 
+	revolt = { size = 1 }
+}
+1652.10.21 = { 
+	revolt = { size = 1 }
+}
+center_of_trade = 1

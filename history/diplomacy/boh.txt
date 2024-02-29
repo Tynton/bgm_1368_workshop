@@ -1,0 +1,30 @@
+
+union = {
+	first = BOH
+	second = SIL
+	start_date = 1368.1.1
+	end_date = 1486.3.12
+}
+dependency = {
+	subject_type = vassal
+	first = BOH
+	second = MVA
+	start_date = 1368.1.1
+	end_date = 1452.1.1
+}
+
+dependency = {
+	subject_type = vassal
+	first = BOH
+	second = GLG
+	start_date = 1368.1.1 #1344
+	end_date = 1452.1.1
+}
+
+dependency = {
+	subject_type = vassal
+	first = BOH
+	second = OPL
+	start_date = 1368.1.1 #1327
+	end_date = 1452.1.1
+}

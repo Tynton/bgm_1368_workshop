@@ -1,0 +1,35 @@
+government = theocracy
+add_government_reform = papacy_reform
+government_rank = 2
+primary_culture = umbrian
+religion = catholic
+technology_group = western
+capital = 202	# Roma
+fixed_capital = 202  # Cannot move capital away from this province & no power cost to move to it
+add_army_professionalism = 0.05
+
+change_estate_land_share = {
+	estate = estate_church
+	share = -30
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 5
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 5
+}
+
+1362.9.1 = {
+	monarch = {
+		name = "Urban V"
+		birth_date = 1310.1.1
+		culture = lengadocian
+		adm = 4
+		dip = 4
+		mil = 5
+	}
+}
+
+1399.1.1 = { decision = blasphemy_act }

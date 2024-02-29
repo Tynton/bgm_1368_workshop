@@ -1,0 +1,46 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = castillian
+add_accepted_culture = andalucian
+add_accepted_culture = leonese
+religion = catholic
+technology_group = western
+historical_rival = GRA
+historical_friend = POR
+capital = 2754 # La Mancha
+national_focus = MIL
+
+1366.3.13 = {
+	add_army_tradition = 33
+	monarch = {
+		name = "Henry II"
+		dynasty = "de Trastámara"
+		birth_date = 1334.1.13
+		death_date = 1379.5.29
+		claim = 95
+		adm = 4
+		dip = 5
+		mil = 4
+	}
+}
+
+1358.8.24 = {
+	heir = {
+		name = "Juan"
+		monarch_name = "Juan I"
+		dynasty = "de Trastámara"
+		birth_date = 1358.8.24
+		death_date = 1390.10.9
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+
+1368.1.1 = {
+	add_country_modifier = {
+		name = intimidating_conqueror
+		duration = 2920
+	}
+}

@@ -1,0 +1,26 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = dagestani
+religion = sunni
+technology_group = muslim
+capital = 4306 #Khumukh
+religious_school = shafii_school
+
+# Pulling a Hansa with the first 1st ruler ( as information before Umal-Muhammad is limited ).  Usually referred to only by their title.
+# Also with birth dates (seniority based system)
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Sultanate"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

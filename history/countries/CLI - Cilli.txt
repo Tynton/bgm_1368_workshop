@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = slovene
+capital = 4751 # Cilli
+
+1331.1.1 = {
+	monarch = {
+		name = "Ulrik I"
+		dynasty = "Celjski"
+		culture = austrian
+		birth_date = 1331.1.1
+		adm = 3
+		dip = 6
+		mil = 4
+	}
+	heir = {
+		name = "Herman"
+		monarch_name = "Herman I"
+		dynasty = "Celjski"
+		culture = austrian
+		birth_date = 1333.1.1
+		claim = 75
+		adm = 1
+		dip = 3
+		mil = 2
+	}
+}

@@ -1,0 +1,103 @@
+yuan_crisis = {
+	potential = {
+		normal_or_historical_nations = yes
+		tag = YUA
+		is_free_or_tributary_trigger = yes
+		always = yes
+		NOT = { has_country_flag = yuan_collapse_happened }
+		NOT = { has_country_flag = no_yuan_crisis }
+	}
+	can_start = {
+		exists = MNG
+	}
+	can_stop = {
+		NOT = {
+			exists = MNG
+		}
+	}
+	progress = {
+		modifier = {
+			factor = 0.5
+			is_in_deficit = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				stability = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				stability = 1
+			}
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				prestige = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 3
+		}
+		modifier = {
+			factor = 1
+			num_of_loans = 6
+		}
+		modifier = {
+			factor = 0.5
+			MNG = {
+				army_size = ROOT
+			}
+		}
+		modifier = {
+			factor = 1
+			MNG = {
+				army_strength = {
+					who = ROOT
+					value = 1.5
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			MNG = {
+				army_strength = {
+					who = ROOT
+					value = 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			always = yes
+		}
+	}
+	can_end = {
+		stability = 1
+		OR = {
+			adm_tech = 9
+			NOT = {
+				exists = MNG
+			}
+		}
+	}
+	modifier = {
+		stability_cost_modifier = 0.5
+		manpower_recovery_speed = -0.25
+	}
+	
+	on_start = BGMYC.1
+	on_end = BGMYC.2
+	
+	on_monthly = {
+		events = {
+			
+		}
+		random_events = {
+			
+		}
+	}
+}

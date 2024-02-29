@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = plutocratic_reform
+government_rank = 2
+technology_group = muslim
+religion = sunni
+primary_culture = gulf_arabic
+capital = 2999	# Ormuz Island
+religious_school = maliki_school
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Sultanate"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}

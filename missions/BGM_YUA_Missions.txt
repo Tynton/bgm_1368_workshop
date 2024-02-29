@@ -1,0 +1,808 @@
+# These missions should require X provinces in [region] rather than entire regions
+
+bgm_yua_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_yua_take_nanking = {
+		position = 1
+		icon = mission_destroy_the_horde
+		required_missions = {  }
+		provinces_to_highlight = {
+			province_id = 1821
+		}
+		trigger = {
+			OR = {
+				controls = 1821
+				owns_or_non_sovereign_subject_of = 1821
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+		}
+	}
+
+	bgm_yua_naval_armaments = {
+		position = 4
+		icon = mission_beyond_the_urals
+		required_missions = { bgm_yua_public_works bgm_yua_reexert_diplomatic_control }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			navy_size_percentage = 0.9
+			OR = {
+				heavy_ship_fraction = 0.25
+				galley_fraction = 0.4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = yuan_naval_arms_depots
+				duration = -1
+			}
+		}
+	}
+
+	bgm_yua_japan = {
+		position = 5
+		icon = jap_deploy_atakebune
+		required_missions = { bgm_yua_naval_armaments bgm_yua_korean_hegemon }
+		provinces_to_highlight = {
+			region = japan_region
+			has_port = yes
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 4
+				japan_region = {
+					type = all
+					has_port = yes
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			japan_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+bgm_yua_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_yua_stabilize_the_realm = {
+		position = 1
+		icon = mission_manchu_warrior
+		required_missions = {  }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			prestige = 0
+			stability = 3
+			OR = {
+				horde_unity = 100
+				meritocracy = 100
+			}
+		}
+		effect = {
+			custom_tooltip = bgm_yua_no_crisis
+			set_country_flag = no_yuan_crisis
+		}
+	}
+
+	bgm_yua_recover_tibet = {
+		position = 3
+		icon = mission_develop_the_scandes
+		required_missions = { bgm_yua_crush_the_red_turbans }
+		provinces_to_highlight = {
+			region = tibet_region
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 12
+				tibet_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 50
+		}
+	}
+	bgm_yua_vietnamese_hegemon = {
+		position = 4
+		icon = mng_expand_bogue
+		required_missions = { bgm_yua_reexert_diplomatic_control }
+		provinces_to_highlight = {
+			region = indo_china_region
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 12
+				indo_china_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 100
+		}
+	}
+}
+
+bgm_yua_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_yua_crush_the_red_turbans = {
+		position = 2
+		icon = mission_crisis_ming_dynasty
+		required_missions = { bgm_yua_take_nanking bgm_yua_stabilize_the_realm }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			is_emperor_of_china = yes
+			NOT = { exists = MNG }
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 50
+			}
+			add_prestige = 100
+
+			tibet_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	bgm_yua_reexert_diplomatic_control = {
+		position = 3
+		icon = mng_heavens_will
+		required_missions = { bgm_yua_crush_the_red_turbans }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 4
+					all_subject_country = {
+						is_subject_of_type = tributary_state
+					}
+				}
+				AND = {
+					is_emperor_of_china = no
+					NOT = { great_power_rank = 2 }
+				}
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+			add_meritocracy = 25
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = KOR
+				months = 180
+			}
+		}
+	}
+
+	bgm_yua_korean_hegemon = {
+		position = 4
+		icon = mng_kingdom_joseon
+		required_missions = { bgm_yua_reexert_diplomatic_control }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = KOR
+					}
+					calc_true_if = {
+						amount = 12
+						korea_region = {
+							type = all
+							owned_by = ROOT
+						}
+					}
+				}
+				AND = {
+					exists = KOR
+					KOR = {
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_dip_power = 100
+			every_province = {
+				limit = {
+					OR = {
+						area = kyushu_area
+						area = northern_kyushu
+						area = shikoku_area
+					}
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+bgm_yua_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_yua_public_works = {
+		position = 3
+		icon = mng_form_depots
+		required_missions = { bgm_yua_crush_the_red_turbans }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			is_emperor_of_china = yes
+			adm_tech = 8
+			years_of_income = 2.5
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					province_has_center_of_trade_of_level = 1
+				}
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+
+	bgm_yua_economic_control = {
+		position = 4
+		icon = mng_tame_china_sorrow
+		required_missions = { bgm_yua_public_works }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4233
+				province_id = 684
+				province_id = 1371
+			}
+		}
+		trigger = {
+			is_emperor_of_china = yes
+			4233 = {
+				is_strongest_trade_power = ROOT
+			}
+			684 = {
+				is_strongest_trade_power = ROOT
+			}
+			1371 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 5
+			add_years_of_income = 0.25
+		}
+	}
+
+	bgm_yua_taiwan = {
+		position = 5
+		icon = mission_asian_city
+		required_missions = { bgm_yua_naval_armaments bgm_yua_economic_control }
+		provinces_to_highlight = {
+			area = taiwan_area
+		}
+		trigger = {
+			num_of_transport = 25
+		}
+		effect = {
+			taiwan_area = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+	}
+}
+
+bgm_yua_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_yua_new_census = {
+		position = 3
+		icon = mng_shengshi_zhishi
+		required_missions = { bgm_yua_crush_the_red_turbans }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			is_emperor_of_china = yes
+			empire_of_china_has_active_decree = expand_bureaucracy_decree
+		}
+		effect = {
+			add_country_modifier = {
+				name = new_census
+				duration = 10950
+			}
+		}
+	}
+
+	bgm_yua_reformed_admin = {
+		position = 4
+		icon = mng_expand_yongle_dadian
+		required_missions = { bgm_yua_new_census }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			is_emperor_of_china = yes
+			empire_of_china_has_active_decree = conduct_census_decree
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			country_event = {
+				id = BGM_YUA_missions.1
+			}
+		}
+	}
+}
+
+bgm_yua_sino_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = mongol_yua }
+	}
+	has_country_shield = yes
+
+	bgm_yua_acceptance_chinese = {
+		position = 5
+		icon = mng_inward_perfection
+		required_missions = { bgm_yua_reformed_admin }
+		provinces_to_highlight = {
+			culture_group = east_asian
+			has_owner_accepted_culture = no
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 12
+				tibet_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			add_country_modifier = {
+				name = sino_yua_syncretic_culture
+				duration = -1
+			}
+			if = {
+				limit = { 
+					accepted_culture = chihan
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = chihan
+			}
+			if = {
+				limit = { 
+					accepted_culture = cantonese
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = cantonese
+			}
+			if = {
+				limit = { 
+					accepted_culture = jin
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = jin
+			}
+			if = {
+				limit = { 
+					accepted_culture = wu
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = wu
+			}
+			if = {
+				limit = { 
+					accepted_culture = chimin
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = chimin
+			}
+			if = {
+				limit = { 
+					accepted_culture = hakka
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = hakka
+			}
+			if = {
+				limit = { 
+					accepted_culture = gan
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = gan
+			}
+			if = {
+				limit = { 
+					accepted_culture = xiang
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = xiang
+			}
+			if = {
+				limit = { 
+					accepted_culture = sichuanese
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = sichuanese
+			}
+			if = {
+				limit = { 
+					accepted_culture = jianghuai
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = jianghuai
+			}
+			if = {
+				limit = { 
+					accepted_culture = xibei
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = xibei
+			}
+			if = {
+				limit = { 
+					accepted_culture = hubei
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = hubei
+			}
+			if = {
+				limit = { 
+					accepted_culture = zhongyuan
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = zhongyuan
+			}
+			if = {
+				limit = { 
+					accepted_culture = shandong_culture
+				}
+				add_dip_power = 100
+			}
+			else = {
+				add_accepted_culture = shandong_culture
+			}
+		}
+	}
+
+	bgm_yua_full_china_infrastructure = {
+		position = 6
+		icon = mission_book_of_royal_degrees
+		required_missions = { bgm_yua_acceptance_chinese }
+		provinces_to_highlight = {
+			superregion = china_superregion
+			NOT = { num_of_buildings_in_province = 3 }
+		}
+		trigger = {
+			china_superregion = {
+				type = all
+				num_of_buildings_in_province = 3
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 50
+			add_mandate = 50
+			change_primary_culture = altaic_new
+		}
+	}
+}
+
+bgm_yua_sino_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = mongol_yua }
+	}
+	has_country_shield = yes
+
+	bgm_yua_develop_urban_infrastructure = {
+		position = 5
+		icon = mng_jing_hang_grand_canal
+		required_missions = { bgm_yua_reformed_admin }
+		provinces_to_highlight = {
+			superregion = china_superregion
+			province_has_center_of_trade_of_level = 1
+			NOT = { province_has_center_of_trade_of_level = 2 }
+			NOT = { num_of_buildings_in_province = 4 }
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 8
+				china_superregion = {
+					type = all
+					province_has_center_of_trade_of_level = 2
+					num_of_buildings_in_province = 4
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = sino_yua_urban_infrastructure
+				duration = 14600
+			}
+		}
+	}
+
+	bgm_yua_great_projects = {
+		position = 6
+		icon = mng_jing_hang_grand_canal
+		required_missions = { bgm_yua_develop_urban_infrastructure bgm_yua_acceptance_chinese }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1816
+				province_id = 1821
+				#province_id = 2140
+			}
+		}
+		trigger = {
+			1816 = {
+				has_great_project = {
+					type = forbidden_city
+					tier = 3
+				}
+			}
+			1821 = {
+				has_great_project = {
+					type = porcelain_tower_nanjing
+					tier = 3
+				}
+			}
+			#2140 = {
+			#	has_great_project = {
+			#		type = temple_of_confucius
+			#		tier = 3
+			#	}
+			#}
+		}
+		effect = {
+			add_prestige = 25
+			add_mandate = 10
+		}
+	}
+}
+
+
+#############
+#MONGOL SIDE#
+#############
+
+bgm_yua_mongol_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = mongol_yua
+	}
+	has_country_shield = yes
+
+	bgm_yua_train_mongol_administrators = {
+		position = 5
+		icon = mng_deal_kama_kagyu
+		required_missions = { bgm_yua_reformed_admin }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			imperial_mandate = 50
+			stability = 1
+		}
+		effect = {
+			add_mandate = -10
+			add_country_modifier = {
+				name = mongol_yua_admin
+				duration = -1
+			}
+		}
+	}
+
+	bgm_yua_infinite_administration = {
+		position = 6
+		icon = mng_pure_land
+		required_missions = { bgm_yua_train_mongol_administrators }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			all_owned_province = {
+				OR = {
+					has_building = courthouse
+					has_building = town_hall
+				}
+				OR = {
+					has_building = temple
+					has_building = cathedral
+					has_building = tax_center
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = infinite_administration
+				duration = -1
+			}
+		}
+	}
+}
+
+bgm_yua_mongol_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = YUA
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = mongol_yua
+	}
+	has_country_shield = yes
+
+	bgm_yua_competent_leaders = {
+		position = 5
+		icon = qng_junji_chu
+		required_missions = { bgm_yua_reformed_admin }
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			has_adm_advisor = yes
+			has_dip_advisor = yes
+			has_mil_advisor = yes
+			monthly_adm = 12
+			monthly_dip = 12
+			monthly_mil = 12
+		}
+		effect = {
+			add_country_modifier = {
+				name = mongol_yua_idea_influx
+				duration = -1
+			}
+		}
+	}
+
+	bgm_yua_mongol_cultural_prestige = {
+		position = 6
+		icon = mng_outer_city_beijing
+		required_missions = { bgm_yua_competent_leaders bgm_yua_train_mongol_administrators }
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			meritocracy = 80
+			prestige = 100
+			stability = 3
+			china_superregion = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			reset_golden_age = yes
+			every_owned_province = {
+				limit = {
+					superregion = china_superregion
+				}
+				change_culture = ROOT
+			}
+		}
+	}
+}

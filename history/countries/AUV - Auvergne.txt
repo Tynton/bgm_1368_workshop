@@ -1,0 +1,34 @@
+government = monarchy
+add_government_reform = appanage_reform
+government_rank = 1
+technology_group = western
+primary_culture = auvergnat
+religion = catholic
+capital = 199	# Clermont
+#fixed_capital = 199 # Cannot move capital away from this province & no power cost to move to it
+
+
+1326.1.1 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "d'Auvergne"
+		birth_date = 1326.1.1
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+
+1394.1.1 = {
+	heir = {
+		name = "Jean"
+		monarch_name = "Jean II"
+		dynasty = "d'Auvergne"
+		birth_date = 1330.1.1
+		death_date = 1404.9.28
+		claim = 85
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

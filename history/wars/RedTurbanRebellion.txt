@@ -1,0 +1,16 @@
+name = "Red Turban Rebellion"
+war_goal = {
+	type = take_capital_personal_union
+	casus_belli = cb_restore_personal_union
+	tag = MNG
+}
+
+1368.1.1 = {
+	add_attacker = YUA
+	add_defender = MNG
+}
+
+1369.1.1 = {
+	add_attacker = YUA
+	add_defender = MNG
+}

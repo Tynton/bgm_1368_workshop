@@ -1,0 +1,23 @@
+government = tribal
+add_government_reform = tribal_federation
+technology_group = muslim
+primary_culture = bedouin_arabic
+religion = sunni
+capital = 393 # Jabal Shammar
+religious_school = shafii_school
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Emirate"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

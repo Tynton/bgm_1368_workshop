@@ -1,0 +1,391 @@
+namespace = BGM_GOV
+
+
+#ruler death election
+
+country_event = {
+	id = BGM_GOV.1
+	title = "BGM_GOV.1.t"
+	desc = "BGM_GOV.1.d"
+	picture = BUREAU_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GOV.1.a"
+		
+		
+	}
+}
+
+#ideology change
+
+country_event = {
+	id = BGM_GOV.2
+	title = "BGM_GOV.2.t"
+	desc = "BGM_GOV.2.d"
+	picture = BUREAU_eventPicture
+	
+	is_triggered_only = yes
+
+	#Remain
+	
+	option = {
+		name = "BGM_GOV.2.a"
+		
+		
+	}
+
+	#Change
+
+	option = {
+		name = "BGM_GOV.2.b"
+		
+		change_government = democracy_govt
+		add_government_reform = parliamentary_republic_reform_bgm
+
+		ai_chance = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					calc_true_if = {
+						amount = 5
+						all_country = {
+							is_great_power = yes
+							has_reform = democratic_mechanic
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGM_GOV.3
+	title = none
+	desc = none
+	picture = none
+
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = none
+		every_subject_country = {
+			limit = {
+				is_subject_other_than_tributary_trigger = yes
+				NOT = {
+					OR = {
+						is_subject_of_type = crown_colony
+						is_subject_of_type = private_enterprise
+						is_subject_of_type = self_governing_colony
+						is_subject_of_type = colony
+					}
+				}
+			}
+			save_event_target_as = subj
+			if = {
+				limit = {
+					NOT = {
+						ROOT = {
+							any_subject_country = {
+								culture_group = event_target:subj
+								NOT = { event_target:subj = { total_development = PREV } }
+								NOT = { tag = event_target:subj }
+								is_subject_other_than_tributary_trigger = yes
+								NOT = {
+									OR = {
+										is_subject_of_type = crown_colony
+										is_subject_of_type = private_enterprise
+										is_subject_of_type = self_governing_colony
+										is_subject_of_type = colony
+									}
+								}
+							}
+						}
+					}
+				}
+				ROOT = {
+					every_subject_country = {
+						limit = {
+							ai = yes
+							culture_group = event_target:subj
+							NOT = { tag = event_target:subj }
+							is_subject_other_than_tributary_trigger = yes
+							NOT = {
+								OR = {
+									is_subject_of_type = crown_colony
+									is_subject_of_type = private_enterprise
+									is_subject_of_type = self_governing_colony
+									is_subject_of_type = colony
+								}
+							}
+						}
+						event_target:subj = {
+							inherit = PREV
+							ROOT = {
+								add_republican_tradition = 5
+								add_legitimacy = 5
+							}
+						}
+					}
+					every_subject_country = {
+						limit = {
+							NOT = { culture_group = event_target:subj }
+							any_owned_province = {
+								culture_group = event_target:subj
+							}
+							is_subject_other_than_tributary_trigger = yes
+							NOT = {
+								OR = {
+									is_subject_of_type = crown_colony
+									is_subject_of_type = private_enterprise
+									is_subject_of_type = self_governing_colony
+									is_subject_of_type = colony
+								}
+							}
+						}
+						every_owned_province = {
+							limit = {
+								culture_group = event_target:subj
+							}
+							cede_province = event_target:subj
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { overlord = { culture_group = germanic } }
+					culture_group = germanic
+					NOT = { exists = GER }
+				}
+				change_tag = GER
+			}
+			else_if = {
+				limit = {
+					NOT = { overlord = { culture_group = latin } }
+					culture_group = latin
+					NOT = { exists = ITA }
+				}
+				change_tag = ITA
+			}
+			else_if = {
+				limit = {
+					NOT = { overlord = { culture_group = occitan } }
+					culture_group = occitan
+					NOT = { exists = OCC }
+				}
+				change_tag = OCC
+			}
+
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = sister_republic
+						culture_group = ROOT
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = sister_republic
+						culture_group = ROOT
+					}
+					ROOT = { inherit = PREV }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGM_GOV.4
+	title = "BGM_GOV.4.t"
+	desc = "BGM_GOV.4.d"
+	picture = RELIGIOUS_WARS_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "BGM_GOV.4.a" #secularize
+		add_country_modifier = {
+			name = aev_secular
+			duration = -1
+		}
+	}
+	option = {
+		name = "BGM_GOV.4.b" #religion
+		add_country_modifier = {
+			name = aev_con
+			duration = -1
+		}
+	}
+}
+
+#Administration
+
+country_event = {
+	id = BGM_GOV.5
+	title = "BGM_GOV.5.t"
+	desc = "BGM_GOV.5.d"
+	picture = BUREAU_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "BGM_GOV.5.a"
+		if = {
+			limit = {
+				adm_tech = 35
+			}
+			add_country_modifier = {
+				name = government_one
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				adm_tech = 37
+				has_country_modifier = government_one
+			}
+			add_country_modifier = {
+				name = government_two
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				adm_tech = 39
+				has_country_modifier = government_one
+			}
+			add_country_modifier = {
+				name = government_three
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGM_GOV.6
+	title = "BGM_GOV.6.t"
+	desc = "BGM_GOV.6.d"
+	picture = BUREAU_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "BGM_GOV.6.a"
+		if = {
+			limit = {
+				dip_tech = 43
+			}
+			add_country_modifier = {
+				name = industrial_medicine
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				dip_tech = 45
+				has_country_modifier = industrial_medicine
+			}
+			add_country_modifier = {
+				name = industrial_medicine_ii
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				dip_tech = 47
+				has_country_modifier = industrial_medicine_ii
+			}
+			add_country_modifier = {
+				name = industrial_medicine_iii
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				dip_tech = 49
+				has_country_modifier = industrial_medicine_iii
+			}
+			add_country_modifier = {
+				name = modern_medicine
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				dip_tech = 51
+				has_country_modifier = modern_medicine
+			}
+			add_country_modifier = {
+				name = modern_medicine_ii
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				dip_tech = 53
+				has_country_modifier = modern_medicine_ii
+			}
+			add_country_modifier = {
+				name = modern_medicine_iii
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = BGM_GOV.7
+	title = "BGM_GOV.7.t"
+	desc = "BGM_GOV.7.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "BGM_GOV.7.a"
+		if = {
+			limit = {
+				adm_tech = 23
+				NOT = { adm_tech = 29 }
+			}
+			add_country_modifier = {
+				name = ae_reduct_one
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				adm_tech = 29
+				NOT = { adm_tech = 33 }
+			}
+			add_country_modifier = {
+				name = ae_reduct_two
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				adm_tech = 33
+				NOT = { adm_tech = 37 }
+			}
+			add_country_modifier = {
+				name = ae_reduct_three
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				adm_tech = 37
+			}
+			add_country_modifier = {
+				name = ae_reduct_four
+				duration = -1
+			}
+		}
+	}
+}

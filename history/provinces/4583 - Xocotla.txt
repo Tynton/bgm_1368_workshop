@@ -1,0 +1,18 @@
+# No previous file for Xocotla
+owner = TLX
+controller = TLX
+culture = aztek
+religion = nahuatl
+capital = "Xocotla"
+trade_goods = sugar
+base_tax = 1
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = TLX
+discovered_by = mesoamerican
+1519.1.1 = { discovered_by = SPA }
+1520.1.1 = { controller = SPA add_core = SPA }
+1525.1.1 = { religion = Catholic }
+1810.9.16 = { add_core = MEX controller = SPA }
+1812.8.10 = { controller = MEX }

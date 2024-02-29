@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = courts_of_navarra
+primary_culture = basque
+religion = catholic
+technology_group = western
+capital = 210	# Pamplona
+
+
+1349.10.6 = {
+	monarch = {
+		name = "Carlos II"
+		dynasty = "de Évreux"
+		birth_date = 1332.10.10
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+
+1362.7.22 = {
+	heir = {
+		name = "Carlos"
+		monarch_name = "Carlos III"
+		dynasty = "de Évreux"
+		birth_date = 1361.1.1
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

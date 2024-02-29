@@ -1,0 +1,29 @@
+# 4751 - Cilli
+owner = CLI
+controller = CLI
+culture = slovene
+religion = catholic
+base_tax = 2
+base_production = 3
+trade_goods = wine
+base_manpower = 1
+capital = "Celje"
+is_city = yes
+hre = yes
+add_core = CLI
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = KAZ
+discovered_by = CRI
+discovered_by = GLH
+discovered_by = AST
+discovered_by = QAS
+1452.1.1 = { 
+	controller = STY
+}
+1456.11.9 = { 
+	controller = HAB
+	add_core = HAB
+}

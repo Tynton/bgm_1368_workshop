@@ -1,0 +1,15 @@
+add_core = KOL
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = KOL
+culture = ripuarian
+trade_goods = cloth
+religion = catholic
+hre = yes
+controller = KOL
+is_city = yes
+base_tax = 2
+base_manpower = 2
+base_production = 2

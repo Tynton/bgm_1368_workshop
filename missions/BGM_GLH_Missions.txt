@@ -1,0 +1,881 @@
+glh_row_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_iron_ores = {
+		icon = mission_iron_and_copper
+		required_missions = { glh_free_from_crisis }
+		position = 3
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 8
+				trade_goods = iron
+				base_production = 4
+			}
+		}
+		effect = {
+			add_mil_power = 200
+		}
+	}
+
+	glh_copper_ores = {
+		icon = per_create_the_tupchi
+		required_missions = { glh_iron_ores }
+		position = 4
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				trade_goods = copper
+				base_production = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = glh_copper_ore
+				duration = 18250
+			}
+		}
+	}
+
+	glh_war_economy_mission = {
+		icon = mission_state_manufactories
+		required_missions = { glh_copper_ores }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					trade_goods = copper
+					trade_goods = iron
+				}
+				has_manufactory_trigger = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = glh_war_economy
+				duration = 10950
+			}
+			add_country_modifier = {
+				name = glh_weapons_production
+				duration = -1
+			}
+		}
+	}
+}
+
+glh_row_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_depose_mamai = {
+		icon = mission_consolidate_the_state
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = no_mamai_tooltip
+				NOT = { general_with_name = "Mamai" }
+				NOT = {
+					has_leader_with = {
+						fire = 1
+						shock = 6
+						manuever = 6
+						siege = 1
+						general = yes
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+		}
+	}
+}
+
+glh_row_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_recover_stability = {
+		icon = per_establish_western_defenses
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			owned_by = ROOT
+			unrest = 1
+		}		
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					unrest = 1
+				}
+			}
+			stability = 0
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+		}
+	}
+
+	glh_free_from_crisis = {
+		icon = per_convert_persia
+		required_missions = { glh_depose_mamai glh_recover_stability glh_recover_dignity }
+		position = 2
+		provinces_to_highlight = {
+			owned_by = ROOT
+			unrest = 1
+		}		
+		trigger = {
+			NOT = {
+				has_disaster = great_horde_collapse
+			}
+			NOT = {
+				any_owned_province = {
+					unrest = 1
+				}
+			}
+			stability = 0
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = glh_new_golden_era
+				duration = 10950
+			}
+		}
+	}
+}
+
+glh_row_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_recover_dignity = {
+		icon = mission_serfdom
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			prestige = 25
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_prestige = 15
+		}
+	}
+
+	glh_future_of_glh = {
+		icon = mission_silk_road
+		required_missions = { glh_free_from_crisis }
+		position = 3
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			stability = 1
+			prestige = 25
+			NOT = {
+				any_owned_province = {
+					devastation = 15
+				}
+			}
+			NOT = { average_unrest = 2 }
+		}
+		effect = {
+			country_event = {
+				id = BGM_GLH_missions.1
+			}
+		}
+	}
+}
+
+glh_row_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_again_great_power = {
+		icon = mission_the_grand_bazaar
+		required_missions = { glh_recover_dignity }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			is_great_power = yes
+		}
+		effect = {
+			add_dip_power = 100
+		}
+	}
+}
+
+glh_row_slot_2_monarchy = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		has_country_flag = glh_reform
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_destroy_kazakh = {
+		icon = mam_baghdad
+		required_missions = { glh_future_of_glh }
+		position = 4
+		provinces_to_highlight = {
+			owned_by = KZH
+		}		
+		trigger = {
+			any_owned_province = {
+				is_core = KAZ
+			}
+			NOT = {
+				exists = KZH
+			}
+		}
+		effect = {
+			country_event = {
+				id = BGM_GLH_missions.3
+			}
+		}
+	}
+
+	glh_unite_the_claims = {
+		icon = per_balance_of_power
+		required_missions = { glh_destroy_kazakh }
+		position = 5
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			is_core = KZH
+		}		
+		trigger = {
+			NOT = {
+				any_province = {
+					is_core = KZH
+					owner = {
+						NOT = {
+							OR = {
+								is_subject_of = ROOT
+								tag = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = BGM_GLH_missions.3
+			}
+		}
+	}
+
+	glh_claim_caliphate = {
+		icon = per_unify_islam
+		required_missions = { glh_unite_the_claims glh_secret_police glh_seat_of_government glh_elite_cavalry }
+		position = 6
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			religion_group = muslim
+		}		
+		trigger = {
+			is_hegemon = yes
+		}
+		effect = {
+			custom_tooltip = caliphal_restoration
+			hidden_effect = {
+				every_province = {
+					limit = {
+						religion_group = muslim
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+glh_row_slot_3_monarchy = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		has_country_flag = glh_reform
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_arrest_corruption = {
+		icon = per_qizilbash_loyalty
+		required_missions = { glh_future_of_glh }
+		position = 4
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			NOT = {
+				corruption = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = glh_arrested_corruption
+				duration = 10950
+			}
+		}
+	}
+
+	glh_secret_police = {
+		icon = mission_kowtow
+		required_missions = { glh_arrest_corruption }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			full_idea_group = spy_ideas
+		}
+		effect = {
+			add_country_modifier = {
+				name = glh_secret_police
+				duration = -1
+			}
+		}
+	}
+}
+
+glh_row_slot_4_monarchy = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		has_country_flag = glh_reform
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_control_the_factions = {
+		icon = per_protect_the_west_iranian
+		required_missions = { glh_future_of_glh }
+		position = 4
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			NOT = {
+				estate_influence = {
+					estate = all
+					influence = 40
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = glh_standing_army
+				duration = 10950
+			}
+		}
+	}
+
+	glh_seat_of_government = {
+		icon = mam_city_thousand_minarets
+		required_missions = { glh_control_the_factions }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			NOT = {
+				estate_influence = {
+					estate = all
+					influence = 40
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = BGM_GLH_missions.2
+			}
+		}
+	}
+}
+
+glh_row_slot_5_monarchy = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		has_country_flag = glh_reform
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_a_standing_army = {
+		icon = mission_ottoman_early_army
+		required_missions = { glh_future_of_glh }
+		position = 4
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			army_size_percentage = 0.9
+		}
+		effect = {
+			add_army_professionalism = 0.05
+
+			add_country_modifier = {
+				name = glh_standing_army
+				duration = 18250
+			}
+		}
+	}
+
+	glh_elite_cavalry = {
+		icon = per_recruit_the_qizilbash
+		required_missions = { glh_a_standing_army }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			has_global_modifier_value = {
+				which = cavalry_power
+				value = 0.25
+			}
+		}
+		effect = {
+			add_army_professionalism = 0.05
+
+			add_country_modifier = {
+				name = glh_standing_army
+				duration = 18250
+			}
+		}
+	}
+}
+
+#############HORDE
+
+glh_row_slot_2_horde = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { has_country_flag = glh_reform }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_destroy_kazakh_horde = {
+		icon = per_purify_the_holy_sites
+		required_missions = { glh_future_of_glh }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = lower_yik_area
+				area = bashkiria_area
+				area = nogai_area
+				area = kazakhstan_area
+			}
+			NOT = { owned_by = ROOT }
+		}		
+		trigger = {
+			stability = 2
+		}
+		effect = {
+			if = {
+				limit = { ruler_has_personality = legendary_conqueror_personality }
+				add_yearly_manpower = 0.25
+				lower_yik_area = {
+					add_core = ROOT
+				}
+				bashkiria_area = {
+					add_core = ROOT
+				}
+				nogai_area = {
+					add_core = ROOT
+				}
+				kazakhstan_area = {
+					add_core = ROOT
+				}
+			}
+			else = {
+				lower_yik_area = {
+					add_permanent_claim = ROOT
+				}
+				bashkiria_area = {
+					add_permanent_claim = ROOT
+				}
+				nogai_area = {
+					add_permanent_claim = ROOT
+				}
+				kazakhstan_area = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	glh_conquer_the_tartary = {
+		icon = mam_highway_empire
+		required_missions = { glh_destroy_kazakh_horde }
+		position = 5
+		provinces_to_highlight = {
+			superregion = tartary_superregion
+			NOT = { owned_by = ROOT }
+		}		
+		trigger = {
+			NOT = {
+				any_province = {
+					is_core = KZH
+					owner = {
+						NOT = {
+							OR = {
+								is_subject_of = ROOT
+								tag = ROOT
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { ruler_has_personality = legendary_conqueror_personality }
+				add_yearly_manpower = 0.33
+				tartary_superregion = {
+					add_core = ROOT
+				}
+			}
+			else = {
+				tartary_superregion = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	glh_conquer_china = {
+		icon = eclipse
+		required_missions = { glh_conquer_the_tartary glh_tighten_the_grip glh_destroy_prospective_powers glh_veteran_army }
+		position = 6
+		provinces_to_highlight = {
+			owner = {
+				is_emperor_of_china = yes
+				NOT = { tag = ROOT }
+			}
+		}		
+		trigger = {
+			any_neighbor_country = {
+				is_emperor_of_china = yes
+			}
+		}
+		effect = {
+			custom_tooltip = new_cb_timurid
+		}
+	}
+}
+
+glh_row_slot_3_horde = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { has_country_flag = glh_reform }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_seize_the_urals = {
+		icon = mission_amur_acquisition
+		required_missions = { glh_future_of_glh }
+		position = 4
+		provinces_to_highlight = {
+			region = ural_region
+			NOT = { owned_by = ROOT }
+		}		
+		trigger = {
+			army_size_percentage = 0.9
+		}
+		effect = {
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = ural_region
+					}
+				}
+				ROOT = {
+					create_subject = {
+						subject_type = appanage
+						who = PREV
+					}
+				}
+			}
+			if = {
+				limit = { ruler_has_personality = legendary_conqueror_personality }
+				add_yearly_manpower = 0.33
+				ural_region = {
+					add_core = ROOT
+				}
+			}
+			else = {
+				ural_region = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	glh_tighten_the_grip = {
+		icon = mission_kowtow
+		required_missions = { glh_seize_the_urals }
+		position = 5
+		provinces_to_highlight = {
+			region = russia_region
+			NOT = { owned_by = ROOT }
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 25
+				all_owned_province = {
+					region = ural_region
+				}
+			}
+		}
+		effect = {
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = russia_region
+					}
+				}
+				ROOT = {
+					create_subject = {
+						subject_type = appanage
+						who = PREV
+					}
+				}
+			}
+			if = {
+				limit = { ruler_has_personality = legendary_conqueror_personality }
+				add_yearly_manpower = 0.33
+				russia_region = {
+					add_core = ROOT
+				}
+			}
+			else = {
+				russia_region = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+glh_row_slot_4_horde = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { has_country_flag = glh_reform }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_caucasus_region = {
+		icon = mission_the_caucasus_rus
+		required_missions = { glh_future_of_glh }
+		position = 4
+		provinces_to_highlight = {
+			region = caucasia_region
+			NOT = { owned_by = ROOT }
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 25
+				all_owned_province = {
+					region = caucasia_region
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { ruler_has_personality = legendary_conqueror_personality }
+				add_yearly_manpower = 0.33
+				persia_region = {
+					add_core = ROOT
+				}
+			}
+			else = {
+				persia_region = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	glh_destroy_prospective_powers = {
+		icon = mzf_destroy_jalayirids
+		required_missions = { glh_caucasus_region }
+		position = 5
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			region = persia_region
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 40
+				all_owned_province = {
+					region = persia_region
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { ruler_has_personality = legendary_conqueror_personality }
+				add_yearly_manpower = 0.33
+				khorasan_region = {
+					add_core = ROOT
+				}
+				mashriq_region = {
+					add_core = ROOT
+				}
+			}
+			else = {
+				khorasan_region = {
+					add_permanent_claim = ROOT
+				}
+				mashriq_region = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+glh_row_slot_5_horde = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = GLH
+		NOT = { has_country_flag = glh_reform }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	glh_horde_army_reform = {
+		icon = mission_ottoman_early_army
+		required_missions = { glh_future_of_glh }
+		position = 4
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			army_tradition = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = glh_horde_reforms_i
+				duration = -1
+			}
+		}
+	}
+
+	glh_veteran_army = {
+		icon = per_recruit_the_qizilbash
+		required_missions = { glh_horde_army_reform }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			army_tradition = 75
+		}
+		effect = {
+			add_country_modifier = {
+				name = glh_horde_reforms_ii
+				duration = -1
+			}
+		}
+	}
+}

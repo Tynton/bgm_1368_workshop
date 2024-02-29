@@ -1,0 +1,501 @@
+
+fabricator = {
+	cost = 3000
+	time = 24
+	
+	modifier = {
+		local_production_efficiency = 2
+		local_manpower_modifier = 0.5
+		land_forcelimit = 1
+	}
+
+	make_obsolete = factory_infrastructure
+	
+	allow_in_gold_provinces = no
+
+	on_built = {
+		add_development_from_building = {
+			building = fabricator
+			type = production
+			value = 3
+		}
+		if = {
+			limit = {
+				OR = {
+					has_terrain = woods
+					has_terrain = hills
+					has_terrain = forest
+					has_terrain = highlands
+					has_terrain = mountain
+				}
+			}
+			add_province_modifier = {
+				name = factory_dev
+				duration = -1
+			}
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = fabricator
+			type = production
+			value = 3
+		}
+		remove_province_modifier = factory_dev
+	}
+	on_obsolete = {
+	}
+
+	ai_will_do = {
+		factor = 8
+
+		modifier = {
+			factor = 10
+			has_building = counting_house
+		}
+
+		modifier = {
+			factor = 10
+			owner = { adm_tech = 33 }
+		}
+
+		modifier = {
+			factor = 10
+			owner = { adm_tech = 36 }
+		}
+
+		modifier = {
+			factor = 2
+			OR = {
+				trade_goods = iron
+				trade_goods = cloth
+				trade_goods = cloves
+				trade_goods = silk
+				trade_goods = dyes
+				trade_goods = paper
+				trade_goods = coal
+				trade_goods = cotton
+				trade_goods = cinema
+				trade_goods = fur
+				trade_goods = gems
+				trade_goods = ivory
+				trade_goods = oil
+				trade_goods = rubber
+				trade_goods = sugar
+				trade_goods = steel
+				trade_goods = tobacco
+			}
+		}
+
+		modifier = {
+			factor = 25
+			owner = {
+				ruler_has_personality = architectural_visionary_personality
+			}
+		}
+
+		modifier = {
+			factor = 2
+			owner = {
+				NOT = {
+					has_global_modifier_value = {
+						which = build_cost
+						value = -0.1
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 2
+			owner = {
+				NOT = {
+					has_global_modifier_value = {
+						which = build_cost
+						value = -0.15
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 4
+			owner = {
+				NOT = {
+					has_global_modifier_value = {
+						which = build_cost
+						value = -0.2
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 8
+			owner = {
+				NOT = {
+					has_global_modifier_value = {
+						which = build_cost
+						value = -0.25
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 16
+			owner = {
+				NOT = {
+					has_global_modifier_value = {
+						which = build_cost
+						value = -0.3
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.1
+			owner = {
+				has_global_modifier_value = {
+					which = build_cost
+					value = 0.05
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0
+			owner = {
+				ruler_has_personality = obsessive_perfectionist_personality
+			}
+		}
+
+		modifier = {
+			factor = 2
+			owner = {
+				adm_tech = 10
+			}
+		}
+	}
+}
+
+railroad = {
+	cost = 50
+	time = 6
+	
+	modifier = {
+		allowed_num_of_buildings = 1
+		local_friendly_movement_speed = 0.25
+		local_development_cost = -0.05
+		local_tax_modifier = 0.05
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = railroad
+			type = production
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = railroad
+			type = production
+			value = 1
+		}
+	}
+
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+public_transport = {
+	cost = 250
+	time = 18
+	
+	modifier = {
+		allowed_num_of_buildings = 1
+		local_friendly_movement_speed = 0.33
+		local_development_cost = -0.1
+		local_tax_modifier = 0.1
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = public_transport
+			type = production
+			value = 1
+		}
+
+		add_development_from_building = {
+			building = public_transport
+			type = tax
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = public_transport
+			type = production
+			value = 1
+		}
+
+		remove_development_from_building = {
+			building = public_transport
+			type = tax
+			value = 1
+		}
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+power_plant = {
+	cost = 1750
+	time = 24
+	
+	modifier = {
+		local_tax_modifier = 0.1
+		local_build_cost = -0.1
+		local_build_time = -0.15
+		local_development_cost_modifier = -0.1
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = power_plant
+			type = production
+			value = 1
+		}
+
+		add_development_from_building = {
+			building = power_plant
+			type = tax
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = power_plant
+			type = production
+			value = 1
+		}
+
+		remove_development_from_building = {
+			building = power_plant
+			type = tax
+			value = 1
+		}
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+casemates = {
+	cost = 2000
+	time = 12
+	
+	modifier = {
+		fort_level = 10
+		local_defensiveness = 0.33
+		local_attacker_dice_roll_bonus = -2
+		local_assault_fort_ability = -0.5
+		blockade_force_required = 1
+		hostile_disembark_speed = 1
+		hostile_fleet_attrition = 5
+		local_own_coast_naval_combat_bonus = 1 
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+trenches = {
+	cost = 50
+	time = 1
+
+	build_trigger = {
+		owner = {
+			is_at_war = yes
+		}
+		NOT = {
+			all_neighbor_province = {
+				controlled_by = ROOT
+			}
+		}
+		any_neighbor_province = {
+			owner = {
+				war_with = ROOT
+			}
+		}
+	}
+
+	keep_trigger = {
+		owner = {
+			is_at_war = yes
+		}
+		NOT = {
+			all_neighbor_province = {
+				controlled_by = ROOT
+			}
+		}
+		any_neighbor_province = {
+			owner = {
+				war_with = ROOT
+			}
+		}
+	}
+	
+	modifier = {
+		allowed_num_of_buildings = 1
+		local_defensiveness = 1
+		local_attacker_dice_roll_bonus = -1
+		local_assault_fort_ability = -0.4
+	}
+
+	ai_will_do = {
+		factor = 999
+	}
+}
+
+postal_service = {
+	cost = 300
+	time = 24
+	
+	modifier = {
+		local_tax_modifier = 0.15
+		local_unrest = -2
+	}
+	on_built = {
+		add_development_from_building = {
+			building = postal_service
+			type = tax
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = postal_service
+			type = tax
+			value = 1
+		}
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+network = {
+	cost = 600
+	time = 18
+
+	make_obsolete = postal_service
+
+	build_trigger = {
+		owner = {
+			has_institution = information_infrastructure
+		}
+	}
+	
+	modifier = {
+		local_tax_modifier = 0.3
+		local_unrest = -4
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = network
+			type = production
+			value = 1
+		}
+
+		add_development_from_building = {
+			building = network
+			type = tax
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = network
+			type = production
+			value = 1
+		}
+
+		remove_development_from_building = {
+			building = network
+			type = tax
+			value = 1
+		}
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+aerodrome = {
+	cost = 500
+	time = 12
+	
+	modifier = {
+		local_production_efficiency = 0.1
+		trade_value_modifier = 0.5
+		local_defensiveness = 0.5
+		supply_limit_modifier = 1
+		local_defender_dice_roll_bonus = 1
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+spaceport = {
+	cost = 2000
+	time = 24
+
+	make_obsolete = aerodrome
+	
+	modifier = {
+		local_production_efficiency = 0.2
+		trade_value_modifier = 1
+		local_center_of_trade_upgrade_cost = -0.33
+		local_defensiveness = 0.5
+		supply_limit_modifier = 1
+		local_defender_dice_roll_bonus = 1
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+shipyard_system = {
+	cost = 750
+	time = 24
+
+	make_obsolete = grand_shipyard
+
+	build_trigger = {
+		has_port = yes
+	}
+	
+	modifier = {
+		naval_forcelimit = 10
+		local_ship_repair = 0.5
+		local_ship_cost = -0.5
+	}
+
+	ai_will_do = {
+		factor = 25
+	}
+}

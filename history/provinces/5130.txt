@@ -1,0 +1,18 @@
+discovered_by = ottoman
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+is_city = no
+base_tax = 2
+base_manpower = 1
+base_production = 3
+center_of_trade = 1
+latent_trade_goods = { 
+	coal 
+}
+culture = west_midlander
+religion = catholic
+trade_goods = cloth
+add_core = ENG
+owner = ENG
+controller = ENG

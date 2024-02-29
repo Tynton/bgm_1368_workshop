@@ -1,0 +1,106 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_disaster_fascist_revolution"
+		texturefile = "gfx//interface//disasters//fascist_revolution.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_futurist_revolution"
+		texturefile = "gfx//interface//disasters//futurist_revolution.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_socialist_revolution"
+		texturefile = "gfx//interface//disasters//socialist_revolution.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_soviet_revolution"
+		texturefile = "gfx//interface//disasters//soviet_revolution.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_march_on_rome"
+		texturefile = "gfx//interface//disasters//march_on_rome.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_intranational_cultural_tension"
+		texturefile = "gfx//interface//disasters//intranational_cultural_tension.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_political_reorganization"
+		texturefile = "gfx//interface//disasters//pol_reorg.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_bgm_liberal"
+		texturefile = "gfx//interface//disasters//bgm_liberal.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_social_upheaval"
+		texturefile = "gfx//interface//disasters//social_upheaval.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_harelle"
+		texturefile = "gfx//interface//disasters//harelle.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_hussite_wars"
+		texturefile = "gfx//interface//disasters//hussite_wars.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_wat_tyler"
+		texturefile = "gfx//interface//disasters//wat_tyler.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_great_horde_collapse"
+		texturefile = "gfx//interface//disasters//great_horde_collapse.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_disaster_yuan_crisis"
+		texturefile = "gfx//interface//disasters//yuan_crisis.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_serbian_collapse"
+		texturefile = "gfx//interface//disasters//serbian_collapse.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+}

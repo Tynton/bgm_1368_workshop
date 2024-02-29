@@ -1,0 +1,26 @@
+name = "War of the Two Peters"
+war_goal = {
+	type = take_capital_throne
+	casus_belli = cb_claim_throne
+	tag = CAS
+}
+
+
+
+# Truce falls apart.
+1366.1.1 = {
+	add_attacker = TST
+	add_attacker = ARA
+	add_attacker = FRA
+	add_defender = CAS
+	add_defender = GRA
+	add_defender = POR
+}
+1369.1.1 = {
+	rem_attacker = TST
+	rem_attacker = ARA
+	rem_attacker = FRA
+	rem_defender = CAS
+	rem_defender = GRA
+	rem_defender = POR
+}

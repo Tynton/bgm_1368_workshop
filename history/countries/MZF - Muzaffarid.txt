@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 432 # Kerman
+
+1356.1.1 = {
+	monarch = {
+		name = "Shoja"
+		dynasty = "Mozaffarid"
+		birth_date = 1333.3.10
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}

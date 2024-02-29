@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = austrian_archduchy_reform
+government_rank = 1
+primary_culture = austrian
+religion = catholic
+technology_group = western
+capital = 134 # Wien
+historical_friend = HUN
+historical_rival = TUR
+historical_rival = FRA
+national_focus = ADM
+
+1365.7.29 = {
+	monarch = {
+		name = "Albrecht III"
+		dynasty = "von Habsburg"
+		birth_date = 1349.9.9
+		death_date = 9999.1.1
+		adm = 4
+		dip = 6
+		mil = 4
+	}
+	add_ruler_personality = patron_of_arts_personality
+}

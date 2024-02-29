@@ -1,0 +1,17 @@
+add_core = FRA
+add_core = PIC
+add_core = CHP
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = FRA
+culture = picard
+trade_goods = livestock
+religion = catholic
+controller = FRA
+is_city = no
+base_tax = 4
+base_manpower = 5
+base_production = 5
+center_of_trade = 1

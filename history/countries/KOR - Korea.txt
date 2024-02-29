@@ -1,0 +1,38 @@
+government = monarchy
+add_government_reform = korean_monarchy
+primary_culture = korean
+religion = vajrayana
+#add_harmonized_religion = confucianism
+technology_group = chinese
+capital = 735	# Hanseong
+
+1368.1.1 = {
+	monarch = {
+		name = "Gongmin" #Taejo
+		dynasty = "Goryeo"
+		birth_date = 1330.5.23
+		adm = 0
+		dip = 3
+		mil = 1
+	}
+	add_ruler_personality = patron_of_arts_personality
+	heir = {
+		name = "U"
+		dynasty = "Goryeo"
+		birth_date = 1365.1.1
+		death_date = 9999.1.1
+		adm = 0
+		dip = 0
+		mil = 2
+	}
+
+	queen = {
+		name = "Jeong-bi An"
+		dynasty = "Juksan Ahn"
+		birth_date = 1352.1.1
+		death_date = 9999.1.1
+		adm = 3
+		dip = 5
+		mil = 1
+	}
+}

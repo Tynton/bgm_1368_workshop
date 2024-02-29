@@ -1,0 +1,30 @@
+#495 - Antigua
+culture = carib
+religion = animism
+capital = "Antigua"
+trade_goods = unknown
+base_tax = 2
+base_production = 3
+base_manpower = 1
+native_size = 20
+native_ferocity = 2
+native_hostileness = 4
+discovered_by = CAB
+discovered_by = ARW
+1493.1.1 = { discovered_by = CAS }
+1516.1.23 = { discovered_by = SPA }
+1632.1.1 = { 
+	controller = ENG
+	add_core = ENG
+	capital = "St. John"
+	religion = Protestant
+	culture = english
+	city = yes
+	trade_goods = Sugar
+}
+1707.5.12 = { 
+	discovered_by = GBR
+	controller = GBR
+	add_core = GBR
+}
+is_city = no

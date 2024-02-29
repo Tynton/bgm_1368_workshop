@@ -1,0 +1,29 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = swabian
+capital = 70	# Stuttgart
+
+1315.1.1 = {
+	monarch = {
+		name = "Eberhard II"
+		dynasty =  "von Württemberg"
+		adm = 5
+		dip = 4
+		mil = 5
+	}
+}
+
+1364.1.1 = {
+	heir = {
+		name = "Eberhard"
+		monarch_name = "Eberhard III"
+		dynasty = "von Württemberg"
+		birth_date = 1362.1.1
+		adm = 3
+		dip = 3
+		mil = 0
+	}
+}

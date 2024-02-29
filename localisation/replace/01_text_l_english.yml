@@ -1,0 +1,36 @@
+﻿l_english:
+ ABSOLUTISM_NOT_YET_TOOLTIP:0 "§YAbsolutism§!\n§YAbsolutism§! is a measurement for the §YCentralization§! of the state. There are §YTradeoffs§! for high and low §YAbsolutism.§! Although we will gain §GTaxation§! and §GProduction Efficiency§! modifiers, we will suffer in §RTrade§! and §RInnovativeness,§! among an assortment of other effects."
+ germanic:0 "German"
+ 
+ latin:0 "Italian"
+ 
+ catholic:0 "Roman Catholic"
+ reformed:0 "Calvinist"
+ protestant:0 "Lutheran"
+ 
+ iberian:0 "Iberian"
+ 
+ cosmopolitan_french:0 "Parisian"
+ 
+ west_slavic:0 "West Slavonic"
+ east_slavic:0 "East Slavonic"
+ 
+ ruthenian:0 "Ukrainian"
+ byelorussian:0 "Belarusian"
+ russian:0 "Russian"
+ 
+ english:0 "East Midlander"
+ scottish:0 "Lowland Scottish"
+ british:0 "English"
+ dutch:0 "Hollandic"
+
+ french:0 "Langues d'Oïl" #Langues d'O�l
+ burgundian:0 "Morvandiau"
+ 
+ english_channel:0 "Holland"
+ wien:0 "Vienna"
+ rheinland:0 "Rhineland"
+ sevilla:0 "Seville"
+ valencia:0 "Occitania"
+ 
+ fra_develop_urban_centers:0 "Every province with at least §Y15§! development which is owned by us or a non-tributary subject in the §YFrench§! region will gain the following reward:"

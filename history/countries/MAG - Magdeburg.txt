@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = brandenburgian
+religion = catholic
+technology_group = western
+capital = 52	# Magdeburg
+fixed_capital = 52 # Cannot move capital away from this province & no power cost to move to it
+
+1333.1.1 = {
+	monarch = {
+		name = "Albrecht II"
+		dynasty = "von Sternberg"
+		birth_date = 1333.1.1
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}

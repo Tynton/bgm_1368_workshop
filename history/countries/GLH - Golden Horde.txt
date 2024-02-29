@@ -1,0 +1,28 @@
+government = tribal
+add_government_reform = steppe_horde
+primary_culture = mishary
+religion = sunni
+technology_group = nomad_group
+capital = 303	# Saratov
+
+1335.1.1 = {
+	monarch = {
+		name = "Abdallah"
+		dynasty = "Borgijin"
+		birth_date = 1335.1.1 #unknown
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+	add_ruler_personality = babbling_buffoon_personality
+
+	define_general = {
+		name = "Mamai"
+		shock = 6
+		fire = 1
+		manuever = 6
+		siege = 1
+	}
+	add_horde_unity = -100
+	add_stability = -3
+}

@@ -1,0 +1,38 @@
+government = monarchy
+add_government_reform = ottoman_government
+primary_culture = turkish
+add_accepted_culture = bulgarian
+add_accepted_culture = greek
+religion = sunni
+technology_group = ottoman
+historical_rival = MAM
+historical_rival = BYZ
+historical_rival = HAB
+capital = 317 # Edirne
+national_focus = MIL
+add_army_professionalism = 0.1
+religious_school = hanafi_school
+
+change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
+
+1444.10.1 = {
+	set_estate_privilege = estate_dhimmi_guaranteed_autonomy
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Murad I"
+		dynasty = Osmanoglu
+		birth_date = 1326.6.29
+		adm = 6
+		dip = 3
+		mil = 6
+	}
+}

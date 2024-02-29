@@ -1,0 +1,27 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = hannoverian
+religion = catholic
+capital = 4775 # Bielefeld-Lippe`
+
+1309.6.9 = {
+	monarch = {
+		name = "Simon III"
+		dynasty = "von Lippe"
+		birth_date = 1340.1.1
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+
+	queen = {
+		name = "Irmgard"
+		dynasty = "von Hoya"
+		birth_date = 1343.1.1
+		adm = 2
+		dip = 4
+		mil = 0
+	}
+}

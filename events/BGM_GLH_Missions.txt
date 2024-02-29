@@ -1,0 +1,119 @@
+namespace = BGM_GLH_missions
+
+country_event = {
+	id = BGM_GLH_missions.1
+	title = "BGM_GLH_missions.1.t"
+	desc = "BGM_GLH_missions.1.d"
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GLH_missions.1.a" #Reform
+		set_country_flag = glh_reform
+
+		change_government = monarchy
+		add_government_reform = feudalism_reform
+
+		add_country_modifier = {
+			name = glh_reformed_government
+			duration = 18250
+		}
+
+		crimea_region = {
+			add_permanent_claim = ROOT
+		}
+		bashkiria_area = {
+			add_permanent_claim = ROOT
+		}
+		lower_yik_area = {
+			add_permanent_claim = ROOT
+		}
+		nogai_area = {
+			add_permanent_claim = ROOT
+		}
+
+		override_country_name = TATARSTAN
+	}
+
+	option = {
+		name = "BGM_GLH_missions.1.b" #Reclaim Temujin's Legacy
+		set_country_flag = glh_conquer
+
+		if = {
+			limit = { 
+				mil = 5
+			}
+			change_mil = 1
+			add_ruler_personality = legendary_conqueror_personality
+		}
+
+		add_country_modifier = {
+			name = glh_horde_military
+			duration = 18250
+		}
+
+		if = {
+			limit = { ruler_has_personality = legendary_conqueror_personality }
+			caucasia_region = {
+				add_core = ROOT
+			}
+		}
+		else = {
+			caucasia_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = BGM_GLH_missions.2
+	title = "BGM_GLH_missions.2.t"
+	desc = "BGM_GLH_missions.2.d"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GLH_missions.2.a" #Yes
+		set_capital = 466
+	}
+
+	option = {
+		name = "BGM_GLH_missions.2.b" #No
+		add_stability_or_adm_power = yes
+	}
+}
+
+country_event = {
+	id = BGM_GLH_missions.3
+	title = "BGM_GLH_missions.3.t"
+	desc = "BGM_GLH_missions.3.d"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_GLH_missions.3.a" #Yes
+		release = KZH
+		create_subject = {
+			subject_type = appanage
+			who = KZH
+		}
+	}
+
+	option = {
+		name = "BGM_GLH_missions.3.b" #No
+		every_province = {
+			limit = {
+				is_core = KZH
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}

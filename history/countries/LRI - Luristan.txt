@@ -1,0 +1,21 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = luri
+religion = sunni
+technology_group = muslim
+#capital = 4342 # Malamir
+capital = 413 #Khorramabad
+religious_school = hanafi_school
+
+#Khorshidis
+
+1413.1.1 = {
+	monarch = {
+		name = "Shams al-Din Pashang"
+		dynasty = "Hazaraspid"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

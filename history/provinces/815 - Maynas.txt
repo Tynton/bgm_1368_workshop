@@ -1,0 +1,31 @@
+#815 - Iquitos
+culture = jivaro
+religion = animism
+capital = "Iquitos"
+trade_goods = unknown
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 15
+native_ferocity = 1
+native_hostileness = 1
+discovered_by = south_american
+discovered_by = andean
+discovered_by = CHM
+1533.8.29 = { 
+	discovered_by = SPA
+	controller = SPA
+	add_core = SPA
+	culture = castillian
+	religion = Catholic
+	trade_goods = Cocoa
+	city = yes
+}
+1810.7.20 = { 
+	controller = COL
+	add_core = COL
+}
+is_city = no
+latent_trade_goods = { 
+	rubber 
+}

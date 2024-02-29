@@ -1,0 +1,26 @@
+#1158 - Kanem
+owner = KBO
+controller = KBO
+culture = kanuri
+religion = sunni
+capital = "Ngala"
+is_city = yes
+base_manpower = 2
+trade_goods = paper#Producer of paper and exporter of Qurans throughout the Islamic world.
+base_tax = 3
+base_production = 3
+extra_cost = 8
+center_of_trade = 1
+add_core = KBO
+discovered_by = sub_saharan
+1505.1.1 = {
+}
+#Idris Katakarmabe retakes Kanem
+1622.1.1 = {
+}
+#Reorganization of provincial governance shifts center of power
+1751.1.1 = {
+}
+#Wadai raiders gravely disrupt local communities
+1804.1.1 = {
+}

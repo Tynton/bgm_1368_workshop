@@ -1,0 +1,1166 @@
+nap_row_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	nap_ligurian_control = {
+		icon = end_genoese_competition
+		required_missions = { nap_recover_the_piedmont }
+		position = 3
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			area = liguria_area
+		}		
+		trigger = {
+			liguria_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			tuscany_area = {
+				add_permanent_claim = ROOT
+			}
+			liguria_area = {
+				set_local_autonomy = 0
+			}
+		}
+	}
+}
+
+nap_row_slot_1_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = no
+
+	nap_land_of_italian_poets = {
+		icon = mission_dante
+		required_missions = { nap_ligurian_control }
+		position = 4
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			area = tuscany_area
+		}		
+		trigger = {
+			tuscany_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			is_state_core = 116
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			country_event = {
+				id = BGM_NAP_missions.2
+			}
+		}
+	}
+}
+
+nap_row_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	nap_recover_the_piedmont = { #This path leads to a union over France
+		icon = prosper_in_piedmont
+		required_missions = { nap_stable_government }
+		position = 2
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			area = piedmont_area
+		}		
+		trigger = {
+			piedmont_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			liguria_area = {
+				add_permanent_claim = ROOT
+			}
+			lombardy_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	nap_emilia_romagna = {
+		icon = milan_victorious
+		required_missions = { nap_recover_the_piedmont }
+		position = 3
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			OR = {
+				area = emilia_romagna_area
+				area = lombardy_area
+			}
+		}		
+		trigger = {
+			lombardy_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			emilia_romagna_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			po_valley_area = {
+				add_permanent_claim = ROOT
+			}
+			venetia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	nap_italian_powerhouse = {
+		icon = the_gallic_wars
+		required_missions = { nap_emilia_romagna nap_ligurian_control }
+		position = 4
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			region = italy_region
+		}		
+		trigger = {
+			is_great_power = yes
+			total_development = FRA
+		}
+		effect = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = FRA
+				months = 60
+			}
+		}
+	}
+
+	nap_the_french_union = {
+		icon = mission_the_french_menace
+		required_missions = { nap_italian_powerhouse nap_land_of_italian_poets }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				owned_by = FRA
+				owned_by_subject_of = FRA
+			}
+			region = france_region
+		}		
+		trigger = {
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					is_subject_of_type = personal_union
+				}
+				FRA = {
+					is_subject = no
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 0.5
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					FRA = {
+						is_subject = no
+					}
+				}
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = FRA
+					months = 180
+				}
+			}
+			else = {
+				FRA = {
+					add_liberty_desire = -50
+				}
+				add_power_projection = {
+					type = mission_rewards_power_projection
+					amount = 50
+				}
+				add_prestige = 50
+			}
+		}
+	}
+}
+
+nap_row_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = no
+
+	nap_stable_government = {
+		icon = mission_joanna
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			OR = {
+				AND = {
+					NOT = { corruption = 5 }
+					legitimacy_equivalent = 90
+					stability = 2
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = no_joanna
+						NOT = { has_ruler_flag = giovanna_i }
+					}
+					legitimacy_equivalent = 50
+					stability = 1
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { has_country_modifier = reign_of_joanna }
+				remove_country_modifier = reign_of_joanna
+			}
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = HUN
+				months = 180
+			}
+
+			piedmont_area = {
+				add_permanent_claim = ROOT
+			}
+
+			albania_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+nap_row_slot_3_shielded = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	nap_lord_of_albania = {
+		icon = mission_protect_albania
+		required_missions = { nap_stable_government }
+		position = 2
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			area = albania_area
+		}		
+		trigger = {
+			albania_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			northern_greece_area = {
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	nap_lands_of_greece = {
+		icon = mission_grecian_dawn
+		required_missions = { nap_lord_of_albania }
+		position = 3
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			OR = {
+				area = northern_greece_area
+				area = morea_area
+			}
+		}		
+		trigger = {
+			northern_greece_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			morea_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			macedonia_area = {
+				add_permanent_claim = ROOT
+			}
+			thrace_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	nap_the_latin_empire = {
+		icon = the_latin_empire
+		required_missions = { nap_lands_of_greece }
+		position = 4
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			OR = {
+				area = macedonia_area
+				area = thrace_area
+			}
+		}		
+		trigger = {
+			macedonia_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			thrace_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = BGM_NAP_missions.3
+			}
+		}
+	}
+
+	nap_anatolian_coastline = {
+		icon = geo_break_the_crescent_2
+		required_missions = { nap_the_latin_empire }
+		position = 5
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			region = anatolia_region
+			has_port = yes
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				all_owned_province = {
+					region = anatolia_region
+					has_port = yes
+				}
+			}
+			327 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			aleppo_area = {
+				add_permanent_claim = ROOT
+			}
+			syria_area = {
+				add_permanent_claim = ROOT
+			}
+			palestine_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+nap_row_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	nap_avenge_1350 = {
+		icon = king_of_hungary
+		required_missions = { nap_stable_government nap_papal_ties }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				owned_by = HUN
+				owned_by_subject_of = HUN
+			}
+		}		
+		trigger = {
+			OR = {
+				HUN = {
+					is_subject_of = ROOT
+				}
+				NOT = { exists = HUN }
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 50
+			}
+			HUN = {
+				add_liberty_desire = -50
+			}
+			bosnia_area = {
+				add_permanent_claim = ROOT
+			}
+			1828 = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	nap_rule_bosnia = {
+		icon = found_batavia
+		required_missions = { nap_avenge_1350 }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				owned_by = BOS
+				owned_by_subject_of = BOS
+			}
+		}		
+		trigger = {
+			bosnia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			1828 = { owned_by = ROOT }
+		}
+		effect = {
+			serbia_area = {
+				add_permanent_claim = ROOT
+			}
+			rascia_area = {
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = { 
+					exists = SER
+				}
+				SER = {
+					every_owned_province = {
+						limit = {
+							NOT = {
+								OR = {
+									area = serbia_area
+									area = rascia_area
+								}
+							}
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	nap_crush_serbia = {
+		icon = defeat_the_serbs
+		required_missions = { nap_lands_of_greece nap_rule_bosnia }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				owned_by = SER
+				owned_by_subject_of = SER
+			}
+		}		
+		trigger = {
+			OR = {
+				SER = {
+					is_subject_of = ROOT
+				}
+				NOT = { exists = SER }
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					region = anatolia_region
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+		}
+	}
+
+	nap_bulgarian_control = {
+		icon = push_on_to_bulgaria
+		required_missions = { nap_crush_serbia }
+		position = 5
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			OR = {
+				area = bulgaria_area
+				area = silistria_area
+			}
+		}		
+		trigger = {
+			bulgaria_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			silistria_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			wallachia_area = {
+				add_permanent_claim = ROOT
+			}
+			moldavia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	nap_king_of_jerusalem = {
+		icon = jerusalem
+		required_missions = { nap_anatolian_coastline }
+		position = 6
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				area = aleppo_area
+				area = syria_area
+				area = palestine_area
+			}
+		}		
+		trigger = {
+			2313 = {
+				owned_by = ROOT
+			}
+			378 = {
+				owned_by = ROOT
+			}
+			1855 = {
+				owned_by = ROOT
+			}
+			1854 = {
+				owned_by = ROOT
+			}
+			379 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			aleppo_area = {
+				add_permanent_claim = ROOT
+			}
+			syria_area = {
+				add_permanent_claim = ROOT
+			}
+			palestine_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+nap_row_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	nap_papal_ties = {
+		icon = spread_piety
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					ROOT = { religion = catholic }
+					owned_by = PAP
+				}
+				AND = {
+					ROOT = { religion = avignon }
+					owned_by = AVP
+				}
+				AND = {
+					ROOT = { religion = pisan }
+					owned_by = PPP
+				}
+				AND = {
+					ROOT = { religion = fraticelli }
+					owned_by = NTI
+				}
+			}
+		}		
+		trigger = {
+			OR = {
+				AND = {
+					religion = catholic
+					PAP = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+				}
+				AND = {
+					religion = avignon
+					AVP = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+				}
+				AND = {
+					religion = pisan
+					PPP = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+				}
+				AND = {
+					religion = fraticelli
+					NTI = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = nap_papal_relations
+				duration = 10950
+			}
+		}
+	}
+
+	nap_end_the_schism = {
+		icon = the_land_of_moses
+		required_missions = { nap_papal_ties }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					ROOT = { religion = catholic }
+					owned_by = PAP
+				}
+				AND = {
+					ROOT = { religion = avignon }
+					owned_by = AVP
+				}
+				AND = {
+					ROOT = { religion = pisan }
+					owned_by = PPP
+				}
+				AND = {
+					ROOT = { religion = fraticelli }
+					owned_by = NTI
+				}
+			}
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = naples_ended_western_schism
+				has_global_flag = western_schism
+				OR = {
+					AND = {
+						religion = catholic
+						NOT = { exists = AVP }
+						NOT = { exists = PPP }
+					}
+					AND = {
+						religion = avignon
+						NOT = { exists = PAP }
+						NOT = { exists = PPP }
+					}
+					AND = {
+						religion = pisan
+						NOT = { exists = AVP }
+						NOT = { exists = PAP }
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = nap_papal_relations
+				duration = 10950
+			}
+		}
+	}
+
+	nap_the_holy_cities = {
+		icon = levantine_missions
+		required_missions = { nap_king_of_jerusalem nap_end_the_schism }
+		position = 7
+		provinces_to_highlight = {
+			
+		}		
+		trigger = {
+			stability = 2
+			prestige = 50
+			legitimacy_equivalent = 90
+		}
+		effect = {
+			custom_tooltip = convert_orthodox_tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						religion = orthodox
+					}
+					change_religion = ROOT
+				}
+			}
+			379 = {
+				change_religion = ROOT
+				change_culture = ROOT
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			2313 = {
+				change_religion = ROOT
+				change_culture = ROOT
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+		}
+	}
+}
+
+nap_internal_row_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	has_country_shield = yes
+	
+	nap_large_naples = {
+		icon = king_of_naples
+		required_missions = { nap_endorsement_renaissance }
+		position = 7
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					region = italy_region
+					development = capital
+				}
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = nap_preeminent_city
+					duration = -1
+				}
+				add_center_of_trade_level = 2
+			}
+		}
+	}
+}
+
+nap_internal_row_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	has_country_shield = yes
+	
+	nap_endorsement_renaissance = {
+		icon = mission_divine_comedy
+		required_missions = { }
+		position = 6
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			any_owned_province = {
+				is_institution_origin = renaissance
+			}
+			has_institution = renaissance
+			innovativeness = 10
+		}
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = nap_grow_the_renaissance
+				duration = 10950
+			}
+		}
+	}
+
+	nap_undo_the_embarrassment = {
+		icon = king_of_sicily
+		required_missions = { nap_endorsement_renaissance }
+		position = 7
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			OR = {
+				area = western_sicily_area
+				area = sicily_area
+			}
+		}		
+		trigger = {
+			western_sicily_area = {
+				type = all
+				owned_by = ROOT
+			}
+			sicily_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			corsica_sardinia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	nap_primacy_of_palermo = {
+		icon = powerhouse_of_the_north
+		required_missions = { nap_large_naples nap_undo_the_embarrassment }
+		position = 8
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			125 = {
+				owned_by = ROOT
+				num_of_buildings_in_province = 4
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		effect = {
+			custom_tooltip = palermo_capital
+			if = {
+				limit = { 
+					125 = {
+						is_capital_of = ROOT
+					}
+				}
+				125 = {
+					change_trade_goods = cloth
+					add_province_modifier = {
+						name = nap_palermo_immigration
+						duration = -1
+					}
+				}
+			}
+			else = {
+				125 = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+}
+
+nap_internal_row_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	has_country_shield = yes
+	
+	nap_lecce_center = {
+		icon = develop_the_po_valley
+		required_missions = { nap_endorsement_renaissance }
+		position = 7
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			4945 = {
+				development = 18
+				num_of_buildings_in_province = 4
+			}
+		}
+		effect = {
+			4945 = {
+				change_trade_goods = cloth
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+
+	nap_apulian_ports = {
+		icon = develop_the_po_valley
+		required_missions = { nap_lecce_center }
+		position = 8
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			apulia_area = {
+				type = all
+				development = 10
+				num_of_buildings_in_province = 4
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					area = apulia_area
+				}
+				add_base_production = 1
+				add_province_modifier = {
+					name = nap_port_city
+					duration = 18250
+				}
+			}
+		}
+	}
+}
+
+nap_internal_row_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = NAP
+			tag = TTS
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+
+	has_country_shield = yes
+
+	nap_prosperity_of_the_holy_cities = {
+		icon = byz_city_of_worlds_desire
+		required_missions = { nap_lecce_center nap_the_holy_cities }
+		position = 8
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			2313 = {
+				owned_by = ROOT
+				development = 15
+			}
+			379 = {
+				owned_by = ROOT
+				development = 15
+			}
+			151 = {
+				owned_by = ROOT
+				development = 25
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		effect = {
+			2313 = {
+				add_province_modifier = {
+					name = religious_immigration
+					duration = -1
+				}
+			}
+			379 = {
+				add_province_modifier = {
+					name = religious_immigration
+					duration = -1
+				}
+			}
+			151 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				add_province_modifier = {
+					name = religious_immigration
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = nap_religious_zeal
+				duration = 10950
+			}
+		}
+	}
+}

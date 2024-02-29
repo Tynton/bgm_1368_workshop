@@ -1,0 +1,645 @@
+bgm_colonial = {
+	OR = {
+		colonial_region = colonial_aden
+		colonial_region = colonial_alaska
+		colonial_region = colonial_alexandria
+		colonial_region = colonial_astrakhan
+		colonial_region = colonial_aleppo
+		colonial_region = colonial_angola
+		colonial_region = colonial_australia
+		colonial_region = colonial_basra
+		colonial_region = colonial_brazil
+		colonial_region = colonial_burma
+		colonial_region = colonial_california
+		colonial_region = colonial_canada
+		colonial_region = colonial_chengdu
+		colonial_region = colonial_colombia
+		colonial_region = colonial_coromandel
+		colonial_region = colonial_deccan
+		colonial_region = colonial_east_africa
+		colonial_region = colonial_east_china
+		colonial_region = colonial_east_india
+		colonial_region = colonial_eastern_america
+		colonial_region = colonial_ethiopia
+		colonial_region = colonial_girin
+		colonial_region = colonial_great_lakes
+		colonial_region = colonial_hormuz
+		colonial_region = colonial_indochina
+		colonial_region = colonial_indonesia
+		colonial_region = colonial_ivory_coast
+		colonial_region = colonial_katsina
+		colonial_region = colonial_kongo
+		colonial_region = colonial_korea
+		colonial_region = colonial_la_plata
+		colonial_region = colonial_lahore
+		colonial_region = colonial_lhasa
+		colonial_region = colonial_louisiana
+		colonial_region = colonial_mexico
+		colonial_region = colonial_moluccas
+		colonial_region = colonial_nippon
+		colonial_region = colonial_north_china
+		colonial_region = colonial_north_india
+		colonial_region = colonial_persia
+		colonial_region = colonial_peru
+		colonial_region = colonial_philippines
+		colonial_region = colonial_polynesia
+		colonial_region = colonial_safi
+		colonial_region = colonial_samarkand
+		colonial_region = colonial_siberia
+		colonial_region = colonial_south_africa
+		colonial_region = colonial_south_china
+		colonial_region = colonial_the_carribean
+		colonial_region = colonial_tunis
+		colonial_region = colonial_timbuktu
+		colonial_region = colonial_west_india
+		colonial_region = colonial_xian
+		colonial_region = colonial_yumen
+		colonial_region = colonial_zambezi
+	}
+}
+
+bgm_colonial_subject = {
+	OR = {
+		is_subject_of_type = colony
+		is_subject_of_type = self_governing_colony
+		is_subject_of_type = crown_colony
+		is_subject_of_type = private_enterprise
+	}
+}
+
+bgm_adm_tech_check = {
+	any_country = {
+		adm_tech = ROOT
+	}
+}
+
+bgm_mil_tech_check = {
+	any_country = {
+		mil_tech = ROOT
+	}
+}
+
+bgm_mil_export = {
+	OR = {
+		trade_goods = fish
+		trade_goods = wine
+		trade_goods = grain
+		trade_goods = livestock
+		trade_goods = naval_supplies
+		trade_goods = naval_equipment
+		trade_goods = steel
+	}
+}
+
+bgm_industry_export = {
+	OR = {
+		trade_goods = cloth
+		trade_goods = silk
+		trade_goods = iron
+		trade_goods = coal
+		trade_goods = copper
+		trade_goods = electronics
+		trade_goods = steel
+		trade_goods = naval_supplies
+		trade_goods = naval_equipment
+	}
+}
+
+bgm_no_constructions = {
+	NOT = {
+		OR = {
+			has_construction = great_project
+			has_construction = culture
+			has_construction = core
+			has_construction = missionary
+			has_construction = building
+		}
+	}
+}
+
+bgm_building_owner = {
+	ai = yes
+	is_in_deficit = no
+	#OR = {
+	#	num_of_cities = 35
+	#	is_great_power = yes
+	#}
+	OR = {
+		is_at_war = no
+		is_in_war = {
+			war_score = 20
+		}
+	}
+	OR = {
+		NOT = { num_of_loans = 1 }
+		AND = {
+			current_income_balance = 30
+			NOT = { num_of_loans = 3 }
+		}
+	}
+	#years_of_income = 0.7
+}
+
+bgm_building_vat = {
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			value = modifier:local_build_cost
+			variable_name = localbuildcost
+		}
+	}
+}
+
+bgm_france = {
+	OR = {
+		tag = FRA
+		tag = FRR
+		tag = FRE
+		tag = FRW
+		tag = SFR
+		tag = BFR
+		tag = BUP
+		tag = BFE
+		tag = OCF
+		tag = OCR
+		tag = OCE
+		tag = FAN
+	}
+}
+
+bgm_france_exists = {
+	OR = {
+		exists = FRA
+		exists = FRR
+		exists = FRE
+		exists = FRW
+		exists = SFR
+		exists = BFR
+		exists = BUP
+		exists = BFE
+		exists = OCF
+		exists = OCR
+		exists = OCE
+		exists = FAN
+	}
+}
+
+bgm_allied_france = {
+	OR = {
+		alliance_with = FRA
+		alliance_with = FRR
+		alliance_with = FRE
+		alliance_with = FRW
+		alliance_with = SFR
+		alliance_with = BFR
+		alliance_with = BUP
+		alliance_with = BFE
+		alliance_with = OCF
+		alliance_with = OCR
+		alliance_with = OCE
+		alliance_with = FAN
+	}
+}
+
+bgm_fra_ally_mon_rev = {
+	OR = {
+		AND = {
+			bgm_rev = yes
+			FRA = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FRA = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			FRR = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FRR = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			FRE = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FRE = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			FRW = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FRW = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			SFR = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			SFR = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			BFR = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			BFR = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			BUP = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			BUP = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			BFE = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			BFE = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			OCF = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			OCF = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			OCE = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			OCE = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			OCR = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			OCR = {
+				bgm_rev = no
+			}
+		}
+		AND = {
+			bgm_rev = yes
+			FAN = {
+				bgm_rev = yes
+			}
+		}
+		AND = {
+			has_country_flag = had_revolution
+			FAN = {
+				bgm_rev = no
+			}
+		}
+	}
+}
+
+bgm_trusted_france = {
+	OR = {
+		FRA = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		FRR = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		FRE = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		FRW = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		SFR = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		BFR = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		BUP = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		BFE = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		OCF = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		OCR = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		OCE = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+		FAN = { 
+			trust = {
+				who = ROOT
+				value = 100
+			} 
+		}
+	}
+}
+
+bgm_fra_minor_missions = {
+	capital_scope = { continent = europe }
+	OR = {
+		culture_group = occitan
+		culture_group = franco_provencal
+		culture_group = french
+	}
+	NOT = {
+		OR = {
+			tag = AEV
+			tag = AEE
+			tag = AER
+			tag = ARA
+			tag = ENG
+		}
+	}
+	NOT = { tag = LOR }
+	NOT = { tag = PRO }
+	NOT = { tag = FRA }
+	NOT = { tag = BUR }
+	NOT = { tag = BFR }
+	NOT = { tag = FAN }
+	NOT = { tag = LOT }
+	NOT = { tag = FRW }
+	NOT = { map_setup = map_setup_random }
+}
+
+bgm_ai_mil_tech_peacetime_checks = {
+	is_at_war = no
+	NOT = {
+		any_neighbor_country = {
+			tech_difference_2_electric_boogaloo = {
+			with = ROOT
+				type = mil
+				diff = 2
+			}
+			army_strength = {
+				who = ROOT
+				value = 1
+			}
+		}
+	}
+	NOT = {
+		any_rival_country = {
+			tech_difference_2_electric_boogaloo = {
+				with = ROOT
+				type = mil
+				diff = 1
+			}
+		}
+	}
+	NOT = {
+		any_enemy_country = {
+			tech_difference_2_electric_boogaloo = {
+				with = ROOT
+				type = mil
+				diff = 1
+			}
+		}
+	}
+}
+
+bgm_ai_mil_tech_checks = {
+	NOT = {
+		any_neighbor_country = {
+			mil_tech = ROOT
+			army_strength = {
+				who = ROOT
+				value = 1
+			}
+		}
+	}
+	NOT = {
+		any_rival_country = {
+			mil_tech = ROOT
+		}
+	}
+	NOT = {
+		any_enemy_country = {
+			mil_tech = ROOT
+		}
+	}
+}
+
+bgm_adm_absolutism = {
+	OR = {
+		AND = {
+			NOT = { absolutism = 25 }
+			adm_power = 100 
+			corruption = 0.5
+		}
+		AND = {
+			absolutism = 25
+			NOT = { absolutism = 50 }
+			adm_power = 95
+			corruption = 0.75
+		}
+		AND = {
+			absolutism = 50
+			NOT = { absolutism = 75 }
+			adm_power = 90
+			corruption = 1
+		}
+		AND = {
+			absolutism = 75
+			NOT = { absolutism = 100 }
+			adm_power = 85
+			corruption = 1.25
+		}
+		AND = {
+			absolutism = 100
+			adm_power = 80
+			corruption = 1.5
+		}
+	}
+}
+
+bgm_dip_absolutism = {
+	OR = {
+		AND = {
+			NOT = { absolutism = 25 }
+			dip_power = 100 
+			corruption = 0.5
+		}
+		AND = {
+			absolutism = 25
+			NOT = { absolutism = 50 }
+			dip_power = 95
+			corruption = 0.75
+		}
+		AND = {
+			absolutism = 50
+			NOT = { absolutism = 75 }
+			dip_power = 90
+			corruption = 1
+		}
+		AND = {
+			absolutism = 75
+			NOT = { absolutism = 100 }
+			dip_power = 85
+			corruption = 1.25
+		}
+		AND = {
+			absolutism = 100
+			dip_power = 80
+			corruption = 1.5
+		}
+	}
+}
+
+bgm_mil_absolutism = {
+	OR = {
+		AND = {
+			NOT = { absolutism = 25 }
+			mil_power = 100 
+			corruption = 0.5
+		}
+		AND = {
+			absolutism = 25
+			NOT = { absolutism = 50 }
+			mil_power = 95
+			corruption = 0.75
+		}
+		AND = {
+			absolutism = 50
+			NOT = { absolutism = 75 }
+			mil_power = 90
+			corruption = 1
+		}
+		AND = {
+			absolutism = 75
+			NOT = { absolutism = 100 }
+			mil_power = 85
+			corruption = 1.25
+		}
+		AND = {
+			absolutism = 100
+			mil_power = 80
+			corruption = 1.5
+		}
+	}
+}
+
+coal_condition = {
+	OR = {
+		development_discounting_tribal = 20
+		owner = { innovativeness = 25 }
+		owner = { has_institution = industrialization }
+	}
+	industrialization = 99
+}
+
+rubber_condition = {
+	owner = { adm_tech = 42 }
+	owner = { has_institution = industrialization }
+}
+
+oil_condition = {
+	owner = { adm_tech = 45 }
+	owner = { has_institution = nationalism_institution }
+}
+
+uranium_condition = {
+	electrification = 99
+	owner = { mil_tech = 49 }
+	owner = { has_institution = electrification }
+}
+
+tungsten_condition = {
+	owner = { mil_tech = 42 }
+	owner = { has_institution = electrification }
+}
+
+aluminium_condition = {
+	owner = { adm_tech = 42 }
+	owner = { has_institution = electrification }
+}

@@ -1,0 +1,19 @@
+add_core = FLA
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = FLA
+base_tax = 4
+base_manpower = 1
+base_production = 6
+culture = west_flemish
+trade_goods = cloth
+religion = catholic
+controller = FLA
+center_of_trade = 1
+is_city = no
+add_province_modifier = { 
+	name = ypres_cloth_hall
+	duration = -1
+}

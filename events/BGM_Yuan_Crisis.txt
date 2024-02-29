@@ -1,0 +1,241 @@
+namespace = BGMYC
+
+country_event = { #Collapse of the Yuan
+	id = BGMYC.1
+	title = "BGMYC.1.t"
+	desc = "BGMYC.1.d"
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = "BGMYC.1.a"
+		add_stability = -2
+		add_yearly_manpower = -0.25
+	}
+}
+
+
+country_event = { #good ending
+	id = BGMYC.2
+	title = "BGMYC.2.t"
+	desc = "BGMYC.2.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = "BGMYC.2.a"
+		remove_country_modifier = yuan_crisis_start
+		end_disaster = yuan_crisis
+		set_country_flag = yuan_collapse_happened
+		add_prestige = 50
+	}
+}
+
+country_event = { #bad ending
+	id = BGMYC.3
+	title = "BGMYC.3.t"
+	desc = "BGMYC.3.d"
+	picture = CIVIL_WAR_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		has_disaster = yuan_crisis
+		NOT = {
+			war_with = MNG
+		}
+		MNG = {
+			total_development = ROOT
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = "BGMYC.3.a"
+		remove_country_modifier = yuan_crisis_start
+		end_disaster = yuan_crisis
+		set_country_flag = yuan_collapse_happened
+
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = tributary_state
+			}
+			grant_independence = yes
+		}
+		every_province = {
+			limit = {
+				OR = {
+					AND = {
+						superregion = china_superregion
+						NOT = {
+							culture_group = altaic
+						}
+					}
+					culture_group = east_asian
+				}
+			}
+			cede_province = MNG
+			add_core = MNG
+			remove_core = ROOT
+		}
+		if = {
+			limit = { 
+				NOT = {
+					stability = -1
+				}
+			}
+			release = LIA
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture = mongol
+					}
+					add_core = KHA
+				}
+				every_owned_province = {
+					limit = {
+						culture = chahar
+					}
+					add_core = KRC
+				}
+			}
+			release = KRC
+			release = KHA
+		}
+		hidden_effect = {
+			random_list = {
+				50 = {
+					country_event = {
+						id = BGMYC.5
+					}
+				}
+				50 = {
+					country_event = {
+						id = BGMYC.6
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #breakaway of the chiefdom of liaoyang
+	id = BGMYC.4
+	title = "BGMYC.4.t"
+	desc = "BGMYC.4.d"
+	picture = MONGOL_BANNERS_eventPicture
+
+	trigger = {
+		NOT = { stability = 1 }
+		has_disaster = yuan_crisis
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	option = {
+		name = "BGMYC.4.a"
+		release = LIA
+		LIA = {
+			change_government = tribal
+			add_government_reform = steppe_horde
+			change_religion = vajrayana
+		}
+	}
+}
+
+country_event = { #become oirat
+	id = BGMYC.5
+	title = "BGMYC.5.t"
+	desc = "BGMYC.5.d"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMYC.5.a"
+		change_tag = OIR
+		swap_free_idea_group = yes
+	}
+}
+
+country_event = { #become mongolia
+	id = BGMYC.6
+	title = "BGMYC.6.t"
+	desc = "BGMYC.6.d"
+	picture = MONGOL_BANNERS_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "BGMYC.6.a"
+		change_tag = KHA
+		swap_free_idea_group = yes
+	}
+}
+
+country_event = { #army desertion
+	id = BGMYC.7
+	title = "BGMYC.7.t"
+	desc = "BGMYC.7.d"
+	picture = MONGOL_BANNERS_eventPicture
+
+	trigger = {
+		manpower_percentage = 0.1
+		NOT = { stability = 1 }
+		has_disaster = yuan_crisis
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "BGMYC.7.a"
+		add_yearly_manpower = -0.1
+	}
+}
+
+country_event = { #ming seize yunnan
+	id = BGMYC.8
+	title = "BGMYC.8.t"
+	desc = "BGMYC.8.d"
+	picture = MONGOL_BANNERS_eventPicture
+
+	trigger = {
+		NOT = { stability = 1 }
+		has_disaster = yuan_crisis
+		NOT = {
+			any_owned_province = {
+				controlled_by = ROOT
+				region = south_china_region
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "BGMYC.8.a"
+		every_owned_province = {
+			limit = {
+				region = south_china_region
+			}
+			cede_province = MNG
+			add_core = MNG
+			remove_core = ROOT
+		}
+	}
+}

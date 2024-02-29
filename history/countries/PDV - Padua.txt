@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = venetian
+religion = catholic
+technology_group = western
+capital = 4729
+fixed_capital = 4729 # Cannot move capital away from this province & no power cost to move to it
+
+1340.3.5 = {
+	monarch = {
+		name = "Francesco I"
+		dynasty = "da Carrara"
+		birth_date = 1340.3.5
+		adm = 3
+		dip = 6
+		mil = 1
+	}
+	add_ruler_personality = just_personality
+}

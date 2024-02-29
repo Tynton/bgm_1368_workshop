@@ -1,0 +1,24 @@
+# 0 Touraine - Principal cities: Tours
+owner = MNE
+controller = MNE
+capital = "Tours"
+is_city = yes
+culture = angevin
+religion = catholic
+base_tax = 5
+base_production = 5
+trade_goods = cloth
+base_manpower = 4
+add_local_autonomy = 10
+add_core = ORL
+add_core = MNE
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1652.7.2 = { 
+	revolt = { size = 1 }
+}
+1652.10.21 = { 
+	revolt = { size = 1 }
+}

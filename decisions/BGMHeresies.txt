@@ -1,0 +1,1049 @@
+country_decisions = {
+	become_waldensian = {
+		major = yes
+		potential = {
+			religion = catholic
+			NOT = { tag = PAP }
+			OR = {
+				AND = {
+					NOT = { religion = waldensian }
+					NOT = { is_subject = yes }
+					
+					any_owned_province = {
+						religion = waldensian
+					}
+					religion_group = christian
+					is_emperor = no
+				}
+				has_global_flag = wald_lea
+			}
+		}
+		allow = {
+			is_at_war = no
+			NOT = { has_country_modifier = recent_conversion }
+			OR = {
+				dominant_religion = waldensian
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
+			stability = 1
+		}
+		effect = {
+			change_religion = waldensian
+			add_stability = -3
+			add_prestige = -100
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			every_known_country = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+			random_owned_province = {
+				change_religion = waldensian
+				add_reform_center = waldensian
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					is_elector = yes
+					is_emperor = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					dominant_religion = waldensian
+				}
+			}
+		}
+	}
+	
+	become_unitarian = {
+		major = yes
+		potential = {
+			NOT = { religion = unitarian }
+			NOT = { tag = PAP }
+			NOT = { is_subject = yes }
+			religion = catholic
+			any_province = {
+				religion = unitarian
+			}
+			OR = {
+				any_owned_province = {
+					religion = unitarian
+				}
+				ai = no
+			}
+			religion_group = christian
+			is_emperor = no
+		}
+		allow = {
+			NOT = { has_country_modifier = recent_conversion }
+			OR = {
+				AND = {
+					dominant_religion = unitarian
+					stability = 1
+				}
+				AND = {
+					OR = {
+						has_global_flag = unitarian_exists
+						ai = no
+					}
+					stability = 1
+				}
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_religion = unitarian
+			add_stability = -3
+			add_prestige = -100
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			every_known_country = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+			random_owned_province = {
+				change_religion = unitarian
+				add_reform_center = unitarian
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					is_elector = yes
+					is_emperor = yes
+				}
+			}
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					dominant_religion = unitarian
+				}
+			}
+			modifier = {
+				factor = 0
+				government = theocracy
+			}
+		}
+	}
+	
+	become_anabaptist = {
+		major = yes
+		potential = {
+			religion = catholic
+			NOT = { religion = anabaptist }
+			NOT = { tag = PAP }
+			NOT = { is_subject = yes }
+			any_province = {
+				religion = anabaptist
+			}
+			OR = {
+				any_owned_province = {
+					religion = anabaptist
+				}
+				ai = no
+			}
+			religion_group = christian
+			is_emperor = no
+		}
+		allow = {
+			NOT = { has_country_modifier = recent_conversion }
+			OR = {
+				AND = {
+					dominant_religion = anabaptist
+					stability = 1
+				}
+				AND = {
+					OR = {
+						any_owned_province = {
+							religion = anabaptist
+						}
+						ai = no
+					}
+					stability = 1
+				}
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_religion = anabaptist
+			add_stability = -3
+			add_prestige = -100
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			every_known_country = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+			random_owned_province = {
+				change_religion = anabaptist
+				add_reform_center = anabaptist
+			}
+		}
+		ai_will_do = {
+			factor = 0 #AI doesn't like peaceful religions lol
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					religion = catholic
+				}
+			}
+		}
+	}
+	
+	become_lollard = {
+		major = yes
+		potential = {
+			NOT = { religion = lollard }
+			religion = catholic
+			NOT = { tag = PAP }
+			OR = {
+				AND = {
+					NOT = { religion = lollard }
+					NOT = { is_subject = yes }
+					any_owned_province = {
+						religion = lollard
+					}
+					religion_group = christian
+					is_emperor = no
+				}
+				has_global_flag = lollard_ref
+			}
+			
+		}
+		allow = {
+			is_at_war = no
+			NOT = { has_country_modifier = recent_conversion }
+			OR = {
+				dominant_religion = lollard
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
+			stability = 1
+		}
+		effect = {
+			change_religion = lollard
+			add_stability = -3
+			add_prestige = -100
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			every_known_country = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+			random_owned_province = {
+				change_religion = lollard
+				add_reform_center = lollard
+			}
+			
+			
+			country_event = { 
+				id = PreProtestantEvent.2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					is_elector = yes
+					is_emperor = yes
+				}
+			}
+
+			modifier = {
+				factor = 0
+				NOT = {
+					dominant_religion = lollard
+				}
+			}
+		}
+	}
+	
+	become_fraticelli = {
+		major = yes
+		potential = {
+			religion = catholic
+			NOT = { tag = PAP }
+			OR = {
+				AND = {
+					NOT = { religion = fraticelli }
+					NOT = { is_subject = yes }
+					
+					any_owned_province = {
+						religion = fraticelli
+					}
+					is_emperor = no
+				}
+				has_global_flag = frat_lea
+				has_global_flag = rome_converted_bgm
+			}
+		}
+		allow = {
+			is_at_war = no
+			NOT = { has_country_modifier = recent_conversion }
+			OR = {
+				dominant_religion = fraticelli
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
+			OR = {
+				AND = {
+					NOT = {
+						has_global_flag = fraticelli_line
+					}
+					NOT = {
+						stability = -1
+					}
+				}
+				AND = {
+					has_global_flag = fraticelli_line
+					stability = 1
+				}
+			}
+		}
+		effect = {
+			add_legitimacy_equivalent = {
+				amount = -50
+			}
+			change_religion = fraticelli
+			add_stability = -3
+			add_prestige = -100
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			every_known_country = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+			
+			country_event = { 
+				id = PreProtestantEvent.4
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					is_elector = yes
+					is_emperor = yes
+					NOT = { dominant_religion = fraticelli }
+				}
+			}
+		}
+	}
+
+	become_anglican = {
+		major = yes
+		potential = {
+			NOT = { religion = anglican }
+			NOT = { tag = PAP }
+			NOT = { is_subject = yes }
+			religion = catholic
+			any_province = {
+				religion = anglican
+			}
+			OR = {
+				dominant_religion = anglican
+				ai = no
+			}
+			religion_group = christian
+			is_emperor = no
+		}
+		allow = {
+			NOT = { has_country_modifier = recent_conversion }
+			OR = {
+				AND = {
+					dominant_religion = anglican
+					stability = 1
+				}
+				AND = {
+					OR = {
+						any_owned_province = {
+							religion = anglican
+						}
+						ai = no
+					}
+					stability = 1
+				}
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_religion = anglican
+			add_stability = -3
+			add_prestige = -100
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+			random_owned_province = {
+				change_religion = anglican
+				add_reform_center = anglican	
+			}
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			every_known_country = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					is_elector = yes
+					is_emperor = yes
+				}
+			}
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					religion = catholic
+				}
+			}
+		}
+	}
+
+	become_cathar = {
+		major = yes
+		potential = {
+			religion = catholic
+			NOT = { tag = PAP }
+			OR = {
+				AND = {
+					NOT = {
+						any_country = {
+							religion = cathar
+						}
+					}
+					OR = {
+						culture_group = french
+						culture_group = occitan
+						culture_group = franco_provencal
+					}
+				}
+				any_owned_province = {
+					religion = cathar
+				}
+			}
+			religion_group = christian
+			is_emperor = no
+		}
+		allow = {
+			is_at_war = no
+			NOT = { has_country_modifier = recent_conversion }
+			OR = {
+				dominant_religion = waldensian
+				has_global_flag = rome_converted_bgm
+				has_global_flag = preprot_heresy
+			}
+			stability = 1
+			OR = {
+				AND = {
+					NOT = { has_country_modifier = recent_conversion }
+					is_excommunicated = yes
+					OR = {
+						culture_group = french
+						culture_group = occitan
+						has_global_flag = cathar_exists
+					}
+					NOT = { any_country = { religion = cathar } }
+				}
+				dominant_religion = cathar
+			}
+			is_at_war = no
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = cathar_exists
+					}
+				}
+				set_global_flag = cathar_exists
+			}
+			change_religion = cathar
+			add_stability = -3
+			add_prestige = -100
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			random_owned_province = {
+				change_religion = cathar
+				add_reform_center = cathar
+			}
+			every_known_country = {
+				limit = {
+					reverse_has_opinion_modifier = {
+						who = ROOT
+						modifier = opinion_demote_pope
+					}
+				}
+				reverse_remove_opinion = {
+					who = ROOT
+					modifier = opinion_demote_pope
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				OR = {
+					is_elector = yes
+					is_emperor = yes
+				}
+			}
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					religion = catholic
+				}
+			}
+
+			modifier = {
+				factor = 0
+				NOT = {
+					ruler_has_personality = sinner_personality
+				}
+			}
+
+			modifier = {
+				factor = 0
+				any_country = {
+					religion = cathar
+				}
+				NOT = {
+					dominant_religion = cathar
+				}
+			}
+		}
+	}
+
+	become_avignonian = {
+		major = yes
+		potential = {
+			calc_true_if = {
+				amount = 2
+				exists = PAP
+				exists = AVP
+				exists = PPP
+			}
+			OR = {
+				ai = no
+				AND = {
+					is_subject = no
+					is_emperor = no
+					is_elector = no
+					ai = yes
+					#had_country_flag = {
+					#	flag = recent_religion_change_bgm
+					#	days = 5475
+					#}
+					NOT = {
+						any_rival_country = {
+							religion = avignon
+						}
+					}
+					OR = {
+						is_rival = PAP
+						is_enemy = PAP
+						NOT = {
+							has_opinion = {
+								who = PAP
+								value = -50
+							}
+						}
+						has_opinion = {
+							who = AVP
+							value = 100
+						}
+						any_ally = {
+							religion = avignon
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						any_rival_country = {
+							religion = catholic
+							NOT = {
+								has_opinion = {
+									who = ROOT
+									value = -100
+								}
+							}
+						}
+					}
+				}
+			}
+			NOT = {
+				has_reform = papacy_reform
+			}
+			OR = {
+				religion = catholic
+				religion = pisan
+			}
+			has_global_flag = western_schism
+			exists = AVP
+		}
+		allow = {
+			prestige = 0
+		}
+		effect = {
+			add_legitimacy_equivalent = {
+				amount = -50
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						religion = catholic
+						religion = pisan
+					}
+				}
+				change_religion = avignon
+			}
+			change_religion = avignon
+			every_owned_province = {
+				change_religion = avignon
+			}
+
+			every_subject_country = {
+				change_religion = avignon
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = catholic
+							religion = pisan
+						}
+					}
+					change_religion = avignon
+				}
+			}
+
+			if = {
+				limit = { 
+					NOT = { has_country_flag = already_has_ws_mod }
+					any_subject_country = {
+						tag = AVP
+					}
+				}
+				set_country_flag = already_has_ws_mod
+				add_country_modifier = {
+					name = western_schism_owns_pope
+					duration = 9125
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	become_pisan = {
+		major = yes
+		potential = {
+			calc_true_if = {
+				amount = 2
+				exists = PAP
+				exists = AVP
+				exists = PPP
+			}
+			has_global_flag = pisan_papacy
+			OR = {
+				ai = no
+				AND = {
+					is_subject = no
+					is_emperor = no
+					is_elector = no
+					ai = yes
+					#had_country_flag = {
+					#	flag = recent_religion_change_bgm
+					#	days = 5475
+					#}
+					NOT = {
+						any_rival_country = {
+							religion = pisan
+						}
+					}
+					OR = {
+						is_rival = PAP
+						is_enemy = PAP
+						NOT = {
+							has_opinion = {
+								who = PAP
+								value = -50
+							}
+						}
+						has_opinion = {
+							who = PPP
+							value = 100
+						}
+						any_ally = {
+							religion = pisan
+							trust = {
+								who = ROOT
+								value = 90
+							}
+						}
+						any_rival_country = {
+							religion = catholic
+							NOT = {
+								trust = {
+									who = ROOT
+									value = 25
+								}
+							}
+						}
+					}
+				}
+			}
+			NOT = {
+				has_reform = papacy_reform
+			}
+			OR = {
+				religion = catholic
+				religion = avignon
+			}
+			has_global_flag = western_schism
+			exists = PPP
+		}
+		allow = {
+			prestige = 0
+		}
+		effect = {
+			add_legitimacy_equivalent = {
+				amount = -50
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						religion = avignon
+						religion = catholic
+					}
+				}
+				change_religion = pisan
+			}
+			change_religion = pisan
+			every_owned_province = {
+				change_religion = pisan
+			}
+
+			every_subject_country = {
+				change_religion = pisan
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = avignon
+							religion = catholic
+						}
+					}
+					change_religion = pisan
+				}
+			}
+
+			if = {
+				limit = { 
+					NOT = { has_country_flag = already_has_ws_mod }
+					any_subject_country = {
+						tag = PPP
+					}
+				}
+				set_country_flag = already_has_ws_mod
+				add_country_modifier = {
+					name = western_schism_owns_pope
+					duration = 9125
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	become_catholic = {
+		major = yes
+		potential = {
+			calc_true_if = {
+				amount = 2
+				exists = PAP
+				exists = AVP
+				exists = PPP
+			}
+			OR = {
+				ai = no
+				AND = {
+					is_subject = no
+					is_emperor = no
+					is_elector = no
+					ai = yes
+					had_country_flag = {
+						flag = recent_religion_change_bgm
+						days = 5475
+					}
+					OR = {
+						is_rival = AVP
+						is_enemy = AVP
+						NOT = {
+							has_opinion = {
+								who = AVP
+								value = -50
+							}
+						}
+						has_opinion = {
+							who = AVP
+							value = 100
+						}
+						any_ally = {
+							religion = catholic
+							trust = {
+								who = ROOT
+								value = 90
+							}
+						}
+						any_rival_country = {
+							religion = avignon
+							NOT = {
+								trust = {
+									who = ROOT
+									value = 25
+								}
+							}
+						}
+					}
+				}
+			}
+			NOT = {
+				has_reform = papacy_reform
+			}
+			OR = {
+				religion = pisan
+				religion = avignon
+			}
+			has_global_flag = western_schism
+			exists = PAP
+		}
+		allow = {
+			prestige = 0
+		}
+		effect = {
+			add_legitimacy_equivalent = {
+				amount = -50
+			}
+			change_religion = catholic
+			every_owned_province = {
+				limit = {
+					OR = {
+						religion = avignon
+						religion = pisan
+					}
+				}
+				change_religion = catholic
+			}
+
+			every_subject_country = {
+				change_religion = catholic
+				every_owned_province = {
+					limit = {
+						OR = {
+							religion = avignon
+							religion = pisan
+						}
+					}
+					change_religion = catholic
+				}
+			}
+
+			if = {
+				limit = {
+					NOT = { has_country_flag = already_has_ws_mod }
+					any_subject_country = {
+						tag = PAP
+					}
+				}
+				set_country_flag = already_has_ws_mod
+				add_country_modifier = {
+					name = western_schism_owns_pope
+					duration = 9125
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	become_catholic_romuva = {
+		major = yes
+		potential = {
+			religion = romuva
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			change_religion = catholic
+			every_owned_province = {
+				change_religion = catholic
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = already_has_ws_mod }
+					any_subject_country = {
+						tag = PAP
+					}
+				}
+				set_country_flag = already_has_ws_mod
+				add_country_modifier = {
+					name = western_schism_owns_pope
+					duration = 9125
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						diplomatic_reputation = 5
+						ruler_has_personality = charismatic_negotiator_personality
+					}
+				}
+			}
+		}
+	}
+}

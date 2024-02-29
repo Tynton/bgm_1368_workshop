@@ -1,0 +1,40 @@
+#2742 - North Hamgyeong
+owner = YUA
+controller = YUA
+culture = manchu
+religion = confucianism
+capital = "Gyeongwon"
+trade_goods = naval_supplies
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_local_autonomy = 60
+add_nationalism = 15
+add_core = YUA
+add_core = KOR
+add_core = LIA
+discovered_by = chinese
+discovered_by = nomad_group
+1542.1.1 = {
+}
+1592.7.18 = {
+}
+# Japanese invasion - Battle of Haejungchang
+1593.2.22 = {
+}
+# Kato retreats to Seoul
+1637.1.1 = {
+}
+# Tributary of Qing China
+1644.1.1 = {
+}
+# Part of the Manchu empire
+1645.7.1 = {
+}
+1653.1.1 = {
+}
+# Hendrick Hamel
+1739.1.1 = {
+}
+# Martin Spanberg

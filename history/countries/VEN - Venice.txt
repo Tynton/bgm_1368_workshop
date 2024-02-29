@@ -1,0 +1,24 @@
+government = republic
+add_government_reform = venice_merchants_reform
+mercantilism = 25
+primary_culture = venetian
+religion = catholic
+add_accepted_culture = greek
+add_accepted_culture = dalmatian
+technology_group = western
+capital = 112 # Venezia
+fixed_capital = 112 # Cannot move capital away from this province & no power cost to move to it
+historical_friend = KNI
+national_focus = DIP
+add_army_professionalism = 0.05
+
+1367.1.1 = {
+	monarch = {
+		name = "Andrea"
+		dynasty = "Contarini"
+		birth_date = 1300.1.1
+		adm = 5
+		dip = 2
+		mil = 4
+	}
+}

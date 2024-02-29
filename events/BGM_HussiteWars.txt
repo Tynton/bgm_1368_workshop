@@ -1,0 +1,385 @@
+namespace = BGMHW
+
+country_event = { #Death of Jan Hus
+	id = BGMHW.1
+	title = "BGMHW.1.t"
+	desc = "BGMHW.1.d"
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	major = yes
+
+	trigger = {
+		OR = {
+			culture = czech
+			culture = moravian
+		}
+		OR = {
+			religion = catholic
+			religion = avignon
+			religion = pisan
+			religion = fraticelli
+		}
+		reform_desire = 0.8
+	}
+
+	mean_time_to_happen = {
+		years = 6
+
+		modifier = {
+			factor = 0.5
+			reform_desire = 0.85
+		}
+
+		modifier = {
+			factor = 0.25
+			reform_desire = 0.9
+		}
+
+		modifier = {
+			factor = 0.125
+			reform_desire = 0.95
+		}
+
+		modifier = {
+			factor = 0.01
+			reform_desire = 0.99
+		}
+	}
+
+	major = yes
+
+	option = {
+		name = "BGMHW.1.a"
+		add_reform_desire = -1
+		add_reform_desire_scale = -0.33
+		add_stability = -1
+		add_yearly_manpower = -0.25
+		set_country_flag = had_hussite_wars
+
+		set_global_flag = hussite_wars_began
+
+		random_owned_province = {
+			change_religion = hussite
+			add_reform_center = hussite
+			add_province_modifier = {
+				name = religious_center
+				duration = 3650
+			}
+		}
+		266 = { change_religion = hussite }
+		4237 = { change_religion = hussite }
+	}
+
+	option = {
+		name = "BGMHW.1.b"
+		add_reform_desire = 0.05
+		add_stability = -3
+		add_yearly_manpower = 0.25
+		set_country_flag = had_hussite_wars
+		set_country_flag = went_hussite
+
+		set_global_flag = hussite_wars_began
+
+		random_owned_province = {
+			change_religion = hussite
+			add_reform_center = hussite
+			add_province_modifier = {
+				name = religious_center
+				duration = 3650
+			}
+		}
+		change_religion = hussite
+		266 = { change_religion = hussite }
+		4237 = { change_religion = hussite }
+		country_event = {
+			id = ideagroups.1
+		}
+	}
+
+	after = {
+		if = {
+			limit = { tag = BOH }
+		}
+		swap_non_generic_missions = yes
+	}
+}
+
+
+country_event = { #good ending
+	id = BGMHW.2
+	title = "BGMHW.2.t"
+	desc = "BGMHW.2.d"
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = "BGMHW.2.a"
+		
+	}
+}
+
+province_event = { #formation of a hussite army
+	id = BGMHW.3
+	title = "BGMHW.3.t"
+	desc = "BGMHW.3.d"
+	picture = BATTLE_eventPicture
+
+	trigger = {
+		NOT = { has_province_flag = hussite_army }
+		owner = { NOT = { stability = 1 } }
+		NOT = { owner = { adm_tech = 8 } }
+		OR = {
+			owner = { has_disaster = hussite_wars }
+			any_neighbor_province = { religion = hussite }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 10
+			NOT = { owner = { has_disaster = hussite_wars } }
+		}
+	}
+
+	option = {
+		name = "BGMHW.3.a"
+		set_province_flag = hussite_army
+		random_list = {
+			34 = {
+				spawn_rebels = {
+					size = 1
+					type = hussite_rebels
+					win = yes
+				}
+			}
+			33 = {
+				spawn_rebels = {
+					size = 2
+					type = hussite_rebels
+					win = yes
+				}
+			}
+			33 = {
+				spawn_rebels = {
+					size = 3
+					type = hussite_rebels
+					win = yes
+				}
+			}
+		}
+	}
+}
+
+province_event = { #hussite preachers in province
+	id = BGMHW.4
+	title = "BGMHW.4.t"
+	desc = "BGMHW.4.d"
+	picture = LIBERUM_VETO_eventPicture
+
+	trigger = {
+		NOT = { has_province_flag = hussite_army }
+		owner = { NOT = { stability = 2 } }
+		NOT = { owner = { adm_tech = 8 } }
+		OR = {
+			owner = { has_disaster = hussite_wars }
+			any_neighbor_province = { religion = hussite }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 40
+		modifier = {
+			factor = 4
+			NOT = { owner = { has_disaster = hussite_wars } }
+		}
+	}
+
+	option = {
+		name = "BGMHW.4.a"
+		set_province_flag = hussite_army
+		if = {
+			limit = {
+				owner = { religious_unity = 0.5 }
+			}
+			change_religion = hussite
+			add_province_modifier = {
+				name = recent_conversion
+				duration = 3650
+			}
+		}
+		else = {
+			add_reform_center = hussite
+			change_religion = hussite
+			add_province_modifier = {
+				name = recent_conversion
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = { #lollards emboldened by the hussite reformation
+	id = BGMHW.5
+	title = "BGMHW.5.t"
+	desc = "BGMHW.5.d"
+	picture = LIBERUM_VETO_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		any_country = {
+			is_great_power = yes
+			OR = {
+				religion = hussite
+				religion = lollard
+				religion = waldensian
+				religion = fraticelli
+				religion = cathar
+			}
+		}
+		any_owned_province = {
+			religion = lollard
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = "BGMHW.5.a"
+		random_owned_province = {
+			limit = {
+				religion = lollard
+			}
+			add_reform_center = lollard
+			add_province_modifier = {
+				name = recent_conversion
+				duration = 3650
+			}
+		}
+	}
+}
+
+province_event = { #Waldensians emboldened by the hussite reformation
+	id = BGMHW.6
+	title = "BGMHW.6.t"
+	desc = "BGMHW.6.d"
+	picture = LIBERUM_VETO_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		any_country = {
+			is_great_power = yes
+			OR = {
+				religion = hussite
+				religion = lollard
+				religion = waldensian
+				religion = fraticelli
+				religion = cathar
+			}
+		}
+		OR = {
+			province_id = 4727
+			province_id = 103
+			province_id = 205
+			province_id = 204
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 100
+	}
+
+	option = {
+		name = "BGMHW.6.a"
+		change_religion = waldensian
+		add_reform_center = waldensian
+		add_province_modifier = {
+			name = recent_conversion
+			duration = 3650
+		}
+	}
+}
+
+country_event = { #Failure of the Hussite Reformation
+	id = BGMHW.7
+	title = "BGMHW.7.t"
+	desc = "BGMHW.7.d"
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = hussite_wars_began
+		had_global_flag = {
+			flag = hussite_wars_began
+			days = 7300
+		}
+		NOT = {
+			any_country = {
+				is_great_power = yes
+				OR = {
+					religion = hussite
+					religion = lollard
+					religion = waldensian
+					religion = fraticelli
+					religion = cathar
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 10
+
+		modifier = {
+			factor = 1.5
+			reform_desire = 0.5
+		}
+
+		modifier = {
+			factor = 2
+			reform_desire = 0.6
+		}
+
+		modifier = {
+			factor = 2.5
+			reform_desire = 0.7
+		}
+
+		modifier = {
+			factor = 3
+			reform_desire = 0.8
+		}
+
+		modifier = {
+			factor = 6
+			reform_desire = 0.9
+		}
+	}
+
+	major = yes
+
+	option = {
+		name = "BGMHW.7.a"
+		every_province = {
+			limit = {
+				religion = hussite
+				is_reformation_center = yes
+			}
+			remove_reform_center = hussite
+		}
+	}
+}

@@ -1,0 +1,14 @@
+add_core = FLA
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = FLA
+base_tax = 3
+base_manpower = 3
+base_production = 5
+culture = flemish
+religion = catholic
+controller = FLA
+is_city = no
+trade_goods = cloth

@@ -1,0 +1,26 @@
+government = monarchy
+add_government_reform = feudal_theocracy
+primary_culture = azerbaijani
+add_accepted_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 424 #Ardabil
+government_rank = 1
+add_army_professionalism = 0.05
+religious_school = jafari_school
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Sheikhdom"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

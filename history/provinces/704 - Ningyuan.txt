@@ -1,0 +1,24 @@
+#704 - Liaoxi
+owner = YUA
+controller = YUA
+culture = chihan
+religion = confucianism
+capital = "Ningyuan"
+trade_goods = rice
+base_tax = 3
+base_production = 3
+base_manpower = 6
+is_city = yes
+#fort_15th = yes the Nine Garrisons
+add_core = YUA
+discovered_by = chinese
+discovered_by = nomad_group
+1500.1.1 = { 
+	base_tax = 9
+}
+1644.4.22 = { 
+	controller = QNG
+	add_core = QNG
+}
+add_core = MNG
+add_core = YAN

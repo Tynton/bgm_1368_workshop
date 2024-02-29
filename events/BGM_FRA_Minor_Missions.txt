@@ -1,0 +1,232 @@
+namespace = BGM_FRA_minor_missions
+
+# choose your strat
+country_event = {
+	id = BGM_FRA_minor_missions.1
+	title = "BGM_FRA_minor_missions.1.t"
+	desc = "BGM_FRA_minor_missions.1.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_FRA_minor_missions.1.a" #We will respond in the long run by moderating
+		set_country_flag = dip_strat
+	}
+	
+	option = {
+		name = "BGM_FRA_minor_missions.1.b" #Take a hardline approach
+		set_country_flag = mil_strat
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = BGM_FRA_minor_missions.2
+	title = "BGM_FRA_minor_missions.2.t"
+	desc = "BGM_FRA_minor_missions.2.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = "BGM_FRA_minor_missions.2.a" #get fucked
+		hidden_effect = {
+			every_subject_country = {
+				grant_independence = yes
+			}
+		}
+		custom_tooltip = fra_breakup_tooltip
+		release_all_subjects = yes
+		
+		hidden_effect = {
+			if = {
+				limit = { 
+					owns = 236
+				}
+				236 = {
+					cede_province = AGT
+					add_core = AGT
+				}
+			}
+			if = {
+				limit = { 
+					owns = 173
+				}
+				173 = {
+					cede_province = GUY
+					add_core = GUY
+				}
+			}
+			if = {
+				limit = { 
+					owns = 209
+				}
+				209 = {
+					cede_province = NAV
+					add_core = NAV
+				}
+			}
+			if = {
+				limit = { 
+					owns = 87
+				}
+				87 = {
+					cede_province = PIC
+					add_core = PIC
+				}
+			}
+			#if = {
+			#	limit = { 
+			#		owns = 4954
+			#	}
+			#	4954 = {
+			#		cede_province = LIE
+			#		add_core = LIE
+			#	}
+			#}
+			if = {
+				limit = { 
+					owns = 183
+				}
+				183 = {
+					cede_province = IDF
+					add_core = IDF
+				}
+			}
+			
+			every_owned_province = {
+				limit = {
+					any_core_country = {
+						NOT = { tag = ROOT }
+						primary_culture = PREV
+						PREV = {
+							NOT = { owned_by = PREV }
+						}
+					}
+				}
+				#remove_core = ROOT
+				random_core_country = {
+					limit = {
+						PREV = {
+							culture = PREV
+						}
+					}
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+
+			every_owned_province = {
+				limit = {
+					any_country = {
+						NOT = { tag = ROOT }
+						primary_culture = PREV
+						PREV = {
+							NOT = { owned_by = PREV }
+						}
+					}
+				}
+				#remove_core = ROOT
+				random_country = {
+					limit = {
+						PREV = {
+							culture = PREV
+						}
+					}
+					PREV = {
+						cede_province = PREV
+						add_core = PREV
+					}
+				}
+			}
+
+			every_owned_province = {
+				limit = {
+					any_core_country = {
+						NOT = { tag = ROOT }
+						PREV = {
+							NOT = { owned_by = PREV }
+						}
+					}
+				}
+				#remove_core = ROOT
+				random_core_country = {
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+		}
+		add_legitimacy = -100
+		add_prestige = -200
+	}
+}
+
+country_event = {
+	id = BGM_FRA_minor_missions.3
+	title = "BGM_FRA_minor_missions.3.t"
+	desc = "BGM_FRA_minor_missions.3.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+	major = yes
+
+	trigger = {
+		any_subject_country = {
+			ai = yes
+			OR = {
+				mission_completed = fra_min_branch_mission_5_d
+				mission_completed = fra_min_branch_mission_5_m
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "BGM_FRA_minor_missions.3.a"
+		custom_tooltip = fra_breakup_warning
+		random_subject_country = {
+			limit = {
+				is_subject_of_type = appanage
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						capital_scope = {
+							continent = ROOT
+						}
+						liberty_desire = 50
+						is_subject_of = ROOT
+					}
+					create_alliance = PREV
+				}
+			}
+			declare_war_with_cb = {
+				casus_belli = cb_independence_war
+				who = ROOT
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						capital_scope = {
+							continent = ROOT
+						}
+						liberty_desire = 50
+						is_subject_of = ROOT
+					}
+					break_alliance = PREV
+				}
+			}
+		}
+	}
+}

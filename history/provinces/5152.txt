@@ -1,0 +1,15 @@
+add_core = SCH
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = SCH
+base_tax = 1
+base_manpower = 1
+base_production = 1
+culture = austrian
+trade_goods = grain
+religion = catholic
+controller = SCH
+is_city = yes
+hre = yes

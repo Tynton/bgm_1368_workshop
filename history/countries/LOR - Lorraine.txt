@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = lorrain
+religion = catholic
+technology_group = western
+capital = 189	# Nancy
+
+
+1346.2.1 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "de Metz"
+		birth_date = 1346.2.1
+		adm = 1
+		dip = 1
+		mil = 3
+	}
+}
+
+1365.9.11 = {
+	heir = {
+		name = "Charles"
+		monarch_name = "Charles II"
+		dynasty = "de Metz"
+		birth_date = 1364.1.1
+		adm = 1
+		dip = 1
+		mil = 3
+	}
+}

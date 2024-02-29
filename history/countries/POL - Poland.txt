@@ -1,0 +1,34 @@
+government = monarchy
+add_government_reform = polish_great_sejm
+primary_culture = polish
+religion = catholic
+technology_group = eastern
+historical_friend = LIT
+historical_rival = TEU
+capital = 262 # Krakow
+add_accepted_culture = ruthenian
+
+1444.10.1 = {
+	set_estate_privilege = estate_nobles_golden_liberty
+}
+
+#1444.11.11 = {
+#	monarch = {
+#		adm = 0
+#		mil = 0
+#		dip = 0
+#		regent = yes
+#	}
+#}
+
+1310.6.25 = {
+	monarch = {
+		name = "Kazimierz III"
+		dynasty = Piast
+		birth_date = 1310.4.30
+		adm = 6
+		dip = 3
+		mil = 2
+	}
+	
+}

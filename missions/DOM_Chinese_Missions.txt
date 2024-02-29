@@ -1,0 +1,1179 @@
+bgm_mng_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = MNG
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_mng_yongle_dadian = {
+		position = 1
+		icon = mng_expand_yongle_dadian
+		required_missions = { }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				has_global_modifier_value = {
+					which = innovativeness_gain
+					value = 0.5
+				}
+				NOT = {
+					has_global_modifier_value = {
+						which = idea_cost
+						value = -0.15
+					}
+				}
+				NOT = {
+					has_global_modifier_value = {
+						which = technology_cost
+						value = -0.15
+					}
+				}
+			}
+			monthly_adm = 12
+		}
+		effect = {
+			add_country_modifier = {
+				name = mng_yongle_dadian
+				duration = 18250
+			}
+		}
+	}
+
+	bgm_mng_literary_culture = {
+		position = 2
+		icon = mission_asian_city
+		required_missions = { bgm_mng_yongle_dadian }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					superregion = china_superregion
+					devastation = 10
+				}
+			}
+			prestige = 0
+			artist = 3
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+
+	bgm_mng_fiat_currency = {
+		position = 3
+		icon = jap_financial_cliques
+		required_missions = {  }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			is_at_war = no
+			stability = 1
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = mng_hongwu_inflation
+				duration = -1
+			}
+			custom_tooltip = bgm_mng_fiat_currency
+			hidden_effect = {
+				set_country_flag = fiat_currency_mng
+			}
+		}
+	}
+
+	bgm_mng_officer_salaries = {
+		position = 4
+		icon = mng_nomadic_frontier
+		required_missions = { bgm_mng_army_infrastructure bgm_mng_fiat_currency }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			is_at_war = no
+			mil_tech = 10
+			NOT = { has_country_modifier = mng_hongwu_inflation }
+			custom_trigger_tooltip = {
+				tooltip = mng_successful_in_fiat_management
+				has_country_flag = mng_inflation_crisis_happened
+				NOT = { has_country_flag = failed_in_fiat }
+			}
+		}
+		effect = {
+			add_mil_power = 100
+		}
+	}
+
+	bgm_mng_central_banks = {
+		position = 5
+		icon = mng_outer_city_beijing
+		required_missions = { bgm_mng_officer_salaries }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			NOT = { governing_capacity_percentage = 0.5 }
+			NOT = {
+				num_of_rebel_controlled_provinces = 1
+			}
+			stability = 1
+			NOT = {
+				inflation = 1
+			}
+			NOT = {
+				num_of_loans = 1
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_country_modifier = {
+				name = mng_banks
+				duration = -1
+			}
+		}
+	}
+
+	bgm_mng_eco_control = {
+		position = 6
+		icon = qng_high_qing_era
+		required_missions = { bgm_mng_central_banks }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				base_tax = 10
+			}
+			NOT = {
+				base_production = 10
+			}
+		}
+		trigger = {
+			full_idea_group = economic_ideas
+			production_efficiency = 0.5
+			has_global_modifier_value = {
+				which = global_tax_modifier
+				value = 0.5
+			}
+			OR = {
+				tax_income_percentage = 0.4
+				production_income_percentage = 0.4
+			}
+			calc_true_if = {
+				amount = 50
+				all_owned_province = {
+					base_tax = 10
+					base_production = 10
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			add_mercantilism = 10
+			add_country_modifier = {
+				name = mng_economic_golden_age
+				duration = 18250
+			}
+		}
+	}
+}
+
+bgm_mng_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = MNG
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_mng_agrarian_production = {
+		position = 1
+		icon = reform_the_monte
+		required_missions = {  }
+		provinces_to_highlight = {
+			superregion = china_superregion
+			trade_goods = grain
+			NOT = {
+				OR = {
+					base_production = 10
+					has_building = workshop
+					has_building = counting_house
+					has_building = factory_infrastructure
+					has_building = fabricator
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				china_superregion = {
+					type = all
+					trade_goods = grain
+					OR = {
+						base_production = 10
+						has_building = workshop
+						has_building = counting_house
+						has_building = factory_infrastructure
+						has_building = fabricator
+					}
+				}
+			}
+		}
+		effect = {
+			add_ruler_modifier = {
+				name = mng_grain
+				duration = -1
+			}
+		}
+	}
+
+	bgm_mng_army_infrastructure = {
+		position = 3
+		icon = qng_ten_grand_campaigns
+		required_missions = { bgm_mng_great_wall bgm_mng_agrarian_production }
+		provinces_to_highlight = {
+			superregion = china_superregion
+			NOT = {
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 50
+				china_superregion = {
+					type = all
+					OR = {
+						has_building = barracks
+						has_building = training_fields
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = mng_grain_country
+				duration = -1
+			}
+			indo_china_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	bgm_southern_subordination = {
+		position = 4
+		icon = mng_jing_hang_grand_canal
+		required_missions = { bgm_mng_army_infrastructure }
+		provinces_to_highlight = {
+			region = indo_china_region
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				indo_china_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_meritocracy = 10
+		}
+	}
+
+	bgm_begin_japan = {
+		position = 4
+		icon = jap_deploy_atakebune
+		required_missions = { bgm_mng_korean_hegemon }
+		provinces_to_highlight = {
+			region = japan_region
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				japan_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_meritocracy = 10
+		}
+	}
+
+	bgm_commercial_controls = {
+		position = 5
+		icon = mission_rb_college_of_justice
+		required_missions = { bgm_mng_central_banks }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 667
+				province_id = 684
+				province_id = 1816
+				province_id = 1822
+				province_id = 4196
+			}
+		}
+		trigger = {
+			full_idea_group = trade_ideas
+			OR = {
+				has_global_modifier_value = {
+					which = global_trade_power
+					value = 0.33
+				}
+				trade_efficiency = 0.33
+			}
+			owns = 667
+			owns = 684
+			owns = 1816
+			owns = 1822
+			owns = 4196
+		}
+		effect = {
+			add_mercantilism = 10
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_id = 667
+						province_id = 684
+						province_id = 1816
+						province_id = 1822
+						province_id = 4196
+					}
+				}
+				add_province_modifier = {
+					name = mng_local_trade
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+bgm_mng_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = MNG
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_mng_defeat_yuan = {
+		position = 1
+		icon = qng_end_yuan
+		required_missions = {  }
+		provinces_to_highlight = {
+			superregion = china_superregion
+			owned_by = YUA
+		}
+		trigger = {
+			NOT = {
+				war_with = YUA
+			}
+			NOT = {
+				calc_true_if = {
+					amount = 5
+					china_superregion = {
+						type = all
+						owned_by = YUA
+					}
+				}
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			add_meritocracy = 50
+			add_mandate = 50
+		}
+	}
+
+	bgm_mng_great_wall = {
+		position = 2
+		icon = mission_great_wall
+		required_missions = { bgm_mng_defeat_yuan }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			any_neighbor_province = {
+				owned_by = YUA
+			}
+		}
+		trigger = {
+			OR = {
+				has_global_modifier_value = {
+					which = defensiveness
+					value = 0.2
+				}
+				full_idea_group = defensive_ideas
+				698 = {
+					has_great_project = {
+						type = the_great_wall_of_china
+						tier = 2
+					}
+				}
+			}
+			OR = {
+				calc_true_if = {
+					amount = 3
+					all_owned_province = {
+						fort_level = 1
+						any_neighbor_province = {
+							owned_by = YUA
+						}
+					}
+				}
+				YUA = {
+					is_subject_of = ROOT
+				}
+				NOT = { exists = YUA }
+			}
+		}
+		effect = {
+			if = {
+				limit = { exists = YUA }
+				add_stability_or_adm_power = yes
+			}
+			else = {
+				add_adm_power = 100
+			}
+			tibet_region = {
+				add_permanent_claim = ROOT
+			}
+			manchuria_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	bgm_mng_manchuria = {
+		position = 3
+		icon = mng_thirteen_provinces
+		required_missions = { bgm_mng_great_wall }
+		provinces_to_highlight = {
+			region = manchuria_region
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 20
+				manchuria_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_meritocracy = 10
+			mongolia_region = {
+				add_permanent_claim = ROOT
+			}
+			korea_region = {
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = { exists = KOR }
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					target = KOR
+				}
+			}
+		}
+	}
+
+	bgm_mng_korean_hegemon = {
+		position = 4
+		icon = mng_kingdom_joseon
+		required_missions = { bgm_mng_manchuria }
+		provinces_to_highlight = {
+			region = korea_region
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = KOR
+					}
+					calc_true_if = {
+						amount = 12
+						korea_region = {
+							type = all
+							owned_by = ROOT
+						}
+					}
+				}
+				AND = {
+					exists = KOR
+					KOR = {
+						is_subject_of_type = tributary_state
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_dip_power = 100
+			japan_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	bgm_mng_religious_tolerance = {
+		position = 5
+		icon = mission_to_china
+		required_missions = {  }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				religion_group = ROOT
+			}
+		}
+		trigger = {
+			OR = {
+				has_global_modifier_value = {
+					which = tolerance_heathen
+					value = 0.0 #0.01
+				}
+				AND = {
+					religious_unity = 1
+					full_idea_group = humanist_ideas
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_country_modifier = {
+				name = mng_religious_toleration
+				duration = -1
+			}
+		}
+	}
+
+	bgm_mng_coastline_fleets = {
+		position = 6
+		icon = mng_expand_bogue
+		required_missions = {  }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			navy_size = 50
+			OR = {
+				heavy_ship_fraction = 0.25
+				galley_fraction = 0.4
+			}
+		}
+		effect = {
+			add_navy_tradition = 25
+			add_dip_power = 100
+
+			custom_tooltip = 25_tran_mng
+			hidden_effect = {
+				if = {
+					limit = { 
+						num_of_transport = 25
+					}
+					taiwan_area = {
+						cede_province = ROOT
+						add_core = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	bgm_mng_asian_naval_hegemon = {
+		position = 7
+		icon = mission_rb_grow_the_channel #mission_rb_scottish_north_sea_trade
+		required_missions = { bgm_mng_westernize_society bgm_mng_coastline_fleets }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			navy_size = 500
+			num_of_heavy_ship = 50
+			num_of_transport = 100
+			num_of_light_ship = 100
+		}
+		effect = {
+			add_country_modifier = {
+				name = mng_eastern_naval_hegemon
+				duration = -1
+			}
+		}
+	}
+}
+
+bgm_mng_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = MNG
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_mng_expand_jinyiwei = {
+		position = 1
+		icon = jap_fate_mandate
+		required_missions = {  }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			stability = 0
+			is_at_war = no
+		}
+		effect = {
+			add_adm_power = 100
+			add_ruler_modifier = {
+				name = mng_jinyiwei
+				duration = -1
+			}
+		}
+	}
+
+	bgm_mng_stabilize_the_succession = {
+		position = 2
+		icon = qng_balance_mandate
+		required_missions = { bgm_mng_expand_jinyiwei }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			stability = 1
+			NOT = {
+				has_country_modifier = mng_jinyiwei
+			}
+		}
+		effect = {
+			if = {
+				limit = { total_development = 1000 }
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { total_development = 1000 } }
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { total_development = 500 } }
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { total_development = 250 } }
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { total_development = 100 } }
+				random_owned_province = {
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+					}
+				}
+			}
+			else = {
+				random_owned_province = {
+					spawn_rebels = {
+						size = 2
+						type = pretender_rebels
+					}
+				}
+			}
+
+			add_adm_power = 200
+			add_mil_power = 100
+		}
+	}
+
+	bgm_mng_tibet = {
+		position = 3
+		icon = mng_survey_ocean_shores
+		required_missions = { bgm_mng_great_wall }
+		provinces_to_highlight = {
+			region = tibet_region
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 10
+				tibet_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_mandate = 10
+			add_meritocracy = 10
+			mongolia_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	bgm_mng_subordination_mongolia = {
+		position = 4
+		icon = mng_form_depots
+		required_missions = { bgm_mng_tibet bgm_mng_manchuria }
+		provinces_to_highlight = {
+			region = mongolia_region
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 20
+				mongolia_region = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			add_mil_power = 100
+		}
+	}
+
+	bgm_mng_western_traders = {
+		position = 5
+		icon = mission_asian_trader
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4233
+				province_id = 684
+				province_id = 1371
+
+				province_id = 236
+				province_id = 183
+				province_id = 97
+				province_id = 227
+				province_id = 219
+				province_id = 217
+			}
+		}
+		trigger = {
+			OR = {
+				mercantilism = 40
+				AND = {
+					4233 = {
+						is_strongest_trade_power = ROOT
+					}
+					684 = {
+						is_strongest_trade_power = ROOT
+					}
+					1371 = {
+						is_strongest_trade_power = ROOT
+					}
+				}
+			}
+			calc_true_if = {
+				amount = 4
+				has_discovered = 236
+				has_discovered = 183
+				has_discovered = 97
+				has_discovered = 227
+				has_discovered = 219
+				has_discovered = 217
+			}
+		}
+		effect = {
+			add_mercantilism = 5
+			add_country_modifier = {
+				name = mng_expanded_trade
+				duration = 18250
+			}
+		}
+	}
+
+	bgm_mng_westernize_society = {
+		position = 6
+		icon = mng_inward_perfection
+		required_missions = { bgm_mng_weather_the_crises bgm_mng_western_traders bgm_mng_religious_tolerance }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			any_country = {
+				technology_group = western
+				alliance_with = ROOT
+			}
+			OR = {
+				full_idea_group = innovativeness_ideas
+				full_idea_group = humanist_ideas
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = mng_westernization
+				duration = 18250
+			}
+			custom_tooltip = will_westernize_fifty_years
+			if = {
+				limit = { 
+					NOT = {
+						OR = {
+							technology_group = modern_nuke
+							technology_group = modern_german_nuke
+							technology_group = modern_soviet_nuke
+						}
+					}
+				}
+				hidden_effect = {
+					country_event = {
+						id = BGM_MNG_missions.1
+						days = 18250
+					}
+				}
+			}
+		}
+	}
+
+	bgm_mng_textile_industries = {
+		position = 7
+		icon = mission_rb_central_belt_coal_mining
+		required_missions = { bgm_mng_westernize_society }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = {
+				OR = {
+					trade_goods = cloth
+					trade_goods = silk
+				}
+			}
+			NOT = {
+				OR = {
+					has_building = counting_house
+					has_building = textile
+				}
+			}
+			NOT = { base_production = 8 }
+		}
+		trigger = {
+			has_institution = enlightenment
+			calc_true_if = {
+				amount = 8
+				all_owned_province = {
+					OR = {
+						trade_goods = cloth
+						trade_goods = silk
+					}
+					OR = {
+						has_building = counting_house
+						has_building = textile
+					}
+					base_production = 8
+				}
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = cloth
+						trade_goods = silk
+					}
+				}
+				add_province_modifier = {
+					name = mng_textile_industry
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+bgm_mng_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = MNG
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bgm_mng_defeat_the_xia = {
+		position = 1
+		icon = mch_proclaim_later_jin
+		required_missions = {  }
+		provinces_to_highlight = {
+			superregion = china_superregion
+			owned_by = XIA
+		}
+		trigger = {
+			NOT = {
+				exists = XIA
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+		}
+	}
+
+	bgm_mng_recover_legitimacy = {
+		position = 2
+		icon = mng_tame_china_sorrow
+		required_missions = { bgm_mng_defeat_the_xia bgm_mng_expand_jinyiwei }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			prestige = 50
+			meritocracy = 100
+		}
+		effect = {
+			add_adm_power = 200
+		}
+	}
+
+	bgm_mng_continue_consolidation = {
+		position = 3
+		icon = mng_shengshi_zhishi
+		required_missions = { bgm_mng_recover_legitimacy }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			absolutism = 50
+		}
+		effect = {
+			add_country_modifier = {
+				name = mng_auth_culture
+				duration = 18250
+			}
+		}
+	}
+
+	bgm_mng_weather_the_crises = {
+		position = 5
+		icon = qng_junji_chu
+		required_missions = { bgm_mng_continue_consolidation }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				NOT = {
+					OR = {
+						current_age = age_of_feudalism
+						current_age = age_of_discovery
+						current_age = age_of_reformation
+						current_age = age_of_absolutism
+					}
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = ming_crisis_happened_tooltip
+						has_country_flag = ming_crisis_happened
+					}
+					has_any_disaster = no
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = mng_auth_culture
+				duration = 18250
+			}
+		}
+	}
+
+	bgm_mng_consolidate_the_empire = {
+		position = 6
+		icon = qng_north_china
+		required_missions = { bgm_mng_weather_the_crises }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				full_idea_group = influence_ideas
+				diplomatic_reputation = 6
+			}
+			absolutism = 90
+		}
+		effect = {
+			if = {
+				limit = { 
+					has_subject_of_type = tributary_state
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = tributary_state
+					}
+					ROOT = {
+						create_subject = {
+							subject_type = appanage
+							subject = PREV
+						}
+					}
+				}
+			}
+			else = {
+				add_dip_power = 200
+			}
+		}
+	}
+
+	bgm_mng_coal_extraction = {
+		position = 7
+		icon = mission_rb_prospect_for_coal
+		required_missions = { bgm_mng_westernize_society }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			has_institution = enlightenment
+			calc_true_if = {
+				amount = 3
+				all_owned_province = {
+					trade_goods = coal
+					has_building = furnace
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = mng_coal_dev_tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = coal
+					}
+					add_base_production = 2
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+﻿l_english:
+ BGMTE.1.t:0 "Victory in the Red Turban Rebellion"
+ BGMTE.1.d:0 "Initially it appeared the Red Turban rebellion was getting out of hand. The leader of the rebellion claimed himself the Emperor of China too soon. His attempt at throwing the Yuan out of China has failed. It's time for $MONARCH$ to move the capital back to Khanbaliq, where it must always remain."
+ BGMTE.1.a:0 "We will once again take our rightful place."
+ 
+ BGMTE.2.t:0 "England in the Late Middle Ages"
+ BGMTE.2.d:0 " In 1066 A.D. the succession of England was in grave crisis. Initially, Harald Hardrada invaded from Scandinavia to attempt to seize the Throne of England for himself but was defeated by Harold Godwinson. Later, William of Normandy would make a successful invasion with support from the Papacy and the Duke of Brittany. All three were claimants to the succession of the King Edward who did not name an heir. The result of all of this was William's rise to power and by extension the initiation of influence from the Norman French Nobility who elected to forcibly oust all influence from the previous Anglo-Saxons in power. \n\nNothing of significance would occur until the 1200's when the English peasantry revolted and secured the implementation of the Magna Carta and the creation of Parliament in a bid to guarantee long-form rights for themselves. In 1337 the succession of France became a matter of considerable debate as the French did not wish to allow the King of England to also assume the Crown of France. Because the succession would pass through a female, Salic law was invoked to deny the English control of France and the cadet branch of Valois was placed on the Throne instead. This would be contested by the Plantagenêt dynasty who would go on to initiate the Hundred Years' War, which by this point has been raging on but with interruptions for thirty-one years. \n\nFrance and England are currently vying for influence in Castile which is in a state of crisis as Henry II is attempting to, with support from Aragon and France, take control of Castile from Peter of Ivrea. A notable poet by the name of Geoffrey Chaucer was active at this time and is available for employment at the royal court."
+ BGMTE.2.a:0 "Acknowledged"
+ 
+ BGMTE.3.t:0 "The Red Turban Rebellion"
+ BGMTE.3.d:0 "The Yuan Dynasty was fraught with numerous internal issues from its outset. Initially there was a question concerning the matter of sinicizing the state and ruling class or retain its Mongolian traditions. Domestic policing abilities were proven incapable by the thirteen-fourties since Yuan military garrisons had proven ineffective in maintaining order in the lands of China Proper. Since the forces of the government were proven inept, local leaders took it upon themselves to enforce order. It was only a matter of time since then that, given the principle of the Mandate of Heaven, a newcomer would come to take the responsibility. The Hongwu Emperor as he is known to history has been coronated as the Emperor of China on the twenty-third of January, making him the first Emperor of the Ming Dynasty and the first ethnic Han to rule in quite some time, ever since the fall of the Song to the Mongol Empire in the 1200's. Nevertheless, the Yuan Dynasty under threat of total destruction should it continue to prove its inability to control the Middle Kingdom of China and prove its legitimacy."
+ BGMTE.3.a:0 "Acknowledged"
+ 
+ BGMTE.4.t:0 "The Collapse of the Serbian Empire"
+ BGMTE.4.d:0 "The Serbian Empire is a young state already entrenched with trouble. Initially Stefan Dusan (the predecessor of Stefan Uros V) managed to conquer sizeable apportionments of territory, most notably in Macedonia and Greece. Dusan was considered popular by the nobility who favored him despite his father's wishes for his younger brother to inherit the Kingdom. Dusan would only rule Serbia for nine years. His successor Stefan Uros V was not capable of consolidating the holdings his father conquered and the Serbian Empire would begin coming apart as he was not successful in reining in the nobility who were in control of Dusan's new conquests. Uros has proven incapable of having an heir which seems to further jeopardize the nascent Serbian Empire. A rapidly expanding Ottoman Sultanate will almost certainly prove a grave danger should Serbia not manage to resolve its impending crisis in due time."
+ BGMTE.4.a:0 "Acknowledged"
+ 
+ BGMTE.5.t:0 "The Great Troubles"
+ BGMTE.5.d:0 "The Golden Horde is one of the successor states to the Mongol Empire. Forged for one of Genghis Khan's generals, he would see the Golden Horde's expansion westward as far as Romania in the early thirteenth century. Eventually in the late twelve-hundreds there would be a great succession crisis in the Mongol Empire as Möngke Khan died culminating in the Toluid Civil War. Batu Khan would be the first ruler of the Golden Horde to operate with autonomy unlike Jochi, his predecessor. The Golden Horde would see a golden age lasting for sixty years from the twelve-fourties to the early fourteenth century, albeit with interruptions. Later efforts were devoted to the prevention of the formation of a Russian state which would become troublesome in the thirteen-fifties. The Great Troubles would begin in 1359 as a persisting civil war on the matter of inheritance as the Khan, Berdi Beg, would be killed by his brother in an attempt to overthrow Beg's government. The Black Death did nothing to help the situation, ravaging the country like with most of Eurasia just before the start of The Golden Horde's succession crisis. Because of this, the Golden Horde's influence in Russia is waning and the realms there are ready to exploit our troubles."
+ BGMTE.5.a:0 "Acknowledged"
+ 
+ BGMTE.6.t:0 "The Reign of Charles IV"
+ BGMTE.6.d:0 "Charles IV's reign has been thus far the most successful for the state of Bohemia. He has worked to preserve peace within the Empire by forging confederations and created the persistent Golden Bull of 1356 which named the electors and the manner of succession for the Holy Roman Empire. Prague was renovated to a degree as to rival the prestige of Paris. To do so Charles constructed the Charles University, renovated the Cathedral of Vitus, had the Prague Castle rebuilt, and created a city square named after him. He would also be the last claimant to the Kingdom of Arles, a successor state to the old Kingdom of Burgundy, whose existence began in 933 A.D."
+ BGMTE.6.a:0 "Acknowledged"
+ charles_iv_core_warning:0 "§RIf we wish to act on our claims to Arles, we need to secure the provinces of Provence within Charles IV's lifetime.§!"
+ ruler_captured:0 "§YTheir ruler is much more likely to surrender to our demands in exchange for their life.§!"
+ 
+ BGMTE.7.t:0 "Our Ruler Captured"
+ BGMTE.7.d:0 "$MONARCH$ has been located on the battlefield by the enemy and their troops were successful in capturing [Root.GetHerHim]. [Root.GetSheHe] attempted to hide or escape by blending in with the surrounding environment but failed. Because [Root.GetSheHe] is now in the enemy's they are much more likely to answer to whatever demands they have for us to conclude our war. [Root.GetSheHe] only asks to not be killed."
+ BGMTE.7.a:0 "This is a disaster..."
+ 
+ BGMTE.8.t:0 "Enemy's Ruler Captured"
+ BGMTE.8.d:0 "The enemy's monarch has been located on the battlefield and our troops were successful in capturing them. They attempted to hide or escape by blending in with the surrounding environment but failed. Because they are now in our custody they are much more likely to answer to whatever demands we have for them to conclude our war. They only ask to not be killed."
+ BGMTE.8.a:0 "Excellent."
+ 
+ BGMTE.9.t:0 "Trastámara Revolt"
+ BGMTE.9.d:0 "The revolt of the Trastámara pretenders can be defeated by Castile if it survives the war without being put under a Union by Trastámara. Otherwise, Castile is inherited by the pretender faction."
+ BGMTE.9.a:0 "Okay."
+ 
+ BGMTE.11.t:0 "Tumult of Joanna"
+ BGMTE.11.d:0 "The reign of Joanna of Naples has been turbulent thus far and it would not appear that the intrigues and foreign adversarial states intend to relieve us of the anxiety of an invasion. Joanna's sole ally in all of this appears to be the Papacy, an alliance she received by ceding Avignon to them formally. \n\nThe Kingdom of Hungary remains a notable enemy, having attempted to force a union with Naples over the death of Joanna's first husband, Andrew. The papacy intervened on behalf of Joanna and the invasion did not achieve its goals. Attempts to have heirs have largely failed for Joanna, though her legitimacy would wax and wane throughout her reign.\n\nThe Queen must navigate politics with great care to see Naples through the coming years with prosperity."
+ BGMTE.11.a:0 "Okay."
+ reign_of_joanna:0 "Reign of Joanna"
+ joanna_warning:0 "If §YLegitimacy§! is under §R25§! or §YStability§! reaches §R-2§! or less, Joanna may be §Rassassinated.§!"
+ 
+ yuan_loses_china_warning:0 "If @YUA §YThe Yuan§! cannot reassert control in §YChina,§! they will §Rlose§! all §Yprovinces§! @MNG §YThe Ming§! has a §Ycore§! on. They must make peace with §YThe Ming§! on terms of enforcing a §YPersonal Union§! which will be §Rinherited§! immediately."
+ 
+ trastamara_warning:0 "If @TST §YTrastámara§! cannot §YEnforce a Personal Union§! over @CAS §YCastile,§! they will be §Rannexed§! by §YCastile.§!"

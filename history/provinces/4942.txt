@@ -1,0 +1,16 @@
+add_core = FRA
+add_core = DAU
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+owner = FRA
+base_tax = 1
+base_manpower = 2
+base_production = 1
+culture = lyonnais
+trade_goods = wool
+religion = waldensian
+controller = FRA
+is_city = no
+add_province_triggered_modifier = waldensian_religious_center

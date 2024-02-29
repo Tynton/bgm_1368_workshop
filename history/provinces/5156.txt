@@ -1,0 +1,15 @@
+add_core = MNT
+owner = MNT
+base_tax = 4
+base_manpower = 3
+base_production = 4
+culture = frainc_comtou
+religion = catholic
+hre = yes
+controller = MNT
+is_city = yes
+trade_goods = iron
+discovered_by = muslim
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern

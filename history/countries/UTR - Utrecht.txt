@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = dutch
+capital = 98	# Utrecht
+fixed_capital = 98 # Cannot move capital away from this province & no power cost to move to it
+
+#Prince Bishops of Utrecht
+1363.1.1 = {
+	monarch = {
+		name = "Jan"
+		dynasty = "van Virneburg"
+		birth_date = 1336.1.1
+		adm = 0
+		dip = 2
+		mil = 0
+	}
+}

@@ -1,0 +1,23 @@
+#614 - Vientiane
+owner = LXA
+controller = LXA
+culture = lao
+religion = buddhism
+capital = "Vientiane"
+trade_goods = rice
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = LXA
+discovered_by = chinese
+discovered_by = indian
+extra_cost = 8
+center_of_trade = 1
+add_core = VIE
+1535.1.1 = { discovered_by = POR }
+1694.1.1 = { add_core = AYU }
+1707.1.1 = { 
+	controller = VIE
+}
+fort_15th = yes

@@ -1,0 +1,16 @@
+
+dependency = {
+	subject_type = appanage
+	first = LIT
+	second = BRY
+	start_date = 1368.1.1
+	end_date = 1532.8.3
+}
+
+dependency = {
+	subject_type = appanage
+	first = LIT
+	second = SEV
+	start_date = 1368.1.1
+	end_date = 1532.8.3
+}

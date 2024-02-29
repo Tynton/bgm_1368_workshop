@@ -1,0 +1,58 @@
+#4788 - Plasencia
+owner = CAS#Enrique III of Castille
+controller = CAS
+culture = leonese
+religion = catholic
+base_tax = 2
+base_production = 2
+trade_goods = livestock
+base_manpower = 1
+capital = "Plasencia"
+is_city = yes
+add_core = CAS
+add_core = LON
+add_core = TST
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+1464.5.1 = {
+}
+#Nobiliary uprising against King Enrique, Castilla goes into anarchy
+1468.9.18 = {
+}
+#Pactos de los Toros de Guisando. Isabel of Castille becomes heir to the throne and a temporary peace is achieved
+1470.1.1 = {
+}
+#Isabel marries with Fernando of Aragon, breaking the Pacts of Guisando. King Enrique choses his daughter Juana ("La Beltraneja") as new heiress and a succession War erupts.
+1475.6.2 = {
+}
+1479.2.25 = {
+}
+1479.9.4 = {
+}
+#Peace of Alca�ovas, between Queen Isabel and King Alfonso of Portugal who had entered the war supporting her wife Juana
+1516.1.23 = {
+	controller = SPA
+	owner = SPA
+	add_core = SPA
+}
+# King Fernando dies, Carlos inherits Aragon and becames co-regent of Castille
+1713.4.11 = {
+}
+1808.6.6 = {
+	revolt = {
+	}
+}
+1809.1.1 = {
+	revolt = {
+	}
+}
+1812.7.26 = {
+	revolt = {
+	}
+}
+1813.12.11 = {
+	revolt = {
+	}
+}

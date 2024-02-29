@@ -1,0 +1,16 @@
+add_core = FNE
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = FNE
+base_tax = 2
+base_manpower = 3
+base_production = 2
+capital = "Finale Ligure"
+culture = ligurian
+trade_goods = naval_supplies
+religion = catholic
+controller = FNE
+is_city = yes
+hre = yes

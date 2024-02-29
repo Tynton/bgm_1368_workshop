@@ -1,0 +1,15 @@
+
+dependency = {
+	subject_type = vassal
+	first = AQU
+	second = TSE
+	start_date = 1368.1.1
+	end_date = 1452.1.1
+}
+
+alliance = {
+	first = AQU
+	second = HUN
+	start_date = 1365.1.1
+	end_date = 1444.1.1
+}

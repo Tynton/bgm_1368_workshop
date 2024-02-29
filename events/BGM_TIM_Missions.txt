@@ -1,0 +1,39 @@
+namespace = BGM_TIM_missions
+
+country_event = { #Samarkand Capital?
+	id = BGM_TIM_missions.1
+	title = "BGM_TIM_missions.1.t"
+	desc = "BGM_TIM_missions.1.d"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_TIM_missions.1.a" #Yes
+		set_capital = 454
+	}
+
+	option = {
+		name = "BGM_TIM_missions.1.b" #No
+		add_stability_or_adm_power = yes
+	}
+}
+
+country_event = { #Herat Capital?
+	id = BGM_TIM_missions.2
+	title = "BGM_TIM_missions.2.t"
+	desc = "BGM_TIM_missions.2.d"
+	picture = GREAT_BUILDING_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_TIM_missions.2.a" #Yes
+		set_capital = 446
+	}
+
+	option = {
+		name = "BGM_TIM_missions.2.b" #No
+		add_stability_or_adm_power = yes
+	}
+}

@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = schleswig_holsteiner
+religion = catholic
+capital = 1857	# Lauenburg
+fixed_capital = 1857 # Cannot move capital away from this province & no power cost to move to it
+
+# Lüneburg (Dukes of Braunschweig-Lüneburg)
+1368.1.1 = {
+	monarch = {
+		name = "Albrecht V"
+		dynasty = "Askanier"
+		birth_date = 1335.1.1
+		dip = 4
+		adm = 0
+		mil = 4
+	}
+	add_ruler_personality = cruel_personality
+
+	heir = {
+		name = "Erich"
+		monarch_name = "Erich III"
+		birth_date = 1336.1.1
+		adm = 3
+		dip = 1
+		mil = 3
+	}
+}

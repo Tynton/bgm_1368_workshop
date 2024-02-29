@@ -1,0 +1,16 @@
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+base_tax = 2
+base_manpower = 1
+base_production = 3
+culture = hannoverian
+trade_goods = cloth
+religion = catholic
+hre = yes
+center_of_trade = 1
+is_city = yes
+add_core = ESS
+owner = ESS
+controller = ESS

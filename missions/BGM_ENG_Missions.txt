@@ -1,0 +1,3346 @@
+##Made by Ogele 'Comrade Flan'
+
+#English Section
+eng_row_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_mobilize_army = {
+		icon = mission_rb_unite_the_clans
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			army_size_percentage = 0.8
+		}	
+		effect = {
+			ulster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			leinster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			connacht_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			munster_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+
+	eng_subordination_of_ireland = {
+		icon = mission_rb_into_ireland
+		required_missions = { eng_naval_superiority eng_mobilize_army }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = ulster_area
+				area = leinster_area
+				area = connacht_area
+				area = munster_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 6
+				all_province = {
+					OR = {
+						area = ulster_area
+						area = leinster_area
+						area = connacht_area
+						area = munster_area
+					}
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_dip_power = 50
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+}
+
+eng_row_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_naval_superiority = {
+		icon = mission_rb_a_mighty_fleet
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			navy_size_percentage = 0.9
+		}	
+		effect = {
+			add_navy_tradition = 15
+
+			if = {
+				limit = { 
+					capital_scope = {
+						has_port = yes
+					}
+				}
+				capital_scope = {
+					heavy_ship = ROOT
+					heavy_ship = ROOT
+					heavy_ship = ROOT
+				}
+			}
+		}
+	}
+
+	eng_beat_western_navies = {
+		icon = Burn_Wooden_Wall
+		required_missions = { eng_naval_superiority }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			all_rival_country = {
+				NOT = {
+					naval_strength = {
+						who = ROOT
+						value = 0.1
+					}
+				}
+			}
+		}	
+		effect = {
+			add_prestige = 15
+		}
+	}
+
+	eng_kill_scotland = {
+		icon = mission_rb_conquer_scotland
+		required_missions = { eng_subordination_of_ireland }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				owned_by = SCO
+				owned_by_subject_of = SCO
+			}
+		}		
+		trigger = {
+			OR = {
+				NOT = {
+					has_opinion = {
+						who = SCO
+						value = -50
+					}
+				}
+				is_rival = SCO
+				is_enemy = SCO
+			}
+			ROOT = {
+				army_strength = {
+					who = SCO
+					value = 1
+				}
+			}
+		}	
+		effect = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				target = SCO
+				months = 120
+			}
+		}
+	}
+}
+
+eng_row_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_fate_castile = {
+		icon = mission_castillian_aggression
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = tst_not_exists
+				NOT = {
+					exists = TST
+				}
+			}
+		}	
+		effect = {
+			custom_tooltip = army_trad_or_dynasty
+			hidden_effect = {
+				if = {
+					limit = { 
+						CAS = {
+							dynasty = "de Trastámara"
+						}
+					}
+					add_army_tradition = 10
+				}
+				else = {
+					CAS = {
+						country_event = {
+							id = BGM_ENG_missions.2
+						}
+					}
+					normandy_area = {
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+eng_row_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_the_good_parliament = {
+		icon = mission_rb_scottish_conquer_london
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = had_good_parliament
+				has_country_flag = good_parliament_flag
+			}
+		}	
+		effect = {
+			add_adm_power = 50
+		}
+	}
+
+	eng_secure_funding = {
+		icon = reform_the_monte
+		required_missions = { eng_the_good_parliament }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			NOT = { num_of_loans = 1 }
+			OR = {
+				has_global_modifier_value = {
+					which = global_tax_modifier
+					value = 0.3
+				}
+				AND = {
+					stability = 3
+					legitimacy = 90
+				}
+			}
+		}	
+		effect = {
+			custom_tooltip = tax_or_goodwill_modifier
+			change_adm = 1
+			if = {
+				limit = {
+					has_global_modifier_value = {
+						which = global_tax_modifier
+						value = 0.15
+					}
+				}
+				add_prestige = 15
+				add_ruler_modifier = {
+					name = effective_taxation_modifier
+					duration = -1
+				}
+			}
+			else = {
+				add_prestige = 15
+				add_ruler_modifier = {
+					name = goodwill_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+eng_row_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_fate_lollards = {
+		icon = mission_rb_weather_the_reformation
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = lollardy_spawned
+				has_global_flag = lollardy_started
+				had_global_flag = {
+					flag = lollardy_started
+					days = 5475
+				}
+			}
+		}	
+		effect = {
+			custom_tooltip = lollard_ct
+			hidden_effect = {
+				if = {
+					limit = { 
+						NOT = {
+							any_owned_province = {
+								religion = lollard
+							}
+						}
+						NOT = {
+							any_subject_country = {
+								any_owned_province = {
+									religion = lollard
+								}
+							}
+						}
+					}
+					add_stability = 1
+				}
+				else_if = {
+					limit = { religion = lollard }
+					random_country = {
+						limit = {
+							religion = catholic
+						}
+						add_reform_desire = 0.5
+					}
+					add_country_modifier = {
+						name = lollard_reformation
+						duration = 18250
+					}
+				}
+				else = {
+					add_country_modifier = {
+						name = lollard_reconciliation
+						duration = 9125
+					}
+				}
+			}
+		}
+	}
+
+	eng_peasants_revolt = {
+		icon = mission_rb_rein_in_the_highland_clans
+		required_missions = { eng_the_good_parliament eng_fate_lollards }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = wt_mt_trigger
+				OR = {
+					has_country_flag = wt_happened
+					AND = {
+						NOT = { current_age = age_of_feudalism }
+						NOT = { has_country_flag = wt_happened }
+					}
+				}
+			}
+		}	
+		effect = {
+			add_adm_power = 50
+		}
+	}
+
+	eng_war_of_the_roses = {
+		icon = mission_rb_war_of_the_roses
+		required_missions = { eng_peasants_revolt }
+		position = 3
+		provinces_to_highlight = {
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = eng_rb_war_of_roses.tooltip
+				OR = {
+					has_country_flag = war_of_the_roses_ended
+					NOT = {
+						OR = {
+							current_age = age_of_discovery
+							current_age = age_of_feudalism
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			simple_dynamic_effect = {
+				first_custom_tooltip = eng_war_of_the_roses_at
+				first_limit = "has_country_flag = war_of_the_roses_ended"
+				first_effect = "
+				add_stability_or_adm_power = yes
+				add_country_modifier = {
+					name = eng_a_house_united
+					duration = -1
+					desc = until_end_of_age_of_discovery_desc
+				}"
+				second_limit = "NOT = { current_age = age_of_discovery }"
+				second_effect = "
+				if = {
+					limit = {
+						government = monarchy
+					}
+					add_country_modifier = {
+						name = eng_dynastical_security
+						duration = 9125
+					}
+				}
+				else = {
+					add_adm_power = 100
+				}
+				"
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+}
+
+eng_gbr_row_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_global_flag = eng_lost_hundred_years_war
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_gbr_oceanian_colony = {
+		icon = settle_austrialasia
+		required_missions = { eng_gbr_african_colony }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				colonial_region = colonial_indonesia
+				colonial_region = colonial_australia
+			}
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}		
+		trigger = {
+			any_subject_country = {
+				bgm_colonial_subject = yes
+				capital_scope = {
+					OR = {
+						colonial_region = colonial_indonesia
+						colonial_region = colonial_australia
+					}
+				}
+			}
+		}	
+		effect = {
+			add_dip_power = 100
+		}
+	}
+
+	eng_south_india = {
+		icon = control_coromandel
+		required_missions = { eng_gbr_acts_of_union }
+		position = 5
+		provinces_to_highlight = {
+			colonial_region = colonial_coromandel
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}		
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 10
+					all_owned_province = {
+						colonial_region = colonial_coromandel
+					}
+				}
+				any_subject_country = {
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							colonial_region = colonial_coromandel
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_yearly_manpower = 0.25
+			add_yearly_sailors = 0.25
+			add_years_of_income = 0.25
+		}
+	}
+
+	eng_indian_foothold = {
+		icon = standardize_relazioni
+		required_missions = { eng_south_india eng_take_ceylon }
+		position = 6
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 30
+					all_owned_province = {
+						OR = {
+							colonial_region = colonial_coromandel
+							colonial_region = colonial_east_india
+							colonial_region = colonial_west_india
+							colonial_region = colonial_north_india
+							colonial_region = colonial_deccan
+						}
+					}
+				}
+				any_subject_country = {
+					calc_true_if = {
+						amount = 30
+						all_owned_province = {
+							OR = {
+								colonial_region = colonial_coromandel
+								colonial_region = colonial_east_india
+								colonial_region = colonial_west_india
+								colonial_region = colonial_north_india
+								colonial_region = colonial_deccan
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_mercantilism = 5
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							colonial_region = colonial_coromandel
+							colonial_region = colonial_east_india
+							colonial_region = colonial_west_india
+							colonial_region = colonial_north_india
+							colonial_region = colonial_deccan
+						}
+					}
+				}
+				add_yearly_manpower = 0.5
+				add_stability = 1
+				add_liberty_desire = -50
+			}
+		}
+	}
+}
+
+eng_gbr_row_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_global_flag = eng_lost_hundred_years_war
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_gbr_african_colony = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { gbr_explore_new_world }
+		position = 3
+		provinces_to_highlight = {
+			continent = africa
+			is_city = no
+		}		
+		trigger = {
+			any_subject_country = {
+				bgm_colonial_subject = yes
+				capital_scope = {
+					continent = africa
+				}
+			}
+		}	
+		effect = {
+			colonial_zambezi = {
+				add_claim = ENG
+			}
+			colonial_ivory_coast = {
+				add_claim = ENG
+			}
+			add_country_modifier = {
+				name = colonial_rush_gbr_tag
+				duration = 14600
+			}
+		}
+	}
+
+	eng_gbr_trade_ivory_coast = {
+		icon = control_coromandel
+		required_missions = { eng_gbr_african_colony }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2258
+				province_id = 1139
+				province_id = 1147
+				province_id = 1163
+				province_id = 1114
+				province_id = 1172
+			}
+		}		
+		trigger = {
+			1466 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = eng_trade_ivory_coast
+				duration = -1
+			}
+		}
+	}
+
+	eng_take_ceylon = {
+		icon = seize_ceylon
+		required_missions = { eng_gbr_acts_of_union }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = south_lanka_area
+				area = lanka_area
+			}
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 3
+					all_owned_province = {
+						OR = {
+							area = south_lanka_area
+							area = lanka_area
+						}
+					}
+				}
+				any_subject_country = {
+					calc_true_if = {
+						amount = 3
+						all_owned_province = {
+							OR = {
+								area = south_lanka_area
+								area = lanka_area
+							}
+						}
+					}
+				}
+			}
+		}	
+		effect = {
+			add_yearly_manpower = 0.2
+			add_country_modifier = {
+				name = south_indian_sepoys
+				duration = 12775
+			}
+		}
+	}
+
+	eng_stability_in_india = {
+		icon = mission_rb_egyptian_authority
+		required_missions = { eng_take_ceylon }
+		position = 6
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 4
+				all_subject_country = {
+					bgm_colonial_subject = yes
+					capital_scope = {
+						OR = {
+							colonial_region = colonial_coromandel
+							colonial_region = colonial_east_india
+							colonial_region = colonial_west_india
+							colonial_region = colonial_north_india
+							colonial_region = colonial_deccan
+						}
+					}
+					NOT = { liberty_desire = 50 }
+				}
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+			every_subject_country = {
+				limit = {
+					bgm_colonial_subject = yes
+					capital_scope = {
+						OR = {
+							colonial_region = colonial_coromandel
+							colonial_region = colonial_east_india
+							colonial_region = colonial_west_india
+							colonial_region = colonial_north_india
+							colonial_region = colonial_deccan
+						}
+					}
+				}
+				add_country_modifier = {
+					name = indian_loyalty
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+eng_gbr_row_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_global_flag = eng_lost_hundred_years_war
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	gbr_explore_new_world = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { eng_mobilize_army eng_fate_castile }
+		position = 2
+		provinces_to_highlight = {
+			if = {
+				limit = { is_random_new_world = no }
+				OR = {
+					colonial_region = colonial_eastern_america
+					colonial_region = colonial_the_carribean
+				}
+			}
+			else = {
+				continent = new_world
+			}
+			NOT = { has_discovered = ROOT }
+		}
+		trigger = {
+			not_in_mission_preview_mode = { key = GBR }
+			if = {
+				limit = { is_random_new_world = no }
+				custom_trigger_tooltip = {
+					tooltip = miss_discover_eastern_america
+					colonial_eastern_america = { has_discovered = ROOT }
+				}
+				custom_trigger_tooltip = {
+					tooltip = miss_discover_caribbean
+					colonial_the_carribean = { has_discovered = ROOT }
+				}
+			}
+			else = {
+				new_world = {
+					is_sea = no
+					has_discovered = ROOT
+				}
+			}
+		}		
+		effect = {
+			add_country_modifier = {
+				name = "the_unknown_frontier"
+				duration = 5475
+			}
+			add_dip_power = 50
+			unlock_issue = {
+				issue = colonial_venture_act
+			}
+			unlock_issue = {
+				issue = the_sugar_act
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	gbr_colonize_canada = {
+		icon = mission_rb_colonise_canada
+		required_missions = { gbr_explore_new_world }
+		position = 3
+		provinces_to_highlight = {
+			if = {
+				limit = { is_random_new_world = no }
+				colonial_region = colonial_canada
+			}
+			else = {
+				continent = new_world
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
+		}
+		trigger = {
+			not_in_mission_preview_mode = { key = GBR }
+			if = {
+				limit = { is_random_new_world = no }
+				custom_trigger_tooltip = {
+					tooltip = miss_discover_canada
+					colonial_canada = {
+						has_discovered = ROOT
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = gbr_colonize_canada_ct
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 10
+						colonial_region = colonial_canada
+						is_city = yes
+					}
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					continent = new_world
+					is_city = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "eng_rb_established_shipping"
+				duration = 9125
+			}
+			country_event_with_insight = {
+				id = flavor_gbr.7
+				insight_tooltip = INSIGHT_JUST_TOOLTIP
+				effect_tooltip = "
+				add_treasury = 500
+				change_price = {
+					trade_goods = fur
+					key = ENGLISH_FUR_TRADE
+					value = 0.25
+					duration = 3650
+				}"
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	eng_gbr_acts_of_union = {
+		icon = mission_war_for_the_crown
+		required_missions = { }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				owned_by = SCO
+				AND = {
+					NOT = { exists = SCO }
+					area = lowlands_area
+					area = highlands_area
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				SCO = {
+					is_subject_of = ROOT
+				}
+				AND = {
+					calc_true_if = {
+						amount = 40
+						all_owned_province = {
+							region = british_isles_region
+						}
+					}
+					NOT = { exists = SCO }
+				}
+			}
+		}	
+		effect = {
+			set_country_flag = can_do_scottish_inheritance
+			set_country_flag = can_conquer_india
+			custom_tooltip = custom_cb_india
+			if = {
+				limit = { 
+					ai = no
+				}
+				add_country_modifier = {
+					name = colonial_frenzy
+					duration = 10950
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = colonial_frenzy
+					duration = 36500
+				}
+			}
+		}
+	}
+
+	eng_take_west_india = {
+		icon = mission_invade_gujarat
+		required_missions = { eng_gbr_acts_of_union }
+		position = 5
+		provinces_to_highlight = {
+			colonial_region = colonial_west_india
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 20
+					all_owned_province = {
+						colonial_region = colonial_west_india
+					}
+				}
+				any_subject_country = {
+					calc_true_if = {
+						amount = 20
+						all_owned_province = {
+							colonial_region = colonial_west_india
+						}
+					}
+				}
+			}
+		}	
+		effect = {
+			add_yearly_manpower = 0.2
+			add_country_modifier = {
+				name = west_indian_sepoys
+				duration = 12775
+			}
+		}
+	}
+
+	eng_northern_india = {
+		icon = mission_crush_delhi
+		required_missions = { eng_take_west_india }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				colonial_region = colonial_lahore
+				colonial_region = colonial_north_india
+			}
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 20
+					all_owned_province = {
+						OR = {
+							colonial_region = colonial_lahore
+							colonial_region = colonial_north_india
+						}
+					}
+				}
+				any_subject_country = {
+					calc_true_if = {
+						amount = 20
+						all_owned_province = {
+							OR = {
+								colonial_region = colonial_lahore
+								colonial_region = colonial_north_india
+							}
+						}
+					}
+				}
+			}
+		}	
+		effect = {
+			add_mercantilism = 5
+			add_country_modifier = {
+				name = north_indian_sepoys
+				duration = 12775
+			}
+		}
+	}
+
+	eng_sole_indian_administration = {
+		icon = mission_rule_britannia
+		required_missions = { eng_stability_in_india eng_northern_india eng_central_india }
+		position = 7
+		provinces_to_highlight = {
+			superregion = india_superregion
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				all_subject_country = {
+					capital_scope = {
+						OR = {
+							colonial_region = colonial_coromandel
+							colonial_region = colonial_east_india
+							colonial_region = colonial_west_india
+							colonial_region = colonial_north_india
+							colonial_region = colonial_deccan
+						}
+					}
+					num_of_owned_provinces_with = {
+						value = 40
+						OR = {
+							colonial_region = colonial_coromandel
+							colonial_region = colonial_east_india
+							colonial_region = colonial_west_india
+							colonial_region = colonial_north_india
+							colonial_region = colonial_deccan
+						}
+					}
+				}
+			}
+		}	
+		effect = {
+			add_mercantilism = 10
+			add_country_modifier = {
+				name = indian_hegemon
+				duration = -1
+			}
+			random_subject_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							colonial_region = colonial_coromandel
+							colonial_region = colonial_east_india
+							colonial_region = colonial_west_india
+							colonial_region = colonial_north_india
+							colonial_region = colonial_deccan
+						}
+					}
+				}
+				set_country_flag = will_be_annexed_single_india
+
+			}
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							colonial_region = colonial_coromandel
+							colonial_region = colonial_east_india
+							colonial_region = colonial_west_india
+							colonial_region = colonial_north_india
+							colonial_region = colonial_deccan
+						}
+					}
+					NOT = { has_country_flag = will_be_annexed_single_india }
+					ai = yes
+				}
+				random_country = {
+					limit = {
+						has_country_flag = will_be_annexed_single_india
+					}
+					inherit = PREV
+				}
+			}
+		}
+	}
+}
+
+eng_gbr_row_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_global_flag = eng_lost_hundred_years_war
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_rb_take_gibraltar = {
+		icon = mission_rb_take_gibraltar
+		required_missions = { gbr_explore_new_world }
+		position = 3
+		
+		provinces_to_highlight = {
+			province_id = 226
+			NOT = { owned_by = ROOT }
+		}
+		
+		ai_weight = {
+			factor = 100
+		}
+		
+		trigger = {
+			226 = {
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "eng_rb_gibraltar_mod"
+				duration = 5475
+			}
+			4559 = {
+				add_permanent_claim = ROOT
+			}
+			corsica_sardinia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	eng_gbr_caribbean = {
+		icon = mission_colonize_the_caribbean
+		required_missions = { eng_rb_take_gibraltar }
+		position = 4
+		provinces_to_highlight = {
+			area = lorraine_area
+			NOT = {
+				owner = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+		}		
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 5
+					all_owned_province = {
+						colonial_region = colonial_the_carribean
+					}
+				}
+				any_subject_country = {
+					capital_scope = {
+						colonial_region = colonial_the_carribean
+					}
+					num_of_cities = 5
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+			if = {
+				limit = { 
+					any_owned_province = {
+						colonial_region = colonial_the_carribean
+					}
+				}
+				random_owned_province = {
+					limit = {
+						colonial_region = colonial_the_carribean
+					}
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+			else_if = {
+				limit = { 
+					any_subject_country = {
+						capital_scope = {
+							colonial_region = colonial_the_carribean
+						}
+						num_of_cities = 5
+					}
+				}
+				every_subject_country = {
+					limit = {
+						capital_scope = {
+							colonial_region = colonial_the_carribean
+						}
+					}
+					add_country_modifier = {
+						name = colonial_rush_gbr_bgm
+						duration = 14600
+					}
+				}
+			}
+		}
+	}
+
+	eng_east_india = {
+		icon = dutch_east_indies
+		required_missions = { eng_gbr_acts_of_union }
+		position = 5
+		provinces_to_highlight = {
+			colonial_region = colonial_east_india
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}		
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 15
+					all_owned_province = {
+						colonial_region = colonial_east_india
+					}
+				}
+				any_subject_country = {
+					capital_scope = {
+						colonial_region = colonial_east_india
+					}
+					num_of_cities = 15
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = east_indian_sepoys
+				duration = 12775
+			}
+		}
+	}
+
+	eng_central_india = {
+		icon = mission_rb_inland_india
+		required_missions = { eng_east_india }
+		position = 6
+		provinces_to_highlight = {
+			colonial_region = colonial_deccan
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 15
+					all_owned_province = {
+						colonial_region = colonial_deccan
+					}
+				}
+				any_subject_country = {
+					capital_scope = {
+						colonial_region = colonial_deccan
+					}
+					num_of_cities = 15
+				}
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = central_indian_sepoys
+				duration = 12775
+			}
+		}
+	}
+}
+
+eng_gbr_row_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_global_flag = eng_lost_hundred_years_war
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_gbr_mexico = {
+		icon = new_pilings
+		required_missions = { eng_rb_take_gibraltar }
+		position = 4
+		provinces_to_highlight = {
+			colonial_region = colonial_mexico
+			NOT = {
+				owner = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+		}		
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 5
+					all_owned_province = {
+						colonial_region = colonial_mexico
+					}
+				}
+				any_subject_country = {
+					capital_scope = {
+						colonial_region = colonial_mexico
+					}
+					num_of_cities = 5
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+			colonial_mexico = {
+				add_claim = ROOT
+			}
+			if = {
+				limit = { 
+					any_subject_country = {
+						capital_scope = {
+							colonial_region = colonial_mexico
+						}
+						num_of_cities = 5
+					}
+				}
+				every_subject_country = {
+					limit = {
+						capital_scope = {
+							colonial_region = colonial_mexico
+						}
+						num_of_cities = 5
+					}
+					add_country_modifier = {
+						name = colonial_rush_gbr_bgm
+						duration = 14600
+					}
+				}
+			}
+		}
+	}
+
+	eng_malacca = {
+		icon = mission_the_governing_senate
+		required_missions = { eng_gbr_acts_of_union }
+		position = 5
+		provinces_to_highlight = {
+		}
+		trigger = {
+			any_subject_country = {
+				bgm_colonial_subject = yes
+				capital_scope = {
+					colonial_region = colonial_moluccas
+				}
+			}
+		}	
+		effect = {
+			add_mercantilism = 10
+			add_prestige = 25
+		}
+	}
+
+	eng_cantonese_trade = {
+		icon = mission_to_china
+		required_missions = { eng_malacca }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			1371 = {
+				is_strongest_trade_power = ROOT
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = opium_trade
+				duration = 36500
+			}
+
+			every_province = {
+				limit = {
+					superregion = china_superregion
+					has_port = yes
+					OR = {
+						province_has_center_of_trade_of_level = 1
+						province_trade_power = 10
+					}
+				}
+				add_core = ROOT
+			}
+		}
+	}
+
+	eng_chinese_trade_cities = {
+		icon = mission_crisis_ming_dynasty
+		required_missions = { eng_cantonese_trade }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					amount = 5
+					all_owned_province = {
+						colonial_region = colonial_mexico
+					}
+				}
+				any_subject_country = {
+					capital_scope = {
+						colonial_region = colonial_the_carribean
+					}
+					num_of_cities = 5
+				}
+			}
+		}	
+		effect = {
+			china_superregion = {
+				add_core = ROOT
+			}
+		}
+	}
+}
+
+
+
+########FRANCE########
+
+eng_fra_row_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { has_global_flag = eng_lost_hundred_years_war }
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_fra_breton_naval_bases = {
+		icon = mission_rb_conquer_brittany
+		required_missions = { eng_fra_conquest_brittany }
+		position = 4
+		provinces_to_highlight = {
+			area = brittany_area
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}		
+		trigger = {
+			brittany_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}	
+		effect = {
+			add_dip_power = 50
+			every_subject_country = {
+				limit = {
+					OR = {
+						capital_scope = {
+							area = brittany_area
+						}
+						primary_culture = breton
+					}
+				}
+				add_liberty_desire = -50
+			}
+			every_owned_province = {
+				limit = {
+					area = brittany_area
+				}
+				add_local_autonomy = -25
+			}
+		}
+	}
+
+	eng_united_bank = {
+		icon = mission_rb_the_bank_of_scotland
+		required_missions = { eng_fra_the_great_destiny }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = eng_enact_bank_charter_act
+				has_country_flag = bank_charter_act_bgm
+			}
+			OR = {
+				treasury = 500
+				monthly_income = 50
+			}
+		}
+		effect = {
+			add_opinion = {
+				who = FRA
+				modifier = united_treasuries
+			}
+			add_stability = 1
+			if = {
+				limit = { 
+					exists = FRA
+					FRA = { is_subject_of = ROOT }
+				}
+				FRA = { 
+					add_stability = 1 
+					add_opinion = {
+						who = ROOT
+						modifier = united_treasuries
+					}
+				}
+			}
+		}
+	}
+
+	eng_centralize_the_banking_institutions = {
+		icon = mission_rb_college_of_justice
+		required_missions = { eng_united_bank eng_fra_parlements }
+		position = 6
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = eng_enact_bank_charter_act
+				has_country_flag = bank_charter_act_bgm
+			}
+			OR = {
+				treasury = 500
+				monthly_income = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = loyal_banking
+				duration = 36500
+			}
+			if = {
+				limit = { 
+					exists = FRA
+					FRA = { is_subject_of = ROOT }
+				}
+				FRA = {
+					add_country_modifier = {
+						name = loyal_banking
+						duration = 36500
+					}
+				}
+			}
+		}
+	}
+}
+
+eng_fra_row_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { has_global_flag = eng_lost_hundred_years_war }
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_fra_conquest_brittany = {
+		icon = mission_rb_conquer_brittany
+		required_missions = { eng_seize_northern_france }
+		position = 3
+		provinces_to_highlight = {
+			area = brittany_area
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}		
+		trigger = {
+			brittany_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}	
+		effect = {
+			add_dip_power = 50
+			every_subject_country = {
+				limit = {
+					OR = {
+						capital_scope = {
+							area = brittany_area
+						}
+						primary_culture = breton
+					}
+				}
+				add_liberty_desire = -50
+			}
+			every_owned_province = {
+				limit = {
+					area = brittany_area
+				}
+				add_local_autonomy = -25
+			}
+		}
+	}
+
+	eng_fra_port_cities = {
+		icon = end_genoese_competition
+		required_missions = { eng_fra_conquest_brittany }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				province_id = 167
+				province_id = 4385
+				province_id = 87
+				province_id = 4111
+			}
+		}		
+		trigger = {
+			owns = 167
+			owns = 87
+			owns = 4385
+			167 = {
+				OR = {
+					province_trade_power = 15
+					development = 20
+					has_building = drydock
+					has_building = grand_shipyard
+				}
+				OR = {
+					has_building = dock
+					has_building = drydock
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = port_cities
+				duration = -1
+			}
+			167 = {
+				add_province_modifier = {
+					name = port_city
+					duration = -1
+				}
+				add_base_production = 3
+				province_event = {
+					id = BGM_provinces.1
+				}
+			}
+			87 = {
+				add_base_production = 3
+				add_province_modifier = {
+					name = port_city
+					duration = -1
+				}
+			}
+			4385 = {
+				add_base_production = 3
+				add_province_modifier = {
+					name = port_city
+					duration = -1
+				}
+			}
+			custom_tooltip = la_rochelle_tooltip
+			if = {
+				limit = { 
+					owns = 4111
+				}
+				4111 = {
+					add_province_modifier = {
+						name = port_city
+						duration = -1
+					}
+					center_of_trade = 1
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 3
+					change_province_name = "La Rochelle"
+					rename_capital = "La Rochelle"
+				}
+				add_country_modifier = {
+					name = eng_colonial_la_rochelle
+					duration = -1
+				}
+			}
+		}
+	}
+
+	eng_fra_parlements = {
+		icon = mission_early_modern_university
+		required_missions = { eng_fra_the_great_destiny }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					NOT = {
+						liberty_desire = 25
+					}
+				}
+				NOT = { exists = FRA }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = syncretized_court_systems
+				duration = 10950
+			}
+			if = {
+				limit = { 
+					exists = FRA
+					FRA = { is_subject_of = ROOT }
+				}
+				FRA = {
+					add_country_modifier = {
+						name = syncretized_court_systems
+						duration = 10950
+					}
+				}
+			}
+		}
+	}
+
+	eng_fra_seneschal_appointments = {
+		icon = mission_intervene_in_castile
+		required_missions = { eng_fra_parlements }
+		position = 6
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			stability = 3
+			NOT = {
+				has_global_modifier_value = {
+					which = stability_cost_modifier
+					value = -0.15
+				}
+			}
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					NOT = {
+						liberty_desire = 0
+					}
+				}
+				NOT = { exists = FRA }
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			capital_scope = {
+				add_base_tax = 1
+			}
+			if = {
+				limit = { 
+					exists = FRA
+					FRA = { is_subject_of = ROOT }
+				}
+				FRA = {
+					add_liberty_desire = -10
+					capital_scope = {
+						add_base_tax = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+eng_fra_row_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { has_global_flag = eng_lost_hundred_years_war }
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_seize_northern_france = {
+		icon = mission_rb_invade_england
+		required_missions = { eng_mobilize_army eng_fate_castile }
+		position = 2
+		provinces_to_highlight = {
+			area = normandy_area
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}		
+		trigger = {
+			is_at_war = no
+			calc_true_if = {
+				amount = 3
+				all_owned_province = {
+					area = normandy_area
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = eng_union_or_annex_strategy
+			custom_tooltip = eng_treaty_troyes
+			hidden_effect = {
+				if = {
+					limit = { 
+						FRA = {
+							NOT = {
+								army_strength = {
+									who = ROOT
+									value = 0.25
+								}
+							}
+						}
+					}
+					FRA = {
+						country_event = {
+							id = BGM_ENG_missions.1
+						}
+					}
+				}
+				else = {
+					every_province = {
+						limit = {
+							OR = {
+								owned_by = FRA
+								owned_by_subject_of = FRA
+							}
+							OR = {
+								area = normandy_area
+								area = ile_de_france_area
+								area = champagne_area
+								area = picardy_area
+							}
+						}
+						add_core = ENG
+					}
+				}
+			}
+		}
+	}
+
+	eng_fra_recover_anjou = {
+		icon = mission_rb_angevin_kingdom
+		required_missions = { eng_seize_northern_france }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 178
+		}		
+		trigger = {
+			178 = {
+				owned_by = ROOT
+				is_state_core = ROOT
+			}
+		}	
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			178 = {
+				add_base_tax = 1
+			}
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = FRA
+				months = 300
+			}
+		}
+	}
+
+	eng_fra_the_great_destiny = {
+		icon = spread_piety
+		required_missions = { eng_fra_conquest_brittany eng_fra_recover_anjou eng_fra_fate_burgundy }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				owned_by = FRA
+				AND = {
+					NOT = { exists = FRA }
+					region = france_region
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+				}
+				AND = {
+					calc_true_if = {
+						amount = 40
+						all_owned_province = {
+							region = france_region
+						}
+					}
+					NOT = { exists = FRA }
+				}
+			}
+		}	
+		effect = {
+			FRA = {
+				change_country_color = { 
+					color = { 175 25 20 }
+				}
+				add_stability = -1
+			}
+			custom_tooltip = eng_fra_pu_tooltip
+		}
+	}
+
+	eng_fra_coronation_at_reims = {
+		icon = mission_european_church
+		required_missions = { eng_fra_the_great_destiny }
+		position = 5
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					NOT = {
+						liberty_desire = 50
+					}
+				}
+				NOT = { exists = FRA }
+			}
+		}	
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 50
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+		}
+	}
+
+	eng_fra_reconciliation = {
+		icon = mission_rb_the_education_acts
+		required_missions = { eng_fra_coronation_at_reims }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					region = france_region
+					unrest = 1
+					local_autonomy = 50
+				}
+			}
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					NOT = {
+						liberty_desire = 50
+					}
+				}
+				NOT = { exists = FRA }
+			}
+		}	
+		effect = {
+			set_country_flag = can_enact_reconciliation
+			custom_tooltip = can_enact_acts_of_union_france
+		}
+	}
+
+	eng_one_throne = {
+		icon = mission_the_angevin_age
+		required_missions = { eng_fra_seneschal_appointments eng_fra_reconciliation eng_fra_consolidation }
+		position = 7
+		provinces_to_highlight = {
+			region = france_region
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			NOT = {
+				exists = FRA
+			}
+			num_of_owned_provinces_with = {
+				value = 50
+				region = france_region
+			}
+		}	
+		effect = {
+			reset_golden_age = yes
+			add_country_modifier = {
+				name = everlasting_union
+				duration = -1
+			}
+		}
+	}
+}
+
+eng_fra_row_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { has_global_flag = eng_lost_hundred_years_war }
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_fra_fate_burgundy = {
+		icon = mission_rb_repatriate_burgundy
+		required_missions = { eng_seize_northern_france }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 192
+				area = west_burgundy_area
+			}
+			NOT = {
+				owner = {
+					OR = {
+						is_subject_of = ROOT
+						is_subject = no
+						tag = ROOT
+					}
+				}
+			}
+		}		
+		trigger = {
+			OR = {
+				BUR = {
+					is_subject_of = ROOT
+					is_subject = no
+				}
+			}
+			west_burgundy_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			192 = {
+				owner = {
+					OR = {
+						is_subject_of = ROOT
+						is_subject = no
+						tag = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			lorraine_area = {
+				add_permanent_claim = ROOT
+			}
+			wallonia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	eng_fra_lorraine = {
+		icon = integrate_lorraine
+		required_missions = { eng_fra_fate_burgundy }
+		position = 4
+		provinces_to_highlight = {
+			area = lorraine_area
+			NOT = {
+				owner = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+		}		
+		trigger = {
+			lorraine_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			188 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			lorraine_area = {
+				add_local_autonomy = -25
+			}
+		}
+	}
+
+	eng_fra_nobility = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { eng_fra_the_great_destiny }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = eng_noble_fra_tooltip
+				has_country_flag = eng_subjugate_fra_nobility
+			}
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					NOT = {
+						liberty_desire = 25
+					}
+				}
+				NOT = { exists = FRA }
+			}
+		}
+		effect = {
+			FRA = {
+				add_liberty_desire = -15
+			}
+			add_adm_power = 100
+		}
+	}
+
+	eng_fra_consolidation = {
+		icon = mission_empire
+		required_missions = { eng_fra_nobility }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					OR = {
+						NOT = {
+							OR = {
+								has_subject_of_type = appanage
+								has_subject_of_type = vassal
+								has_subject_of_type = march
+								has_subject_of_type = client_march
+								has_subject_of_type = client_vassal
+							}
+						}
+						all_subject_country = {
+							NOT = {
+								liberty_desire = 0
+							}
+						}
+					}
+				}
+				NOT = { exists = FRA }
+			}
+		}	
+		effect = {
+			if = {
+				limit = { 
+					FRA = {
+						OR = {
+							has_subject_of_type = appanage
+							has_subject_of_type = vassal
+							has_subject_of_type = march
+							has_subject_of_type = client_march
+							has_subject_of_type = client_vassal
+						}
+					}
+				}
+				FRA = {
+					every_subject_country = {
+						limit = {
+							OR = {
+								has_subject_of_type = appanage
+								has_subject_of_type = vassal
+								has_subject_of_type = march
+								has_subject_of_type = client_march
+								has_subject_of_type = client_vassal
+							}
+						}
+						FRA = {
+							inherit = PREV
+						}
+					}
+					add_country_modifier = {
+						name = consolidated_crowns
+						duration = 18250
+					}
+				}
+			}
+			else = {
+				add_adm_power = 100
+				FRA = { add_adm_power = 100 }
+			}
+			add_country_modifier = {
+				name = consolidated_crowns
+				duration = 18250
+			}
+		}
+	}
+}
+
+eng_fra_row_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { has_global_flag = eng_lost_hundred_years_war }
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_fra_wallonia = {
+		icon = expand_the_arsenal
+		required_missions = { eng_fra_fate_burgundy }
+		position = 4
+		provinces_to_highlight = {
+			area = wallonia_area
+			NOT = {
+				owner = {
+					OR = {
+						is_subject_of = ROOT
+						tag = ROOT
+					}
+				}
+			}
+		}		
+		trigger = {
+			wallonia_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		effect = {
+			93 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				change_trade_goods = cloth
+			}
+			wallonia_area = {
+				add_local_autonomy = -25
+			}
+		}
+	}
+
+	eng_fra_joint_drilling = {
+		icon = support_the_orders
+		required_missions = { eng_fra_the_great_destiny }
+		position = 5
+		provinces_to_highlight = {
+		}
+		trigger = {
+			army_size_percentage = 0.75
+			num_of_regiments_at_full_drill = 15
+			manpower_percentage = 0.75
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					NOT = {
+						liberty_desire = 50
+					}
+					manpower_percentage = 0.75
+				}
+				NOT = { exists = FRA }
+			}
+		}	
+		effect = {
+			add_opinion = {
+				who = FRA
+				modifier = joint_drilling
+			}
+			FRA = {
+				add_liberty_desire = -10
+				add_opinion = {
+					who = ROOT
+					modifier = joint_drilling
+				}
+			}
+		}
+	}
+
+	eng_fra_intermingling_cultures = {
+		icon = english_alliance
+		required_missions = { eng_fra_nobility eng_fra_joint_drilling }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = eng_advisors_tooltip
+				OR = {
+					employed_advisor = {
+						culture = cosmopolitan_french
+					}
+					employed_advisor = {
+						culture = angevin
+					}
+					employed_advisor = {
+						culture = normand
+					}
+					employed_advisor = {
+						culture = picard
+					}
+					employed_advisor = {
+						culture = orleanais
+					}
+					employed_advisor = {
+						culture = bourbonnais_culture
+					}
+					employed_advisor = {
+						culture = burgundian
+					}
+					employed_advisor = {
+						culture = lorrain
+					}
+					employed_advisor = {
+						culture = wallonian
+					}
+				}
+				OR = {
+					employed_advisor = {
+						culture = anglo_norman
+					}
+					employed_advisor = {
+						culture = english
+					}
+					employed_advisor = {
+						culture = kentish
+					}
+					employed_advisor = {
+						culture = southern_english
+					}
+					employed_advisor = {
+						culture = west_midlander
+					}
+					employed_advisor = {
+						culture = northumbrian
+					}
+					employed_advisor = {
+						culture = scottish
+					}
+				}
+			}
+			OR = {
+				FRA = {
+					is_subject_of = ROOT
+					NOT = {
+						liberty_desire = 0
+					}
+				}
+				NOT = { exists = FRA }
+			}
+		}	
+		effect = {
+			set_country_flag = intermingling_culture_flag
+			custom_tooltip = anglo_norman_prov_tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture_group = british
+						OR = {
+							development = 15
+							province_has_center_of_trade_of_level = 1
+						}
+					}
+					change_culture = anglo_norman
+				}
+			}
+		}
+	}
+
+	eng_fra_lingua_franca = {
+		icon = mission_rb_empire
+		required_missions = { eng_fra_intermingling_cultures }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = eng_fra_intermingling_time
+				had_country_flag = {
+					flag = intermingling_culture_flag
+					days = 18250
+				}
+			}
+			stability = 2
+			NOT = {
+				exists = FRA
+			}
+		}	
+		effect = {
+			change_primary_culture = anglo_norman
+			every_owned_province = {
+				limit = {
+					culture_group = british
+				}
+				change_culture = anglo_norman
+			}
+		}
+	}
+}
+
+#####EARLY MODERN#####
+
+eng_fra_early_modern_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		#has_country_flag = france_path_selected
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = AVE
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_fra_embrace_renaissance = {
+		icon = renaissance_city
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+		}
+		trigger = {
+			has_institution = renaissance
+		}	
+		effect = {
+			add_country_modifier = {
+				name = english_renaissance
+				duration = 10950
+			}
+		}
+	}
+
+	gbr_ave_monopolize_the_channel = {
+		icon = mission_rb_monopolize_the_channel
+		required_missions = { eng_fra_embrace_renaissance }
+		position = 8
+		provinces_to_highlight = {
+			if = {
+				limit = { is_random_new_world = no }
+				OR = {
+					province_id = 1500
+					province_id = 1269
+				}
+				has_discovered = ROOT
+			}
+			else = {
+				province_id = 1269
+			}
+		}		
+		trigger = {
+			if = {
+				limit = { is_random_new_world = no }
+				1500 = {
+					trade_share = {
+						country = ROOT
+						share = 40
+					}
+				}
+				1269 = {
+					highest_value_trade_node = yes
+					trade_share = {
+						country = ROOT
+						share = 60
+					}
+				}
+			}
+			else = {
+				1269 = {
+					highest_value_trade_node = yes
+					trade_share = {
+						country = ROOT
+						share = 60
+					}
+				}
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = "eng_channel_dominance"
+				duration = 9125
+			}
+			add_treasury = 500
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	gbr_ave_center_of_worlds_trade = {
+		icon = mission_control_the_channel
+		required_missions = {
+			gbr_ave_monopolize_the_channel
+			#gbr_ave_early_industry
+		}
+		position = 9
+		provinces_to_highlight = {
+			province_id = 1269
+		}		
+		trigger = { 
+			1269 = {
+				is_strongest_trade_power = ROOT
+			}
+			1269 = {
+				highest_value_trade_node = yes
+			}
+			1269 = {
+				trade_node_value = 500
+			}
+			reform_level = 8
+		}	
+		effect = {
+			unlock_government_reform = {
+				government_reform = commercial_trade_empire_reform
+			}
+			change_government_reform_progress = 100
+			add_treasury = 2000
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+}
+
+eng_fra_early_modern_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		#has_country_flag = france_path_selected
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = AVE
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	gbr_ave_english_renaissance = {
+		icon = mission_english_renaissance
+		required_missions = { eng_fra_embrace_renaissance }
+		position = 8
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+			is_prosperous = no
+		}		
+		trigger = {
+			has_institution = renaissance
+			artist = 3
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				capital_scope = {
+					is_prosperous = yes
+				}
+			}
+			prestige = 75
+		}
+		effect = {
+			country_event_with_insight = {
+				id = flavor_gbr.12
+				insight_tooltip = INSIGHT_JUST_TOOLTIP
+				effect_tooltip = "
+				add_prestige_or_monarch_power = {
+					amount = 25
+				}
+				capital_scope = {
+					add_province_triggered_modifier = eng_globe_theatre
+				}
+				"
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	gbr_ave_renovate_universities = {
+		icon = mission_rb_renovate_oxbridge
+		required_missions = { gbr_ave_english_renaissance }
+		position = 9
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 237
+				province_id = 4370
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { development = 30 }
+			}
+		}
+		
+		trigger = {
+			owns = 237
+			owns = 4370
+			OR = {
+				AND = {
+					237 = { development = 30 }
+					4370 = { development = 30 }
+				}
+				if = {
+					limit = { has_dlc = "Rule Britannia" }
+					innovativeness = 50
+				}
+				else = {
+					full_idea_group = innovativeness_ideas
+				}
+			}
+		}
+		
+		effect = {
+			237 = {
+				add_building = university
+				add_province_modifier = {
+					name = eng_most_esteemed_university
+					duration = -1
+				}
+			}
+			4370 = {
+				add_building = university
+				add_province_modifier = {
+					name = eng_most_esteemed_university
+					duration = -1
+				}
+			}
+			change_innovativeness = 3
+			country_event = {
+				id = flavor_eng.9880
+				days = 1
+			}
+			hidden_effect = {
+				random_list = {
+					20 = {
+						set_variable = {
+							which = oxbridge_subject
+							value = 1
+						}
+					}
+					20 = {
+						set_variable = {
+							which = oxbridge_subject
+							value = 2
+						}
+					}
+					20 = {
+						set_variable = {
+							which = oxbridge_subject
+							value = 3
+						}
+					}
+					20 = {
+						set_variable = {
+							which = oxbridge_subject
+							value = 4
+						}
+					}
+					20 = {
+						set_variable = {
+							which = oxbridge_subject
+							value = 5
+						}
+					}
+				}
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	gbr_ave_early_industry = {
+		icon = mission_rb_prospect_for_coal
+		required_missions = {
+			gbr_ave_center_of_worlds_trade gbr_ave_renovate_universities
+		}
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						province_id = 1861
+						province_id = 241
+						province_id = 4375
+						province_id = 246
+					}
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					owned_by = ROOT
+					NOT = { has_manufactory_no_custom_tooltip_trigger = yes }
+				}
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					has_manufactory_trigger = yes
+				}
+				amount = 20
+			}
+			owns = 1861
+			owns = 241
+			owns = 4375
+			owns = 246
+		}		
+		effect = {
+			if = {
+				limit = { has_dlc = "Rule Britannia" }
+				custom_tooltip = earlier_coal_available_tt
+			}
+			set_country_flag = earlier_coal_available
+			1861 = {
+				add_base_production = 3
+				add_base_manpower = 3
+				add_province_modifier = {
+					name = "eng_rb_coal_produced_mod"
+					duration = -1
+				}
+			}
+			241 = {
+				add_base_production = 3
+				add_base_manpower = 3
+				add_province_modifier = {
+					name = "eng_rb_coal_produced_mod"
+					duration = -1
+				}
+			}
+			4375 = {
+				add_base_production = 3
+				add_base_manpower = 3
+				add_province_modifier = {
+					name = "eng_rb_coal_produced_mod"
+					duration = -1
+				}
+			}
+			246 = {
+				add_base_production = 3
+				add_base_manpower = 3
+				add_province_modifier = {
+					name = "eng_rb_coal_produced_mod"
+					duration = -1
+				}
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+}
+
+eng_fra_early_modern_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		#has_country_flag = france_path_selected
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = AVE
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	gbr_ave_the_men_of_war = {
+		icon = mission_rb_grow_the_channel
+		required_missions = { eng_fra_embrace_renaissance }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_port = yes
+			NOT = { has_shipyard_building_trigger = yes }
+			NOT = { has_dock_building_trigger = yes }
+			#NOT = { has_building = impressment_offices }
+		}		
+		trigger = {
+			num_of_owned_provinces_with = {
+				OR = {
+					has_shipyard_building_trigger = yes
+					has_dock_building_trigger = yes
+					#has_building = impressment_offices
+				}
+				value = 10
+			}
+			navy_tradition = 30
+		}
+		effect = {
+			add_navy_tradition = 10
+			add_country_modifier = {
+				name = eng_the_man_of_war
+				duration = -1
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	gbr_ave_the_royal_marines = {
+		icon = mission_plc_lifetime_of_war
+		required_missions = {
+			gbr_ave_the_men_of_war
+			gbr_ave_create_standing_army
+		}
+		position = 9
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			num_of_marines = 30
+			has_reform = royal_marines_reform
+		}
+		effect = {
+			add_country_modifier = {
+				name = eng_strict_marines
+				duration = -1
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+}
+
+eng_fra_early_modern_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		#has_country_flag = france_path_selected
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = AVE
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	gbr_ave_create_standing_army = {
+		icon = mission_assemble_an_army
+		required_missions = { eng_fra_embrace_renaissance }
+		position = 8
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			#max_manpower = 40
+			army_size = 50
+			if = {
+				limit = { has_dlc = "Cradle of Civilization" }
+				army_professionalism = 0.2
+			}
+			army_tradition = 30
+		}	
+		effect = {
+			#unlock_issue = {
+			#	issue = military_reform_acts
+			#}
+			unlock_issue = {
+				issue = discipline_for_the_marines_acts
+			}
+			unlock_issue = {
+				issue = improved_man_of_war_acts
+			}
+			unlock_issue = {
+				issue = army_reform_acts
+			}
+			define_general = {
+				shock = 5
+				fire = 4
+				manuever = 5
+				siege = 2
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	gbr_ave_the_redcoats = {
+		icon = mission_redcoats
+		required_missions = { gbr_ave_create_standing_army }
+		position = 9
+		provinces_to_highlight = {
+		}		
+		trigger = { 
+			reform_level = 4
+			max_manpower = 120
+			army_size = 80
+			if = {
+				limit = { has_dlc = "Cradle of Civilization" }
+				army_professionalism = 0.4
+			}
+			army_tradition = 60
+			has_reform = royal_marines_reform
+		}	
+		effect = {
+			add_country_modifier = {
+				name = eng_the_redcoat
+				duration = -1
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+}
+
+eng_fra_early_modern_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		#has_country_flag = france_path_selected
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = AVE
+			tag = GBR
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	eng_handle_the_reformation = {
+		icon = mission_rb_control_state_religion
+		required_missions = { eng_fra_embrace_renaissance }
+		position = 8
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			NOT = { current_age = age_of_feudalism }
+			NOT = { current_age = age_of_discovery }
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = anglican
+				religion = hussite
+				has_country_modifier = counter_reformation
+				AND = {
+					NOT = { current_age = age_of_reformation }
+					religion = catholic
+				}
+				hidden_trigger = {
+					religion_group = christian
+					NOT = { religion = catholic }
+					NOT = { religion = protestant }
+					NOT = { religion = reformed }
+					NOT = { religion = anglican }
+					NOT = { religion = hussite }
+				}
+				hidden_trigger = {
+					NOT = { religion_group = christian }
+				}
+			}
+		}		
+		effect = {
+			if = {
+				limit = { NOT = { religion_group = christian } }
+				add_country_modifier = {
+					name = eng_a_new_religious_destiny
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					religion_group = christian
+					NOT = { religion = catholic }
+					NOT = { religion = protestant }
+					NOT = { religion = reformed }
+					NOT = { religion = anglican }
+				}
+				add_country_modifier = {
+					name = eng_a_different_kind_of_christian
+					duration = -1
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = { current_age = age_of_reformation }
+						religion = catholic
+					}
+					add_papal_influence = 50
+				}
+				else = {
+					complex_dynamic_effect = {
+						first_custom_tooltip = eng_handle_the_reformation_at
+						first_limit = "has_country_modifier = counter_reformation"
+						first_effect = "
+						add_papal_influence = 50
+						if = {
+							limit = { exists = PAP }
+							reverse_add_opinion = {
+								who = PAP
+								modifier = eng_papal_support
+							}
+						}
+						add_country_modifier = {
+							name = eng_loyalty_to_catholocisim
+							duration = 9125
+						}
+						"
+						second_custom_tooltip = eng_handle_the_reformation_bt
+						second_limit = "religion = protestant"
+						second_effect = "
+						if = {
+							limit = { has_dlc = \"Common Sense\" }
+							add_church_power = 100
+						}
+						add_country_modifier = {
+							name = eng_own_church_creation
+							duration = 9125
+						}"
+						third_custom_tooltip = eng_handle_the_reformation_ct
+						third_limit = "religion = reformed"
+						third_effect = "
+						if = {
+							limit = { has_dlc = \"Wealth of Nations\" }
+							add_fervor = 50
+						}
+						add_country_modifier = {
+							name = eng_calvinist_path
+							duration = 9125
+						}"
+						fourth_custom_tooltip = eng_handle_the_reformation_dt
+						fourth_limit = "religion = anglican"
+						fourth_effect = "
+						if = {
+							limit = { has_dlc = \"Rule Britannia\" }
+							add_church_power = 100
+						}
+						add_country_modifier = {
+							name = eng_head_of_the_anglican_church
+							duration = 9125
+						}
+						"
+					}
+				}
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+
+	eng_piety_of_the_state = {
+		icon = mission_english_reformation
+		required_missions = { eng_handle_the_reformation }
+		position = 9
+		provinces_to_highlight = {
+		}		
+		trigger = { 
+			reform_level = 4
+			OR = {
+				AND = {
+					OR = {
+						has_reform = separate_clergy_from_state_affairs_reform
+						has_reform = curtail_clergy_power_reform
+					}
+					if = {
+						limit = { has_estate = estate_church }
+						NOT = {
+							estate_influence = {
+								estate = estate_church
+								influence = 50
+							}
+						}
+						crown_land_share = estate_church
+					}
+					else = {
+						NOT = { has_estate = estate_church }
+					}
+				}
+				AND = {
+					NOT = { has_reform = separate_clergy_from_state_affairs_reform }
+					NOT = { has_reform = curtail_clergy_power_reform }
+					if = {
+						limit = { has_estate = estate_church }
+						num_of_estate_agendas_completed = {
+							estate = estate_church
+							value = 4
+						}
+					}
+					else = {
+						num_of_owned_provinces_with = {
+							has_tax_building_trigger = yes
+							value = 10
+						}
+					}
+				}
+			}
+		}	
+		effect = {
+			if = {
+				limit = {
+					has_dlc = "Common Sense"
+					religion = protestant
+				}
+				add_church_power = 100
+				tooltip = {
+					unlock_church_aspect = {
+						church_aspect = anglican_aspect
+					}	
+				}
+			}
+			else_if = {
+				limit = {
+					has_dlc = "Rule Britannia"
+					religion = anglican
+				}
+				add_church_power = 100
+				tooltip = {
+					unlock_church_aspect = {
+						church_aspect = spread_the_book_of_common_prayer
+					}	
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = gbr_religious_stability
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				unlock_church_aspect = {
+					church_aspect = anglican_aspect
+				}	
+				unlock_church_aspect = {
+					church_aspect = spread_the_book_of_common_prayer
+				}	
+			}
+			change_government_reform_progress = 50
+			simple_dynamic_effect = {
+				first_custom_tooltip = eng_piety_of_the_state_at
+				first_limit = "
+				OR = {
+					has_reform = separate_clergy_from_state_affairs_reform
+					has_reform = curtail_clergy_power_reform
+				}
+				"
+				first_effect = "
+				unlock_government_reform = {
+					government_reform = anglican_state_church_reform
+				}
+				change_estate_land_share = {
+					estate = estate_church
+					share = -3
+				}
+				"
+				second_limit = "
+				NOT = { has_reform = separate_clergy_from_state_affairs_reform }
+				NOT = { has_reform = curtail_clergy_power_reform }
+				"
+				second_effect = "
+				add_estate_loyalty = {
+					estate = estate_church
+					loyalty = 20
+				}
+				unlock_government_reform = {
+					government_reform = english_conciliarism_reform
+				}
+				"
+			}
+		}
+		ai_weight = {
+			factor = 250
+		}
+	}
+}

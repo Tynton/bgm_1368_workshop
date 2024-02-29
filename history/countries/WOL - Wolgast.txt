@@ -1,0 +1,31 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = east_pomeranian
+add_accepted_culture = pommeranian
+add_accepted_culture = cassubian
+religion = catholic
+technology_group = western
+capital = 2995	# Stolp
+
+
+1351.1.1 = {
+	monarch = {
+		name = "Kasimir IV"
+		dynasty = "Greifen"
+		birth_date = 1351.1.1
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+
+	queen = {
+		name = "Johanna"
+		dynasty = "Gediminai"
+		birth_date = 1310.1.1
+		culture = lithuanian
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

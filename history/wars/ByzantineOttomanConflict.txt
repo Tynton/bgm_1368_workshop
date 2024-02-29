@@ -1,0 +1,17 @@
+name = "Byzantine-Ottoman War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 149 # Adrianople
+}
+
+1368.1.1 = {
+	add_attacker = TUR
+	add_defender = BYZ
+	add_defender = MOE
+}
+
+1369.1.1 = {
+	rem_defender = BYZ
+	rem_defender = MOE
+}

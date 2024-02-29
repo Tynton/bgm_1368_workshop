@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = east_pomeranian
+religion = catholic
+technology_group = western
+government_rank = 1
+capital = 5160	# Köln
+fixed_capital = 5160 # Cannot move capital away from this province & no power cost to move to it
+
+1364.1.1 = {
+	monarch = {
+		name = "Johann I"
+		dynasty = "von Saxe-Lauenburg"
+		birth_date = 1304.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

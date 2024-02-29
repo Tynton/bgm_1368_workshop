@@ -1,0 +1,39 @@
+#208 - Le�n
+owner = CAS#Juan II of Castille
+controller = CAS
+culture = leonese
+religion = catholic
+base_tax = 3
+base_production = 3
+trade_goods = livestock
+base_manpower = 1
+capital = "Le�n"
+is_city = yes
+extra_cost = 8
+center_of_trade = 1
+add_core = CAS
+add_core = LON
+add_core = TST
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+latent_trade_goods = { 
+	coal 
+}
+1516.1.23 = { 
+	controller = SPA
+	add_core = SPA
+}
+1808.6.6 = { 
+	revolt = { size = 1 }
+}
+1808.12.1 = { 
+	revolt = { size = 1 }
+}
+1812.10.1 = { 
+	revolt = { size = 1 }
+}
+1813.12.11 = { 
+	revolt = { size = 1 }
+}

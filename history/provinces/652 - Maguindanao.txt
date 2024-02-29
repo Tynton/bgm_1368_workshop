@@ -1,0 +1,17 @@
+#652 - Maguindanao
+culture = filipino
+religion = animism
+capital = "Maguindanao"
+trade_goods = spices
+is_city = yes
+base_tax = 3
+base_production = 3
+base_manpower = 1
+discovered_by = chinese
+owner = MGD
+controller = MGD
+add_core = MGD
+1520.1.1 = { 
+	religion = Sunni
+}
+1527.1.1 = { discovered_by = SPA }

@@ -1,0 +1,195 @@
+namespace = BGM_ENG_missions
+
+# Treaty of Troyes
+country_event = {
+	id = BGM_ENG_missions.1
+	title = "BGM_ENG_missions.1.t"
+	desc = "BGM_ENG_missions.1.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_ENG_missions.1.a" #Such a disaster
+		if = {
+			limit = { 
+				exists = ENG
+			}
+			every_province = {
+				limit = {
+					OR = {
+						owned_by = FRA
+						owned_by_subject_of = FRA
+					}
+					OR = {
+						area = normandy_area
+						area = ile_de_france_area
+						area = champagne_area
+						area = picardy_area
+					}
+				}
+				cede_province = ENG
+			}
+		}
+		else_if = {
+			limit = { exists = GBR }
+			every_province = {
+				limit = {
+					OR = {
+						owned_by = FRA
+						owned_by_subject_of = FRA
+					}
+					OR = {
+						area = normandy_area
+						area = ile_de_france_area
+						area = champagne_area
+						area = picardy_area
+					}
+				}
+				cede_province = GBR
+			}
+		}
+	}
+}
+
+# John of Gaunt pressures the Castilians
+country_event = {
+	id = BGM_ENG_missions.2
+	title = "BGM_ENG_missions.2.t"
+	desc = "BGM_ENG_missions.2.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	#major = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_ENG_missions.2.a" #Accept the PlantagenÃªt heir
+		if = {
+			limit = { 
+				has_heir = yes
+			}
+			add_prestige = -50
+		}
+		define_heir = {
+			dynasty = "Plantagenêt"
+		}
+	}
+
+	option = {
+		name = "BGM_ENG_missions.2.b" #We won't do that
+		add_prestige = -25
+		ENG = {
+			add_casus_belli = {
+				type = cb_restore_personal_union
+				target = ROOT
+				months = 60
+			}
+		}
+	}
+}
+
+# Wycliffe
+country_event = {
+	id = BGM_ENG_missions.3
+	title = "BGM_ENG_missions.3.t"
+	desc = "BGM_ENG_missions.3.d"
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	#major = yes
+
+	trigger = {
+		NOT = {
+			has_global_flag = lollardy_started
+		}
+	}
+
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	option = {
+		name = "BGM_ENG_missions.3.a" #oh noes
+		clr_global_flag = lollardy_started
+		set_global_flag = lollardy_started
+		custom_tooltip = lollardy_will_despawn
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			change_religion = lollard
+			add_reform_center = lollard
+			add_province_modifier = {
+				name = conversion_zeal
+				duration = 9125
+			}
+		}
+		
+	}
+}
+
+country_event = {
+	id = BGM_ENG_missions.4
+	title = none
+	desc = none
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	hidden = yes
+
+	#major = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				exists = ENG
+				tag = ENG
+			}
+			NOT = { exists = ENG }
+		}
+		has_global_flag = lollardy_started
+	}
+
+	mean_time_to_happen = {
+		years = 15
+	}
+	
+	option = {
+		name = none
+		
+		every_owned_province = {
+			limit = {
+				is_reformation_center = yes
+			}
+			remove_reform_center = lollard
+		}
+	}
+}
+
+# Select Your France Path
+country_event = {
+	id = BGM_ENG_missions.5
+	title = "BGM_ENG_missions.5.t"
+	desc = "BGM_ENG_missions.5.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	#major = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_ENG_missions.5.a" #Claim France
+		set_country_flag = france_path_selected
+	}
+
+	option = {
+		name = "BGM_ENG_missions.5.b" #Do the Angevin Realm
+		set_country_flag = angevin_path_selected
+	}
+
+	option = {
+		name = "BGM_ENG_missions.5.c" #Put a relative on France's throne
+		set_country_flag = france_ally_path_selected
+	}
+}

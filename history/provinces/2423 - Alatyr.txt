@@ -1,0 +1,22 @@
+#2423 - Alatyr
+owner = GLH
+controller = GLH
+culture = russian
+religion = orthodox
+base_tax = 2
+base_production = 2
+trade_goods = grain
+base_manpower = 1
+capital = "Alatyr"
+is_city = yes
+add_core = NZH
+add_core = GLH
+add_core = GDW
+add_core = GOS
+discovered_by = western
+discovered_by = eastern
+discovered_by = nomad_group
+1503.4.1 = { 
+	controller = RUS
+	add_core = RUS
+}

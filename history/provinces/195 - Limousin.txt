@@ -1,0 +1,39 @@
+# 195 Limousin - Principal cities: Limoges
+owner = GUY
+controller = GUY
+capital = "Limoges"
+is_city = yes
+culture = limousin
+religion = catholic
+base_tax = 4
+base_production = 4
+trade_goods = lumber
+base_manpower = 3
+add_core = GUY
+add_core = FRA
+add_core = LIM
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1589.1.1 = { 
+	base_tax = 5
+}
+1650.3.1 = { 
+	revolt = { size = 1 }
+}
+1651.4.1 = { 
+	revolt = { size = 1 }
+}
+1652.2.15 = { 
+	revolt = { size = 1 }
+}
+1652.10.21 = { 
+	revolt = { size = 1 }
+}
+1702.1.1 = { 
+	revolt = { size = 1 }
+}
+1705.1.1 = { 
+	revolt = { size = 1 }
+}

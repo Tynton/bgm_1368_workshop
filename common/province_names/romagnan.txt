@@ -1,0 +1,17 @@
+105 = "Pärma"
+113 = "Fràra"
+4730 = "Bulåggna"
+106 = "Mòdna"
+114 = "Ravèna"
+1862 = "Carmona"
+
+5395 = "Ruig"
+
+4960 = "San Maréin"
+
+# = { "Rémin" "Cisêna" }
+# = "Pés're"
+
+# = "Masa"
+# = "Piasëinsa"
+# = "Süsèra"

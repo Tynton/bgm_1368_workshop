@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = ripuarian
+add_accepted_culture = brabantian
+religion = catholic
+technology_group = western
+capital = 2975	# Cleves
+
+
+1334.1.1 = {
+	monarch = {
+		name = "Adolf III"
+		dynasty = "von der Mark"
+		birth_date = 1334.1.1
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = conqueror_personality
+	add_ruler_personality = greedy_personality
+	add_ruler_personality = architectural_visionary_personality
+}

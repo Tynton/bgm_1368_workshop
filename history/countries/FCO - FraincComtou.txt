@@ -1,0 +1,37 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = frainc_comtou
+religion = catholic
+capital = 193	# besancon
+
+add_casus_belli = {
+    target = BRB
+    type = cb_restore_personal_union
+    months = 180
+}
+
+1361.1.18 = {
+	monarch = {
+		name = "Marguerite I"
+		dynasty = "Capet"
+		birth_date = 1310.1.1
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+
+	heir = {
+		name = "Louis"
+		monarch_name = "Louis II"
+		dynasty = "de Dampierre"
+		birth_date = 1330.10.25
+		death_date = 1384.1.30
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+	set_heir_flag = louis_ii_dampierre
+}

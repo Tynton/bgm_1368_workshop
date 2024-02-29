@@ -1,0 +1,12 @@
+bookmark =
+{
+	name = "1368_E_NAME"
+	desc = "1368_E_DESC"
+	date = 1368.1.23
+	
+	country = MNG
+	country = YUA
+	country = MAM
+	country = CHG
+	country = DLH
+}

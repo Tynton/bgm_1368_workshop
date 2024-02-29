@@ -1,0 +1,194 @@
+namespace = BGM_colonies
+
+country_event = {
+	id = BGM_colonies.1
+	title = "BGM_colonies.n.1"
+	desc = "BGM_colonies.d.1"
+	picture = ANGRY_MOB_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_colonies.1.a"
+		
+		FROM = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_colonial_independance_war
+			}
+			every_enemy_country = {
+				limit = {
+					ai = yes
+				}
+				join_all_defensive_wars_of = PREV
+			}
+		}
+	}
+}
+
+province_event = {
+	id = BGM_colonies.2
+	title = "BGM_colonies.n.2"
+	desc = "BGM_colonies.d.2"
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		controlled_by = owner
+		owner = {
+			bgm_colonial_subject = yes
+		}
+		OR = {
+			is_prosperous = yes
+			owner = {
+				OR = {
+					in_golden_age = yes
+					stability = 1
+					prestige = 20
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1440
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				stability = 2
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stability = 3
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				prestige = 25
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				prestige = 50
+			}
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				prestige = 75
+			}
+		}
+		modifier = {
+			factor = 0.7
+			owner = {
+				prestige = 90
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				overlord = {
+					NOT = { stability = 1 }
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			owner = {
+				overlord = {
+					NOT = { stability = 0 }
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.7
+			owner = {
+				overlord = {
+					NOT = { stability = -1 }
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			owner = {
+				overlord = {
+					has_any_disaster = yes
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			owner = {
+				overlord = {
+					war_exhaustion = 5
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			owner = {
+				overlord = {
+					war_exhaustion = 10
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.6
+			owner = {
+				overlord = {
+					war_exhaustion = 15
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.8
+			NOT = {
+				development = 10
+			}
+		}
+
+		modifier = {
+			factor = 0.9
+			NOT = {
+				development = 20
+			}
+		}
+
+		modifier = {
+			factor = 0.85
+			bgm_industry_export = yes
+		}
+	}
+	
+	option = {
+		name = "BGM_colonies.2.a"
+		
+		random_list = {
+			40 = {
+				add_base_tax = 1
+			}
+			40 = {
+				add_base_production = 1
+			}
+			20 = {
+				add_base_manpower = 1
+			}
+		}
+		
+		
+	}
+}

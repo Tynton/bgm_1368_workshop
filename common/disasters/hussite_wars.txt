@@ -1,0 +1,108 @@
+hussite_wars = {
+	potential = {
+		NOT = { has_country_flag = had_hussite_wars_disaster }
+		OR = {
+			primary_culture = czech
+			BOH = {
+				has_country_flag = had_hussite_wars_disaster
+			}
+		}
+		had_global_flag = {
+			flag = western_schism
+			days = 5475
+		}
+		normal_or_historical_nations = yes
+		num_of_cities = 6
+		is_free_or_tributary_trigger = yes
+		NOT = { has_country_flag = hussite_wars_happened }
+		OR = {
+			religion = catholic
+			religion = avignon
+			religion = pisan
+		}
+		OR = {
+			culture_group = baltic
+			culture_group = west_slavic
+			culture_group = carpathian
+			culture_group = south_slavic
+			culture_group = romanian_group
+			primary_culture = baltic_german
+			primary_culture = east_pomeranian
+			primary_culture = pommeranian
+			primary_culture = brandenburgian
+			primary_culture = austrian
+			primary_culture = south_tyrolean
+			tag = BRA
+		}
+	}
+	can_start = {
+		OR = {
+			is_year = 1415
+			NOT = { stability = 0 }
+			NOT = { legitimacy = 50 }
+			num_of_loans = 3
+		}
+	}
+	can_stop = {
+		NOT = { is_year = 1415 }
+		stability = 0
+		legitimacy = 50
+		NOT = { num_of_loans = 3 }
+	}
+	progress = {
+		modifier = {
+			factor = 1
+			is_year = 1415
+		}
+		modifier = {
+			factor = 1
+			unrest = 1
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { religious_unity = 0.75 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { legitimacy = 75 }
+		}
+	}
+	can_end = {
+		religious_unity = 0.9
+		stability = 2
+		NOT = {
+			any_owned_province = {
+				controlled_by = REB
+				unrest = 1
+			}
+		}
+		NOT = {
+			num_of_rebel_armies = 1
+		}
+	}
+	modifier = {
+		tolerance_heretic = -5
+		global_manpower_modifier = -0.25
+		global_tax_modifier = -0.25
+	}
+	
+	on_start = BGMHW.1
+	on_end = BGMHW.2
+	
+	on_monthly = {
+		events = {
+			
+		}
+		random_events = {
+			
+		}
+	}
+}

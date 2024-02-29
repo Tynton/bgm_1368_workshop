@@ -1,0 +1,14 @@
+add_core = YUA
+owner = YUA
+controller = YUA
+is_city = no
+religion = confucianism
+culture = xiang
+base_tax = 4
+base_manpower = 2
+base_production = 5
+trade_goods = iron
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = YUE
+add_core = MNG

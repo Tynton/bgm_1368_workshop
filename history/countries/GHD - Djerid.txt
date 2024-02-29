@@ -1,0 +1,24 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = tunisian
+religion = sunni
+technology_group = muslim
+capital = 352	# Gafsa
+religious_school = maliki_school
+
+add_country_modifier = {
+	name = no_stability_start
+	duration = 1
+}
+
+1368.1.1 = {
+	monarch = {
+		name = "Emirate"
+		adm = 0
+		dip = 0
+		mil = 0
+		regent = yes
+	}
+}
+kill_ruler = yes

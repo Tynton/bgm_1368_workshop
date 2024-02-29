@@ -1,0 +1,11 @@
+# Napoleonic Lancers
+
+type = cavalry
+
+maneuver = 2
+offensive_morale = 20
+defensive_morale = 15
+offensive_fire = 15
+defensive_fire = 10
+offensive_shock = 20
+defensive_shock = 15

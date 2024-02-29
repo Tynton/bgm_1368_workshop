@@ -1,0 +1,15 @@
+graphical_culture = asiangfx
+color = { 
+	107 74 193 
+}
+monarch_names = { 
+	"Ming Sheng" = 0
+}
+leader_names = { 
+}
+ship_names = { 
+}
+fleet_names = { 
+}
+army_names = { 
+}

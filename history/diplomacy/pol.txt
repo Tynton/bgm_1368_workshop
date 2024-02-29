@@ -1,0 +1,14 @@
+
+vassal = {
+	first = POL
+	second = MAZ
+	start_date = 1368.1.1
+	end_date = 1486.3.12
+}
+
+vassal = {
+	first = POL
+	second = PDL
+	start_date = 1368.1.1
+	end_date = 1486.3.12
+}

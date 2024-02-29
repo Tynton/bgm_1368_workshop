@@ -1,0 +1,50 @@
+cb_balance_power = {
+
+	prerequisites = {
+		OR = {
+			current_age = age_of_revolutions
+			current_age = age_of_industrialization
+		}
+		FROM = {
+			NOT = { great_power_rank = 2 }
+			OR = {
+				any_subject_country = {
+					military_strength = {
+						who = FROM
+						value = 0.5
+					}
+				}
+				any_country = {
+					capital_scope = {
+						continent = ROOT
+					}
+					NOT = {
+						military_strength = {
+							who = FROM
+							value = 0.3
+						}
+					}
+				}
+			}
+			OR = {
+				capital_scope = { continent = ROOT }
+				AND = {
+					is_hegemon = yes
+					NOT = {
+						had_recent_war = 15
+					}
+					OR = {
+						any_subject_country = {
+							capital_scope = { continent = ROOT }
+						}
+						any_owned_province = {
+							continent = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+
+	war_goal = take_capital_liberation
+}

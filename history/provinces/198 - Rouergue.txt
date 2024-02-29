@@ -1,0 +1,29 @@
+# 198 Rouergue - Principal cities: Rodez
+controller = GUY
+capital = "Rodez"
+is_city = yes
+culture = lengadocian
+religion = catholic
+base_tax = 4
+base_production = 4
+trade_goods = livestock
+base_manpower = 3
+add_local_autonomy = 25
+add_core = GUY
+add_core = TOU
+add_core = FRA
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+owner = GUY
+1444.1.1 = { 
+	controller = AMG
+	add_core = AMG
+}
+1652.2.15 = { 
+	revolt = { size = 1 }
+}
+1652.10.21 = { 
+	revolt = { size = 1 }
+}

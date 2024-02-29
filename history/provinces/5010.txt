@@ -1,0 +1,10 @@
+add_core = MNG
+owner = MNG
+controller = MNG
+is_city = no
+religion = confucianism
+culture = chimin
+base_tax = 4
+base_manpower = 4
+base_production = 3
+trade_goods = naval_supplies

@@ -1,0 +1,22 @@
+235 = { "Kent" "Caunterbury" } #Canterburi
+237 = { "Oxneford" "Oxenford" }
+239 = "Gloucestreschire"
+233 = { "Cornwale" "Cornwaile" }
+4370 = { "Bedefordschire" "Cantebrigge" }
+1860 = "Northfolk"
+246 = { "Northumberlond" "Northhumberlond" }
+244 = "Lancastreshire"
+87 = { "Caleys" "Calais" }
+4376 = "Ledecestre"
+4375 = { "Leyrpole" "Chestre" }
+234 = { "Hampshire" "Sarisberie" }
+
+248 = { "Lothian" "Edynburgh" }
+
+112 = { "Venyse" "Venise" }
+
+245 = "Yorke"
+
+5133 = "Worcestershire"
+5134 = "Cicestre"
+5136 = "Colneceastre"

@@ -1,0 +1,32 @@
+#626 - Karta
+owner = MAJ
+controller = MAJ
+add_core = MAJ
+culture = javanese
+religion = hinduism
+capital = "Karta"
+trade_goods = grain
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman
+1475.1.1 = { 
+	controller = DMK
+	add_core = DMK
+}
+1500.1.1 = { religion = Sunni }
+1509.1.1 = { discovered_by = POR }
+1587.1.1 = { 
+	controller = MTR
+	add_core = MTR
+}
+1613.1.1 = { discovered_by = NED }
+1647.1.1 = { capital = "Plered" }
+1680.1.1 = { capital = "Kartosuro" }
+latent_trade_goods = { 
+	rubber 
+}

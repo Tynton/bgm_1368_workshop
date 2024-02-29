@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = ruthenian
+religion = orthodox
+
+1338.1.1 = {
+	monarch = {
+		name = "Oleksander Koriatovich I"
+		dynasty = "Yuri"
+		birth_date = 1336.1.1
+		adm = 2
+		dip = 0
+		mil = 1
+	}
+}

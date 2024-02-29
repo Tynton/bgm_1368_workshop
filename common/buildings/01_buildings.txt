@@ -1,0 +1,266 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new buildings, make sure they are uniquely named.
+
+# cost = x #==> cost in $ to build (subject to other modifiers)
+# time = x #==> number of months to build.
+# modifier = m # a modifier on the province that the building gives
+# trigger = t # an and trigger that needs to be fullfilled to build and keep the building
+# one_per_country = yes/no # if yes, only one of these can exist in a country
+# manufactory = { trade_good trade_good } # list of trade goods that get a production bonus
+# onmap = yes/no # show as a sprite on the map
+
+# FROM = owner
+# ROOT = province
+
+# Building AI is now mainly hard-coded. The AI will estimate how much it gains yearly from each building,
+# convert the value to ducats, and take the building with biggest yearly return as a percentage of the build cost.
+# If lower than 1%, the AI will not consider the yearly return worth it.
+# It will also require higher yearly return if the economy in not in prime shape.
+# Forts' value also get converted to a yearly return based on terrain and strategic position, as well as available budget for fort maintenance.
+
+# AI can still be modded though; it will multiply the yearly return with the value of ai_will_do.
+# If you don't want the AI to build a building at all, make ai_will_do become 0.
+# AI will consider each building to be worth 0.01 ducats per year as a base, so making ai_will_do above cost will have them build it at some point.
+# It will still check whether it can afford a building before doing so though, but may save up to it.
+
+factory_infrastructure = {
+	cost = 1500
+	time = 24
+	
+	modifier = {
+		local_production_efficiency = 1
+		local_manpower_modifier = 0.5
+		local_development_cost = -0.1
+	}
+
+	make_obsolete = counting_house
+	
+	allow_in_gold_provinces = no
+
+	on_built = {
+		add_development_from_building = {
+			building = factory_infrastructure
+			type = production
+			value = 2
+		}
+		#if = {
+		#	limit = {
+		#		OR = {
+		#			has_terrain = woods
+		#			has_terrain = hills
+		#			has_terrain = forest
+		#			has_terrain = highlands
+		#			has_terrain = mountain
+		#		}
+		#	}
+		#	add_province_modifier = {
+		#		name = factory_dev
+		#		duration = -1
+		#	}
+		#}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = factory_infrastructure
+			type = production
+			value = 2
+		}
+		#remove_province_modifier = factory_dev
+	}
+	on_obsolete = {
+	}
+
+	ai_will_do = {
+		factor = 8
+
+		modifier = {
+			factor = 10
+			has_building = counting_house
+		}
+
+		modifier = {
+			factor = 10
+			owner = { adm_tech = 33 }
+		}
+
+		modifier = {
+			factor = 10
+			owner = { adm_tech = 36 }
+		}
+
+		modifier = {
+			factor = 2
+			OR = {
+				trade_goods = iron
+				trade_goods = cloth
+				trade_goods = cloves
+				trade_goods = silk
+				trade_goods = dyes
+				trade_goods = paper
+				trade_goods = coal
+				trade_goods = cotton
+				trade_goods = cinema
+				trade_goods = fur
+				trade_goods = gems
+				trade_goods = ivory
+				trade_goods = oil
+				trade_goods = rubber
+				trade_goods = sugar
+				trade_goods = steel
+				trade_goods = tobacco
+			}
+		}
+	}
+}
+
+tax_center = {
+	cost = 1000
+	time = 12
+	modifier = {
+		local_tax_modifier = 1.0
+		#local_development_cost = -0.05
+	}
+
+	make_obsolete = cathedral
+
+	on_built = {
+		add_development_from_building = {
+			building = tax_center
+			type = tax
+			value = 3
+		}
+		#if = {
+		#	limit = {
+		#		OR = {
+		#			has_terrain = woods
+		#			has_terrain = hills
+		#			has_terrain = forest
+		#			has_terrain = highlands
+		#			has_terrain = mountain
+		#		}
+		#	}
+		#	add_province_modifier = {
+		#		name = tax_dev
+		#		duration = -1
+		#	}
+		#}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = tax_center
+			type = tax
+			value = 3
+		}
+		#remove_province_modifier = tax_dev
+	}
+	
+	ai_will_do = {
+		factor = 5
+
+		modifier = {
+			factor = 0.25
+
+			owner = {
+				OR = {
+					production_income_percentage = 0.4
+					trade_income_percentage = 0.4
+				}
+			}
+		}
+
+		modifier = {
+			factor = 10
+			has_building = cathedral
+		}
+
+		modifier = {
+			factor = 8
+			owner = {
+				tax_income_percentage = 0.33
+			}
+		}
+	}
+}
+
+polytechnic = {
+	cost = 800
+	time = 36
+	modifier = {
+		allowed_num_of_buildings = 1
+		institution_growth = 1
+		local_development_cost = -0.1
+		local_culture_conversion_cost = -0.1
+		local_culture_conversion_time = -0.25
+	}
+
+	make_obsolete = university
+
+	build_trigger = {
+		development = 40
+		OR = {
+			province_has_center_of_trade_of_level = 3
+			AND = {
+				base_tax = 10
+				has_building = town_hall
+			}
+		}
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = polytechnic
+			type = tax
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = polytechnic
+			type = tax
+			value = 2
+		}
+	}
+	
+	ai_will_do = {
+		factor = 25
+	}
+}
+
+bureau_offices = {
+	cost = 800
+	time = 36
+	modifier = {
+		local_state_maintenance_modifier = -0.66
+		local_autonomy = -0.25
+		local_governing_cost = -0.5
+		local_tax_modifier = 0.1
+		local_centralize_state_cost = -0.33
+		allowed_num_of_buildings = 1
+	}
+
+	make_obsolete = town_hall
+
+	build_trigger = {
+		development = 40
+		has_building = tax_center
+	}
+
+	on_built = {
+		add_development_from_building = {
+			building = bureau_offices
+			type = tax
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = bureau_offices
+			type = tax
+			value = 1
+		}
+	}
+	
+	ai_will_do = {
+		factor = 25
+	}
+}

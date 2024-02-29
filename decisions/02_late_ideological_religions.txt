@@ -1,0 +1,300 @@
+country_decisions = {
+
+	convert_to_atheism = {
+		major = yes
+		potential = {
+			OR = {
+				bgm_comgovt = yes
+				has_reform = fascist_mechanic
+				has_reform = futurist_mechanic
+			}
+			NOT = {
+				OR = {
+					has_reform = austrofascism
+					has_reform = rexism
+					has_reform = falanghism
+					has_reform = italian_fascism
+				}
+			}
+			OR = {
+				NOT = {
+					religion = atheism
+				}
+				NOT = {
+					religion = futurism
+				}
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+			
+			is_vassal = no
+			is_march = no
+			is_colonial_nation = no
+		}
+		effect = {
+			export_to_variable = {
+				variable_name = prevReligion
+				value = religion
+			}
+			change_religion = atheism
+			add_stability = -2
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { stability = 3 }
+			}
+		}
+	}
+	
+	convert_to_futurism = {
+		major = yes
+		potential = {
+			has_reform = futurist_mechanic
+			NOT = {
+				OR = {
+					religion = atheism
+					religion = futurism
+				}
+			}
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+			
+			is_vassal = no
+			is_march = no
+			is_colonial_nation = no
+		}
+		effect = {
+			export_to_variable = {
+				variable_name = prevReligion
+				value = religion
+			}
+			change_religion = futurism
+			add_stability = -2
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 0
+				NOT = { stability = 3 }
+			}
+		}
+	}
+	
+	convert_to_machine_worship = {
+		major = yes
+		potential = {
+			has_reform = futurist_mechanic
+			OR = {
+				NOT = {
+					religion = atheism
+				}
+				NOT = {
+					religion = futurism
+				}
+			}
+			has_institution = information_infrastructure
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+			
+			is_vassal = no
+			is_march = no
+			is_colonial_nation = no
+		}
+		effect = {
+			export_to_variable = {
+				variable_name = prevReligion
+				value = religion
+			}
+			change_religion = machine_worship
+			add_stability = -2
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 0
+				NOT = { stability = 3 }
+			}
+		}
+	}
+	
+	institute_freedom_of_religion = {
+		major = yes
+		potential = {
+			NOT = { 
+				OR = {
+					religion = secular 
+					government = theocracy
+					has_country_modifier = secular_constitution
+				}
+			}
+			OR = {
+				#AND = {
+				#	OR = {
+				#		has_reform = pro_enlightenment_reform
+				#		has_reform = egalite_reform
+				#	}
+				#	full_idea_group = humanist_ideas
+				#	has_institution = enlightenment
+				#}
+				has_reform = merchant_republic
+				has_reform = democratic_mechanic
+				is_revolutionary = yes
+				overlord = {
+					religion = secular
+				}
+			}
+			is_part_of_hre = no
+		}
+		allow = {
+			stability = 1
+			is_at_war = no
+			OR = {
+				#AND = {
+				#	OR = {
+				#		has_reform = pro_enlightenment_reform
+				#		has_reform = egalite_reform
+				#	}
+				#	full_idea_group = humanist_ideas
+				#	has_institution = enlightenment
+				#}
+				has_reform = merchant_republic
+				has_reform = democratic_mechanic
+				is_revolutionary = yes
+				overlord = {
+					OR = {
+						religion = secular
+						has_country_modifier = secular_constitution
+					}
+				}
+				AND = {
+					bgm_rev = no
+					OR = {
+						religion = cult_of_reason
+						religion = cult_of_the_supreme_being
+					}
+				}
+			}
+		}
+		effect = {
+
+			if = {
+				limit = {
+					OR = {
+						religion = protestant
+						religion = anglican
+						religion = unitarian
+						religion = shinto
+						religion = hussite
+						religion = lollard
+						religion = cathar
+					}
+					OR = {
+						government = monarchy
+						has_reform = parliamentary_monarchism
+						has_reform = auth_monarchism
+						has_reform = fascist_monarchism
+					}
+				}
+				add_country_modifier = {
+					name = secular_constitution
+					duration = -1
+				}
+			}
+			else = {
+				hidden_effect = {
+					export_to_variable = {
+						variable_name = prevReligion
+						value = religion
+					}
+				}
+				change_religion = secular
+			}
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				NOT = { stability = 3 }
+			}
+
+			modifier = {
+				factor = 0
+				tag = GBR
+			}
+
+			modifier = {
+				factor = 0
+				religion_group = muslim
+				NOT = { has_reform = democratic_mechanic }
+			}
+		}
+	}
+
+	return_to_previous = {
+		potential = {
+			OR = {
+				NOT = {
+					religion = variable:prevReligion
+				}
+				AND = {
+					OR = {
+						has_reform = italian_fascism
+						has_reform = rexism
+						has_reform = falanghism
+					}
+					NOT = { religion = catholic }
+					religion = variable:prevReligion
+				}
+			}
+			dominant_religion = variable:prevReligion
+		}
+		allow = {
+			#stability = 2
+			is_at_war = no
+			dominant_religion = variable:prevReligion
+		}
+		effect = {
+			change_religion = variable:prevReligion
+			add_stability_or_adm_power = yes
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				OR = { 
+					is_revolutionary = yes
+					bgm_comgovt = yes
+					has_reform = futurist_mechanic
+					has_reform = national_socialism
+				}
+			}
+		}
+	}
+}

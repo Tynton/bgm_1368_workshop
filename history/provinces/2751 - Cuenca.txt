@@ -1,0 +1,39 @@
+#2751 - Cuenca
+owner = TST#Juan II of Castille
+controller = TST
+culture = castillian
+religion = catholic
+base_tax = 2
+base_production = 2
+trade_goods = wool
+base_manpower = 1
+capital = "Cuenca"
+is_city = yes
+add_core = TST
+add_core = CAS
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+1516.1.23 = { 
+	controller = SPA
+	add_core = SPA
+}
+1520.6.1 = { 
+	revolt = { size = 1 }
+}
+1521.4.1 = { 
+	revolt = { size = 1 }
+}
+1808.6.6 = { 
+	revolt = { size = 1 }
+}
+1809.1.1 = { 
+	revolt = { size = 1 }
+}
+1812.10.1 = { 
+	revolt = { size = 1 }
+}
+1813.12.11 = { 
+	revolt = { size = 1 }
+}

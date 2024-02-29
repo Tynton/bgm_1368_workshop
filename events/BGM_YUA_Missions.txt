@@ -1,0 +1,48 @@
+namespace = BGM_YUA_missions
+
+# choose your strat
+country_event = {
+	id = BGM_YUA_missions.1
+	title = "BGM_YUA_missions.1.t"
+	desc = "BGM_YUA_missions.1.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_YUA_missions.1.a" #Sinicized Administration
+		set_country_flag = sino_yua
+		#change_primary_culture = chihan
+		add_country_modifier = {
+			name = sino_yua_longform_modifier
+			duration = 10950
+		}
+
+		add_country_modifier = {
+			name = sino_yua_longform_modifier
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "BGM_YUA_missions.1.b" #Retain the Mongol Hierarchy
+		set_country_flag = mongol_yua
+		add_country_modifier = {
+			name = mongol_yua_modifier
+			duration = 10950
+		}
+
+		add_country_modifier = {
+			name = mongol_yua_longform_modifier
+			duration = -1
+		}
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}

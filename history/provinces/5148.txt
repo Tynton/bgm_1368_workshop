@@ -1,0 +1,15 @@
+add_core = VLD
+discovered_by = western
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = muslim
+owner = VLD
+culture = palatine
+religion = catholic
+hre = yes
+controller = VLD
+is_city = yes
+base_tax = 1
+base_manpower = 2
+base_production = 1
+trade_goods = lumber

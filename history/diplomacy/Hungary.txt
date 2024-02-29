@@ -1,0 +1,29 @@
+union = {
+	first = HUN
+	second = TRA
+	#start_date = 1397.6.17
+	start_date = 1368.1.1
+	end_date = 1452.1.1
+}
+union = {
+	first = HUN
+	second = CRO
+	#start_date = 1397.6.17
+	start_date = 1368.1.1
+	end_date = 1452.1.1
+}
+
+royal_marriage = {
+	first = HUN
+	second = POL
+	start_date = 1368.1.1
+	end_date = 1370.11.5
+}
+
+union = {
+	first = HUN
+	second = POL
+	#start_date = 1397.6.17
+	start_date = 1370.11.5
+	end_date = 1382.9.10
+}

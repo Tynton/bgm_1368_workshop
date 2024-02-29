@@ -1,0 +1,24 @@
+#2687 - Pakuan
+owner = SUN
+controller = SUN
+add_core = SUN
+culture = sundanese
+religion = hinduism
+capital = "Pakuan"
+trade_goods = rice
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman
+1509.1.1 = { discovered_by = POR }
+1527.1.1 = { 
+	controller = BAN
+	add_core = BAN
+}
+1550.1.1 = { religion = Sunni }
+1602.1.1 = { discovered_by = ENG }
+1707.5.12 = { discovered_by = GBR }

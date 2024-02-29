@@ -1,0 +1,45 @@
+#235 - Kent
+controller = ENG
+culture = kentish
+religion = catholic
+base_tax = 5
+base_production = 5
+trade_goods = cloth
+base_manpower = 2
+capital = "Canterbury"
+is_city = yes
+seat_in_parliament = yes
+add_core = ENG
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+1450.5.1 = { 
+	revolt = { size = 1 }
+}
+1450.7.12 = { 
+	revolt = { size = 1 }
+}
+1460.1.1 = { 
+	revolt = { size = 1 }
+}
+1461.6.28 = { 
+	revolt = { size = 1 }
+}
+1642.8.22 = { 
+	revolt = { size = 1 }
+}
+1646.5.5 = { 
+	revolt = { size = 1 }
+}
+1648.5.11 = { 
+	revolt = { size = 1 }
+}
+1648.6.1 = { 
+	revolt = { size = 1 }
+}
+1707.5.12 = { 
+	controller = GBR
+	add_core = GBR
+}
+center_of_trade = 1

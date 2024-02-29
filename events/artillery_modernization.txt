@@ -1,0 +1,116 @@
+namespace = artillery_modernization
+
+	country_event = {
+		id = artillery_modernization.1
+		title = "artillery_modernization.t.1"
+		desc = "artillery_modernization.d.1"
+		picture = MIL_ADVANCE_eventPicture
+
+		is_triggered_only = yes
+	
+		option = {
+			name = "artillery_modernization.1.a"
+
+			if = {
+				limit = {
+					mil_tech = 38
+					NOT = { has_country_modifier = m1 }
+				}
+				add_country_modifier = {
+					name = "m1"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 39
+					NOT = { has_country_modifier = m2 }
+				}
+				add_country_modifier = {
+					name = "m2"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 40
+					NOT = { has_country_modifier = m3 }
+				}
+				add_country_modifier = {
+					name = "m3"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 41
+					NOT = { has_country_modifier = m4 }
+				}
+				add_country_modifier = {
+					name = "m4"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 42
+					NOT = { has_country_modifier = m5 }
+				}
+				add_country_modifier = {
+					name = "m5"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 43
+					NOT = { has_country_modifier = m6 }
+				}
+				add_country_modifier = {
+					name = "m6"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 44
+					NOT = { has_country_modifier = m7 }
+				}
+				add_country_modifier = {
+					name = "m7"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 45
+					NOT = { has_country_modifier = m8 }
+				}
+				add_country_modifier = {
+					name = "m8"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 46
+					NOT = { has_country_modifier = m9 }
+				}
+				add_country_modifier = {
+					name = "m9"
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					mil_tech = 47
+					NOT = { has_country_modifier = m10 }
+				}
+				add_country_modifier = {
+					name = "m10"
+					duration = -1
+				}
+			}
+		}
+	}
+

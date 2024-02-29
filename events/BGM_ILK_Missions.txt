@@ -1,0 +1,81 @@
+namespace = BGM_ILK_missions
+
+country_event = { #Begin a proto-industrial area?
+	id = BGM_ILK_missions.1
+	title = "BGM_ILK_missions.1.t"
+	desc = "BGM_ILK_missions.1.d"
+	picture = INDUSTRY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_ILK_missions.1.a" #Yes
+		random_owned_area = {
+			change_trade_goods = cloth
+			add_province_modifier = {
+				name = ilk_proto_industrial_area
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = "BGM_ILK_missions.1.b" #No
+		add_stability_or_adm_power = yes
+		add_years_of_income = 1
+	}
+}
+
+country_event = { #Islam, Zoroastrianism or Buddhism?
+	id = BGM_ILK_missions.2
+	title = "BGM_ILK_missions.2.t"
+	desc = "BGM_ILK_missions.2.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_ILK_missions.2.a" #Remain
+		add_stability_or_adm_power = yes
+		ai_chance = {
+			factor = 5
+		}
+	}
+
+	option = {
+		name = "BGM_ILK_missions.2.b" #Zoroastrianism
+
+		trigger = {
+			OR = {
+				any_owned_province = {
+					religion = zoroastrian
+				}
+				any_neighbor_country = {
+					religion = zoroastrian
+				}
+			}
+		}
+
+		change_religion = zoroastrian
+		add_stability = -5
+		add_country_modifier = {
+			name = bgm_zeal
+			duration = 1825
+		}
+	}
+
+	option = {
+		name = "BGM_ILK_missions.2.c" #Buddhism
+		change_religion = vajrayana
+		add_stability = -5
+		add_country_modifier = {
+			name = bgm_zeal
+			duration = 1825
+		}
+	}
+
+	after = {
+		set_country_flag = resolved_religious_debate
+		swap_non_generic_missions = yes
+	}
+}

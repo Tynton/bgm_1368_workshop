@@ -1,0 +1,2 @@
+116 = { "Fiorenza" "Firenze" }
+112 = "Vinegia"

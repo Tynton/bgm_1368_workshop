@@ -1,0 +1,11 @@
+add_core = TMB
+discovered_by = sub_saharan
+owner = TMB
+base_tax = 1
+base_manpower = 1
+base_production = 1
+culture = tuareg
+trade_goods = salt
+religion = sunni
+controller = TMB
+is_city = yes

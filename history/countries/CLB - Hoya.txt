@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = hannoverian
+religion = catholic
+capital = 4775 # Bielefeld-Lippe`
+
+1309.6.9 = {
+	monarch = {
+		name = "Gerhard III"
+		dynasty = "von Hoya"
+		birth_date = 1325.1.1
+		adm = 1
+		dip = 4
+		mil = 1
+	}
+}

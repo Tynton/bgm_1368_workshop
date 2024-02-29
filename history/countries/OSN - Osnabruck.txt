@@ -1,0 +1,18 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = hannoverian
+religion = catholic
+technology_group = western
+capital = 56	# Köln
+fixed_capital = 56 # Cannot move capital away from this province & no power cost to move to it
+
+1364.1.1 = {
+	monarch = {
+		name = "Melchior I"
+		dynasty = "von Brunswick-Grubenhagen"
+		birth_date = 1304.1.1
+		adm = 1
+		dip = 3
+		mil = 1
+	}
+}

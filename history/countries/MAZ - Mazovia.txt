@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = eastern
+religion = catholic
+primary_culture = polish
+capital = 257	# Warsaw
+
+
+# Mazovian Dukes# (in fact the dukes of Warsaw as Mazovia had more duchies)
+
+1320.1.1 = {
+	monarch = {
+		name = "Siemowit III"
+		dynasty = "Piast"
+		birth_date = 1320.1.1
+		dip = 1
+		adm = 2
+		mil = 1
+	}
+	heir = {
+		name = "Janusz"
+		monarch_name = "Janusz I"
+		dynasty = "Piast"
+		birth_date = 1350.1.1
+		dip = 1
+		adm = 2
+		mil = 1
+	}
+}

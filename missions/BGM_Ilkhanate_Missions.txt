@@ -1,0 +1,1195 @@
+
+ilk_row_slot_1 = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = JAL
+			tag = MZF
+			tag = ILK
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	ilk_secured_succession = {
+		icon = mission_fiqh_laws
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			adm_tech = 8
+			OR = {
+				AND = {
+					current_age = age_of_feudalism
+					has_age_ability = ab_autocracy
+				}
+				NOT = {
+					current_age = age_of_feudalism
+				}
+			}
+		}	
+		effect = {
+			add_stability_or_adm_power = yes
+		}
+	}
+
+	ilk_persian_trade_dominion = {
+		icon = per_expand_our_influence
+		required_missions = { ilk_secure_economy }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 4341
+		}		
+		trigger = {
+			4341 = {
+				is_strongest_trade_power = ROOT
+				trade_share = {
+					country = ROOT
+					share = 66
+				}
+			}
+		}	
+		effect = {
+			add_mercantilism = 5
+		}
+	}
+
+	ilk_hormuzi_trade_dominion = {
+		icon = mission_russian_navy
+		required_missions = { ilk_persian_trade_dominion ilk_trade_centers }
+		position = 4
+		provinces_to_highlight = {
+			province_id = 1334
+		}		
+		trigger = {
+			1334 = {
+				is_strongest_trade_power = ROOT
+				trade_share = {
+					country = ROOT
+					share = 66
+				}
+			}
+		}	
+		effect = {
+			if = {
+				limit = {
+					owns = 2999
+				}
+				2999 = {
+					add_base_tax = 2
+					add_base_production = 2
+					add_base_manpower = 2
+				}
+			}
+			add_country_modifier = {
+				name = ilk_hormuzi_commerce
+				duration = -1
+			}
+		}
+	}
+
+	ilk_urban_society = {
+		icon = mam_baghdad
+		required_missions = { ilk_hormuzi_trade_dominion ilk_new_golden_age }
+		position = 6
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { development = 20 }
+			NOT = { num_of_buildings_in_province = 4 }
+		}		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 35
+				development = 20
+				num_of_buildings_in_province = 4
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_urbanized_society
+				duration = -1
+			}
+			custom_tooltip = ilk_urban_ports
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = persia_region
+							region = mashriq_region
+						}
+						province_has_center_of_trade_of_level = 1
+						has_port = yes
+					}
+					add_province_modifier = {
+						name = ilk_urban_port
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	ilk_oil_exportation = {
+		icon = fra_black_gold
+		required_missions = { ilk_urban_society }
+		position = 7
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				has_latent_trade_goods = oil
+				trade_goods = oil
+			}
+		}		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 4
+				base_production = 10
+				trade_goods = oil
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_oil_production
+				duration = -1
+			}
+		}
+	}
+}
+
+ilk_row_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = JAL
+			tag = MZF
+			tag = ILK
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	ilk_secure_economy = {
+		icon = mam_tabriz
+		required_missions = { ilk_secured_succession ilk_valuable_exports }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			NOT = { num_of_loans = 1 }
+			years_of_income = 0.33
+			calc_true_if = {
+				amount = 5
+				all_owned_province = {
+					OR = {
+						trade_goods = silk
+						trade_goods = cloth
+					}
+					base_production = 5
+					has_building = textile
+					OR = {
+						has_building = workshop
+						has_building = counting_house
+						has_building = factory_infrastructure
+						has_building = fabricator
+					}
+				}
+			}
+		}	
+		effect = {
+			add_dip_power = 100
+			add_years_of_income = 0.5
+		}
+	}
+
+	ilk_trade_centers = {
+		icon = mam_yemen
+		required_missions = { ilk_secure_economy }
+		position = 3
+		provinces_to_highlight = {
+			province_has_center_of_trade_of_level = 1
+			NOT = { province_has_center_of_trade_of_level = 2 }
+			OR = {
+				region = persia_region
+				region = khorasan_region
+			}
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 4
+				all_owned_province = {
+					province_has_center_of_trade_of_level = 2
+					OR = {
+						region = persia_region
+						region = khorasan_region
+					}
+				}
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_centers_of_trade
+				duration = 18250
+			}
+			every_owned_province = {
+				limit = {
+					province_has_center_of_trade_of_level = 1
+					OR = {
+						region = persia_region
+						region = khorasan_region
+					}
+				}
+				add_province_modifier = {
+					name = ilk_center_trade
+					duration = -1
+				}
+			}
+		}
+	}
+
+	ilk_cultural_renaissance = {
+		icon = per_language_of_poetry
+		required_missions = { }
+		position = 4
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			OR = {
+				full_idea_group = humanist_ideas
+				full_idea_group = innovativeness_ideas
+				AND = {
+					stability = 2
+					NOT = {
+						any_owned_province = {
+							devastation = 10
+						}
+					}
+				}
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_centers_of_trade
+				duration = 18250
+			}
+			every_owned_province = {
+				limit = {
+					province_has_center_of_trade_of_level = 1
+					OR = {
+						region = persia_region
+						region = khorasan_region
+					}
+				}
+				add_province_modifier = {
+					name = ilk_center_trade
+					duration = -1
+				}
+			}
+			define_advisor = {
+				type = artist
+				skill = 3
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
+		}
+	}
+
+	ilk_new_golden_age = {
+		icon = per_convert_persia
+		required_missions = { ilk_cultural_renaissance ilk_proto_industry }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			has_had_golden_age = yes
+			stability = 2
+			prestige = 75
+			power_projection = 50
+		}	
+		effect = {
+			reset_golden_age = yes
+		}
+	}
+
+	mzf_question_of_identity = {
+		icon = per_our_religious_direction
+		required_missions = { }
+		position = 6
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			OR = {
+				theologian = 1
+				inquisitor = 1
+				religious_unity = 1
+			}
+			stability = 1
+		}	
+		effect = {
+			country_event = {
+				id = BGM_ILK_missions.2
+			}
+		}
+	}
+
+	ilk_recruit_inquisitor = {
+		icon = per_qizilbash_loyalty
+		required_missions = { mzf_question_of_identity }
+		position = 7
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			inquisitor = 1
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_shia_inquisitor
+				duration = 10950
+			}
+		}
+	}
+
+	ilk_religious_unity = {
+		icon = per_reborn_in_fire
+		required_missions = { ilk_recruit_inquisitor }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { religion = ROOT }
+		}		
+		trigger = {
+			religious_unity = 1
+		}	
+		effect = {
+			add_stability_or_adm_power = yes
+		}
+	}
+}
+
+ilk_row_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = JAL
+			tag = MZF
+			tag = ILK
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	ilk_valuable_exports = {
+		icon = invest_in_the_rich_trades
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				region = persia_region
+				region = khorasan_region
+			}
+			OR = {
+				trade_goods = silk
+				trade_goods = spices
+				trade_goods = paper
+				trade_goods = sugar
+				trade_goods = gems
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 15
+				all_owned_province = {
+					OR = {
+						trade_goods = silk
+						trade_goods = spices
+						trade_goods = paper
+						trade_goods = sugar
+						trade_goods = gems
+					}
+				}
+			}
+		}	
+		effect = {
+			
+			add_dip_power = 100
+			add_years_of_income = 0.5
+		}
+	}
+
+	ilk_silk_industry = {
+		icon = mission_colonial
+		required_missions = { ilk_secure_economy }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				region = persia_region
+				region = khorasan_region
+			}
+			OR = {
+				trade_goods = silk
+				trade_goods = spices
+				trade_goods = paper
+				trade_goods = sugar
+				trade_goods = gems
+			}
+			NOT = { base_production = 5 }
+			NOT = { has_building = textile }
+			NOT = {
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+					has_building = factory_infrastructure
+					has_building = fabricator
+				}
+			}
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				all_owned_province = {
+					OR = {
+						trade_goods = silk
+						trade_goods = cloth
+					}
+					base_production = 5
+					has_building = textile
+					OR = {
+						has_building = workshop
+						has_building = counting_house
+						has_building = factory_infrastructure
+						has_building = fabricator
+					}
+				}
+			}
+		}	
+		effect = {
+			custom_tooltip = ilk_random_production_increase
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							trade_goods = silk
+							trade_goods = spices
+							trade_goods = paper
+							trade_goods = sugar
+							trade_goods = gems
+						}
+					}
+					random_list = {
+						50 = {
+	
+						}
+						50 = {
+							add_base_production = 1
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						OR = {
+							trade_goods = silk
+							trade_goods = spices
+							trade_goods = paper
+							trade_goods = sugar
+							trade_goods = gems
+						}
+						has_building = textile
+						OR = {
+							has_building = workshop
+							has_building = counting_house
+							has_building = factory_infrastructure
+							has_building = fabricator
+						}
+					}
+					add_base_production = 1
+				}
+			}
+		}
+	}
+
+	ilk_proto_industry = {
+		icon = mission_rb_prospect_for_coal
+		required_missions = { ilk_silk_industry }
+		position = 4
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_manufactory_trigger = no
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 20
+				all_owned_province = {
+					has_manufactory_trigger = yes
+				}
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_manufactory_pioneers
+				duration = 18250
+			}
+		}
+	}
+
+	ilk_state_armories = {
+		icon = per_build_the_fire_temples
+		required_missions = { ilk_proto_industry }
+		position = 5
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_manufactory_trigger = no
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 20
+				all_owned_province = {
+					OR = {
+						has_building = regimental_camp
+						has_building = conscription_center
+					}
+					OR = {
+						has_building = barracks
+						has_building = training_fields
+					}
+				}
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_state_armories
+				duration = -1
+			}
+		}
+	}
+
+	ilk_rally_the_country = {
+		icon = per_create_the_ghulams
+		required_missions = { mzf_question_of_identity }
+		position = 7
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			stability = 1
+			has_global_modifier_value = {
+				which = land_morale
+				value = 0.3
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_army_of_faith
+				duration = 10950
+			}
+		}
+	}
+
+	ilk_religious_wars = {
+		icon = mam_baghdad
+		required_missions = { ilk_rally_the_country }
+		position = 8
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			all_neighbor_country = {
+				OR = {
+					religion = ROOT
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 1
+						}
+					}
+				}
+			}
+		}	
+		effect = {
+			add_stability_or_adm_power = yes
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+		}
+	}
+}
+
+jal_row_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = JAL
+			tag = ILK
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	jal_build_army = {
+		icon = per_balance_of_power
+		required_missions = {  }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			army_size_percentage = 0.9
+		}	
+		effect = {
+			tabarestan_area = {
+				add_permanent_claim = ROOT
+			}
+			basra_area = {
+				add_permanent_claim = ROOT
+			}
+			tabriz_area = {
+				add_permanent_claim = ROOT
+			}
+			north_kurdistan_area = {
+				add_permanent_claim = ROOT
+			}
+			armenia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	jal_basra = {
+		icon = mam_basrah
+		required_missions = { jal_build_army }
+		position = 2
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			area = basra_area
+		}		
+		trigger = {
+			basra_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}	
+		effect = {
+			khuzestan_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	jal_khuzestan = {
+		icon = mam_baghdad
+		required_missions = { jal_basra }
+		position = 3
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			area = khuzestan_area
+		}		
+		trigger = {
+			khuzestan_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}	
+		effect = {
+			persia_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	jal_dominate_persia = {
+		icon = per_purify_the_holy_sites
+		required_missions = { jal_khuzestan jal_stable_tabarestan }
+		position = 4
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			region = persia_region
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 25
+				all_owned_province = {
+					region = persia_region
+				}
+			}
+		}	
+		effect = {
+			persia_region = {
+				add_core = ROOT
+			}
+		}
+	}
+
+	jal_the_periphery = {
+		icon = eclipse
+		required_missions = { jal_dominate_persia }
+		position = 5
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			superregion = persia_superregion
+		}		
+		trigger = {
+			NOT = { great_power_rank = 5 }
+			persia_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}	
+		effect = {
+			persia_superregion = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+jal_row_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = JAL
+			tag = ILK
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	jal_tabarestan = {
+		icon = per_the_city_of_daman
+		required_missions = { jal_build_army }
+		position = 2
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			area = tabarestan_area
+		}		
+		trigger = {
+			tabarestan_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}	
+		effect = {
+			tabarestan_area = {
+				add_permanent_claim = ROOT
+			}
+			basra_area = {
+				add_permanent_claim = ROOT
+			}
+			#khuzestan_area = {
+			#	add_permanent_claim = ROOT
+			#}
+		}
+	}
+
+	jal_stable_tabarestan = {
+		icon = per_expand_our_influence
+		required_missions = { jal_tabarestan }
+		position = 3
+		provinces_to_highlight = {
+			owned_by = ROOT
+			area = tabarestan_area
+			OR = {
+				unrest = 1
+				nationalism = 1
+			}
+		}		
+		trigger = {
+			tabarestan_area = {
+				type = all
+				NOT = { unrest = 1 }
+				NOT = { nationalism = 1 }
+			}
+		}	
+		effect = {
+			every_owned_province = {
+				limit = {
+					area = tabarestan_area
+				}
+				add_base_production = 1
+			}
+		}
+	}
+
+	jal_textile_manufactories = {
+		icon = mam_city_thousand_minarets
+		required_missions = { jal_stable_tabarestan }
+		position = 4
+		provinces_to_highlight = {
+			owned_by = ROOT
+			area = tabarestan_area
+			has_manufactory_trigger = no
+		}		
+		trigger = {
+			tabarestan_area = {
+				type = all
+				has_manufactory_trigger = yes
+			}
+		}	
+		effect = {
+			every_owned_province = {
+				limit = {
+					area = tabarestan_area
+				}
+				add_province_modifier = {
+					name = jal_tabarestan_factories
+					duration = 10950
+				}
+			}
+		}
+	}
+}
+
+#Muzaffarids
+
+mzf_row_slot_4 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = MZF
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	mzf_consolidate_home_states = {
+		icon = per_qizilbash_loyalty
+		required_missions = { mzf_mobilize_an_army }
+		position = 2
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			OR = {
+				area = farsistan_area
+				area = makran_area
+				area = persian_gulf_coast
+			}
+		}		
+		trigger = {
+			farsistan_area = {
+				type = all
+				owned_by = ROOT
+			}
+			makran_area = {
+				type = all
+				owned_by = ROOT
+			}
+			persian_gulf_coast = {
+				type = all
+				owned_by = ROOT
+			}
+		}	
+		effect = {
+			add_adm_power = 100
+		}
+	}
+
+	mzf_crush_the_jalayirids = {
+		icon = mzf_destroy_jalayirids
+		required_missions = { mzf_north_iran }
+		position = 4
+		provinces_to_highlight = {
+			owned_by = JAL
+		}		
+		trigger = {
+			OR = {
+				NOT = { exists = JAL }
+			}
+			num_of_cities = JAL
+			total_development = JAL
+			JAL = {
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { exists = JAL }
+			}
+			every_province = {
+				limit = {
+					owned_by = JAL
+				}
+				add_core = ROOT
+			}
+			else = {
+				iraq_arabi_area = {
+					add_core = ROOT
+				}
+				shahrizor_area = {
+					add_core = ROOT
+				}
+				tabriz_area = {
+					add_core = ROOT
+				}
+				luristan_area = {
+					add_core = ROOT
+				}
+				basra_area = {
+					add_core = ROOT
+				}
+				khuzestan_area = {
+					add_core = ROOT
+				}
+				al_jazira_area = {
+					add_core = ROOT
+				}
+			}
+		}
+	}
+}
+
+mzf_row_slot_5 = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		tag = MZF
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	mzf_mobilize_an_army = {
+		icon = per_recruit_the_qizilbash
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			army_size_percentage = 0.9
+		}	
+		effect = {
+			farsistan_area = {
+				add_permanent_claim = ROOT
+			}
+			persian_gulf_coast = {
+				add_permanent_claim = ROOT
+			}
+			makran_area = {
+				add_permanent_claim = ROOT
+			}
+			iraq_e_ajam_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	mzf_iraq_ajam = {
+		icon = mission_the_sultan_of_morocco
+		required_missions = { mzf_mobilize_an_army }
+		position = 2
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			area = iraq_e_ajam_area
+		}		
+		trigger = {
+			iraq_e_ajam_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}	
+		effect = {
+			birjand_area = {
+				add_permanent_claim = ROOT
+			}
+			tabarestan_area = {
+				add_permanent_claim = ROOT
+			}
+			azerbaijan_area = {
+				add_permanent_claim = ROOT
+			}
+			mashhad_area = {
+				add_permanent_claim = ROOT
+			}
+			luristan_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	mzf_north_iran = {
+		icon = per_protect_the_west_iranian
+		required_missions = { mzf_iraq_ajam }
+		position = 3
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			OR = {
+				area = birjand_area
+				area = tabarestan_area
+				area = azerbaijan_area
+				area = mashhad_area
+			}
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 12
+				all_owned_province = {
+					OR = {
+						area = birjand_area
+						area = tabarestan_area
+						area = azerbaijan_area
+						area = mashhad_area
+					}
+				}
+			}
+		}	
+		effect = {
+			shirvan_area = {
+				add_permanent_claim = ROOT
+			}
+			tabriz_area = {
+				add_permanent_claim = ROOT
+			}
+			armenia_area = {
+				add_permanent_claim = ROOT
+			}
+			herat_area = {
+				add_permanent_claim = ROOT
+			}
+			sistan_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	mzf_persian_dominance = {
+		icon = eclipse
+		required_missions = { mzf_north_iran }
+		position = 4
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			superregion = persia_superregion
+		}		
+		trigger = {
+			calc_true_if = {
+				amount = 50
+				all_owned_province = {
+					superregion = persia_superregion
+				}
+			}
+			NOT = {
+				any_neighbor_country = {
+					is_great_power = yes
+					any_owned_province = {
+						superregion = persia_superregion
+					}
+				}
+			}
+		}	
+		effect = {
+			shirvan_area = {
+				add_permanent_claim = ROOT
+			}
+			tabriz_area = {
+				add_permanent_claim = ROOT
+			}
+			armenia_area = {
+				add_permanent_claim = ROOT
+			}
+			herat_area = {
+				add_permanent_claim = ROOT
+			}
+			sistan_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+jal_row_slot_4_2 = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		OR = {
+			tag = JAL
+			tag = ILK
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	ilk_fotresses = { #haha typo
+		icon = per_establish_western_defenses
+		required_missions = { mzf_question_of_identity }
+		position = 7
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_terrain = mountain
+			NOT = { fort_level = 2 }
+		}		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 5
+				has_terrain = mountain
+				fort_level = 2
+			}
+		}	
+		effect = {
+			define_advisor = {
+				type = fortification_expert
+				skill = 3
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
+		}
+	}
+
+	ilk_fortresses = {
+		icon = per_establish_eastern_defenses
+		required_missions = { ilk_fotresses }
+		position = 7
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_terrain = mountain
+			NOT = { fort_level = 2 }
+		}		
+		trigger = {
+			full_idea_group = defensive_ideas
+			num_of_owned_provinces_with = {
+				value = 12
+				has_terrain = mountain
+				fort_level = 2
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = ilk_defensive_doctrine
+				duration = -1
+			}
+		}
+	}
+}

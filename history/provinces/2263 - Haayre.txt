@@ -1,0 +1,18 @@
+# No previous file for Haayre
+owner = MSI
+controller = MSI
+is_city = yes
+culture = bozo
+religion = shamanism#Fetishism
+capital = "Douentza"
+trade_goods = ivory
+base_tax = 1
+base_production = 1
+base_manpower = 1
+add_core = MSI
+discovered_by = sub_saharan
+1484.1.1 = {
+}
+#Conquered by Sunni Ali Ber of Songhai
+1591.3.15 = {
+}

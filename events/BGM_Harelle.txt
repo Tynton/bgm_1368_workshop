@@ -1,0 +1,173 @@
+namespace = BGMH
+
+country_event = { #City starts the Harelle
+	id = BGMH.1
+	title = "BGMH.1.t"
+	desc = "BGMH.1.d"
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = "BGMH.1.a"
+		add_stability = -1
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = anti_tax_rebels
+				win = yes
+			}
+		}
+		capital_scope = {
+			spawn_rebels = {
+				size = 2
+				type = anti_tax_rebels
+				win = yes
+			}
+		}
+	}
+}
+
+
+country_event = { #good ending
+	id = BGMH.2
+	title = "BGMH.2.t"
+	desc = "BGMH.2.d"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		end_disaster = harelle
+	}
+
+	option = { #defeat them entirely
+		name = "BGMH.2.a"
+		set_country_flag = harelle_happened
+		add_country_modifier = {
+			name = harelle_defeated
+			duration = -1
+		}
+	}
+
+	option = { #grant clemency
+		name = "BGMH.2.b"
+		set_country_flag = harelle_happened
+		add_country_modifier = {
+			name = harelle_middleground
+			duration = -1
+		}
+	}
+}
+
+country_event = { #bad ending
+	id = BGMH.3
+	title = "BGMH.3.t"
+	desc = "BGMH.3.d"
+	picture = FARMING_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		has_disaster = harelle
+		num_of_rebel_controlled_provinces = 5
+		OR = {
+			AND = {
+				NOT = {
+					owns = 186
+				}
+				186 = {
+					has_rebel_faction = anti_tax_rebels
+					controlled_by = REB
+				}
+			}
+			AND = {
+				NOT = {
+					owns = 167
+				}
+				167 = {
+					has_rebel_faction = anti_tax_rebels
+					controlled_by = REB
+				}
+			}
+			AND = {
+				NOT = {
+					owns = 203
+				}
+				203 = {
+					has_rebel_faction = anti_tax_rebels
+					controlled_by = REB
+				}
+			}
+			AND = {
+				NOT = {
+					owns = 172
+				}
+				172 = {
+					has_rebel_faction = anti_tax_rebels
+					controlled_by = REB
+				}
+			}
+		}
+		capital_scope = {
+			controlled_by = REB
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = "BGMH.3.a"
+		set_country_flag = harelle_happened
+		end_disaster = harelle
+		every_owned_province = {
+			limit = {
+				controlled_by = REB
+				has_rebel_faction = anti_tax_rebels
+			}
+			add_devastation = 15
+		}
+		disband_rebels = anti_tax_rebels
+		add_country_modifier = {
+			name = harelle_legacy
+			duration = -1
+		}
+	}
+}
+
+province_event = { #province joins the Harelle
+	id = BGMH.4
+	title = "BGMH.4.t"
+	desc = "BGMH.4.d"
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		owner = { has_disaster = harelle }
+		NOT = {
+			has_rebel_faction = nationalist_rebels
+		}
+		NOT = {
+			has_province_flag = harelle_prov
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = "BGMH.4.a"
+		set_province_flag = harelle_prov
+		spawn_rebels = {
+			size = 1
+			type = anti_tax_rebels
+			win = yes
+		}
+	}
+}

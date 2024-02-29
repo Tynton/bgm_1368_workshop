@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = saxon
+religion = catholic
+elector = yes
+technology_group = western
+capital = 62 # Leipzig
+
+
+#Elector
+1356.3.12 = {
+	monarch = {
+		name = "Rudolf II"
+		dynasty = "Askanier"
+		birth_date = 1307.1.1
+		dip = 3
+		adm = 5
+		mil = 2
+	}
+}

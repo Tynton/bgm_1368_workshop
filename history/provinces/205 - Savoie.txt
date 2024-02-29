@@ -1,0 +1,33 @@
+#205 - Savoie
+owner = SAV
+controller = SAV
+culture = savoyard
+religion = catholic
+hre = yes
+base_tax = 5
+base_production = 6
+trade_goods = cloth
+base_manpower = 4
+capital = "Chamb�ry"
+is_city = yes
+add_core = SAV
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+1713.4.12 = { 
+	controller = SIC
+	add_core = SIC
+}
+1720.1.1 = { 
+	controller = SPI
+	add_core = SPI
+}
+1792.11.27 = { 
+	add_core = FRA
+}
+1814.4.11 = { 
+	controller = SPI
+}
+fort_15th = yes
+center_of_trade = 1

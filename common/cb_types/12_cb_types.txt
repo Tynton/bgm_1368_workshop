@@ -1,0 +1,13 @@
+cb_timurid_china = {
+
+	prerequisites = {
+		OR = {
+			mission_completed = chg_invade_the_chinese_empire
+			mission_completed = glh_conquer_china
+		}
+		is_emperor_of_china = no
+		FROM = { is_emperor_of_china = yes }
+	}
+
+	war_goal = take_capital_timurid_china
+}

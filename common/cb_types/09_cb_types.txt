@@ -1,0 +1,22 @@
+cb_frat_zeal = {
+
+	prerequisites = {
+		NOT = { full_idea_group = humanist_ideas }
+		OR = {
+			AND = {
+				government = theocracy
+				devotion = 80
+			}
+			AND = {
+				ruler_has_personality = zealot_personality
+				religious_unity = 0.8
+			}
+			full_idea_group = religious_ideas
+		}
+		FROM = {
+			is_rival = ROOT
+		}
+	}
+
+	war_goal = take_capital_frat_zeal
+}

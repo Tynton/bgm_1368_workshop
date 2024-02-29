@@ -1,0 +1,213 @@
+age_of_feudalism = {
+	start = 1350
+	
+	can_start = {
+		always = yes
+	}
+	
+	religious_conflicts = yes
+	papacy = 1.0
+	
+
+	objectives = {
+		obj_many_subjects = {
+			num_of_subjects = 5
+		}
+		obj_secure_succession_laws = {
+			hidden_trigger = {
+				has_country_flag = secured_succession_laws
+			}
+			custom_trigger_tooltip = {
+				tooltip = succession_laws_tooltip
+			}
+		}
+		obj_30_development_city = {
+			allow = {
+				NOT = {
+					government = monarchy
+				}
+			}
+			total_development = 30
+		}
+		obj_3_countries_same_dynasty = {
+			allow = {
+				government = monarchy
+			}
+			calc_true_if = {
+				amount = 3
+				all_country = {
+					dynasty = ROOT
+				}
+			}
+		}
+		obj_religious_conviction = {
+			tolerance_to_this = 7
+		}
+		obj_reduce_influence = {
+	 		NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 40
+				}
+			}
+			NOT = {
+				estate_influence = {
+					estate = estate_church
+					influence = 40
+				}
+			}
+		}
+		obj_high_taxes = {
+			has_global_modifier_value = {
+				which = global_tax_modifier
+				value = 0.1
+			}
+	   }
+		obj_mercantilism = {
+			mercantilism = 15
+		}
+	}		
+	
+
+	
+	
+	
+	abilities = {
+		ab_allow_feudal_de_jure_law = {
+			effect = {
+				custom_tooltip = feudal_de_jure_law
+				set_country_flag = feudal_de_jure_law
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		ab_early_carracks = {
+			modifier = {
+				heavy_ship_power = 0.1
+			}
+			ai_will_do = {
+				factor = 10
+			}			
+		}
+		
+
+		ab_firearms = {
+			modifier = {
+				infantry_fire = 0.2
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		ab_siege_engines = {
+			modifier = {
+				siege_ability = 0.1
+			}
+			ai_will_do = {
+				factor = 10
+			}	
+		}
+		
+
+		ab_early_mercantilism = {
+			modifier = {
+				mercantilism_cost = -0.1
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		ab_autocracy = {
+			modifier = {
+				all_estate_influence_modifier = -0.1
+				all_estate_loyalty_equilibrium = 0.1
+			}
+			effect = {
+				if = {
+					limit = { 
+						adm_tech = 8
+					}
+					set_country_flag = secured_succession_laws
+				}
+			}
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 0
+					NOT = { num_of_colonists = 1 }
+				}
+			}
+		}
+		
+		ab_raised_taxes = {
+			modifier = {
+				global_tax_modifier = 0.1
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		ab_emperor = {
+			allow = {
+				is_emperor = yes
+			}
+			modifier = {
+				imperial_authority = 0.1
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+		ab_dynastic_diplomacy = {
+		
+			allow = {
+				government = monarchy
+			}
+			modifier = {
+				diplomatic_reputation = 1
+				reduced_liberty_desire = 15
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_western_schism = {
+		
+			allow = {
+				has_global_flag = western_schism
+				OR = {
+					religion = catholic
+					religion = avignon
+					religion = pisan
+				}
+			}
+			effect = {
+				set_country_flag = western_schism_flag
+			}
+			modifier = {
+				papal_influence = 1
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_trade_pioneer = {
+		
+			allow = {
+				government = republic
+			}
+			modifier = {
+				trade_steering = 0.25
+				trade_range_modifier = 0.25
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+}

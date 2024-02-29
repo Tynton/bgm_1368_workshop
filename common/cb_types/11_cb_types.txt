@@ -1,0 +1,22 @@
+cb_chinese_ambition = {
+
+	prerequisites = {
+		has_country_flag = claim_china
+		FROM = {
+			OR = {
+				capital_scope = {
+					superregion = china_superregion
+				}
+				AND = {
+					development_in_provinces = {
+						value = 100
+						superregion = china_superregion
+					}
+					is_great_power = no
+				}
+			}
+		}
+	}
+
+	war_goal = take_capital_india_imperial
+}

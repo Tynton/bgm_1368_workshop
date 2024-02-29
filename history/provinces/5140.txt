@@ -1,0 +1,16 @@
+add_core = PDE
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+owner = PDE
+base_tax = 3
+base_manpower = 2
+base_production = 4
+culture = piedmontese
+religion = waldensian
+controller = PDE
+is_city = yes
+add_province_triggered_modifier = waldensian_religious_center
+trade_goods = paper
+hre = yes

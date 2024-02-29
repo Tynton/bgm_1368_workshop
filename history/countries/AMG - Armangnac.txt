@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = appanage_reform
+technology_group = western
+primary_culture = gascon
+religion = catholic
+capital = 175	# Bayonne
+fixed_capital = 175 # Cannot move capital away from this province & no power cost to move to it
+
+
+1311.1.1 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "d'Armagnac"
+		birth_date = 1311.1.1
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}

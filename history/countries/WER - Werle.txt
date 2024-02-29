@@ -1,0 +1,29 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = pommeranian
+religion = catholic
+technology_group = western
+government_rank = 1
+capital = 4749	# KÃ¶ln
+fixed_capital = 4749 # Cannot move capital away from this province & no power cost to move to it
+
+1364.1.1 = {
+	monarch = {
+		name = "Johann I"
+		dynasty = "von Mecklenburg-Stargard"
+		birth_date = 1326.1.1
+		adm = 1
+		dip = 4
+		mil = 2
+	}
+
+	queen = {
+		name = "Agnes"
+		dynasty = "von Lindow-Ruppin"
+		birth_date = 1341.1.1
+		death_date = 9999.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

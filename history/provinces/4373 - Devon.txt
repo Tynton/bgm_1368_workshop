@@ -1,0 +1,26 @@
+#4373 - Devon
+controller = ENG
+culture = southern_english
+religion = catholic
+base_tax = 1
+base_production = 1
+trade_goods = cloth
+base_manpower = 1
+capital = "Plymouth"
+is_city = yes
+add_core = ENG
+add_core = CRN
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+1470.9.1 = { 
+	revolt = { size = 1 }
+}
+1470.10.6 = { 
+	revolt = { size = 1 }
+}
+1707.5.12 = { 
+	controller = GBR
+	add_core = GBR
+}

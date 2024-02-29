@@ -1,0 +1,28 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = western
+religion = catholic
+primary_culture = sardinian
+capital = 127	# Cagliari
+fixed_capital = 127 # Cannot move capital away from this province & no power cost to move to it
+
+1368.1.1 = {
+	monarch = { 
+		name = "Mariano IV"
+		dynasty = "d'Arborea"
+		birth_date = 1319.1.1
+		adm = 2
+		dip = 4
+		mil = 4
+	}
+
+	heir = {
+		name = "Ugone"
+		monarch_name = "Ugone III"
+		dynasty = "d'Arborea"
+		birth_date = 1337.1.1
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}

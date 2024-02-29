@@ -1,0 +1,27 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = western
+religion = catholic
+primary_culture = sicilian
+capital = 125	# Palermo
+
+
+1341.9.1 = {
+	monarch = { 
+		name = "Federico III"
+		dynasty = "de Barcelona"
+		birth_date = 1341.9.1
+		dip = 3
+		mil = 4
+		adm = 2
+	}
+	heir = {
+		name = "Maria I"
+		dynasty = "de Barcelona"
+		birth_date = 1363.7.2
+		dip = 3
+		mil = 4
+		adm = 2
+		female = yes
+	}
+}

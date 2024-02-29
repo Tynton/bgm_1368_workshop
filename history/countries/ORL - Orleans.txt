@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = appanage_reform
+government_rank = 1
+primary_culture = orleanais
+religion = catholic
+technology_group = western
+capital = 184	# Orléans
+fixed_capital = 184 # Cannot move capital away from this province & no power cost to move to it
+
+1345.1.1 = {
+	queen = {
+		name = Blanche
+		dynasty = Capet
+		birth_date = 1328.4.1
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+
+1336.7.1 = {
+	monarch = {
+		name = "Philippe I"
+		dynasty = "de Valois"
+		birth_date = 1336.7.1
+		adm = 3
+		dip = 1
+		mil = 2
+	}
+}

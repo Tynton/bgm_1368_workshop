@@ -1,0 +1,56 @@
+#For all the English Parliament Issues which should be unique.
+good_parliament = {
+	category = 4
+
+	allow = {
+		OR = {
+			tag = ENG
+			tag = AEV
+			tag = AVE
+			tag = AEE
+			tag = AER
+		}
+	}
+	
+	effect = {
+		add_corruption = -0.5
+		set_country_flag = good_parliament_flag
+	}
+	
+	modifier = {
+		stability_cost_modifier = -0.1
+		yearly_corruption = -0.05
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}
+
+bad_parliament = {
+	category = 4
+
+	allow = {
+		has_country_flag = good_parliament_flag
+	}
+	
+	effect = {
+		add_years_of_income = 0.5
+	}
+	
+	modifier = {
+		global_tax_modifier = 0.15
+	}
+	
+	chance = {
+		factor = 1
+	}
+
+	ai_will_do = {
+		factor = 1000
+	}
+}

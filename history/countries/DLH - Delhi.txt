@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = indian_sultanate_reform
+primary_culture = kanauji
+religion = sunni
+technology_group = indian
+capital = 522	# Delhi
+fixed_capital = 522 # Cannot move capital away from this province & no power cost to move to it
+religious_school = hanafi_school
+
+1351.1.1 = {
+	monarch = {
+		name = "Firuz Shah"
+		dynasty = "Tughlaq"
+		birth_date = 1309.1.1
+		ADM = 2
+		DIP = 0
+		MIL = 3
+	}
+	add_piety = 0.25
+}

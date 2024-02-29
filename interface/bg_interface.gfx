@@ -1,0 +1,292 @@
+spriteTypes = {
+	
+	#Build Banners
+	spriteType = {
+		name = "GFX_banner_left_6"
+		texturefile = "gfx//interface//banner_left_6.dds"
+	}
+
+	spriteType = {
+ 		name = "GFX_exploit_button_manpower"
+		texturefile = "gfx//interface//exploit_button_manpower.dds"
+	}		
+ 
+ 	spriteType = {
+ 		name = "GFX_exploit_button_production"
+ 		texturefile = "gfx//interface//exploit_button_production.dds"
+ 	}		
+
+ 	spriteType = {
+		name = "GFX_exploit_button_tax"
+		texturefile = "gfx//interface//exploit_button_tax.dds"
+ 	}		
+
+	spriteType = {
+		name = "GFX_exploit_bg"
+		texturefile = "gfx//interface//exploit_bg.dds"
+ 	}
+
+	 spriteType = {
+		name = "GFX_exploit_button"
+	   texturefile = "gfx/interface/exploit_button.dds"
+	}
+	 
+	#custom gui
+	spriteType = {
+		name = "GFX_buyreformprogress"
+		texturefile = "gfx//interface//buyreformprogress.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_buyreformprogress_adm"
+	    texturefile = "gfx//interface//buyreformprogress_adm.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_genocide"
+	    texturefile = "gfx//interface//genocide_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_nuke"
+	    texturefile = "gfx//interface//nuke_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_terror_force"
+	    texturefile = "gfx//interface//terror_force.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_forced_famine"
+	    texturefile = "gfx//interface//forced_famine.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_dem_development"
+	    texturefile = "gfx//interface//dem_development.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_auth_exploit"
+	    texturefile = "gfx//interface//auth_exploit.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_button_paratrooper"
+	    texturefile = "gfx//interface//button_paratrooper.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+
+	spriteType = {
+		name = "GFX_strengthengovt_bgm"
+	    texturefile = "gfx//interface//bgm_strengthen_govt.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_decrease_absolutism"
+	    texturefile = "gfx//interface//decrease_absolutism.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+
+	spriteType = {
+		name = "GFX_decrease_absolutism_dip"
+	    texturefile = "gfx//interface//decrease_absolutism_dip.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+
+	#missions
+
+	spriteType = {
+		name = "fra_eiffel"
+		texturefile = "gfx/interface/missions/mission_eiffel.dds"
+	}
+
+	spriteType = {
+		name = "fra_black_gold"
+		texturefile = "gfx/interface/missions/black_gold_mission.dds"
+	}
+
+	spriteType = {
+		name = "eclipse"
+		texturefile = "gfx/interface/missions/mission_eclipse.dds"
+	}
+
+	spriteType = {
+		name = "mission_persian_dawn"
+		texturefile = "gfx/interface/missions/persian_dawn.dds"
+	}
+
+	spriteType = {
+		name = "mission_joanna"
+		texturefile = "gfx/interface/missions/joanna.dds"
+	}
+
+	spriteType = {
+		name = "mission_dante"
+		texturefile = "gfx/interface/missions/dante_alighieri.dds"
+	}
+
+	spriteType = {
+		name = "mission_grecian_dawn"
+		texturefile = "gfx/interface/missions/grecian_dawn.dds"
+	}
+
+	spriteType = {
+		name = "mission_divine_comedy"
+		texturefile = "gfx/interface/missions/divine_comedy.dds"
+	}
+
+	spriteType = {
+		name = "mission_divine_comedy"
+		texturefile = "gfx/interface/missions/divine_comedy.dds"
+	}
+
+	spriteType = {
+		name = "boh_hussite_chalice_1"
+		texturefile = "gfx/interface/missions/hussite_chalice_1.dds"
+	}
+
+	spriteType = {
+		name = "boh_hussite_chalice_2"
+		texturefile = "gfx/interface/missions/hussite_chalice_2.dds"
+	}
+
+	spriteType = {
+		name = "mzf_destroy_jalayirids"
+		texturefile = "gfx/interface/missions/destroy_jalayirids.dds"
+	}
+	
+	#Institutions
+	spriteType = {
+		name = "GFX_icon_institution_urbanization"
+		texturefile = "gfx//interface//institutions//urbanization.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_icon_institution_global_imperialism"
+		texturefile = "gfx//interface//institutions//global_imperialism.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}		
+	spriteType = {
+		name = "GFX_icon_institution_industrialization"
+		texturefile = "gfx//interface//institutions//industrialization.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_icon_institution_nationalism_institution"
+		texturefile = "gfx//interface//institutions//nationalism.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}	
+	spriteType = {
+		name = "GFX_icon_institution_compulsory_education"
+		texturefile = "gfx//interface//institutions//compulsory_education.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_icon_institution_electrification"
+		texturefile = "gfx//interface//institutions//electrification.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_icon_institution_mass_media"
+		texturefile = "gfx//interface//institutions//mass_media.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_icon_institution_information_infrastructure"
+		texturefile = "gfx//interface//institutions//information_infrastructure.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_institution_tab_urbanization"
+		texturefile = "gfx/interface/institutions//institution_tab_urbanization.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_institution_tab_global_imperialism"
+		texturefile = "gfx/interface/institutions//institution_tab_global_imperialism.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_institution_tab_industrialization"
+		texturefile = "gfx/interface/institutions//institution_tab_industrialization.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_institution_tab_nationalism_institution"
+		texturefile = "gfx/interface/institutions//institution_tab_nationalism.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_institution_tab_compulsory_education"
+		texturefile = "gfx/interface/institutions//institution_tab_compulsory_education.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_institution_tab_electrification"
+		texturefile = "gfx/interface/institutions//institution_tab_electrification.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_institution_tab_mass_media"
+		texturefile = "gfx/interface/institutions//institution_tab_mass_media.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_institution_tab_information_infrastructure"
+		texturefile = "gfx/interface/institutions//institution_tab_information_infrastructure.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	
+	#Ages
+	spriteType = {
+		name = "GFX_age_of_feudalism"
+		texturefile = "gfx/interface/ages/age_of_feudalism.dds"
+	}
+	spriteType = {
+		name = "GFX_age_of_industrialization"
+		texturefile = "gfx/interface/ages/age_of_industrialization.dds"
+	}
+	spriteType = {
+		name = "GFX_age_of_great_wars"
+		texturefile = "gfx/interface/ages/age_of_great_wars.dds"
+	}
+	
+	
+	#Building Icons
+	spriteType = {
+		name = "GFX_oil_well"
+		texturefile = "gfx//interface//buildings//oil_well.tga"
+		loadType = "INGAME"
+	}
+}

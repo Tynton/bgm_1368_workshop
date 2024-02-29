@@ -1,0 +1,7 @@
+
+royal_marriage = {
+	first = LUX
+	second = BRB
+	start_date = 1356.1.1
+	end_date = 1383.12.7
+}

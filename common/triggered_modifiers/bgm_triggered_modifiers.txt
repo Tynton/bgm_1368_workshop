@@ -1,0 +1,1214 @@
+#industrial_government = {
+#	potential = {
+#		has_institution = industrialization
+#	}
+#
+#	trigger = {
+#		has_institution = industrialization
+#	}
+#
+#	free_policy = 1
+#	possible_policy = 1
+#	province_warscore_cost = -0.25
+#	unjustified_demands = -0.25
+#	#may_perform_slave_raid = no
+#}
+
+#modern_government = {
+#	potential = {
+#		has_institution = electrification
+#	}
+#
+#	trigger = {
+#		has_institution = electrification
+#	}
+#
+#	free_policy = 1
+#	province_warscore_cost = -0.25
+#	unjustified_demands = -0.25
+#}
+
+boh_bank_other = {
+	potential = {
+		is_part_of_hre = yes
+		has_global_flag = boh_bank
+	}
+	
+	trigger = {
+		is_part_of_hre = yes
+		has_global_flag = boh_bank
+	}
+	
+	interest = -0.5
+	inflation_reduction = 0.05
+	yearly_corruption = -0.05
+}
+
+bgm_disallow_scandinavian_ai_colonization = {
+	potential = {
+		culture_group = scandinavian
+		ai = yes
+	}
+
+	trigger = {
+		culture_group = scandinavian
+		ai = yes
+	}
+
+	colonists = -10
+}
+
+hre_ae_reduct_one = {
+	potential = {
+		has_country_modifier = ae_reduct_one
+		is_part_of_hre = yes
+	}
+
+	trigger = {
+		
+	}
+
+	ae_impact = -0.05
+}
+
+hre_ae_reduct_two = {
+	potential = {
+		has_country_modifier = ae_reduct_two
+		is_part_of_hre = yes
+	}
+
+	trigger = {
+		
+	}
+
+	ae_impact = -0.05
+}
+
+hre_ae_reduct_three = {
+	potential = {
+		has_country_modifier = ae_reduct_three
+		is_part_of_hre = yes
+	}
+
+	trigger = {
+		
+	}
+
+	ae_impact = -0.05
+}
+
+hre_ae_reduct_four = {
+	potential = {
+		has_country_modifier = ae_reduct_four
+		is_part_of_hre = yes
+	}
+
+	trigger = {
+		
+	}
+
+	ae_impact = -0.05
+}
+
+hre_threatened = {
+	potential = {
+		any_country = {
+			is_great_power = yes
+			is_part_of_hre = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_part_of_hre = yes
+			}
+		}
+		OR = {
+			is_emperor = yes
+			is_elector = yes
+		}
+	}
+
+	trigger = {
+		
+	}
+
+	improve_relation_modifier = 0.05
+	ae_impact = 0.05
+	imperial_authority_value = 0.1
+}
+
+rev_trad_m = {
+	potential = {
+		has_country_flag = rev_trad
+		has_reform = democratic_mechanic
+	}
+
+	trigger = {
+		has_country_flag = rev_trad
+		has_reform = democratic_mechanic
+	}
+
+	dm_social_democrat_influence = 0.05
+	dm_social_liberal_influence = 0.025
+	dm_social_conservative_influence = -0.05
+	dm_fascist_influence = -0.05
+	dm_monarchist_influence = -0.05
+}
+
+rev_target_trad_m = {
+	potential = {
+		has_country_flag = rev_target_trad
+		has_reform = democratic_mechanic
+	}
+
+	trigger = {
+		has_country_flag = rev_target_trad
+		has_reform = democratic_mechanic
+	}
+
+	dm_social_democrat_influence = 0.05
+	dm_social_liberal_influence = 0.025
+	dm_social_conservative_influence = -0.05
+	dm_fascist_influence = -0.05
+	dm_monarchist_influence = -0.05
+}
+
+coalition_continent_hegemon = {
+	potential = {
+		has_country_flag = continental_hegemony
+		all_ally = {
+			is_hegemon = no
+		}
+	}
+	trigger = {
+		has_country_flag = continental_hegemony
+		all_ally = {
+			is_hegemon = no
+		}
+	}
+	diplomatic_upkeep = 1
+	diplomatic_reputation = 1
+}
+
+coalition_continent_hegemon_rival = {
+	potential = {
+		all_ally = {
+			is_hegemon = no
+		}
+		any_rival_country = {
+			is_hegemon = yes
+			capital_scope = {
+				continent = ROOT
+			}
+		}
+		has_country_flag = continental_hegemony
+		great_power_rank = 3
+	}
+	trigger = {
+		all_ally = {
+			is_hegemon = no
+		}
+		any_rival_country = {
+			is_hegemon = yes
+			capital_scope = {
+				continent = ROOT
+			}
+		}
+		has_country_flag = continental_hegemony
+		great_power_rank = 3
+	}
+	
+	diplomatic_upkeep = 2
+	diplomatic_reputation = 2
+}
+
+ai_get_tech = {
+	potential = {
+		always = no #TEST
+		ai = yes
+		OR = {
+			any_neighbor_country = {
+				army_strength = {
+					who = ROOT
+					value = 0.75
+				}
+			}
+			NOT = {
+				has_country_modifier = general_pioneer
+			}
+			adm_power = 999
+			dip_power = 999
+			mil_power = 999
+			full_idea_group = postmodern_ideas
+		}
+	}
+	trigger = {
+		always = no #TEST
+		ai = yes
+		OR = {
+			any_neighbor_country = {
+				army_strength = {
+					who = ROOT
+					value = 0.75
+				}
+			}
+			AND = {
+				NOT = {
+					has_country_modifier = general_pioneer
+				}
+			}
+			full_idea_group = postmodern_ideas
+			adm_power = 999
+			dip_power = 999
+			mil_power = 999
+		}
+	}
+	#development_cost_modifier = 1000
+	idea_cost = 1000
+}
+
+ai_fml = {
+	potential = {
+		ai = yes
+		is_at_war = no
+		OR = {
+			personality = ai_diplomat
+			personality = ai_capitalist
+		}
+		OR = {
+			NOT = {
+				any_neighbor_country = {
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+			}
+			calc_true_if = {
+				amount = 4
+				all_ally = {
+					is_great_power = yes
+				}
+			}
+		}
+		all_owned_province = {
+			NOT = { num_free_building_slots = 1 }
+		}
+	}
+	trigger = {
+		ai = yes
+		is_at_war = no
+		OR = {
+			personality = ai_diplomat
+			personality = ai_capitalist
+		}
+		OR = {
+			NOT = {
+				any_neighbor_country = {
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+			}
+			calc_true_if = {
+				amount = 4
+				all_ally = {
+					is_great_power = yes
+				}
+			}
+		}
+		all_owned_province = {
+			NOT = { num_free_building_slots = 1 }
+		}
+	}
+	
+	land_forcelimit_modifier = -0.33
+}
+
+ai_final_ideas = {
+	potential = {
+		ai = yes
+		NOT = {
+			full_idea_group = postmodern_ideas
+		}
+		has_idea_group = postmodern_ideas
+	}
+	trigger = {
+		ai = yes
+		NOT = {
+			full_idea_group = postmodern_ideas
+		}
+		has_idea_group = postmodern_ideas
+	}
+	development_cost_modifier = 1000
+	technology_cost = 1000
+}
+
+national_prosperity = {
+	potential = {
+		capital_scope = {
+			region_for_scope_province = {
+				type = all
+				OR = {
+					NOT = { owned_by = ROOT }
+					is_prosperous = yes
+				}
+			}
+		}
+	}
+	trigger = {
+		capital_scope = {
+			region_for_scope_province = {
+				type = all
+				OR = {
+					NOT = { owned_by = ROOT }
+					is_prosperous = yes
+				}
+			}
+		}
+	}
+	
+	stability_cost_modifier = -0.05
+	idea_cost = -0.05
+	development_cost = -0.05
+	technology_cost = -0.05
+	global_trade_power = 0.1
+	innovativeness_gain = 0.25
+	global_trade_goods_size_modifier = 0.05
+}
+
+chinese_empire = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			is_emperor_of_china = yes
+		}
+		government_rank = 3
+	}
+	trigger = {
+		OR = {
+			culture_group = east_asian
+			is_emperor_of_china = yes
+		}
+		government_rank = 3
+	}
+	governing_capacity = 1000
+	development_cost = -0.5
+}
+
+ww1_right = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww1_r
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww1_r
+	}
+
+	dm_fascist_influence = -0.1
+	dm_monarchist_influence = -0.1
+}
+
+ww1_left = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww1_l
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww1_l
+	}
+
+	dm_communist_influence = -0.1
+	dm_nationalist_influence = -0.1
+}
+
+ww2_right = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww2_r
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww2_r
+	}
+
+	dm_fascist_influence = -0.3
+	dm_monarchist_influence = -0.3
+}
+
+ww2_left = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww2_l
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww2_l
+	}
+
+	dm_communist_influence = -0.3
+	dm_nationalist_influence = -0.3
+}
+
+ww3_right = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww3_r
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww3_r
+	}
+
+	dm_fascist_influence = -0.5
+	dm_monarchist_influence = -0.5
+}
+
+ww3_left = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww3_l
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		has_global_flag = ww3_l
+	}
+
+	dm_communist_influence = -0.5
+	dm_nationalist_influence = -0.5
+}
+
+no_futurism = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		NOT = {
+			has_global_flag = futurist_manifesto_written
+		}
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		NOT = {
+			has_global_flag = futurist_manifesto_written
+		}
+	}
+
+	dm_nationalist_influence = -1.0
+}
+
+no_communism = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		NOT = {
+			has_global_flag = communist_manifesto_written
+		}
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		NOT = {
+			has_global_flag = communist_manifesto_written
+		}
+	}
+
+	dm_communist_influence = -1.0
+	dm_social_democrat_influence = -0.75
+}
+
+no_fascism = {
+	potential = {
+		has_reform = democratic_mechanic
+		
+		NOT = {
+			has_global_flag = fascism_invented
+		}
+	}
+
+	trigger = {
+		has_reform = democratic_mechanic
+		
+		NOT = {
+			has_global_flag = fascism_invented
+		}
+	}
+
+	dm_fascist_influence = -1.0
+	dm_nationalist_influence = -0.75
+}
+
+cadet_branch_one = {
+	potential = {
+		calc_true_if = {
+			amount = 2
+			all_country = {
+				OR = {
+					dynasty = ROOT
+					AND = {
+						is_subject_of_type = appanage
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+	}
+	trigger = {
+		calc_true_if = {
+			amount = 2
+			all_country = {
+				OR = {
+					dynasty = ROOT
+					AND = {
+						is_subject_of_type = appanage
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+	}
+	prestige = 0.25
+	heir_chance = 0.1
+	diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+	adm_advisor_cost = -0.05
+}
+
+cadet_branch_two = {
+	potential = {
+		calc_true_if = {
+			amount = 3
+			all_country = {
+				OR = {
+					dynasty = ROOT
+					AND = {
+						is_subject_of_type = appanage
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+	}
+	trigger = {
+		calc_true_if = {
+			amount = 3
+			all_country = {
+				OR = {
+					dynasty = ROOT
+					AND = {
+						is_subject_of_type = appanage
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+	}
+	leader_cost = -0.05
+	heir_chance = 0.05
+	dip_advisor_cost = -0.05
+	mil_advisor_cost = -0.05
+	idea_cost = -0.025
+}
+
+non_catholic_rome = {
+	potential = {
+		religion = catholic
+		118 = {
+			NOT = {
+				religion = catholic
+			}
+		}
+	}
+	trigger = {
+		religion = catholic
+		118 = {
+			NOT = {
+				religion = catholic
+			}
+		}
+	}
+	
+	stability_cost_modifier = 0.25
+	global_unrest = 3
+	prestige = -1
+}
+
+tanks_i = {
+	potential = {
+		mil_tech = 45
+	}
+	trigger = {
+		mil_tech = 45
+	}
+	
+	cavalry_cost = 3.0
+	cavalry_power = 0.5
+	
+}
+
+tanks_ii = {
+	potential = {
+		mil_tech = 46
+	}
+	trigger = {
+		mil_tech = 46
+	}
+	
+	cavalry_cost = 0.5
+	cavalry_power = 0.1
+	cavalry_flanking = 0.2
+}
+
+tanks_iii = {
+	potential = {
+		mil_tech = 47
+	}
+	trigger = {
+		mil_tech = 47
+	}
+	
+	cavalry_cost = 0.5
+	cavalry_power = 0.1
+	cavalry_flanking = 0.4
+}
+
+america_exclusive = {
+	potential = {
+		ai = yes
+		OR = {
+			culture_group = iberian
+		}
+		OR = {
+			current_age = age_of_reformation
+			current_age = age_of_absolutism
+		}
+	}
+	trigger = {
+		ai = yes
+		OR = {
+			culture_group = iberian
+		}
+		OR = {
+			current_age = age_of_reformation
+			current_age = age_of_absolutism
+		}
+	}
+	
+	range = -0.7
+}
+
+leader_of_german_nations = {
+	potential = {
+		ai = yes
+		OR = {
+			german_confederation_member = 1
+			german_empire_member = 1
+			has_country_flag = gercon_leader
+			has_country_flag = geremp_leader
+			tag = GER
+		}
+	}
+	
+	trigger = {
+		OR = {
+			german_confederation_member = 1
+			german_empire_member = 1
+			has_country_flag = gercon_leader
+			has_country_flag = geremp_leader
+			tag = GER
+		}
+	}
+	
+	technology_cost = -0.025
+	idea_cost = -0.05
+	advisor_pool = 1 
+	diplomatic_annexation_cost = -0.5
+	land_forcelimit_modifier = 0.2
+	manpower_recovery_speed = 0.2
+	governing_capacity = 1000
+}
+
+land_of_opportunity = {
+	potential = {
+		ai = yes
+		AND = {
+			OR = {
+				has_parliament = yes
+				tag = USA
+			}
+			OR = {
+				religion = anglican
+				religion = protestant
+				religion = reformed
+			}
+		}
+		stability = 2
+		is_former_colonial_nation = yes
+	}
+	
+	trigger = {
+		AND = {
+			OR = {
+				has_parliament = yes
+				tag = USA
+			}
+			OR = {
+				religion = anglican
+				religion = protestant
+				religion = reformed
+			}
+		}
+		stability = 2
+		is_former_colonial_nation = yes
+	}
+	
+	technology_cost = -0.025
+	idea_cost = -0.05
+	advisor_pool = 1 
+	diplomatic_annexation_cost = -0.5
+	embargo_efficiency = 0.15
+	trade_goods_size_modifier = 0.05
+	global_tax_modifier = 0.05
+	production_efficiency = 0.2
+	governing_capacity_modifier = 0.3
+}
+
+no_air_force = {
+	potential = {
+		mil_tech = 45
+		OR = {
+			NOT = {
+				has_country_modifier = air_force_tierone
+				has_country_modifier = air_force_tiertwo
+				has_country_modifier = air_force_tierthree
+				has_country_modifier = air_force_tierfour
+				has_country_modifier = air_force_tierfive
+				has_country_modifier = air_force_tiersix
+				has_country_modifier = air_force_tierseven
+			}
+		}
+	}
+	
+	trigger = {
+		mil_tech = 45
+		OR = {
+			NOT = {
+				has_country_modifier = air_force_tierone
+				has_country_modifier = air_force_tiertwo
+				has_country_modifier = air_force_tierthree
+				has_country_modifier = air_force_tierfour
+				has_country_modifier = air_force_tierfive
+				has_country_modifier = air_force_tiersix
+				has_country_modifier = air_force_tierseven
+			}
+		}
+	}
+	
+	shock_damage = -0.1
+}
+
+allied_air = {
+	potential = {
+		any_ally = { 
+			has_country_modifier = air_force_tierone
+			is_at_war = yes 
+		} 
+		NOT = {
+			has_country_modifier = air_force_tierone
+		}
+		is_at_war = yes
+	}
+	trigger = {
+		any_ally = { 
+			has_country_modifier = air_force_tierone
+			is_at_war = yes 
+		} 
+		NOT = {
+			has_country_modifier = air_force_tierone
+		}
+		is_at_war = yes 
+	}
+	fire_damage_received = -0.025
+	shock_damage_received = -0.025
+	fire_damage = 0.025
+	shock_damage = 0.025
+}
+
+#age ability tech
+
+import_tech = {
+	potential = {
+		OR = {
+			has_age_ability = ab_tech_import
+			overlord = {
+				tech_difference = 2
+			}
+			any_ally = {
+				tech_difference = 3
+			}
+			any_subject_country = {
+				tech_difference = 2
+			}
+		}
+		any_country = {
+			tech_difference = 2
+		}
+	}
+	
+	trigger = {
+		OR = {
+			has_age_ability = ab_tech_import
+			overlord = {
+				tech_difference = 2
+			}
+			any_ally = {
+				tech_difference = 3
+			}
+			any_subject_country = {
+				tech_difference = 2
+			}
+		}
+		any_country = {
+			tech_difference = 2
+		}
+	}
+	
+	technology_cost = -0.05
+}
+
+import_tech_2 = {
+	potential = {
+		OR = {
+			has_age_ability = ab_tech_import
+			overlord = {
+				tech_difference = 4
+			}
+			any_subject_country = {
+				tech_difference = 4
+			}
+		}
+		any_country = {
+			tech_difference = 4
+		}
+	}
+	
+	trigger = {
+		OR = {
+			has_age_ability = ab_tech_import
+			overlord = {
+				tech_difference = 4
+			}
+			any_subject_country = {
+				tech_difference = 4
+			}
+		}
+		any_country = {
+			tech_difference = 4
+		}
+	}
+	
+	technology_cost = -0.05
+}
+
+import_tech_3 = {
+	potential = {
+		OR = {
+			has_age_ability = ab_tech_import
+			overlord = {
+				tech_difference = 6
+			}
+			any_subject_country = {
+				tech_difference = 6
+			}
+		}
+		any_country = {
+			tech_difference = 6
+		}
+	}
+	
+	trigger = {
+		OR = {
+			has_age_ability = ab_tech_import
+			overlord = {
+				tech_difference = 6
+			}
+			any_subject_country = {
+				tech_difference = 6
+			}
+		}
+		any_country = {
+			tech_difference = 6
+		}
+	}
+	
+	technology_cost = -0.075
+}
+
+major_war = {
+	potential = {
+		any_enemy_country = { 
+			war_with = ROOT
+			is_great_power = yes
+		}
+		OR = {
+			bgm_comgovt = yes
+			has_reform = fascist_mechanic
+			has_reform = democratic_mechanic
+			has_reform = authoritarian_mechanic
+			has_reform = futurist_mechanic
+		}
+	}
+	
+	trigger = {
+		any_enemy_country = { 
+			war_with = ROOT
+			is_great_power = yes
+		}
+		OR = {
+			bgm_comgovt = yes
+			has_reform = fascist_mechanic
+			has_reform = democratic_mechanic
+			has_reform = authoritarian_mechanic
+			has_reform = futurist_mechanic
+		}
+	}
+	
+	monthly_militarized_society = 2.5
+	war_exhaustion = -0.25
+}
+
+modernization_of_tax_administration = {
+	potential = {
+		tax_center = 5
+	}
+	
+	trigger = {
+		tax_center = 5
+	}
+	global_tax_modifier = 0.05
+	global_unrest = -0.5
+	inflation_reduction = 0.05
+}
+
+industrial_building_sector = {
+	potential = {
+		factory_infrastructure = 10
+	}
+	
+	trigger = {
+		factory_infrastructure = 10
+	}
+	production_efficiency = 0.05
+	development_cost = -0.05
+}
+
+industrial_society = { 
+	potential = {
+		num_of_owned_provinces_with = {
+			value = 3
+			development = 70
+		}
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+		}
+	}
+	
+	trigger = {
+		num_of_owned_provinces_with = {
+			value = 3
+			development = 70
+		}
+		OR = {
+			current_age = age_of_industrialization
+			current_age = age_of_great_wars
+		}
+	}
+	
+	prestige = 0.25
+	global_tax_modifier = 0.05
+	technology_cost = -0.05
+	idea_cost = -0.05
+}
+
+gercon_concession_mod = {
+	potential = {
+		has_global_flag = gercon_concession
+		OR = {
+			is_subject_of_type = german_confederation_member
+			has_subject_of_type = german_confederation_member
+		}
+	}
+	
+	trigger = {
+		has_global_flag = gercon_concession
+		OR = {
+			is_subject_of_type = german_confederation_member
+			has_subject_of_type = german_confederation_member
+		}
+	}
+	
+	global_tax_modifier = -0.05
+	production_efficiency = -0.05
+	legitimacy = -2
+	global_unrest = -2
+}
+
+gercon_crackdown_mod = {
+	potential = {
+		has_global_flag = gercon_crackdown
+		OR = {
+			is_subject_of_type = german_confederation_member
+			has_subject_of_type = german_confederation_member
+		}
+	}
+	
+	trigger = {
+		has_global_flag = gercon_crackdown
+		OR = {
+			is_subject_of_type = german_confederation_member
+			has_subject_of_type = german_confederation_member
+		}
+	}
+	
+	global_unrest = 1
+	legitimacy = 1
+	republican_tradition = 0.5
+	yearly_absolutism = 1
+}
+
+computing_technology = {
+	potential = {
+		electronics = 2
+	}
+	
+	trigger = {
+		electronics = 2
+	}
+	
+	technology_cost = -0.1
+}
+
+illiberal_society = { 
+	potential = {
+		OR = {
+			NOT = {
+				has_reform = democratic_mechanic
+			}
+			bgm_rev = no
+		}
+		has_parliament = no
+	}
+	
+	trigger = {
+		OR = {
+			NOT = {
+				has_reform = democratic_mechanic
+			}
+			bgm_rev = no
+		}
+		has_parliament = no
+	}
+	
+	pl_social_conservative_influence = 0.025
+	stability_cost_modifier = -0.1
+}
+
+liberal_society = { 
+	potential = {
+		has_reform = parliamentary_reform
+		has_reform = pro_enlightenment_reform
+	}
+	
+	trigger = {
+		has_reform = parliamentary_reform
+		has_reform = pro_enlightenment_reform
+	}
+	
+	pl_social_liberal_influence = 0.1
+	technology_cost = -0.025
+	idea_cost = -0.025
+	global_tax_modifier = 0.05
+}
+
+hre_elector = {
+	potential = {
+		is_elector = yes
+	}
+	trigger = {
+		is_elector = yes
+	}
+	diplomatic_reputation = 1
+	global_manpower_modifier = 0.1
+	land_forcelimit_modifier = 0.1
+	ae_impact = -0.1
+	improve_relation_modifier = 0.1
+}
+
+ai_conserve_mil_power = {
+	potential = {
+		ai = yes
+		#is_at_war = no
+		OR = {
+			any_neighbor_country = {
+				tech_difference_2_electric_boogaloo = {
+					with = ROOT
+					type = mil
+					diff = 2
+				}
+			}
+			any_rival_country = {
+				tech_difference_2_electric_boogaloo = {
+					with = ROOT
+					type = mil
+					diff = 1
+				}
+			}
+			any_enemy_country = {
+				tech_difference_2_electric_boogaloo = {
+					with = ROOT
+					type = mil
+					diff = 1
+				}
+			}
+		}
+	}
+	trigger = {
+	}
+	general_cost = 9999
+	artillery_barrage_cost = 9999
+	global_naval_barrage_cost = 9999
+}
+
+#cheat_reform = {
+#	potential = {
+#		adm_tech = 1
+#	}
+#
+#	trigger = {
+#		adm_tech = 1
+#	}
+#
+#	reform_progress_growth = 100000000000000.00
+#}

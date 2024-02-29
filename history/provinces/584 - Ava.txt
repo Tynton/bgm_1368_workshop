@@ -1,0 +1,24 @@
+#584 - Ava
+owner = AVA
+controller = AVA
+culture = burmese
+religion = buddhism
+capital = "Ava"
+trade_goods = gems#Burmese Emerald/Myanmar Jade
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = AVA
+discovered_by = chinese
+discovered_by = indian
+extra_cost = 16
+center_of_trade = 2
+1527.1.1 = { 
+	controller = SST
+	add_core = SST
+}
+1535.1.1 = { discovered_by = POR }
+1554.1.1 = { add_core = TAU }
+1555.1.22 = { controller = TAU }
+fort_15th = yes

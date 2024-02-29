@@ -1,0 +1,29 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = moravian
+religion = catholic
+government_rank = 1
+capital = 4237 # Olomouc
+technology_group = western
+
+1335.1.1 = {
+	monarch = {
+		name = "Jan Jindrich"
+		dynasty = "von Luxemburg"
+		birth_date = 1322.2.12
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+
+1354.1.1 = {
+	heir = {
+		name = "Jost"
+		dynasty = "von Luxemburg"
+		birth_date = 1354.1.1
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+}

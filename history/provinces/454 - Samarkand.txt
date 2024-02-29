@@ -1,0 +1,34 @@
+#454 - Samarkand
+owner = TRS
+controller = TRS
+culture = uzbehk
+religion = sunni
+capital = "Samarkand"
+trade_goods = paper
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes
+extra_cost = 16
+center_of_trade = 2
+add_core = TRS
+add_claim = CHG
+discovered_by = KAS
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = nomad_group
+discovered_by = indian
+1409.5.13 = { 
+	controller = TRS
+}
+1448.3.1 = { 
+	controller = TIM
+}
+1501.1.1 = { 
+	controller = SHY
+	add_core = SHY
+}
+1502.1.1 = { 
+	add_core = BUK
+	controller = BUK
+}

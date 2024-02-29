@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = piedmontese
+religion = catholic
+technology_group = western
+capital = 205 # Chambery
+add_army_professionalism = 0.05
+add_accepted_culture = savoyard
+
+1334.1.4 = {
+	monarch = {
+		name = "Amedeo VI"
+		dynasty = "di Savoia"
+		birth_date = 1334.1.4
+		adm = 2
+		dip = 5
+		mil = 4
+	}
+}

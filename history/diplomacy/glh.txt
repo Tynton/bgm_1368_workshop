@@ -1,0 +1,39 @@
+dependency = {
+	subject_type = tributary_state
+	first = GLH
+	second = NZH
+	start_date = 1368.1.1
+	end_date = 1532.8.3
+}
+
+dependency = {
+	subject_type = tributary_state
+	first = GLH
+	second = MRM
+	start_date = 1368.1.1
+	end_date = 1532.8.3
+}
+
+dependency = {
+	subject_type = tributary_state
+	first = GLH
+	second = RYA
+	start_date = 1368.1.1
+	end_date = 1532.8.3
+}
+
+dependency = {
+	subject_type = tributary_state
+	first = GLH
+	second = MOS
+	start_date = 1368.1.1
+	end_date = 1532.8.3
+}
+
+dependency = {
+	subject_type = tributary_state
+	first = GLH
+	second = YAR
+	start_date = 1368.1.1
+	end_date = 1532.8.3
+}

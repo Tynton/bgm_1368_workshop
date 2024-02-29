@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = lower_saxon
+religion = catholic
+technology_group = western
+capital = 4771	# Verden
+
+
+1368.1.1 = {
+	monarch = {
+		name = "Heinrich I"
+		dynasty = "von Langlingen"
+		birth_date = 1341.1.1
+		adm = 3
+		dip = 1
+		mil = 2
+	}
+}

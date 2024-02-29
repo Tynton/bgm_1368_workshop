@@ -1,0 +1,4 @@
+culture = rwandan
+is_city = no
+religion = shamanism
+trade_goods = unknown

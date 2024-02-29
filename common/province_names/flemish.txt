@@ -1,0 +1,6 @@
+4769 = { "ijssel" "Rysel" }
+5138 = { "Kortryk" "Kortrik" }
+90 = "Brugge"
+#4951 = "Duunkerke"
+5137 = "Yper"
+#4946 = "Abbekerke"

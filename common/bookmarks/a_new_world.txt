@@ -1,0 +1,13 @@
+bookmark =
+{
+	name = "1368_NAME"
+	desc = "1368_DESC"
+	date = 1368.1.23
+	
+	country = TST
+	country = ENG
+	country = FRA
+	country = CAS
+	country = TUR
+	country = BOH
+}

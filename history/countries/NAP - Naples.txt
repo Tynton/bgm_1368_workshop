@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = western
+religion = catholic
+primary_culture = neapolitan
+capital = 121 # Napoli
+
+add_legitimacy = -50
+
+1325.12.1 = {
+	monarch = { 
+		name = "Giovanna I"
+		dynasty = "d'Anjou"
+		female = yes
+		birth_date = 1325.12.1
+		adm = 5
+		dip = 1
+		mil = 4
+	}
+	add_ruler_personality = infertile_personality
+	set_ruler_flag = giovanna_i
+	queen = {
+		name = "Jaume IV"
+		dynasty = "de Barcelona"
+		birth_date = 1336.1.1
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}

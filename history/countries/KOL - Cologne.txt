@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = ripuarian
+religion = catholic
+elector = yes
+technology_group = western
+capital = 85	# Köln
+fixed_capital = 85 # Cannot move capital away from this province & no power cost to move to it
+
+1364.1.1 = {
+	monarch = {
+		name = "Engelbert III"
+		dynasty = "von der Mark"
+		birth_date = 1304.1.1
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
