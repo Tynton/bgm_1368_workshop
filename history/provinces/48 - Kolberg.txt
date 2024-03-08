@@ -1,5 +1,5 @@
 #48 - Kolberg
-controller = WOL
+controller = CMN
 culture = east_pomeranian
 religion = catholic
 hre = yes
@@ -21,3 +21,5 @@ discovered_by = ottoman
 	controller = PRU
 	add_core = PRU
 }
+add_core = CMN
+owner = CMN

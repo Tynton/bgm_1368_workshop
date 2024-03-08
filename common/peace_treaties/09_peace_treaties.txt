@@ -240,5 +240,8 @@ po_sisterrepublic = {
 			variable_name = ai_value
 			value = 1000
 		}
+		limit = {
+			always = yes
+		}
 	}
 }

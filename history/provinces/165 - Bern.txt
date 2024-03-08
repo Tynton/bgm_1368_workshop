@@ -1,6 +1,6 @@
 #165 - Bern
-owner = SWI
-controller = SWI
+owner = HAB
+controller = HAB
 culture = swiss
 religion = catholic
 capital = "Bern"
@@ -10,7 +10,6 @@ base_tax = 3
 base_production = 3
 base_manpower = 1
 is_city = yes
-add_core = SWI
 extra_cost = 8
 center_of_trade = 1
 discovered_by = western
@@ -28,4 +27,6 @@ discovered_by = ottoman
 1798.9.1 = { controller = SWI revolt = { size = 1 } }
 1802.6.1 = { controller = REB revolt = { type = revolutionary_rebels size = 1 } }
 1802.9.18 = { controller = SWI revolt = { size = 1 } }
+add_core = HAB
+add_core = SWI
 fort_15th = yes

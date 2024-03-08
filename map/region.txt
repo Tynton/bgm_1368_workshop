@@ -31,7 +31,7 @@ north_german_region = {
 south_german_region = { 
 	areas = { 
 		tirol_area austria_proper_area inner_austria_area carinthia_area switzerland_area lower_bavaria_area upper_bavaria_area east_bavaria_area franconia_area upper_franconia_area
-		lower_swabia_area upper_swabia_area upper_rhineland_area romandie_area palatinate_area alsace_area 
+		lower_swabia_area upper_swabia_area upper_rhineland_area romandie_area palatinate_area alsace_area grisons_area
 	}
 }
 russia_region = { 
@@ -254,6 +254,7 @@ japan_region = {
 	areas = { 
 		hokkaido_area hokuriku_area kanto_area eastern_kanto_area kyushu_area chubu_area eastern_chubu_area kinai_area thohoku_area saigoku_area
 		sanindo_area shikoku_area northern_kyushu 
+		higashi_ezo_area wajinchi_area dewa_area fukushima_area echigo_area keno_area choshu_area umpaku_area middle_kyushu_area northern_kyushu hizen_area south_shikoku_area kii_area koshin_area ryukyu_area
 	}
 }
 australia_region = { 
@@ -265,7 +266,7 @@ australia_region = {
 south_china_region = { 
 	areas = { 
 		guangdong_area fujian_area jiangxi_area huguang_area zhejiang_area south_anhui_area taiwan_area south_jiangsu_area hunan_area guangxi_area western_canton_area
-		central_canton_area hainan_area inner_canton_area north_cantonese_countryside_area east_canton_area east_anhui_area southeast_jiangsu_area central_fujian_area coastal_fujian_area south_central_anhui_area
+		central_canton_area hainan_area north_cantonese_countryside_area east_canton_area east_anhui_area southeast_jiangsu_area central_fujian_area coastal_fujian_area south_central_anhui_area
 		central_anhui_area east_huguang_area 
 	}
 }

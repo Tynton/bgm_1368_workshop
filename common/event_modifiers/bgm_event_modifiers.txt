@@ -3704,6 +3704,28 @@ microstate_prov = {
 	province_trade_power_modifier = -0.5
 }
 
+#############JAPANESE ESTUARIES#############
+
+jap_ishikari = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+jap_katakami = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+jap_tone = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+jap_yodo = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
 #############Province Interactions#############
 
 forced_famine_1 = {

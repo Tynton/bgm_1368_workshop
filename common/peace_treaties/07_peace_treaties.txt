@@ -82,5 +82,8 @@ po_bgmleague = {
 			variable_name = ai_value
 			value = 1000
 		}
+		limit = {
+			always = yes
+		}
 	}
 }

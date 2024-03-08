@@ -377,4 +377,4 @@
 #4977 = "Bastia"
 1247 = "Córcega"
 
-5232 = "Lérida"
+# = "Lérida"

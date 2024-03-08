@@ -638,7 +638,7 @@ base_values = {
 	tolerance_of_heathens_capacity = 3
 	max_flagships = 1
 	num_of_parliament_issues = 10
-	yearly_corruption = 0.05
+	#yearly_corruption = 0.05
 	has_marines = yes
 }
 
@@ -648,6 +648,9 @@ ai_nation = {
 	free_leader_pool = 1					# ai needs to have enough pool for 1 general & 1 admiral
 	sailors_recovery_speed = 0.25
 	monthly_favor_modifier = 0.5
+	ae_impact = -0.1
+	core_creation = -0.1
+	improve_relation_modifier = 0.2 #diplomat advisor
 }
 
 
@@ -705,7 +708,7 @@ privateering = {
 negative_stability = {
 	global_unrest = -4					#-1% EXTRA revolt risk each step
 	trade_goods_size_modifier = 0.1
-	yearly_corruption = 0.1
+	#yearly_corruption = 0.1
 	land_morale = 0.075
 	naval_morale = 0.075
 	discipline = 0.017
@@ -1102,17 +1105,18 @@ karma = {
 # Multiplied by the amount of positive karma
 positive_karma = {
 	bgm_status_quo_influence = 0.02
+	yearly_corruption = -0.1
 }
 
 # Multiplied by the amount of negative karma
 negative_karma = {
 	bgm_liberals_influence = 0.1
-	yearly_corruption = 0.01
+	yearly_corruption = 0.1
 }
 
 # Multiplied by Development/COUNTRY_DEVELOPMENT_SCALE
 country_development = {
-	yearly_corruption = 0.01
+	
 	global_own_trade_power = 0.25
 	state_maintenance_modifier = 0.5
 	advisor_pool = 3
@@ -1222,6 +1226,7 @@ root_out_corruption = {
 }
 
 recovery_motivation = {
+	yearly_corruption = -0.5
 	global_tax_modifier = 0.5
 	defensiveness = 0.25
 	manpower_recovery_speed = 0.5
@@ -1294,6 +1299,7 @@ luck = {
 	legitimacy = 0.5
 	ae_impact = -0.1
 	governing_capacity_modifier = 0.1
+	yearly_corruption = -0.05
 
 }
 
@@ -1356,6 +1362,7 @@ no_debate_in_parliament = {
 
 
 republican_tradition = {
+	yearly_corruption = -0.1
 	global_unrest = -2
 	rr_jacobins_influence = 0.1
 	reform_progress_growth = 1.0
@@ -1870,9 +1877,11 @@ gov_rank_1 = {
 }
 
 gov_rank_2 = {
+	yearly_corruption = -0.1
 }
 
 gov_rank_3 = {
+	yearly_corruption = -0.25
 }
 
 # for mod support...
@@ -1910,7 +1919,7 @@ autonomy_decreased = {
 }
 
 revolution_target = {
-	yearly_corruption = -0.1
+	yearly_corruption = -0.25
 	unjustified_demands = -0.75
 	prestige_decay = -0.01
 	prestige = 0.5
@@ -2628,7 +2637,7 @@ ruler_adm = {
 	dm_social_liberal_influence = 0.025
 	dm_social_democrat_influence = 0.02
 
-	yearly_corruption = -0.01
+	yearly_corruption = -0.025
 }
 
 ruler_dip = {
@@ -2639,6 +2648,8 @@ ruler_dip = {
 	dm_social_democrat_influence = 0.02
 
 	pl_social_liberal_influence = 0.01
+
+	yearly_corruption = -0.025
 }
 
 ruler_mil = {
@@ -2649,6 +2660,8 @@ ruler_mil = {
 	dm_social_democrat_influence = 0.02
 
 	pl_social_conservative_influence = 0.03
+
+	yearly_corruption = -0.025
 }
 
 heir_adm = {

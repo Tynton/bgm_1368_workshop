@@ -2001,7 +2001,7 @@ administrative_ideas = {
 		adm_advisor_cost = -0.1
 	}
 	local_rule = {
-		advisor_pool = 1
+		yearly_corruption = -0.25
 	}
 	adaptability = {
 		core_creation = -0.1

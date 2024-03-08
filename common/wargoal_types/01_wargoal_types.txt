@@ -512,3 +512,40 @@ take_capital_timurid_china = {
 	
 	war_name = IMPERIAL_WAR_NAME
 }
+
+take_capital_depose_hremperor = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 1.0
+		
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+			po_depose_emperor
+		}
+	}
+	
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 0.5
+		
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_demand_provinces
+		}
+	}	
+	
+	war_name = IMPERIAL_WAR_NAME
+}

@@ -1,6 +1,6 @@
 #Norway 
 graphical_culture = westerngfx
-color = { 45 55 45 }
+color = { 10 25 100 } #45 55 45
 historical_score = 25
 preferred_religion = protestant
 historical_idea_groups = { 

@@ -1,6 +1,6 @@
 #1869 - Zurich
-owner = SWI
-controller = SWI
+owner = HAB
+controller = HAB
 culture = swiss
 religion = catholic
 capital = "Zürich"
@@ -17,3 +17,5 @@ discovered_by = muslim
 discovered_by = ottoman
 1523.1.1 = { religion = Reformed }
 1806.7.12 = { hre = no }
+add_core = HAB
+center_of_trade = 1

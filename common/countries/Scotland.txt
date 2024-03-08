@@ -1,6 +1,6 @@
 #Country Name: Please see filename.
 graphical_culture = westerngfx
-color = { 6 38 84 } #199  175  12
+color = { 25 50 190 } # 6 38 84 | 199  175  12
 revolutionary_colors = { 15 0 15 }
 preferred_religion = reformed
 historical_idea_groups = { 

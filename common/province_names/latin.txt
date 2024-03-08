@@ -286,10 +286,10 @@
 4776 = "Blesa"
 
 5241 = "Lubiana"
-5242 = "Cocevie"
-5243 = "Marburgo"
-5244 = "Capodistria"
-5245 = "Tolmino"
+#= "Cocevie"
+# = "Marburgo"
+# = "Capodistria"
+# = "Tolmino"
 
 #5093 = "Coleto"
 

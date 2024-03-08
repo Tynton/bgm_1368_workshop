@@ -1,0 +1,8 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = swiss
+religion = catholic
+technology_group = western
+government_rank = 1
+capital = 1870	# Köln
+fixed_capital = 1870 # Cannot move capital away from this province & no power cost to move to it

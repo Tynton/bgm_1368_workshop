@@ -1,0 +1,39 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = frainc_comtou
+religion = catholic
+capital = 5238
+
+
+#
+1368.1.1 = {
+	monarch = {
+		name = "Louis I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1305.1.1
+		adm = 5
+		dip = 3
+		mil = 2
+	}
+
+	heir = {
+		name = "Isabelle"
+		birth_date = 1330.1.1
+		death_date = 9999.1.1
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+
+	queen = {
+		name = "Jeanne"
+		dynasty = "de Montfaucon"
+		birth_date = 1310.1.1
+		death_date = 9999.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -10,7 +10,6 @@ base_manpower = 2
 capital = "Santander"
 is_city = yes
 extra_cost = 8
-center_of_trade = 1
 add_core = CAS
 add_core = ASU
 add_core = TST

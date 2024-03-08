@@ -26,4 +26,3 @@ discovered_by = western
 1803.1.1 = { 
 	revolt = { size = 1 }
 }
-add_core = THE

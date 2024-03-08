@@ -6,6 +6,16 @@ technology_group = western
 primary_culture = brandenburgian
 religion = catholic
 capital = 50	# Berlin
+add_years_of_income = 0.5
+
+add_ruler_modifier = {
+	name = bra_start_legitimacy_drop
+	duration = -1
+}
+
+set_country_flag = started_as_brandenburg
+
+add_legitimacy = -50
 
 change_estate_land_share = {
 	estate = estate_church
@@ -26,5 +36,15 @@ change_estate_land_share = {
 		adm = 2
 		dip = 1
 		mil = 3
+	}
+
+	queen = {
+		name = "Katerina"
+		dynasty = "von Luxemburg"
+		birth_date = 1342.8.19
+		death_date = 9999.1.1
+		adm = 5
+		dip = 1
+		mil = 2
 	}
 }

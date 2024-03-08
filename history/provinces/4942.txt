@@ -12,5 +12,5 @@ culture = lyonnais
 trade_goods = wool
 religion = waldensian
 controller = FRA
-is_city = no
+is_city = yes
 add_province_triggered_modifier = waldensian_religious_center

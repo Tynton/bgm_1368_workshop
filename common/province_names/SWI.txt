@@ -16,6 +16,8 @@
 50 = "Berlin"
 
 151 = "Konstantinopel"
+5238 = "Neufchastel"
+5247 = "Lugano"
 
 #4994 = "Lozärn"
 #4993 = "Soledurn"

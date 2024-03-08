@@ -40,5 +40,4 @@ discovered_by = ottoman
 	controller = SER
 	revolt = { size = 1 }
 }
-add_core = THE
 fort_15th = yes

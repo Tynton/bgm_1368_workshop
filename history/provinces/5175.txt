@@ -1,0 +1,11 @@
+discovered_by = chinese
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = MCH
+is_city = yes
+culture = kyushuan
+religion = shinto
+capital = "Seifukuji"
+base_tax = 3
+base_manpower = 3
+base_production = 3

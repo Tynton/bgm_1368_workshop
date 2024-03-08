@@ -1,18 +1,19 @@
 # 193 Franche-Comtï¿½ - Principal cities: Besanï¿½on
 owner = FCO
 controller = FCO
-capital = "Besanï¿½on"
+capital = "Besançon"
 is_city = yes
 culture = frainc_comtou
 religion = catholic
 hre = yes
 base_tax = 4
 base_production = 5
-trade_goods = lumber
+trade_goods = cloth
 base_manpower = 4
 add_core = FCO
 discovered_by = eastern
 discovered_by = western
 discovered_by = muslim
 discovered_by = ottoman
+center_of_trade = 1
 fort_15th = yes

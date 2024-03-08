@@ -68,4 +68,22 @@ country_decisions = {
 			factor = 1
 		}
 	}
+
+	dummy_decision = {
+		potential = {
+			always = yes
+		}
+		allow = {
+			num_of_owned_provinces_with = {
+				value = 8
+				region = italy_region
+			}
+		}
+		effect = {
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
 }

@@ -33,3 +33,4 @@ discovered_by = ottoman
 1813.12.11 = { 
 	revolt = { size = 1 }
 }
+center_of_trade = 1

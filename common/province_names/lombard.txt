@@ -17,6 +17,8 @@
 4960 = "San Marin"
 4729 = "Padoa"
 111 = "Friul"
+5242 = "Lècch"
+5247 = "Lügán"
 
 #speculation starts
 1770 = "Trevis"

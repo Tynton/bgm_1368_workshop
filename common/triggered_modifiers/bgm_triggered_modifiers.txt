@@ -393,6 +393,7 @@ chinese_empire = {
 	}
 	governing_capacity = 1000
 	development_cost = -0.5
+	yearly_corruption = -3
 }
 
 ww1_right = {

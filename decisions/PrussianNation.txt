@@ -10,6 +10,7 @@ country_decisions = {
 					has_dlc = "Emperor"
 				}
 			}
+			has_country_flag = prussian_missions
 			normal_or_historical_nations = yes
 			tag = PRU
 			government = republic

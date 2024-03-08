@@ -31,7 +31,7 @@
  north_marche_area:0 "Marche - North"
  south_lombardy_area:0 "Lombardy - South"
  west_liguria_area:0 "Liguria - West"
- grisons_area:0 "Grisons"
+ grisons_area:0 "Graubünden"
  west_orleans_area:0 "Orleans - West"
  south_flanders_area:0 "Flanders - South"
 
@@ -67,6 +67,21 @@
  inner_namibia_area:0 "Inner Namibia"
  south_botswana_area:0 "South Botswana"
  north_botswana_area:0 "North Botswana"
+ fukushima_area:0 "Fukushima"
+ higashi_ezo_area:0 "Higashi-Ezo"
+ wajinchi_area:0 "Wajinchi"
+ dewa_area:0 "Dewa"
+ echigo_area:0 "Echigo"
+ keno_area:0 "Keno"
+ choshu_area:0 "Choshu"
+ umpaku_area:0 "Umpaku"
+ middle_kyushu_area:0 "Naka-Kyushu"
+ hizen_area:0 "Hizen"
+ south_shikoku_area:0 "Nishi-Shikoku"
+ kii_area:0 "Kii"
+ koshin_area:0 "Koshin"
+ ryukyu_area:0 "Ryukyu"
+ grisons_area:0 "Graubünden"
 
 
 

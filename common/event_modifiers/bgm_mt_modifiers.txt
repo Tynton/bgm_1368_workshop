@@ -153,6 +153,7 @@ colonial_frenzy = {
 
 yuan_claimant = {
 	governing_capacity = 1000
+	yearly_corruption = -1
 }
 
 new_census = {
@@ -599,6 +600,14 @@ boh_authoritarian_culture = {
 boh_subordinated_estates = {
 	yearly_absolutism = 0.5
 	yearly_corruption = -0.25
+}
+
+#######################
+##Brandenburg-Prussia##
+#######################
+
+bra_start_legitimacy_drop = {
+	legitimacy = -3
 }
 
 #Cheat modifiers

@@ -1,0 +1,11 @@
+discovered_by = chinese
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = MCH
+is_city = yes
+religion = shinto
+center_of_trade = 1
+capital = "Nagano"
+base_tax = 3
+base_manpower = 2
+base_production = 2

@@ -4,7 +4,7 @@ base_production = 1
 culture = tunjur
 trade_goods = unknown
 religion = shamanism
-is_city = no
+
 discovered_by = sub_saharan
 native_size = 40
 native_ferocity = 4

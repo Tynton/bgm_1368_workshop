@@ -1,15 +1,13 @@
 #1832 - Yamato
-
 owner = TTI
 controller = TTI
 culture = japanese
 religion = shinto
-capital = "Nara"
+capital = "Yoshino"
 trade_goods = tea
-hre = no
-base_tax = 4
-base_manpower = 2
-base_production = 3
+base_tax = 2
+base_manpower = 1
+base_production = 1
 is_city = yes
 add_core = TTI
 discovered_by = chinese
@@ -17,8 +15,6 @@ discovered_by = MCH
 discovered_by = KHA
 discovered_by = OIR
 discovered_by = QNG
-
 1542.1.1 = { discovered_by = POR }
-
-1585.8.1 = { owner = ODA controller = ODA add_core = ODA remove_core = TTI } #The Tsutsui clan moved to Iga
-1600.10.21 = { owner = TKG controller = TKG add_core = TKG remove_core = ODA }
+1585.8.1 = { controller = ODA add_core = ODA }
+1600.10.21 = { controller = TKG add_core = TKG }

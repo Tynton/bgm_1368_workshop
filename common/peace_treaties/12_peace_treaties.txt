@@ -19,19 +19,20 @@ po_timurid_china = {
 	requires_is_allowed = yes
 	
 	is_visible = {
-		#mission_completed = chg_invade_the_chinese_empire
-		is_emperor_of_china = no
-		FROM = {
-			is_emperor_of_china = yes
+		OR = {
+			mission_completed = chg_invade_the_chinese_empire
+			mission_completed = glh_conquer_china
 		}
+		is_emperor_of_china = no
+		FROM = { is_emperor_of_china = yes }
 	}
 	is_allowed = {
-		#ROOT = {
-		#	army_strength = {
-		#		who = FROM
-		#		value = 1
-		#	}
-		#}
+		ROOT = {
+			army_strength = {
+				who = FROM
+				value = 1
+			}
+		}
 	}
 	effect = {
 		set_emperor_of_china = ROOT
@@ -43,6 +44,9 @@ po_timurid_china = {
 		export_to_variable = {
 			variable_name = ai_value
 			value = 1000
+		}
+		limit = {
+			always = yes
 		}
 	}
 }

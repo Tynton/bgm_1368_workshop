@@ -1,6 +1,6 @@
 #Country Name: Please see filename.
 graphical_culture = italianategfx
-color = { 147 168 143 } #93  160  163
+color = { 93 160 163 } #93  160  163 | 147 168 143
 revolutionary_colors = { 0 14 0 }
 historical_idea_groups = { 
 	defensive_ideas

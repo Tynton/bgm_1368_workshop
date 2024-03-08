@@ -1,0 +1,4 @@
+discovered_by = chinese
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = MCH

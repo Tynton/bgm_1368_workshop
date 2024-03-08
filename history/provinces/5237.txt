@@ -1,0 +1,15 @@
+base_tax = 4
+base_manpower = 3
+base_production = 3
+is_city = yes
+add_core = BSL
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = BSL
+religion = catholic
+controller = BSL
+culture = swiss
+trade_goods = paper
+hre = yes

@@ -1,0 +1,101 @@
+bra_row_slot_3 = {
+	slot = 3
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bra_fate_of_the_dynasty = {
+		icon = per_butcher_black_sheep
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			OR = {
+				NOT = {
+					legitimacy_equivalent = 40
+				}
+				legitimacy_equivalent = 75
+			}
+		}
+		effect = {
+			custom_tooltip = bra_wittelsbach_or_luxemburg
+
+			remove_country_modifier = bra_start_legitimacy_drop
+			if = {
+				limit = { NOT = { legitimacy_equivalent = 40 } }
+				set_country_flag = prussian_missions
+				hidden_effect = {
+					swap_non_generic_missions = yes
+					define_ruler = {
+						dynasty = emperor
+					}
+					kill_heir = {
+						allow_new_heir = no
+					}
+					kill_consort = yes
+				}
+			}
+		}
+	}
+}
+
+bra_row_slot_2 = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = prussian_missions }
+	}
+	has_country_shield = yes
+
+	bra_forge_alliances = {
+		icon = per_butcher_black_sheep
+		required_missions = { bra_fate_of_the_dynasty }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			any_ally = {
+				OR = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+				AND = {
+					total_development = ROOT
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+			}
+		}
+		effect = {
+			add_casus_belli = {
+				type = cb_unseat_the_emperor
+				target = emperor
+				months = 120
+			}
+		}
+	}
+}

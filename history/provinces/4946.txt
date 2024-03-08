@@ -12,5 +12,5 @@ culture = picard
 trade_goods = cloth
 religion = catholic
 controller = ENG
-is_city = no
+is_city = yes
 add_core = PIC

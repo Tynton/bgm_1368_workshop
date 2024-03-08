@@ -86,5 +86,8 @@ po_zollverein = {
 			variable_name = ai_value
 			value = 100
 		}
+		limit = {
+			always = yes
+		}
 	}
 }

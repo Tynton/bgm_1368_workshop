@@ -10,13 +10,12 @@ hre = yes
 controller = MNT
 is_city = yes
 trade_goods = cloth
-fort_15th = yes
-center_of_trade = 1
 discovered_by = muslim
 discovered_by = western
 discovered_by = ottoman
 discovered_by = eastern
-add_province_modifier = { 
+add_permanent_province_modifier = { 
 	name = belfort_gap
 	duration = -1
 }
+fort_15th = yes

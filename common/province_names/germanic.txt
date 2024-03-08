@@ -15,12 +15,14 @@
 
 4142 = { "Arenhusen" "Aarhaus" }
 
-5185 = { "Bastnach" "Bastenach" }
+# = { "Bastnach" "Bastenach" }
 
 5137 = "Ypern"
 
 5275 = { "Karlstadt" "Carlstadt" }
 5276 = "Kopreinitz"
+5238 = "Nüwenburg" #Neuenburg
+5247 = "Lowerz"
 
 ## = "Macharscha"
 
@@ -439,10 +441,10 @@
 # = "Velwisch"
 
 5241 = "Laibach"
-5242 = "Gottschee"
-5243 = "Marburg"
-5244 = "Gafers"
-5245 = "Tolmein"
+#= "Gottschee"
+# = "Marburg"
+# = "Gafers"
+# = "Tolmein"
 
 5154 = "Diedenhofen"
 

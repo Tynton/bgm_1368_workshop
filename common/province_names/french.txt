@@ -138,6 +138,9 @@
 4364 = "Hébrides"
 4365 = "Île de Man"
 
+5237 = "Basle"
+5238 = "Neufchastel"
+
 #5087 = "Boulonnais"
 188 = "Messin"
 4766 = "Verdunois"

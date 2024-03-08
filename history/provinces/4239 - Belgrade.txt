@@ -48,5 +48,4 @@ center_of_trade = 1
 	controller = SER
 	revolt = { size = 1 }
 }
-add_core = THE
 fort_15th = yes

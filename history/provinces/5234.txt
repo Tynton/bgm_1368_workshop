@@ -1,0 +1,9 @@
+is_city = yes
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = OIR
+capital = "Kuroi"
+base_tax = 4
+base_manpower = 3
+base_production = 4
+religion = shinto

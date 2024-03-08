@@ -1,0 +1,46 @@
+po_depose_emperor = {
+	category = 6
+	power_projection = humiliated_rival
+	power_cost_base = 0
+	prestige_base = 1
+	ae_base = 0.0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 100.0
+		owner_keeps = 0.0
+		conquered = 5.0
+		returned_core = 0.05
+		released_nation = 0.05
+		cancelled_subject = 0.05
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = -1
+	is_make_subject = no
+	requires_is_allowed = yes
+	
+	is_visible = {
+		FROM = { is_emperor = yes }
+	}
+	is_allowed = {
+		ROOT = {
+			army_strength = {
+				who = FROM
+				value = 1
+			}
+		}
+	}
+	effect = {
+		ROOT = {
+			set_emperor = yes
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value
+			value = 1000
+		}
+		limit = {
+			always = yes
+		}
+	}
+}

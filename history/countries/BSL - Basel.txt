@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+primary_culture = arpitan
+religion = catholic
+technology_group = western
+government_rank = 1
+capital = 4721	# Köln
+fixed_capital = 4721 # Cannot move capital away from this province & no power cost to move to it
+
+1364.1.1 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "de Vienne"
+		birth_date = 1317.1.1
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}

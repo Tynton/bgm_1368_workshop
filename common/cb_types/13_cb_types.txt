@@ -1,0 +1,29 @@
+cb_unseat_the_emperor = {
+
+	ai_peace_desire = -75
+	is_triggered_only = yes
+	months = 240
+
+	prerequisites_self = {
+		OR = {
+			government = monarchy
+			has_government_attribute = has_dutch_election
+		}
+		is_revolutionary = no
+	}
+
+	prerequisites = {
+		FROM = {
+			OR = {
+				government = monarchy
+				has_reform = ambrosian_republic
+				# has_reform = military_dictatorship_reform
+				has_country_flag = neapolitan_republic
+			}
+			is_subject = no
+			is_emperor = yes
+		}
+	}
+
+	war_goal = take_capital_depose_hremperor
+}

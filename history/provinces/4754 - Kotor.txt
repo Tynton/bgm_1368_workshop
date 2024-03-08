@@ -39,4 +39,3 @@ discovered_by = ottoman
 1814.4.6 = { 
 	controller = HAB
 }
-add_core = THE

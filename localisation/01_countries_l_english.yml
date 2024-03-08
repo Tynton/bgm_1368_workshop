@@ -329,6 +329,18 @@
  WER_ADJ:0 "Stargardisch"
  ESS:0 "Essen"
  ESS_ADJ:0 "Essenisch"
+ SGN:0 "Sargans"
+ SGN_ADJ:0 "Sarganser"
+ STG:0 "Saint Gall"
+ STG_ADJ:0 "Gallish"
+ BSL:0 "Basel"
+ BSL_ADJ:0 "Baselian"
+ NEU:0 "Neuchâtel"
+ NEU_ADJ:0 "Neuchâtelois"
+ FRB:0 "Fribourg"
+ FRB_ADJ:0 "Fribourgois"
+ LUG:0 "Lugano"
+ LUG_ADJ:0 "Luganese"
  
  
  

@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = swiss
+add_accepted_culture = romansh
+religion = catholic
+technology_group = western
+capital = 4722	# Kassel
+
+1368.1.1 = {
+	monarch = {
+		name = "Johann I"
+		dynasty = "von Werdenberg"
+		birth_date = 1359.1.1
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}

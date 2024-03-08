@@ -25,5 +25,4 @@ discovered_by = western
 1520.1.1 = { religion = Sunni }
 1797.1.1 = { controller = REB revolt = { type = revolutionary_rebels size = 1 } }
 1803.1.1 = { controller = TUR revolt = { size = 1 } }
-add_core = THE
 fort_15th = yes

@@ -10,5 +10,5 @@ base_production = 5
 culture = flemish
 religion = catholic
 controller = FLA
-is_city = no
+is_city = yes
 trade_goods = cloth

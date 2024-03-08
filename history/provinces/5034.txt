@@ -1,13 +1,13 @@
 add_core = MNG
 owner = MNG
 controller = MNG
-is_city = no
+is_city = yes
 religion = confucianism
 culture = chihan
 base_tax = 3
 base_manpower = 4
 base_production = 2
-trade_goods = rice
+trade_goods = grain
 discovered_by = chinese
 discovered_by = nomad_group
 add_core = YAN

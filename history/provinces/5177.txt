@@ -1,0 +1,12 @@
+discovered_by = chinese
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = MCH
+is_city = yes
+culture = kyushuan
+religion = shinto
+center_of_trade = 1
+capital = "Kikuchi"
+base_tax = 5
+base_manpower = 3
+base_production = 6

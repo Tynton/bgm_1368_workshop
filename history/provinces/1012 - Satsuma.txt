@@ -1,15 +1,13 @@
 #1012 - Satsuma
-
 owner = SMZ
 controller = SMZ
 culture = kyushuan
 religion = shinto
 capital = "Kagoshima"
 trade_goods = iron
-hre = no
-base_tax = 3
-base_manpower = 3
-base_production = 3
+base_tax = 2
+base_manpower = 2
+base_production = 2
 is_city = yes
 add_core = SMZ
 discovered_by = chinese
@@ -17,7 +15,6 @@ discovered_by = MCH
 discovered_by = KHA
 discovered_by = OIR
 discovered_by = QNG
-
 1542.1.1 = { discovered_by = POR }
-
-1550.1.1 = { fort_15th = yes } # Uchi Castle, the capital of the Shimazu clan
+1550.1.1 = { fort_15th = yes }
+center_of_trade = 2

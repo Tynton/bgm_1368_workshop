@@ -62,5 +62,5 @@
 4695 = "Carcasona"
 214 = "Zarautza"
 
-#5193 = "Donostia"
+## = "Donostia"
 #5194 = "Lizarra"

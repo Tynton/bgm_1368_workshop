@@ -1,7 +1,7 @@
 add_core = YUA
 owner = YUA
 controller = YUA
-is_city = no
+is_city = yes
 religion = confucianism
 base_tax = 3
 base_manpower = 1

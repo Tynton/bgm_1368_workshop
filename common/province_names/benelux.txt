@@ -15,7 +15,7 @@
 89 = "Amiëns"
 91 = "Bergen"
 93 = "Luik"
-#5185 = "Bastenaken"
+## = "Bastenaken"
 
 #5379 = "Iëper"
 1865 = "Gent"

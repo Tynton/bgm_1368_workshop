@@ -44,5 +44,8 @@ po_demobilize = {
 			variable_name = ai_value
 			value = 500
 		}
+		limit = {
+			always = yes
+		}
 	}
 }

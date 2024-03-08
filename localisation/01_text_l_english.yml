@@ -44,11 +44,17 @@
  has_foreign_heir_tooltip:0 "§YThey must not have a foreign heir already.§!"
  
  pu_fla_ld:0 "Union Liberty Desire Reduction"
+ jap_tone:0 "Tone Estuary"
+ jap_ishikari:0 "Ishikari Estuary"
+ jap_yodo:0 "Yodo Estuary"
+ jap_katakami:0 "Katakami Estuary"
  
  intimidating_conqueror:0 "Intimidating Conqueror"
  
  ypres_cloth_hall:0 "Ypres Cloth Hall"
  belfort_gap:0 "Belfort Gap"
+ gokaido:0 "Gokaido"
+ korea:0 "Korea"
  
  bgm_disallow_scandinavian_ai_colonization:0 "Disallow Colonization by Scandinavian Artificial Intelligence"
  
@@ -113,7 +119,7 @@
  
  meridional:0 "Meridional"
  
- rome:0 "Rome"
+ rome:0 "Naples"
  british_isles_node:0 "British Isles"
  occitan_node:0 "Occitania"
  
@@ -1377,6 +1383,14 @@
  take_capital_timurid_china:0 "Invade the Great Empire"
  PEACE_po_timurid_china:0 "Conquer China"
  po_timurid_china_desc:0 "The Emperor of China has been deposed. Long Live the New Imperial Mandate!"
+
+ cb_unseat_the_emperor:0 "Unseat the Holy Roman Emperor"
+ cb_unseat_the_emperor_desc:0 "We have reason to believe they are the illegitimate Emperor."
+ CB_ALLOWED_po_depose_emperor:0 "Deposition of the sitting Emperor"
+ take_capital_depose_hremperor_desc:0 "Seize Their Capital!"
+ take_capital_depose_hremperor:0 "Depose the Holy Roman Emperor"
+ PEACE_po_depose_emperor:0 "Depose Emperor"
+ po_depose_emperor_desc:0 "The Emperor of the Holy Rman Empire has been deposed. Long Live the [Root.GetAdjective] Empire!"
  
  cb_colonial_independance_war:0 "Independence"
  cb_colonial_independance_war_desc:0 "They are tyrants over an overseas domain in which they have no right!"

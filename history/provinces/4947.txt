@@ -11,4 +11,4 @@ culture = umbrian
 trade_goods = fish
 religion = catholic
 controller = PAP
-is_city = no
+is_city = yes

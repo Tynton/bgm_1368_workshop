@@ -3,11 +3,11 @@ owner = HTK
 controller = HTK
 culture = togoku
 religion = shinto
-capital = "Kanazawa"
+capital = "Uozu"
 trade_goods = rice
-base_tax = 3
-base_production = 3
-base_manpower = 3
+base_tax = 5
+base_production = 4
+base_manpower = 4
 is_city = yes
 add_core = SBA
 discovered_by = chinese
@@ -22,4 +22,5 @@ discovered_by = ANU
 1576.1.1 = { controller = UES }
 1581.1.1 = { add_core = ODA controller = ODA }
 1583.6.14 = { controller = MAE add_core = MAE }
+center_of_trade = 1
 fort_15th = yes
