@@ -1,7 +1,7 @@
 #1030 - Owari
-owner = ODA
-controller = ODA
-culture = togoku
+owner = TKI
+controller = TKI
+culture = gia
 religion = shinto
 capital = "Kiyosu"
 trade_goods = dyes
@@ -9,7 +9,6 @@ base_tax = 7
 base_production = 6
 base_manpower = 6
 is_city = yes
-add_core = ODA
 add_core = SBA
 discovered_by = chinese
 discovered_by = MCH
@@ -22,3 +21,4 @@ discovered_by = ANU
 1542.1.1 = { discovered_by = POR }
 1600.9.13 = { controller = TKG add_core = TKG }
 center_of_trade = 1
+add_core = TKI

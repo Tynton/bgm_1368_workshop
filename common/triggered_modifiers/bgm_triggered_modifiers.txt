@@ -44,6 +44,34 @@ boh_bank_other = {
 	yearly_corruption = -0.05
 }
 
+bra_imperial_infrastructure = {
+	potential = {
+		is_part_of_hre = yes
+		is_emperor = no
+		has_global_flag = hre_imperial_infrastructure
+	}
+	trigger = {
+		is_part_of_hre = yes
+		is_emperor = no
+		has_global_flag = hre_imperial_infrastructure
+	}
+	global_tax_modifier = 0.1
+	development_cost = -0.25
+}
+
+bra_imperial_commerce = {
+	potential = {
+		is_part_of_hre = yes
+		has_global_flag = hre_imperial_commerce
+	}
+	trigger = {
+		is_part_of_hre = yes
+		has_global_flag = hre_imperial_commerce
+	}
+	trade_efficiency = 0.1
+	center_of_trade_upgrade_cost = -0.25
+}
+
 bgm_disallow_scandinavian_ai_colonization = {
 	potential = {
 		culture_group = scandinavian

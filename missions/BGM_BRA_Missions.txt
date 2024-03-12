@@ -1,3 +1,315 @@
+bra_row_slot_1_infrastructure = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bra_berlin_colln = {
+		icon = ansbach_succession
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 50
+		}		
+		trigger = {
+			50 = {
+				development = 10
+				is_capital_of = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					50 = {
+						NOT = {
+							province_has_center_of_trade_of_level = 2
+						}
+					}
+				}
+				50 = {
+					add_center_of_trade_level = 1
+				}
+			}
+			else = {
+				50 = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+
+	bra_palace_of_berlin = {
+		icon = bra_berlin_palace
+		required_missions = { bra_berlin_colln }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			owns = 50
+			50 = {
+				development = 30
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		effect = {
+			50 = {
+				add_province_modifier = {
+					name = bra_palace_berlin
+					duration = -1
+				}
+			}
+		}
+	}
+
+	bra_cultural_center = {
+		icon = bra_berlin_dawn_2
+		required_missions = { bra_palace_of_berlin }
+		position = 3
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			owns = 50
+			prestige = 50
+			is_great_power = yes
+		}
+		effect = {
+			50 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+			add_country_modifier = {
+				name = bra_cultural_nexus
+				duration = -1
+			}
+		}
+	}
+}
+
+bra_row_slot_1_wittelsbach = {
+	slot = 1
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = prussian_missions }
+	}
+	has_country_shield = yes
+
+	bra_model_state = {
+		icon = mission_pol_imperial_commonwealth
+		required_missions = { bra_seize_the_crown }
+		position = 4
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			NOT = {
+				num_of_loans = 1
+			}
+			stability = 3
+			prestige = 50
+			is_emperor = yes
+
+		}
+		effect = {
+			add_country_modifier = {
+				name = bra_model_state
+				duration = -1
+			}
+		}
+	}
+
+	bra_imperial_infrastructure = {
+		icon = mission_develop_visby
+		required_missions = { bra_model_state }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			is_emperor = yes
+			imperial_influence = 50
+			adm_tech = 10
+			reform_level = 10
+		}
+		effect = {
+			custom_tooltip = bra_imperial_infrastructure_tooltip
+			set_global_flag = hre_imperial_infrastructure
+			add_country_modifier = {
+				name = bra_imperial_infrastructure_emperor
+				duration = -1
+			}
+		}
+	}
+
+	bra_imperial_commerce = {
+		icon = eastern_catholicization
+		required_missions = { bra_imperial_infrastructure }
+		position = 6
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			OR = {
+				has_global_modifier_value = {
+					which = trade_efficiency
+					value = 0.5
+				}
+				mercantilism = 50
+			}
+			OR = {
+				calc_true_if = {
+					amount = 3
+					all_owned_province = {
+						province_has_center_of_trade_of_level = 2
+					}
+				}
+				calc_true_if = {
+					amount = 9
+					all_province = {
+						is_part_of_hre = yes
+						province_has_center_of_trade_of_level = 2
+					}
+				}
+			}
+		}
+		effect = {
+			add_mercantilism = 10
+			custom_tooltip = bra_imperial_commerce_tooltip
+			set_global_flag = hre_imperial_commerce
+		}
+	}
+}
+
+bra_row_slot_2_wittelsbach = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = prussian_missions }
+	}
+	has_country_shield = yes
+
+	bra_forge_alliances = {
+		icon = mission_diplomatic_relation
+		required_missions = { bra_fate_of_the_dynasty }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			any_ally = {
+				OR = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+				AND = {
+					total_development = ROOT
+					army_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+			}
+		}
+		effect = {
+			add_casus_belli = {
+				type = cb_unseat_the_emperor
+				target = emperor
+				months = 120
+			}
+		}
+	}
+
+	bra_seize_the_crown = {
+		icon = mission_crown_of_norway
+		required_missions = { bra_forge_alliances }
+		position = 3
+		provinces_to_highlight = {
+			owner = {
+				is_emperor = yes
+			}
+			is_capital_of = emperor
+		}		
+		trigger = {
+			is_emperor = yes
+		}
+		effect = {
+			add_prestige = 50
+		}
+	}
+
+	bra_emperors_military = {
+		icon = mission_livonian_intervention
+		required_missions = { }
+		position = 4
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			mission_completed = bra_fate_of_the_dynasty
+			has_global_modifier_value = {
+				which = global_manpower_modifier
+				value = 0.5
+			}
+			has_global_modifier_value = {
+				which = discipline
+				value = 0.1
+			}
+		}
+		effect = {
+			add_mil_power = 100
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+		}
+	}
+
+	bra_faith_decided = {
+		icon = mission_livonian_knights
+		required_missions = { bra_emperors_military }
+		position = 5
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			is_emperor = yes
+			hre_religion_locked = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = bra_religious_conformity
+				duration = -1
+			}
+		}
+	}
+}
+
 bra_row_slot_3 = {
 	slot = 3
 	generic = no
@@ -50,8 +362,8 @@ bra_row_slot_3 = {
 	}
 }
 
-bra_row_slot_2 = {
-	slot = 2
+bra_row_slot_3_wittelsbach = {
+	slot = 3
 	generic = no
 	ai = yes	
 	potential_on_load = {
@@ -67,34 +379,732 @@ bra_row_slot_2 = {
 	}
 	has_country_shield = yes
 
-	bra_forge_alliances = {
-		icon = per_butcher_black_sheep
+	bra_recover_lusatia = {
+		icon = confront_the_lombards
+		required_missions = { bra_sovereign_brandenburg }
+		position = 3
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			area = lusatia_area
+		}
+		trigger = {
+			lusatia_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 15
+		}
+	}
+
+	bra_substantial_power_base = {
+		icon = league_of_the_public_weal
+		required_missions = { bra_seize_the_crown bra_conquer_pomerania }
+		position = 4
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			any_neighbor_province = {
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			num_of_cities = 20
+			is_emperor = yes
+		}
+		effect = {
+			add_imperial_influence = 10
+		}
+	}
+
+	bra_control_the_electors = {
+		icon = mission_alliances
+		required_missions = { bra_substantial_power_base bra_expanded_diplomacy }
+		position = 5
+		provinces_to_highlight = {
+			owner = {
+				is_elector = yes
+				NOT = { preferred_emperor = ROOT }
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				desc = gen_hre_electors.tooltip
+				all_elector = {
+					preferred_emperor = ROOT
+				}
+				amount = 4
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			add_imperial_influence = 10
+		}
+	}
+
+	bra_ewiger_landfriede = {
+		icon = mission_expand_into_the_forest
+		required_missions = { bra_control_the_electors }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			is_emperor = yes
+			custom_trigger_tooltip = {
+				tooltip = boh_ewiger_landfriede
+				OR = {
+					hre_reform_passed = landfriede
+					hre_reform_passed = emperor_landfriede
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = bra_landfriede_affixtures
+				duration = 18250
+			}
+		}
+	}
+}
+
+bra_row_slot_4_wittelsbach = {
+	slot = 4
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = prussian_missions }
+	}
+	has_country_shield = yes
+
+	bra_sovereign_brandenburg = {
+		icon = mission_war_for_the_crown
 		required_missions = { bra_fate_of_the_dynasty }
 		position = 2
 		provinces_to_highlight = {
 		}		
 		trigger = {
-			any_ally = {
-				OR = {
-					army_strength = {
-						who = ROOT
-						value = 1
-					}
-				}
-				AND = {
-					total_development = ROOT
-					army_strength = {
-						who = ROOT
-						value = 0.5
+			NOT = {
+				any_neighbor_country = {
+					OR = {
+						num_of_cities = ROOT
+						total_development = ROOT
+						army_strength = {
+							who = ROOT
+							value = 1
+						}
 					}
 				}
 			}
 		}
 		effect = {
-			add_casus_belli = {
-				type = cb_unseat_the_emperor
-				target = emperor
-				months = 120
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			vorpommern_area = {
+				add_permanent_claim = ROOT
+			}
+			hinter_pommern_area = {
+				add_permanent_claim = ROOT
+			}
+			custom_tooltip = bra_lusatia_1400
+			if = {
+				limit = {
+					NOT = { is_year = 1400 }
+				}
+				lusatia_area = {
+					add_core = ROOT
+				}
+			}
+			else = {
+				lusatia_area = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	bra_conquer_pomerania = {
+		icon = mission_plc_golden_liberty
+		required_missions = { bra_sovereign_brandenburg }
+		position = 3
+		provinces_to_highlight = {
+			NOT = {
+				owned_by = ROOT
+			}
+			OR = {
+				area = vorpommern_area
+				area = hinter_pommern_area
+			}
+		}
+		trigger = {
+			calc_true_if = {
+				amount = 4
+				all_owned_province = {
+					area = vorpommern_area
+				}
+			}
+			hinter_pommern_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			lower_saxony_area = {
+				add_permanent_claim = ROOT
+			}
+			mecklenburg_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	bra_expanded_diplomacy = {
+		icon = unite_the_realm
+		required_missions = { }
+		position = 4
+		provinces_to_highlight = {
+		}
+		trigger = {
+			mission_completed = bra_fate_of_the_dynasty
+			diplomatic_reputation = 5
+		}
+		effect = {
+			every_country = {
+				limit = {
+					NOT = { is_subject_of = ROOT }
+					dynasty = ROOT
+					capital_scope = {
+						OR = {
+							area = east_bavaria_area
+							area = lower_bavaria_area
+							area = upper_bavaria_area
+						}
+					}
+				}
+				ROOT = {
+					add_casus_belli = {
+						type = cb_restore_personal_union
+						target = PREV
+						months = 180
+					}
+				}
+			}
+		}
+	}
+
+	bra_appoint_bavarian_elector = {
+		icon = law_of_the_pious
+		required_missions = { bra_bavarian_domain }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			NOT = {
+				num_of_electors = 7
+			}
+			exists = BAV
+			BAV = {
+				NOT = { is_elector = yes }
+				is_subject_of = ROOT
+			}
+		}
+		effect = {
+			BAV = {
+				elector = yes
+			}
+		}
+	}
+}
+
+bra_row_slot_5_teuton = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	bra_mission_to_teutons = {
+		icon = mission_teutonic_knights
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			OR = {
+				NOT = {
+					exists = TEU
+				}
+				AND = {
+					exists = TEU
+					TEU = { alliance_with = ROOT }
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 100
+		}
+	}
+
+	bra_fate_of_teutons = {
+		icon = mission_conquer_prussia
+		required_missions = { bra_mission_to_teutons }
+		position = 2
+		provinces_to_highlight = {
+		}		
+		trigger = {
+			TEU = {
+				NOT = {
+					total_development = ROOT
+				}
+				NOT = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+			OR = {
+				TEU = {
+					has_opinion = {
+						who = ROOT
+						value = 200
+					}
+					trust = {
+						who = ROOT
+						value = 100
+					}
+					
+				}
+				TEU = {
+					all_neighbor_country = {
+						religion_group = christian
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					TEU = { ai = yes }
+				}
+				country_event = {
+					id = BGM_BRA_missions.1
+				}
+			}
+			else = {
+				add_dip_power = 200
+			}
+		}
+	}
+
+	bra_large_kingdom = {
+		icon = an_army_with_a_state
+		required_missions = { bra_fate_of_teutons }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				province_id = 41	# Königsberg
+				AND = {
+					province_id = 43	# Danzig
+					ROOT = { NOT = { owns_core_province = 2995 } }
+				}
+				AND = {
+					province_id = 2995
+					ROOT = { NOT = { owns_core_province = 2995 } }
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}		
+		trigger = {
+			num_of_cities = 20
+
+			NOT = { exists = PRU }
+			adm_tech = 10
+			owns_core_province = 41			# Königsberg
+			OR = {
+				owns_core_province = 43		# Danzig
+				owns_core_province = 2995	# Stolp
+			}
+			is_at_war = no
+		}
+		effect = {
+			if = {
+				limit = { 
+					has_country_flag = prussian_missions
+				}
+				change_tag = PRU
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				remove_non_electors_emperors_from_empire_effect = yes
+				if = {
+					limit = {
+						OR = {
+							NOT = { has_dlc = "Emperor" }
+							NOT = { hre_size = 1 }
+						}
+						NOT = { government_rank = 2 }
+					}
+					set_government_rank = 2
+				}
+				if = {
+					limit = {
+						has_custom_ideas = no
+						NOT = { has_idea_group = PRU_ideas }
+					}
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+				random_owned_province = {
+					limit = {
+						OR = {
+							culture = pommeranian
+							culture = saxon
+							culture = prussian
+						}
+					}
+					add_base_tax = 1
+				}
+				add_country_modifier = {
+					name = "centralization_modifier"
+					duration = 3650
+				}
+				if =  {
+					limit = {
+						NOT = {
+							government = republic
+						}
+						bgm_rev = no
+					}
+					change_government_to_monarchy = yes
+					add_government_reform = prussian_monarchy
+				}
+				else_if = {
+					limit = {
+						bgm_rev = no
+					}
+					add_government_reform = prussian_republic_reform
+				}
+				if = {
+					limit = {
+						has_reform = states_general_reform
+					}
+					remove_government_reform = states_general_reform
+				}
+				add_prestige = 5
+				change_primary_culture = prussian
+				PRU = {
+					random_owned_province = {
+						limit = { 
+							is_capital = no 
+							OR = {
+								culture = saxon
+								culture = pommeranian
+							}
+						} 
+						change_culture = prussian
+					}
+				}
+				west_prussia_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = PRU
+				}
+				east_prussia_area = {
+					limit = {
+						NOT = { owned_by = ROOT }
+					}
+					add_permanent_claim = PRU
+				}
+				capital_scope = {
+					change_culture = prussian
+				}
+				set_country_flag = formed_prussia_flag
+			}
+			else = {
+				add_dip_power = 200
+			}
+		}
+	}
+}
+
+bra_row_slot_5_wittelsbach = {
+	slot = 5
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = prussian_missions }
+	}
+	has_country_shield = yes
+
+	bra_bavarian_domain = {
+		icon = duchy_of_bavaria
+		required_missions = { bra_expanded_diplomacy }
+		position = 5
+		provinces_to_highlight = {
+			NOT = {
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			OR = {
+				area = east_bavaria_area
+				area = lower_bavaria_area
+				area = upper_bavaria_area
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = LBV
+					}
+					NOT = {
+						exists = UBV
+					}
+				}
+				AND = {
+					UBV = { is_subject_of = ROOT }
+					LBV = { is_subject_of = ROOT }
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			random_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							area = east_bavaria_area
+							area = lower_bavaria_area
+							area = upper_bavaria_area
+						}
+					}
+					is_subject_of = ROOT
+				}
+				change_tag = BAV
+			}
+			every_subject_country = {
+				limit = {
+					NOT = { tag = BAV }
+					capital_scope = {
+						OR = {
+							area = east_bavaria_area
+							area = lower_bavaria_area
+							area = upper_bavaria_area
+						}
+					}
+				}
+				BAV = {
+					inherit = PREV
+				}
+			}
+			if = {
+				limit = {
+					BAV = {
+						NOT = { is_subject_of_type = personal_union }
+					}
+				}
+				create_union = BAV
+			}
+		}
+	}
+
+	bra_historical_claims = {
+		icon = humiliate_austria
+		required_missions = { bra_bavarian_domain }
+		position = 6
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				area = austria_proper_area
+				area = tirol_area
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					exists = BAV
+					BAV = {
+						is_subject_of = ROOT
+						NOT = {
+							OR = {
+								total_development = ROOT
+								num_of_cities = ROOT
+							}
+						}
+					}
+				}
+				AND = {
+					NOT = { exists = BAV }
+					num_of_owned_provinces_with = {
+						value = 6
+						OR = {
+							area = east_bavaria_area
+							area = lower_bavaria_area
+							area = upper_bavaria_area
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { exists = BAV }
+				austria_proper_area = {
+					add_core = BAV
+				}
+				tirol_area = {
+					add_core = BAV
+				}
+			}
+			else = {
+				austria_proper_area = {
+					add_core = ROOT
+				}
+				tirol_area = {
+					add_core = ROOT
+				}
+			}
+		}
+	}
+
+	bra_full_bavaria = {
+		icon = expand_the_confederacy
+		required_missions = { bra_historical_claims }
+		position = 7
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				area = erzgebirge_area
+				area = bohemia_area
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					austria_proper_area = {
+						type = all
+						owned_by = ROOT
+					}
+					tirol_area = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				AND = {
+					austria_proper_area = {
+						type = all
+						owned_by_subject_of = ROOT
+					}
+					tirol_area = {
+						type = all
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { exists = BOH }
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = BOH
+					months = 120
+				}
+			}
+			else = {
+				erzgebirge_area = {
+					add_permanent_claim = ROOT
+				}
+				bohemia_area = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+#####################
+#BRANDENBURG-PRUSSIA#
+#####################
+
+bra_row_slot_2_prussia = {
+	slot = 2
+	generic = no
+	ai = yes	
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = started_as_brandenburg
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = prussian_missions
+	}
+	has_country_shield = yes
+
+	bra_amass_army = {
+		icon = mission_knight
+		required_missions = { bra_fate_of_the_dynasty }
+		position = 2
+		provinces_to_highlight = {
+		}
+		trigger = {
+			army_size_percentage = 0.9
+		}
+		effect = {
+			hinter_pommern_area = {
+				add_permanent_claim = ROOT
+			}
+			vorpommern_area = {
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = { ai = no }
+				add_country_modifier = {
+					name = bra_expansionism
+					duration = 3650
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = bra_ai_expansionism
+					duration = 7300
+				}
 			}
 		}
 	}

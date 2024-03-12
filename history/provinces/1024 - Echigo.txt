@@ -1,7 +1,7 @@
 #1024 - Echigo
-owner = UES
-controller = UES
-culture = togoku
+owner = ECH
+controller = ECH
+culture = echigo
 religion = shinto
 capital = "Naoetsu"
 trade_goods = rice
@@ -9,7 +9,6 @@ base_tax = 5
 base_production = 4
 base_manpower = 3
 is_city = yes
-add_core = UES
 discovered_by = chinese
 discovered_by = MCH
 discovered_by = KHA
@@ -20,3 +19,4 @@ discovered_by = ANU
 1542.1.1 = { discovered_by = POR }
 1598.1.10 = { add_core = ODA controller = ODA }
 1600.9.13 = { add_core = TKG controller = TKG }
+add_core = ECH

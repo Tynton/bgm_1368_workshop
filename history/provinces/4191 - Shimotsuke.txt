@@ -1,7 +1,7 @@
 #4191 - Shimotsuke
 owner = UTN
 controller = UTN
-culture = togoku
+culture = east_kanto
 religion = shinto
 capital = "Utsunomiya"
 trade_goods = rice

@@ -24,8 +24,11 @@
  british:0 "English"
  dutch:0 "Hollandic"
 
- french:0 "Langues d'Oïl" #Langues d'O�l
+ french:0 "Gallic" #Langues d'Oïl
  burgundian:0 "Morvandiau"
+ japanese:0 "Kansai"
+ togoku:0 "West Kanto"
+ kyushuan:0 "Honichi"
  
  english_channel:0 "Low Countries"
  nippon:0 "Setouchi"

@@ -610,6 +610,47 @@ bra_start_legitimacy_drop = {
 	legitimacy = -3
 }
 
+bra_palace_berlin = {
+	local_tax_modifier = 0.25
+	local_development_cost = -0.25
+}
+
+bra_cultural_nexus = {
+	prestige = 0.5
+	power_projection_from_insults = 0.5
+}
+
+bra_landfriede_affixtures = {
+	imperial_authority_value = 0.15
+}
+
+bra_religious_conformity = {
+	imperial_authority_value = 0.1
+	global_manpower_modifier = 0.1
+	manpower_recovery_speed = 0.1
+}
+
+bra_model_state = {
+	diplomatic_reputation = 1
+	prestige_decay = -0.01
+}
+
+bra_imperial_infrastructure_emperor = {
+	movement_speed = 0.1
+	global_tax_modifier = 0.1
+	global_manpower_modifier = 0.1
+}
+
+bra_expansionism = {
+	core_creation = -0.1
+	ae_impact = -0.1
+}
+
+bra_ai_expansionism = {
+	core_creation = -0.2
+	ae_impact = -0.2
+}
+
 #Cheat modifiers
 
 cheat = {

@@ -9,3 +9,6 @@ capital = "Haga"
 base_tax = 1
 base_manpower = 1
 base_production = 1
+add_core = HSK
+owner = HSK
+controller = HSK

@@ -9,3 +9,6 @@ capital = "Ni-mu-oro"
 base_tax = 1
 base_manpower = 1
 base_production = 1
+add_core = HNM
+owner = HNM
+controller = HNM

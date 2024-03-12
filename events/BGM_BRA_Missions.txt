@@ -1,0 +1,34 @@
+namespace = BGM_BRA_missions
+
+# PU with the teutons?
+country_event = {
+	id = BGM_BRA_missions.1
+	title = "BGM_BRA_missions.1.t"
+	desc = "BGM_BRA_missions.1.d"
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_BRA_missions.1.a" #PU them
+		TEU = {
+			change_government = monarchy
+		}
+		create_subject = {
+			subject_type = personal_union
+			who = TEU
+		}
+		TEU = {
+			add_liberty_desire = -50
+		}
+	}
+
+	option = {
+		name = "BGM_BRA_missions.1.b" #no
+		add_dip_power = 200
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

@@ -1,7 +1,7 @@
 #4651 - Tsushima
 owner = SOO
 controller = SOO
-culture = kyushuan
+culture = hichiku
 religion = shinto
 capital = "Tsushima"
 trade_goods = chinaware

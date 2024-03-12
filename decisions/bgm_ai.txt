@@ -1,0 +1,764 @@
+country_decisions = {
+
+	ai_adm_manage_corruption = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+			bgm_adm_absolutism = yes NOT = { corruption = 50 }
+		}
+		allow = {
+			NOT = {
+				any_neighbor_country = {
+					tech_difference = 6
+				}
+			}
+		}
+		effect = { 
+			bgm_adm_corruption_absolutism = yes
+		}
+		
+	}
+
+	ai_dip_manage_corruption = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+			bgm_dip_absolutism = yes NOT = { corruption = 75 }
+		}
+		allow = {
+			NOT = {
+				any_neighbor_country = {
+					tech_difference = 6
+				}
+			}
+		}
+		effect = { 
+			bgm_dip_corruption_absolutism = yes
+		}
+	}
+
+	ai_mil_manage_corruption = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+			bgm_mil_absolutism = yes stability = 1
+		}
+		allow = {
+			NOT = {
+				OR = {
+					any_rival_country = {
+						mil_tech = ROOT
+					}
+					any_neighbor_country = {
+						army_strength = {
+							who = ROOT
+							value = 1
+						}
+						mil_tech = ROOT
+					}
+					any_enemy_country = {
+						mil_tech = ROOT
+					}
+					num_of_rebel_controlled_provinces = 3
+				}
+			}
+		}
+		effect = {
+			bgm_mil_corruption_absolutism = yes
+		}
+	}
+
+	ai_money_manage_corruption = {
+	
+		major = yes
+	
+		potential = {
+			always = no #deactivated for now
+			ai = yes
+			years_of_income = 0.5 corruption = 1
+		}
+		allow = {
+			
+		}
+		effect = { 
+			add_years_of_income = -0.5 
+			add_corruption = -1 
+			if = {
+				limit = { 
+					uses_republican_tradition = yes
+				}
+				add_republican_tradition = 1
+			}
+		}
+	}
+
+	ai_buy_reformprogress = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			years_of_income = 1
+			NOT = {
+				any_owned_province = {
+					num_free_building_slots = 1
+				}
+			}
+		}
+		effect = { 
+			add_years_of_income = -1
+			change_government_reform_progress = 20
+		}
+	}
+
+	ai_buy_reformprogress_adm = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			adm_power = 100
+			NOT = {
+				OR = {
+					any_neighbor_country = {
+						adm_tech = ROOT
+					}
+					any_enemy_country = {
+						adm_tech = ROOT
+					}
+					any_rival_country = {
+						adm_tech = ROOT
+					}
+				}
+			}
+		}
+		effect = { 
+			add_adm_power = -100
+			change_government_reform_progress = 20
+		}
+	}
+
+	ai_bgm_strengthen_govt = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			mil_power = 100
+			bgm_ai_mil_tech_peacetime_checks = yes
+			NOT = {
+				any_enemy_country = {
+					mil_tech = ROOT
+				}
+			}
+			NOT = {
+				any_rival_country = {
+					mil_tech = ROOT
+				}
+			}
+		}
+		effect = { 
+			bgm_strengthen_govt = yes
+		}
+	}
+
+	ai_bgm_reduce_absolutism = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			absolutism = 2
+			average_unrest = 5
+			stability = 3
+			adm_power = 500
+			NOT = {
+				OR = {
+					any_neighbor_country = {
+						adm_tech = ROOT
+					}
+					any_rival_country = {
+						adm_tech = ROOT
+					}
+					any_enemy_country = {
+						adm_tech = ROOT
+					}
+				}
+			}
+		}
+		effect = { 
+			add_adm_power = -100
+			add_absolutism = -2
+		}
+	}
+
+	ai_bgm_deploy_nuke = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			is_at_war = yes
+			custom_trigger_tooltip = {
+				tooltip = needs_nuclear_tooltip
+				OR = {
+					technology_group = modern_nuke
+					technology_group = modern_german_nuke
+					technology_group = modern_soviet_nuke
+				}
+			}
+			has_country_modifier = air_force_tierthree
+			any_war_enemy_country = {
+				any_owned_province = {
+					NOT = { devastation = 50 }
+					NOT = { base_tax = 2 }
+					NOT = { base_production = 2 }
+					NOT = { base_manpower = 2 }
+				}
+			}
+		}
+		effect = { 
+			random_war_enemy_country = {
+				random_owned_province = {
+					limit = {
+						NOT = { devastation = 50 }
+						NOT = { base_tax = 2 }
+						NOT = { base_production = 2 }
+						NOT = { base_manpower = 2 }
+					}
+					province_event = {
+						id = nuclearevents.4
+					}
+				}
+			}
+		}
+	}
+
+	ai_bgm_genocide = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			mil_power = 25
+			has_reform = purge_foreigners_reform
+			any_owned_province = {
+				has_owner_accepted_culture = no
+				custom_trigger_tooltip = {
+					tooltip = depopulation_trigger
+					OR = {
+						had_province_flag = {
+							flag = just_depopulated
+							days = 60
+						}
+						NOT = { has_province_flag = just_depopulated }
+					}
+				}
+			}
+			bgm_ai_mil_tech_checks = yes
+		}
+		effect = {
+			add_mil_power = -25
+			random_owned_province = {
+				limit = {
+					has_owner_accepted_culture = no
+				}
+				add_devastation = 10
+				if = {
+					limit = { base_tax = 1 }
+					add_base_tax = -1
+				}
+				if = {
+					limit = { base_production = 1 }
+					add_base_production = -1
+				}
+				if = {
+					limit = { base_manpower = 1 }
+					add_base_manpower = -1
+				}
+				custom_tooltip = need_10_dev_or_less
+				if = {
+					limit = { 
+						NOT = {
+							development = 10
+						}
+					}
+					change_religion = ROOT
+					change_culture = ROOT
+				}
+				add_nationalism = -5
+				add_unrest = 3
+
+				if = {
+					limit = { 
+						has_province_flag = just_depopulated
+					}
+					clr_province_flag = just_depopulated
+					set_province_flag = just_depopulated
+				}
+				else = {
+					set_province_flag = just_depopulated
+				}
+			}
+		}
+	}
+
+	ai_bgm_famine = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			adm_power = 25
+			bgm_comgovt = yes
+			any_owned_province = {
+				NOT = {
+					has_province_modifier = forced_famine_2
+				}
+				unrest = 5
+			}
+		}
+		effect = {
+			add_adm_power = -25
+			random_owned_province = {
+				limit = {
+					has_owner_accepted_culture = no
+				}
+				add_devastation = 25
+				add_province_modifier = {
+					name = forced_famine_1
+					duration = 1825
+				}
+				add_province_modifier = {
+					name = forced_famine_2
+					duration = 3650
+				}
+			}
+		}
+	}
+
+	ai_bgm_investments = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			years_of_income = 1.0 #0.1
+			has_reform = democratic_mechanic
+		}
+		effect = {
+			add_years_of_income = -0.1
+			random_owned_province = {
+				limit = {
+					NOT = { has_province_modifier = provincial_investment }
+				}
+				add_devastation = -10
+				add_province_modifier = {
+					name = provincial_investment
+					duration = 1825
+				}
+			}
+		}
+	}
+
+	ai_bgm_terror = {
+	
+		major = yes
+	
+		potential = {
+			ai = yes
+		}
+		allow = {
+			mil_power = 25
+			has_reform = futurist_mechanic
+			bgm_comgovt = no
+			bgm_ai_mil_tech_peacetime_checks = yes
+		}
+		effect = {
+			add_years_of_income = -0.1
+			random_owned_province = {
+				limit = {
+					unrest = 3
+				}
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_devastation = 5
+				add_province_modifier = {
+					name = forced_famine_2
+					duration = 1825
+				}
+			}
+		}
+	}
+
+
+
+
+
+	#################
+	#AI MANIPULATION#
+	#################
+
+	ai_germany_decision = {
+		potential = {
+			ai = yes
+			culture_group = germanic
+			num_of_cities = 20
+			NOT = { has_country_flag = did_germany }
+			OR = {
+				tag = GER
+				NOT = { exists = GER }
+			}
+		}
+		allow = {
+			north_german_region = {
+				type = all
+				owned_by = ROOT
+			}
+			south_german_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_germany
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_italy_decision = {
+		potential = {
+			ai = yes
+			culture_group = latin
+			num_of_cities = 15
+			NOT = { has_country_flag = did_germany }
+			OR = {
+				tag = ITA
+				tag = VIY
+				NOT = {
+					OR = {
+						exists = ITA
+						exists = VIY
+					}
+				}
+			}
+		}
+		allow = {
+			italy_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_italy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_france_decision = {
+		potential = {
+			ai = yes
+			culture_group = french
+			bgm_france_exists = no
+			num_of_cities = 20
+			NOT = { has_country_flag = did_france }
+		}
+		allow = {
+			france_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_france
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_ned_decision = {
+		potential = {
+			ai = yes
+			culture_group = benelux
+			num_of_cities = 7
+			NOT = { has_country_flag = did_ned }
+			OR = {
+				tag = NED
+				NOT = {
+					exists = NED
+				}
+			}
+		}
+		allow = {
+			low_countries_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_ned
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_rus_decision = {
+		potential = {
+			ai = yes
+			culture_group = east_slavic
+			num_of_cities = 10
+			NOT = { has_country_flag = did_rus }
+			OR = {
+				tag = RUS
+				NOT = {
+					exists = RUS
+				}
+			}
+		}
+		allow = {
+			russia_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_rus
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_france_takes_italy_decision = {
+		potential = {
+			ai = yes
+			culture_group = french
+			bgm_france = yes
+			NOT = {
+				has_institution = nationalism_institution
+			}
+			OR = {
+				savoy_dauphine_area = {
+					type = all
+					owned_by = ROOT
+				}
+				provence_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
+			NOT = {
+				any_rival_country = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+			NOT = { has_country_flag = did_france_italy }
+		}
+		allow = {
+			italy_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_france_italy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_france_takes_gaul_decision = {
+		potential = {
+			ai = yes
+			culture_group = french
+			bgm_france = yes
+			france_region = {
+				type = all
+				owned_by = ROOT
+			}
+			NOT = { has_country_flag = did_france_gaul }
+		}
+		allow = {
+			lower_rhineland_area = {
+				type = all
+				owned_by = ROOT
+			}
+			alsace_area = {
+				type = all
+				owned_by = ROOT
+			}
+			brabant_area = {
+				type = all
+				owned_by = ROOT
+			}
+			flanders_area = {
+				type = all
+				owned_by = ROOT
+			}
+			north_brabant_area = {
+				type = all
+				owned_by = ROOT
+			}
+			wallonia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			78 = { owned_by = ROOT }
+			85 = { owned_by = ROOT }
+			2975 = { owned_by = ROOT }
+			1761 = { owned_by = ROOT }
+			4767 = { owned_by = ROOT }
+		}
+		effect = {
+			set_country_flag = did_france_gaul
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_france_takes_catalonia_decision = {
+		potential = {
+			ai = yes
+			culture_group = french
+			bgm_france = yes
+			NOT = {
+				has_institution = nationalism_institution
+			}
+			languedoc_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+			NOT = {
+				any_rival_country = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+			NOT = { has_country_flag = did_france_catalonia }
+		}
+		allow = {
+			catalonia_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_france_catalonia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_russia_takes_ukraine_decision = {
+		potential = {
+			ai = yes
+			tag = RUS
+			NOT = {
+				has_institution = nationalism_institution
+			}
+			NOT = {
+				any_rival_country = {
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+			NOT = { has_country_flag = did_russia_ukraine }
+		}
+		allow = {
+			ruthenia_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_russia_ukraine
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+
+	ai_murica = {
+		potential = {
+			ai = yes
+			tag = USA
+			NOT = { has_country_flag = did_france_catalonia }
+		}
+		allow = {
+			colonial_canada = {
+				type = all
+				owned_by = ROOT
+			}
+			colonial_eastern_america = {
+				type = all
+				owned_by = ROOT
+			}
+			colonial_louisiana = {
+				type = all
+				owned_by = ROOT
+			}
+			colonial_california = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = did_france_catalonia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 99
+	}
+}

@@ -1,7 +1,7 @@
 #Northern Mutsu
 owner = RFR
 controller = RFR
-culture = togoku
+culture = north_tohoku
 religion = shinto
 capital = "Morioka"
 trade_goods = livestock

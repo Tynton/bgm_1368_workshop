@@ -1,7 +1,7 @@
 #1819 - Tosa
 owner = HSK
 controller = HSK
-culture = japanese
+culture = shikoku
 religion = shinto
 capital = "Nankoku"
 trade_goods = naval_supplies

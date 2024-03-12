@@ -9,3 +9,6 @@ capital = "Nara"
 base_tax = 4
 base_manpower = 4
 base_production = 3
+add_core = TTI
+owner = TTI
+controller = TTI

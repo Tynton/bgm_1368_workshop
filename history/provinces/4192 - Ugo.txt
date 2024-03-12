@@ -1,7 +1,7 @@
 #4192 - Ugo
 owner = AKT
 controller = AKT
-culture = togoku
+culture = north_tohoku
 religion = shinto
 capital = "Akita"
 trade_goods = fish

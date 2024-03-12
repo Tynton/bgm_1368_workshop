@@ -1,7 +1,7 @@
 #1825 - Aki
-owner = HSK
-controller = HSK
-culture = japanese
+owner = AKI
+controller = AKI
+culture = chugoku
 religion = shinto
 capital = "Ginzan"
 trade_goods = rice
@@ -9,7 +9,6 @@ base_tax = 4
 base_manpower = 2
 base_production = 4
 is_city = yes
-add_core = HSK
 add_core = MRI
 discovered_by = chinese
 discovered_by = MCH
@@ -25,3 +24,4 @@ discovered_by = QNG
 1542.1.1 = { discovered_by = POR }
 1599.1.1 = { capital = "Hiroshima" }
 1600.10.21 = { controller = TKG add_core = TKG }
+add_core = AKI

@@ -1,0 +1,29 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = romagnan
+capital = 5260	# Mecklenburg
+fixed_capital = 5260 # Cannot move capital away from this province & no power cost to move to it
+
+1368.1.1 = {
+	monarch = {
+		name = "Ungaro I"
+		dynasty = "Malatesta"
+		birth_date = 1327.6.1
+		adm = 4
+		dip = 4
+		mil = 5
+	}
+
+	heir = {
+		name = "Galeotto"
+		monarch_name = "Galeotto I"
+		birth_date = 1299.1.1
+		death_date = 9999.1.1
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}

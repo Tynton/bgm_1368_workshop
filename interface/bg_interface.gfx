@@ -168,6 +168,21 @@ spriteTypes = {
 		name = "mzf_destroy_jalayirids"
 		texturefile = "gfx/interface/missions/destroy_jalayirids.dds"
 	}
+
+	spriteType = {
+		name = "bra_berlin_palace"
+		texturefile = "gfx/interface/missions/berlin_palace.dds"
+	}
+
+	spriteType = {
+		name = "bra_berlin_dawn"
+		texturefile = "gfx/interface/missions/berlin_dawn.dds"
+	}
+
+	spriteType = {
+		name = "bra_berlin_dawn_2"
+		texturefile = "gfx/interface/missions/berlin_dawn_2.dds"
+	}
 	
 	#Institutions
 	spriteType = {

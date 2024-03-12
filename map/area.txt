@@ -464,7 +464,7 @@ emilia_romagna_area = {  #5
 }
 central_italy_area = {  #3
 
-	119 120 2977 5167 
+	120 2977 5167 119 5260 
 }
 ########################################
 # British Isles			 			   #
@@ -2477,7 +2477,7 @@ kanto_area = {  #3 #Western Kanto
 }
 eastern_kanto_area = {  #3
 
-	1027 4190 5212 5213
+	1027 4190 5212 5213 
 }
 kyushu_area = {  #4 #Southern Kyushu
 

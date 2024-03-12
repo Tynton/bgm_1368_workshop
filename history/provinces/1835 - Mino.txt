@@ -1,7 +1,7 @@
 #1835 - Mino
 owner = TKI
 controller = TKI
-culture = togoku
+culture = gia
 religion = shinto
 capital = "Inabayama"
 trade_goods = paper

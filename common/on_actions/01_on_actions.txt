@@ -200,6 +200,16 @@ on_startup = {
 			add_yearly_manpower = -10
 			
 		}
+		BRA = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				set_country_flag = prussian_missions
+				swap_non_generic_missions = yes
+				create_alliance = TEU
+			}
+		}
 		MNG = {
 			add_rival = YUA
 			country_event = {

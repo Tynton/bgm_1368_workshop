@@ -1,7 +1,7 @@
 #1027 - Hitachi
 owner = STK
 controller = STK
-culture = togoku
+culture = east_kanto
 religion = shinto
 capital = "Ota"
 trade_goods = fish

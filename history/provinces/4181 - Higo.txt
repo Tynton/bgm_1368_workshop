@@ -1,7 +1,7 @@
 #4181 - Higo
-owner = KKC
-controller = KKC
-culture = kyushuan
+owner = SAG
+controller = SAG
+culture = hichiku
 religion = shinto
 capital = "Hitoyoshi"
 trade_goods = fish
@@ -9,7 +9,6 @@ base_tax = 2
 base_manpower = 1
 base_production = 3
 is_city = yes
-add_core = KKC
 discovered_by = chinese
 discovered_by = MCH
 discovered_by = KHA
@@ -23,3 +22,4 @@ discovered_by = QNG
 1587.5.15 = { owner = ODA controller = ODA add_core = ODA remove_core = SMZ } #Hideyoshi's conquest of Kyushu
 1600.10.21 = { controller = TKG add_core = TKG }
 1632.1.1 = { controller = HSK add_core = HSK fort_16th = yes }
+add_core = SAG

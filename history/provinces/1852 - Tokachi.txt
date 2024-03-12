@@ -2,9 +2,8 @@
 latent_trade_goods = { 
 	coal 
 }
-owner = ANU
-controller = ANU
-add_core = ANU
+owner = HNM
+controller = HNM
 is_city = yes
 culture = ainu
 religion = animism
@@ -70,3 +69,4 @@ discovered_by = chinese
 discovered_by = OIR
 discovered_by = QNG
 discovered_by = MCH
+add_core = HNM

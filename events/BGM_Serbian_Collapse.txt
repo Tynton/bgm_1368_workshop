@@ -161,6 +161,7 @@ country_event = { #Secession of Macedonia
 		declare_war_with_cb = {
 			casus_belli = cb_core
 			who = MCE
+			war_goal_province = 3001
 		}
 		hidden_effect = {
 			MCE = {
@@ -276,6 +277,7 @@ country_event = { #Secession of Thessaly
 		declare_war_with_cb = {
 			casus_belli = cb_core
 			who = THE
+			war_goal_province = 147
 		}
 		hidden_effect = {
 			THE = {
@@ -389,6 +391,7 @@ country_event = { #Secession of Prilep
 		declare_war_with_cb = {
 			casus_belli = cb_core
 			who = PRI
+			war_goal_province = 4780
 		}
 		hidden_effect = {
 			PRI = {
@@ -502,6 +505,7 @@ country_event = { #Secession of Zeta
 		declare_war_with_cb = {
 			casus_belli = cb_core
 			who = ZET
+			war_goal_province = 4754
 		}
 		hidden_effect = {
 			ZET = {
@@ -615,6 +619,7 @@ country_event = { #Secession of Montenegro
 		declare_war_with_cb = {
 			casus_belli = cb_core
 			who = MON
+			war_goal_province = 138
 		}
 		hidden_effect = {
 			MON = {
@@ -728,6 +733,7 @@ country_event = { #Secession of Albania
 		declare_war_with_cb = {
 			casus_belli = cb_core
 			who = ALB
+			war_goal_province = 4174
 		}
 		hidden_effect = {
 			ALB = {

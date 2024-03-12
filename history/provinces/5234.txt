@@ -7,3 +7,6 @@ base_tax = 4
 base_manpower = 3
 base_production = 4
 religion = shinto
+add_core = YMN
+owner = YMN
+controller = YMN

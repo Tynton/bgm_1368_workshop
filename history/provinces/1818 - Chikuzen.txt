@@ -2,9 +2,9 @@
 latent_trade_goods = { 
 	coal 
 }
-owner = OUC
-controller = OUC
-culture = kyushuan
+owner = SHN
+controller = SHN
+culture = hichiku
 religion = shinto
 capital = "Hakata"
 trade_goods = chinaware
@@ -12,7 +12,6 @@ base_tax = 5
 base_production = 3
 base_manpower = 4
 is_city = yes
-add_core = OUC
 discovered_by = chinese
 discovered_by = MCH
 discovered_by = KHA
@@ -27,4 +26,5 @@ center_of_trade = 2
 1587.5.15 = { add_core = MRI controller = MRI }
 1600.9.13 = { add_core = TKG controller = TKG }
 1603.1.1 = { capital = "Fukuoka" }
+add_core = SHN
 fort_15th = yes

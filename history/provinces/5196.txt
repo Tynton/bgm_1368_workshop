@@ -9,3 +9,6 @@ capital = "Kuwana"
 base_tax = 4
 base_manpower = 3
 base_production = 4
+add_core = HSK
+owner = HSK
+controller = HSK

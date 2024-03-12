@@ -9,3 +9,6 @@ capital = "Kururi"
 base_tax = 7
 base_manpower = 6
 base_production = 7
+add_core = UES
+owner = UES
+controller = UES

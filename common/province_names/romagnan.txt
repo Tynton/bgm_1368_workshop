@@ -8,6 +8,7 @@
 5395 = "Ruig"
 
 4960 = "San Maréin"
+5260 = { "Rémne" "Cisêna" }
 
 # = { "Rémin" "Cisêna" }
 # = "Pés're"

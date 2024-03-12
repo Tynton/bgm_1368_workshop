@@ -1703,6 +1703,7 @@ voc_indiamen_modifier = {
 
 power_projection = {
 	#defensiveness = 0.1
+	imperial_authority_value = 0.25
 	diplomatic_reputation = 1
 	prestige_decay = -0.01
 	land_morale = 0.15

@@ -1,7 +1,7 @@
 #1017 - Suo
 owner = OUC
 controller = OUC
-culture = japanese
+culture = chugoku
 religion = shinto
 capital = "Yamaguchi"
 trade_goods = silk

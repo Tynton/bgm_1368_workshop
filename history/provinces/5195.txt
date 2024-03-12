@@ -9,3 +9,6 @@ capital = "Kakata"
 base_tax = 10
 base_manpower = 9
 base_production = 8
+add_core = ROK
+owner = ROK
+controller = ROK

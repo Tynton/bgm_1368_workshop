@@ -169,7 +169,7 @@
 #4946 = "Spetia"
 # = "Eporedia"
 #5111 = "Grossetum"
-# = { "Ariminum" "Caesena" }
+5260 = { "Ariminum" "Caesena" }
 # = "Pisaurum"
 # = "Chatacium"
 # = "Beneventum"

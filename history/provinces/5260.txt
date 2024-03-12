@@ -1,0 +1,16 @@
+add_core = MLA
+discovered_by = western
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = muslim
+owner = MLA
+base_tax = 3
+base_manpower = 2
+base_production = 3
+culture = romagnan
+trade_goods = naval_supplies
+religion = catholic
+controller = MLA
+is_city = yes
+add_core = PAP
+center_of_trade = 1

@@ -10,3 +10,6 @@ capital = "Sakai"
 base_tax = 11
 base_manpower = 6
 base_production = 10
+add_core = HSK
+owner = HSK
+controller = HSK

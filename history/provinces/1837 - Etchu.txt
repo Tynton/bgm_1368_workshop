@@ -1,7 +1,7 @@
 #1837 - Etchu
-owner = HTK
-controller = HTK
-culture = togoku
+owner = SBA
+controller = SBA
+culture = hokuriku
 religion = shinto
 capital = "Uozu"
 trade_goods = rice

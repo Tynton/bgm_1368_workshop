@@ -1,4 +1,4 @@
-culture = togoku
+culture = echigo
 religion = shinto
 is_city = yes
 discovered_by = chinese
@@ -6,3 +6,6 @@ discovered_by = OIR
 base_tax = 1
 base_manpower = 1
 base_production = 1
+add_core = ECH
+owner = ECH
+controller = ECH

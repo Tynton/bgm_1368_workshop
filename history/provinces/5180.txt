@@ -9,3 +9,6 @@ capital = "Inoue"
 base_tax = 1
 base_manpower = 1
 base_production = 1
+add_core = TSH
+owner = TSH
+controller = TSH

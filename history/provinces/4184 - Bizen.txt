@@ -1,7 +1,7 @@
 #4184 - Bizen
-owner = YMN
-controller = YMN
-culture = japanese
+owner = AKM
+controller = AKM
+culture = chugoku
 religion = shinto
 capital = "Fukuoka"
 trade_goods = iron
@@ -9,7 +9,6 @@ base_tax = 7
 base_manpower = 5
 base_production = 6
 is_city = yes
-add_core = YMN
 add_core = AKM
 discovered_by = chinese
 discovered_by = MCH

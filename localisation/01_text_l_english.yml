@@ -1139,6 +1139,31 @@
  auvergnat:0 "Auvergnat" #Auvernhat
  limousin:0 "Limousin" #Lemosin
  
+ lengadocian_2:0 "Lengadocian" #Lengadocian
+ nicard_2:0 "Niçard"
+ auvergnat_2:0 "Auvernhat" #Auvernhat
+ limousin_2:0 "Lemosin" #Lemosin
+ gascon_2:0 "Gascon"
+ occitain_2:0 "Occitan"
+ catalan_2:0 "Catalan"
+ 
+ satsugu:0 "Satsugu"
+ hichiku:0 "Hichiku"
+ chugoku:0 "Chugoku"
+ shikoku:0 "Shikoku"
+ umpaku:0 "Umpaku"
+ gia:0 "Gia"
+ east_kanto:0 "East Kanto"
+ hokuriku:0 "Hokuriku"
+ nayashi:0 "Nayashi"
+ echigo:0 "Echigo"
+ south_tohoku:0 "South Tohoku"
+ north_tohoku:0 "North Tohoku"
+ ryukyu_g:0 "Ryukyu"
+ ushima:0 "Ushima"
+ uchinaa:0 "Uchinaa"
+ saksizima:0 "Saksїzїma"
+ 
  ruthenian_g:0 "Ruthenian"
  
  franco_provencal:0 "Arpitan"
@@ -1146,6 +1171,10 @@
  savoyard:0 "Savoyard"
  lyonnais:0 "Lyonnais"
  arpitan:0 "Patouès"
+ 
+ savoyard_2:0 "Savoyard"
+ lyonnais_2:0 "Lyonnais"
+ arpitan_2:0 "Patouès"
  
  po_bgmleague:0 "Religious Supremacy"
  cb_bgm_league:0 "Religious League"

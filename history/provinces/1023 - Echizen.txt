@@ -1,7 +1,7 @@
 #1023 - Echizen
 owner = SBA
 controller = SBA
-culture = japanese
+culture = hokuriku
 religion = shinto
 capital = "Fuchu"
 trade_goods = paper

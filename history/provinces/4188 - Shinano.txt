@@ -1,7 +1,7 @@
 #2017 - Shinano
 owner = OGS
 controller = OGS
-culture = togoku
+culture = nayashi
 religion = shinto
 capital = "Nagano"
 trade_goods = rice

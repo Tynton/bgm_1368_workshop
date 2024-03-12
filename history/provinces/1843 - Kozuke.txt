@@ -1,6 +1,6 @@
 #1843 - Kozuke
-owner = UES
-controller = UES
+owner = KAW
+controller = KAW
 culture = togoku
 religion = shinto
 capital = "Kawagoe"
@@ -9,7 +9,6 @@ base_tax = 12
 base_production = 11
 base_manpower = 9
 is_city = yes
-add_core = UES
 discovered_by = chinese
 discovered_by = MCH
 discovered_by = KHA
@@ -23,3 +22,4 @@ discovered_by = ANU
 1582.4.3 = { add_core = ODA controller = ODA }
 1582.10.27 = { controller = HJO }
 1590.8.10 = { add_core = TKG controller = TKG }
+add_core = KAW

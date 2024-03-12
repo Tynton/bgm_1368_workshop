@@ -1509,13 +1509,13 @@ franco_provencal = {
 		Agassiz Berlioz Cullaz Deletraz Droz Gattaz Gex Mermoz Praz Sandoz Vuillermoz Cerlogne Uchard Roquille di Savouè
 	}
 	
-	arpitan = {
+	arpitan_2 = {
 		primary = GNV
 	}
-	savoyard = {
+	savoyard_2 = {
 		primary = SAV
 	}
-	lyonnais = {
+	lyonnais_2 = {
 		primary = DAU
 	}
 }
@@ -1899,7 +1899,7 @@ occitan = {
 		Nadine Osanne Yolande Jeanne Marie Anne Catherine Anaïs Catarina Magali Magdalena Margarida Maria Mirèlha Mirèio Azalaïs Alienòr Isabèl
 	}
 	
-	gascon = {
+	gascon_2 = {
 		primary = GUY
 		
 		dynasty_names = {
@@ -1928,7 +1928,7 @@ occitan = {
 			Marguerite Isabelle Marie Eléonore Rose Anne Charlotte
 		}
 	}
-	occitain = {
+	occitain_2 = {
 		primary = PRO
 		
 		dynasty_names = {
@@ -1959,17 +1959,17 @@ occitan = {
 			Nadine Osanne Yolande Jeanne Marie Anne Catherine Anaïs Catarina Magali Magdalena Margarida Maria Mirèlha Mirèio Azalaïs Alienòr Isabèl
 		}
 	}
-	auvergnat = {
+	auvergnat_2 = {
 		primary = AUV
 	}
-	limousin = {
+	limousin_2 = {
 		primary = AUV
 	}
-	nicard = {
+	nicard_2 = {
 		primary = NIC
 	}
 	
-	lengadocian = {
+	lengadocian_2 = {
 		primary = TOU
 		
 		dynasty_names = {
@@ -2001,7 +2001,7 @@ occitan = {
 		}
 	}
 	
-	catalan = {
+	catalan_2 = {
 		primary = CAT
 		dynasty_names = {
 			"d'Aragó" "de Borja" "de Luna" "d'Urgell" "Folc de Cardona"
@@ -2526,6 +2526,35 @@ iberian	= {
 		}
 	}
 	
+	catalan = {
+		primary = CAT
+		dynasty_names = {
+			"d'Aragó" "de Borja" "de Luna" "d'Urgell" "Folc de Cardona"
+			#CK2
+			"de Menezes" "de Mendoza" "de Niebla" "de Silva" "de Alba" "de Borja"  
+			"de Medinaceli" "de Castro" "de Haro" "Santcliment" "de Altamira" Osorio
+			Zúñiga "de Villahermosa" Vilafermosa Garmendia "de Rocamora" "de Goyeneche"
+			"de Cabrera" "de Villena" Abaroa Abelló
+			
+			Abarca Plácido Roldán Aguado Aguilar Álvarez Belmonte Cardona Castilla Colón Cortés Contreras Cuesta Díaz Duarte Domínguez Delgado "del Río" "del Olmo" Escamilla Echevarría Estévez Félix
+			Gallego Fernández Fuentes Giménez López Juárez Machado Márquez Martínez Martinez Montaña Morales Muñoz Moreno Nieves Ortiz Pereira Prieto Quiñones Quintana Quirós Ramírez Rendón Reyes Ríos Rivero Rivera
+			Robledo Robles Rodríguez Rojas Romero Ruiz Salazar Salinas Salcedo Santiago Sepúlveda
+		}
+		male_names = {
+			Aaró Aaron Abelard Abraham Absaló Abundi Adalbert Adam Adrià Alaric Albà Albí Aleix Àlvar Àngel Antoni Arnau 
+			Artur Blai Carles Cecili Conrad Dari Dionís Emili Enric Felip Ferran Francés Francesc Fructuós Germà 
+			Gonçal Guillem Guiu Ignasi Israel Joan Jordi Josep Josep Maria Lleó Lluc Lluís Macedoni Màrius Martí Miquel 
+			Octavi Òscar Pau Pere Pol Pompeu Pròsper Prudenci Prudencià Quirze Rafael Ramir Raül Reginald Ricard Robert Roc 
+			Rubèn Sergi Simó Teodor Tomàs Vicenç Vicent Xavier
+			
+			Fermín Quirino Rocío Agustín Roque Ramón Moreno Benjamín Macario Santiago Sergio
+		}
+		female_names = {
+			Àgata Àgueda Aina Anna Antònia Caterina Cecília Cristina Dolors Francesca Genoveva Isabel Joana Justina Laia 
+			Montserrat Núria Octàvia Prudència Roberta Rodolfa
+		}
+	}
+
 	portugese = {
 		primary = POR
 		dynasty_names = {
@@ -3149,6 +3178,119 @@ french = {
 	meridional = {
 		primary = PRO
 	}
+
+	gascon = {
+		primary = GUY
+		
+		dynasty_names = {
+			"d'Artagnan" "d'Astarac" "d'Avensac" "d'Avezan" 
+			"Barry de Puyol" "de Batz" "de Broque" "de Burosse" 
+			"de Calbiac" "de Cambairac" "de Castanet" "de Castelbajac" "de Catellan" "Chastenet de Puységur" "de Cheveny" "de Corneillan" "du Cos de La Hitte" 
+			"d'Esclignac" "d'Esparbez" 
+			"de Faudoas" "de Forcade"
+			"de Galard de Brassac" "de Gestas" "de Goth" "de Grossoles" 
+			"de La Barthe" "de La Briffe" "de Lacaze" "de Lasseran" "de Lavardac" "de L'Isle-Jourdain" "de Lizarey" "de Lomagne" "de Loupiac" "de Luppé"
+			"de Mauléon" "de Maupas" "de Montcorneil" "de Montégut" "de Montluc" "de Montpezat"
+			"de Nogaret"
+			"de Pardaillan"
+			"de Roquelaure"
+			"de Salles" "de Sensacq" "de Sérignac" "de Solages"
+			"de la Tour-Maubourg"
+			"de Voisins" "de Foix"
+		}
+		
+		male_names = {
+			Jean Charles Bernard Henri Géraud Guillaume Arnaud-Bernard Mascarose Esquivat Pierre-Géraud Armand Arnaud Aymeric Bartomiu Bernat Bertrand Domejon Eneco Estève Exemen Ferrán Folquet Frix Gastó
+			Gaufré Guilhem Jacme Jordan Jordan Loys Martí Matheu Miqueu Romeu Thomas Vicentz Vives François Phébus Gaston
+		}
+		
+		female_names = {
+			Marguerite Isabelle Marie Eléonore Rose Anne Charlotte
+		}
+	}
+	occitain = {
+		primary = PRO
+		
+		dynasty_names = {
+			"d'Abeille" "d'Adhémar" "d'Agoult" "d'Aiglun" "d'Aiguières" "d'Allemagne" "d'Amalric" "d'Audiffredi"
+			"de Bagnols" "de Barberin" "de Barcillon" "de Baschi" "des Baux" "de Bermond" "de Bionneau" "de Brunet"
+			"de Cadenet" "de Cascaris-Castellet" "de Castaing" "de Castellane" "de Castillon" Coquerel "de Cordes" "de Cormis" "de Crillon"
+			"d'Entrecasteaux" "d'Espagnet" Esparron "d'Espinouze"
+			"de Fargis" "Fauque de Jonquières" "Ferré de la Grange" 
+			"de Gassendi" "de Gévaudan" "de Gombert" "de Gordes" "de Grignan" Grimaldi "de Grimaud" "de Guast" "des Isnards" 
+			"de Lauris" "de Libertat" "de Loménie"
+			"de Monteil" "de Montpezat" 
+			"de Paule" "de Pena" "Pene de la Borde" "de la Pérusse" "de Pontevès"
+			"de Raimondis" "de Revest" "de Riquetti"
+			"de Sabran" "de Sade" "de Saint Victoret" "de Séguiran" "de Simiane"
+			"de Valbelle"
+		}
+		
+		male_names = {
+			Édouard Louis Matheu Miqueu Alexandre Érrard
+			Aldebert Aldéric Alphonse Amaury Amédée André Antoine Arnaud 
+			Arnault Arnoul Aubry Aymar Barthélémi Baudouin Benoît Bérenger Bernard Bertrand Bohemond 
+			Boson Bouchard Centule Charles Clotaire Ebbon Enguerrand Eudes Eustache Evrard Foulques François 
+			Frédéric Gauthier Geoffroi Géraud Gilbert Jean Josèp Loís Pau Pèire Joan
+			Guichard Guiges Guilhem Guillaume Henri Jacques Frances Enric Estève Emeric Ferrán Gastó Jacme Sanc Vincentz
+		}
+		
+		female_names = {
+			Nadine Osanne Yolande Jeanne Marie Anne Catherine Anaïs Catarina Magali Magdalena Margarida Maria Mirèlha Mirèio Azalaïs Alienòr Isabèl
+		}
+	}
+	auvergnat = {
+		primary = AUV
+	}
+	limousin = {
+		primary = AUV
+	}
+	nicard = {
+		primary = NIC
+	}
+
+	arpitan = {
+		primary = GNV
+	}
+	savoyard = {
+		primary = SAV
+	}
+	lyonnais = {
+		primary = DAU
+	}
+	
+	lengadocian = {
+		primary = TOU
+		
+		dynasty_names = {
+			"d'Abeille" "d'Adhémar" "d'Agoult" "d'Aiglun" "d'Aiguières" "d'Allemagne" "d'Amalric" "d'Audiffredi"
+			"de Bagnols" "de Barberin" "de Barcillon" "de Baschi" "des Baux" "de Bermond" "de Bionneau" "de Brunet"
+			"de Cadenet" "de Cascaris-Castellet" "de Castaing" "de Castellane" "de Castillon" Coquerel "de Cordes" "de Cormis" "de Crillon"
+			"d'Entrecasteaux" "d'Espagnet" Esparron "d'Espinouze"
+			"de Fargis" "Fauque de Jonquières" "Ferré de la Grange" 
+			"de Gassendi" "de Gévaudan" "de Gombert" "de Gordes" "de Grignan" Grimaldi "de Grimaud" "de Guast" "des Isnards" 
+			"de Lauris" "de Libertat" "de Loménie"
+			"de Monteil" "de Montpezat" 
+			"de Paule" "de Pena" "Pene de la Borde" "de la Pérusse" "de Pontevès"
+			"de Raimondis" "de Revest" "de Riquetti"
+			"de Sabran" "de Sade" "de Saint Victoret" "de Séguiran" "de Simiane"
+			"de Valbelle"
+		}
+		
+		male_names = {
+			Édouard Louis Matheu Miqueu Alexandre Érrard
+			Aldebert Aldéric Alphonse Amaury Amédée André Antoine Arnaud 
+			Arnault Arnoul Aubry Aymar Barthélémi Baudouin Benoît Bérenger Bernard Bertrand Bohemond 
+			Boson Bouchard Centule Charles Clotaire Ebbon Enguerrand Eudes Eustache Evrard Foulques François 
+			Frédéric Gauthier Geoffroi Géraud Gilbert Jean Josèp Loís Pau Pèire Joan
+			Guichard Guiges Guilhem Guillaume Henri Jacques Frances Enric Estève Emeric Ferrán Gastó Jacme Sanc Vincentz
+		}
+		
+		female_names = {
+			Nadine Osanne Yolande Jeanne Marie Anne Catherine Anaïs Catarina Magali Magdalena Margarida Maria Mirèlha Mirèio Azalaïs Alienòr Isabèl
+		}
+	}
+
 	dynasty_names = {
 		"de Valois" "de Bourbon" "de la Tour" "d'Anjou" 
 		"de Lorraine" "de Foix" "de Montfort" "de Blois" "de Penthievre" "de Dreux"
@@ -8462,8 +8604,6 @@ korean_g = {
 		dynasty_names = { 
 			Yi Wang Kim Pak Shin Song Chae Gang Jeong Jang Yun Han Hong Yu Ki Choi Ga Gye Go Na Noh Woo Do Du Ban Ma Min Mun
 			Seo Son Sim An Yang O Jeon Cho Jin Ha Hong Heo Kwak Lim Won Kwon Hwang Bae Seok Bang Dae Gyeong Nam Sung Baek
-
-
 		}
 		male_names = {
 			Hongwi Yu Gwang Hyeol Yung Yeok Ho Hwan Yeon Hon Jong Sun Yun Geum San Gong Byeon Myeongbok Ha-eung Un Gu Seon Hyeon
@@ -8493,88 +8633,115 @@ japanese_g = {
 	graphical_culture = asiangfx
 	country = { has_samurai = yes }
 	province = { local_has_samurai = yes }
+
+	dynasty_names = { 
+		Yamato Arisugawa Asaka Fushimi "Kan'in" Katsura Kaya Kitashirakawa 
+		Kuni Nashimoto Takeda Yamashina
+	}
+	male_names = {
+		Motohito Mihito Hikohito Fusahito Katsuhito Tomohito Michihito Kazuhito Kotohito Okiko Tsuguhito Nagahito 
+		Satohito Asahito Toshiko Yasuhito Teruhito Hidehito Morohito Ayahito Takauji Yoshiakira Yoshimitsu 
+		Yoshimochi Yoshikazu Yoshinori Yoshikatsu Yoshimasa Yoshihisa Yoshitane Yoshizumi Yoshiharu Yoshiteru 
+		Yoshihide Yoshiaki Nobutada Hidenobu Hideyoshi Hideyori Ieyasu Hidetada Iemitsu Ietsuna Tsunayoshi Ienobu 
+		Ietsugu Yoshimune Ieshige Ieharu Ienari Ieyoshi Iesada Iemochi Yoshinobu
+	}
+	female_names = {
+		Toku Sen Tama Aya Ina Kumiko Ai Aiko Aimi Aina Airi Akane Akemi Aki Akiko Akira Ami Aoi Asuka Atsuko Aya Ayaka 
+		Ayako Ayame Ayane Ayano Chika Chikako Chinatsu Chiyo Chiyoko Cho Chou Chouko Emi Etsuko Hana Hanae Hanako Haru 
+		Haruka Haruko Haruna Hikari Hikaru Hina Hinata Hiroko Hitomi Honoka Hoshi Hoshiko Hotaru Izumi Junko Kaede 
+		Kanon Kaori Kaoru Kasumi Kazue Kazuko Keiko Kiku Kiyoko Kohaku Koharu Kokoro Kotone Kumiko Kyo Kyou Mai Makoto 
+		Mami Manami Mao Mariko Masami Masuyo Mayu Megumi Mei Michi Michiko Midori Mika Miki Miku Minako Minato Mio 
+		Misaki Mitsuko Miu Miyako Miyu Mizuki Moe Momoka Momoko Moriko Nana Nanami Naoko Naomi Natsuki Natsuko Natsumi 
+		Noa Noriko Ran Rei Ren Riko Rin Rina Rio Sachiko Saki Sakura Sakurako Satomi Sayuri Setsuko Shinju Shinobu 
+		Shiori Shizuka Shun Sora Sumiko Suzu Suzume Takako Takara Tamiko Tomiko Tomoko Tomomi Tsubaki Tsubame Tsubasa 
+		Tsukiko Ume Umeko Wakana Yasu Yoko Yoshi Yoshiko Youko Yua Yui Yuina Yuki Yukiko Yuko Yumi Yumiko Yuri Yuu 
+		Yuuka Yuuki Yuuko Yuuna Yuzuki
+	}
+
 	togoku = { #Togoku / Eastern Japanese
 		province = { local_has_samurai = yes }
 		primary = JAP
-		dynasty_names = { 
-			Yamato Arisugawa Asaka Fushimi "Kan'in" Katsura Kaya Kitashirakawa 
-			Kuni Nashimoto Takeda Yamashina
-		}
-		male_names = {
-			Motohito Mihito Hikohito Fusahito Katsuhito Tomohito Michihito Kazuhito Kotohito Okiko Tsuguhito Nagahito 
-			Satohito Asahito Toshiko Yasuhito Teruhito Hidehito Morohito Ayahito Takauji Yoshiakira Yoshimitsu 
-			Yoshimochi Yoshikazu Yoshinori Yoshikatsu Yoshimasa Yoshihisa Yoshitane Yoshizumi Yoshiharu Yoshiteru 
-			Yoshihide Yoshiaki Nobutada Hidenobu Hideyoshi Hideyori Ieyasu Hidetada Iemitsu Ietsuna Tsunayoshi Ienobu 
-			Ietsugu Yoshimune Ieshige Ieharu Ienari Ieyoshi Iesada Iemochi Yoshinobu
-		}
-		female_names = {
-			Toku Sen Tama Aya Ina Kumiko Ai Aiko Aimi Aina Airi Akane Akemi Aki Akiko Akira Ami Aoi Asuka Atsuko Aya Ayaka 
-			Ayako Ayame Ayane Ayano Chika Chikako Chinatsu Chiyo Chiyoko Cho Chou Chouko Emi Etsuko Hana Hanae Hanako Haru 
-			Haruka Haruko Haruna Hikari Hikaru Hina Hinata Hiroko Hitomi Honoka Hoshi Hoshiko Hotaru Izumi Junko Kaede 
-			Kanon Kaori Kaoru Kasumi Kazue Kazuko Keiko Kiku Kiyoko Kohaku Koharu Kokoro Kotone Kumiko Kyo Kyou Mai Makoto 
-			Mami Manami Mao Mariko Masami Masuyo Mayu Megumi Mei Michi Michiko Midori Mika Miki Miku Minako Minato Mio 
-			Misaki Mitsuko Miu Miyako Miyu Mizuki Moe Momoka Momoko Moriko Nana Nanami Naoko Naomi Natsuki Natsuko Natsumi 
-			Noa Noriko Ran Rei Ren Riko Rin Rina Rio Sachiko Saki Sakura Sakurako Satomi Sayuri Setsuko Shinju Shinobu 
-			Shiori Shizuka Shun Sora Sumiko Suzu Suzume Takako Takara Tamiko Tomiko Tomoko Tomomi Tsubaki Tsubame Tsubasa 
-			Tsukiko Ume Umeko Wakana Yasu Yoko Yoshi Yoshiko Youko Yua Yui Yuina Yuki Yukiko Yuko Yumi Yumiko Yuri Yuu 
-			Yuuka Yuuki Yuuko Yuuna Yuzuki
-		}
 	}
 	japanese = { #Saigoku / Western Japanese
 		province = { local_has_samurai = yes }
 		primary = MRI
-		dynasty_names = { 
-			Yamato Arisugawa Asaka Fushimi "Kan'in" Katsura Kaya Kitashirakawa 
-			Kuni Nashimoto Takeda Yamashina
-		}
-		male_names = {
-			Motohito Mihito Hikohito Fusahito Katsuhito Tomohito Michihito Kazuhito Kotohito Okiko Tsuguhito Nagahito 
-			Satohito Asahito Toshiko Yasuhito Teruhito Hidehito Morohito Ayahito Takauji Yoshiakira Yoshimitsu 
-			Yoshimochi Yoshikazu Yoshinori Yoshikatsu Yoshimasa Yoshihisa Yoshitane Yoshizumi Yoshiharu Yoshiteru 
-			Yoshihide Yoshiaki Nobutada Hidenobu Hideyoshi Hideyori Ieyasu Hidetada Iemitsu Ietsuna Tsunayoshi Ienobu 
-			Ietsugu Yoshimune Ieshige Ieharu Ienari Ieyoshi Iesada Iemochi Yoshinobu
-		}
-		female_names = {
-			Toku Sen Tama Aya Ina Kumiko Ai Aiko Aimi Aina Airi Akane Akemi Aki Akiko Akira Ami Aoi Asuka Atsuko Aya Ayaka 
-			Ayako Ayame Ayane Ayano Chika Chikako Chinatsu Chiyo Chiyoko Cho Chou Chouko Emi Etsuko Hana Hanae Hanako Haru 
-			Haruka Haruko Haruna Hikari Hikaru Hina Hinata Hiroko Hitomi Honoka Hoshi Hoshiko Hotaru Izumi Junko Kaede 
-			Kanon Kaori Kaoru Kasumi Kazue Kazuko Keiko Kiku Kiyoko Kohaku Koharu Kokoro Kotone Kumiko Kyo Kyou Mai Makoto 
-			Mami Manami Mao Mariko Masami Masuyo Mayu Megumi Mei Michi Michiko Midori Mika Miki Miku Minako Minato Mio 
-			Misaki Mitsuko Miu Miyako Miyu Mizuki Moe Momoka Momoko Moriko Nana Nanami Naoko Naomi Natsuki Natsuko Natsumi 
-			Noa Noriko Ran Rei Ren Riko Rin Rina Rio Sachiko Saki Sakura Sakurako Satomi Sayuri Setsuko Shinju Shinobu 
-			Shiori Shizuka Shun Sora Sumiko Suzu Suzume Takako Takara Tamiko Tomiko Tomoko Tomomi Tsubaki Tsubame Tsubasa 
-			Tsukiko Ume Umeko Wakana Yasu Yoko Yoshi Yoshiko Youko Yua Yui Yuina Yuki Yukiko Yuko Yumi Yumiko Yuri Yuu 
-			Yuuka Yuuki Yuuko Yuuna Yuzuki
-		}
+		
 	}
 	kyushuan = { #Kyushu culture
+		province = { local_has_samurai = yes }
 		primary = OTM
-		dynasty_names = { 
-			Yamato Arisugawa Asaka Fushimi "Kan'in" Katsura Kaya Kitashirakawa 
-			Kuni Nashimoto Takeda Yamashina
-		}
-		male_names = {
-			Motohito Mihito Hikohito Fusahito Katsuhito Tomohito Michihito Kazuhito Kotohito Okiko Tsuguhito Nagahito 
-			Satohito Asahito Toshiko Yasuhito Teruhito Hidehito Morohito Ayahito Takauji Yoshiakira Yoshimitsu 
-			Yoshimochi Yoshikazu Yoshinori Yoshikatsu Yoshimasa Yoshihisa Yoshitane Yoshizumi Yoshiharu Yoshiteru 
-			Yoshihide Yoshiaki Nobutada Hidenobu Hideyoshi Hideyori Ieyasu Hidetada Iemitsu Ietsuna Tsunayoshi Ienobu 
-			Ietsugu Yoshimune Ieshige Ieharu Ienari Ieyoshi Iesada Iemochi Yoshinobu
-		}
-		female_names = {
-			Toku Sen Tama Aya Ina Kumiko Ai Aiko Aimi Aina Airi Akane Akemi Aki Akiko Akira Ami Aoi Asuka Atsuko Aya Ayaka 
-			Ayako Ayame Ayane Ayano Chika Chikako Chinatsu Chiyo Chiyoko Cho Chou Chouko Emi Etsuko Hana Hanae Hanako Haru 
-			Haruka Haruko Haruna Hikari Hikaru Hina Hinata Hiroko Hitomi Honoka Hoshi Hoshiko Hotaru Izumi Junko Kaede 
-			Kanon Kaori Kaoru Kasumi Kazue Kazuko Keiko Kiku Kiyoko Kohaku Koharu Kokoro Kotone Kumiko Kyo Kyou Mai Makoto 
-			Mami Manami Mao Mariko Masami Masuyo Mayu Megumi Mei Michi Michiko Midori Mika Miki Miku Minako Minato Mio 
-			Misaki Mitsuko Miu Miyako Miyu Mizuki Moe Momoka Momoko Moriko Nana Nanami Naoko Naomi Natsuki Natsuko Natsumi 
-			Noa Noriko Ran Rei Ren Riko Rin Rina Rio Sachiko Saki Sakura Sakurako Satomi Sayuri Setsuko Shinju Shinobu 
-			Shiori Shizuka Shun Sora Sumiko Suzu Suzume Takako Takara Tamiko Tomiko Tomoko Tomomi Tsubaki Tsubame Tsubasa 
-			Tsukiko Ume Umeko Wakana Yasu Yoko Yoshi Yoshiko Youko Yua Yui Yuina Yuki Yukiko Yuko Yumi Yumiko Yuri Yuu 
-			Yuuka Yuuki Yuuko Yuuna Yuzuki
-		}
+	}
+	satsugu = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	hichiku = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	chugoku = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	shikoku = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	umpaku = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	gia = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	east_kanto = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	hokuriku = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	nayashi = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	echigo = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	south_tohoku = {
+		province = { local_has_samurai = yes }
+		primary = OTM
+	}
+	north_tohoku = {
+		province = { local_has_samurai = yes }
+		primary = OTM
 	}
 }
 
+ryukyu_g = {
+	graphical_culture = asiangfx
+	dynasty_names = {
+		Sho Ba Mo O Agarie Arakachi Fija Ikegusuku Kanagusuku Nagusuku Shimabuku Tamagusuku Tera Toyomigusuku Ufugusuku Yamagusuku Wibaru
+	}
+	male_names = {
+		Bunei Satto Shisho Hashi Chu Shitatsu Kimpuku Taikyu Toku En Sen'i Shin Gen Sei Ei Nei Ho Ken Shitsu Tei Eki Kei Boku Tetsu On Ko Ton Shu Iku Yo Kaku Wa Ki Koki Kotoku Kojin Kosai Tuka Taru Jira Sanru Gura Chiru Ushi Guji
+	}
+	female_names = {
+		Honko Seishin Ranshitsu Hekiren Nanso
+	}
+	ushima = {
+		primary = RYU
+	}
+	uchinaa = {
+		primary = RYU
+	}
+	saksizima = {
+		primary = RYU
+	}
+}
 
 tibetan_group = {
 	graphical_culture = asiangfx

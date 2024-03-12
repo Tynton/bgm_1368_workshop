@@ -902,8 +902,8 @@ on_new_monarch = {
 		protestantism_events.15	# Catholic Leaning Monarch
 		tengri_events.17		# Keep the Khojas in Power?
 		flavor_tus.15			# Savonarola Dies
-		flavor_brapru.22		# Succession of Albrecht Achilles
-		flavor_brapru.25		# Dispositio Achillea (can also trigger from flavor_brapru.22)
+		#flavor_brapru.22		# Succession of Albrecht Achilles
+		#flavor_brapru.25		# Dispositio Achillea (can also trigger from flavor_brapru.22)
 		flavor_nor.27			# Proclamation in Hamar
 		china_events.43			# Picking new Capital for China
 		celestial_empire_events.3 #Resistance to Sinicization
